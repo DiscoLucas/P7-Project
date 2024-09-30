@@ -37,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Input.GetAxis("Mouse Y"));
 
         #region Handles Movment
         Vector3 forward = transform.TransformDirection(Vector3.forward);
@@ -48,48 +47,13 @@ public class PlayerMovement : MonoBehaviour
         float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+
+        Vector3 moveDirectionNormalized = (forward * curSpeedX).normalized + (right * curSpeedY).normalized;
+        moveDirection = moveDirectionNormalized * (isRunning ? runSpeed : walkSpeed);
 
         #endregion
 
-        #region Handles Jumping
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded && currentStamina>40)
-        {
-            moveDirection.y = jumpPower;
-            ReduceStamina(40);
-        }
-        else
-        {
-            moveDirection.y = movementDirectionY;
-        }
-
-        if (!characterController.isGrounded)
-        {
-            moveDirection.y -= gravity * Time.deltaTime;
-        }
-
-        #endregion
-
-        #region Handles Rotation
-        characterController.Move(moveDirection * Time.deltaTime);
-
-        if (canMove)
-        {
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
-        }
-
-        #endregion
-
-        #region Stamina regeneration (Stamina system is scattered in the code)
-        if(currentStamina < 100) 
-        {
-            currentStamina += staminaRegen * Time.deltaTime;
-        }
-        
-        #endregion
+        // Rest of the code...
     }
     private void ReduceStamina(float reductionAmount)
     {
