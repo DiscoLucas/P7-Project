@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxStamina = 100f;
     public float currentStamina;
     public float staminaRegen = 10f;
+    public float staminaCunsumption_Jump = 40f;
 
 
     public float lookSpeed = 2f;
@@ -54,10 +55,10 @@ public class PlayerMovement : MonoBehaviour
         #endregion
 
         #region Handles Jumping
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded && currentStamina > 40)
+        if (Input.GetButton("Jump") && canMove && characterController.isGrounded && currentStamina > staminaCunsumption_Jump)
         {
             moveDirection.y = jumpPower;
-            ReduceStamina(40);
+            ReduceStamina(staminaCunsumption_Jump);
         }
         else
         {
@@ -85,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
         #endregion
 
         #region Stamina regeneration (Stamina system is scattered in the code)
-        if (currentStamina < 100)
+        if (currentStamina < maxStamina)
         {
             currentStamina += staminaRegen * Time.deltaTime;
         }
