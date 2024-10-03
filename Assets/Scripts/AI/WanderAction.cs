@@ -9,7 +9,6 @@ public class WanderAction : ActionBase<WanderAction.Data>
     // called when the action is created
     public override void Created()
     {
-        throw new System.NotImplementedException();
     }
     
     // Called when the action is started for a specific agent.
