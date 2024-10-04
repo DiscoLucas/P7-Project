@@ -1,16 +1,37 @@
+using CrashKonijn.Goap.Behaviours;
+using CrashKonijn.Goap.Classes;
+using CrashKonijn.Goap.Enums;
+using CrashKonijn.Goap.Interfaces;
 using UnityEngine;
 
-public class ChaseAction : MonoBehaviour
+public class ChaseAction : ActionBase<ChaseAction.Data>
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Created()
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Start(IMonoAgent agent, Data data)
     {
-        
+        data.Timer = Random.Range(0.3f, 1.5f);
+    }
+
+    public override ActionRunState Perform(IMonoAgent agent, Data data, ActionContext context)
+    {
+        data.Timer -= context.DeltaTime;
+
+        if (data.Timer > 0) return ActionRunState.Continue;
+
+        return ActionRunState.Stop;
+    }
+
+    public override void End(IMonoAgent agent, Data data)
+    {
+    }
+
+    public class Data : IActionData
+    {
+        public ITarget Target { get; set; }
+        public float Timer { get; set; }
     }
 }
+
