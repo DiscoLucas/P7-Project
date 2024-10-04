@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Input.GetAxis("Mouse Y"));
+        //Debug.Log(Input.GetAxis("Mouse Y"));
 
         #region Handles Movment
         Vector3 forward = transform.TransformDirection(Vector3.forward);
