@@ -105,7 +105,9 @@ namespace Demos.Complex.Actions
         
         private BoxSource GetClosestBox(IMonoAgent agent, Data data)
         {
+#pragma warning disable CS0618 // Type or member is obsolete
             var boxes = GameObject.FindObjectsOfType<BoxSource>();
+#pragma warning restore CS0618 // Type or member is obsolete
             var typeBox = boxes.FirstOrDefault(x => x.ItemType != null && x.ItemType == data.Item.GetType());
             
             if (typeBox != null)

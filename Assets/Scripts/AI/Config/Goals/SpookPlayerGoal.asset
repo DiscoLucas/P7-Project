@@ -15,4 +15,7 @@ MonoBehaviour:
   classType: SpookPlayerGoal, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   baseCost: 1
-  conditions: []
+  conditions:
+  - worldKey: {fileID: 11400000, guid: 9bd7401420b68c6409f27e82698a511b, type: 2}
+    <Comparison>k__BackingField: 3
+    <Amount>k__BackingField: 1

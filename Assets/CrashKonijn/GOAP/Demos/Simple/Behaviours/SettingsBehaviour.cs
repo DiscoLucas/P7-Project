@@ -31,8 +31,10 @@ namespace Demos.Simple.Behaviours
         private void Awake()
         {
             this.agentPrefab.SetActive(false);
+#pragma warning disable CS0618 // Type or member is obsolete
             this.goapRunner = FindObjectOfType<GoapRunnerBehaviour>();
             this.apples = FindObjectOfType<AppleCollection>();
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         private void Update()

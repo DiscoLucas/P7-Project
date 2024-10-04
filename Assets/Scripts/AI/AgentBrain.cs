@@ -13,5 +13,6 @@ public class AgentBrain : MonoBehaviour
     private void Start()
     {
         //agent.SetGoal<WanderGoal>(false);
+        agent.SetGoal<SpookPlayerGoal>(true);
     }
 }
