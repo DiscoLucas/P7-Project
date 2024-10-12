@@ -18,7 +18,7 @@ namespace Demos.Simple.Behaviours
 
         private void Start()
         {
-            this.agent.SetGoal<WanderGoal>(false);
+            this.agent.SetGoal<WanderGoalM>(false);
         }
 
         private void Update()
@@ -30,7 +30,7 @@ namespace Demos.Simple.Behaviours
             }
             
             if (this.hunger.hunger < 20)
-                this.agent.SetGoal<WanderGoal>(true);
+                this.agent.SetGoal<WanderGoalM>(true);
         }
     }
 }
