@@ -11,7 +11,7 @@ namespace Demos.Complex.Factories.Extensions
     {
         public static void AddWanderGoal(this GoapSetBuilder builder)
         {
-            builder.AddGoal<WanderGoal>()
+            builder.AddGoal<WanderGoalM>()
                 .AddCondition<IsWandering>(Comparison.GreaterThanOrEqual, 1);
         }
 

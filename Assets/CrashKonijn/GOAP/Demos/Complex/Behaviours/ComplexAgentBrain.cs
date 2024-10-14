@@ -42,17 +42,17 @@ namespace Demos.Complex.Behaviours
 
         private void Start()
         {
-            this.agent.SetGoal<WanderGoal>(false);
+            this.agent.SetGoal<WanderGoalM>(false);
         }
         
         private void OnNoActionFound(IGoalBase goal)
         {
-            this.agent.SetGoal<WanderGoal>(false);
+            this.agent.SetGoal<WanderGoalM>(false);
         }
 
         private void OnGoalCompleted(IGoalBase goal)
         {
-            this.agent.SetGoal<WanderGoal>(false);
+            this.agent.SetGoal<WanderGoalM>(false);
         }
 
         private void OnActionStop(IActionBase action)
@@ -113,7 +113,7 @@ namespace Demos.Complex.Behaviours
                 return;
             }
             
-            this.agent.SetGoal<WanderGoal>(false);
+            this.agent.SetGoal<WanderGoalM>(false);
         }
         
         private void DetermineWoodCutterGoals()
@@ -130,7 +130,7 @@ namespace Demos.Complex.Behaviours
                 return;
             }
             
-            this.agent.SetGoal<WanderGoal>(false);
+            this.agent.SetGoal<WanderGoalM>(false);
         }
         
         private void DetermineSmithGoals()
@@ -147,7 +147,7 @@ namespace Demos.Complex.Behaviours
                 return;
             }
 
-            this.agent.SetGoal<WanderGoal>(false);
+            this.agent.SetGoal<WanderGoalM>(false);
         }
         
         private void DetermineCleanerGoals()
@@ -158,7 +158,7 @@ namespace Demos.Complex.Behaviours
                 return;
             }
             
-            this.agent.SetGoal<WanderGoal>(false);
+            this.agent.SetGoal<WanderGoalM>(false);
         }
 
         public enum AgentType
