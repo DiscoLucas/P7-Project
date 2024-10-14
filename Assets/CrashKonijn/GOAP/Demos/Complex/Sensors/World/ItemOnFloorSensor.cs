@@ -11,7 +11,9 @@ namespace Demos.Complex.Sensors.World
 
         public override void Created()
         {
+#pragma warning disable CS0618 // Type or member is obsolete
             this.collection = GameObject.FindObjectOfType<ItemCollection>();
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         public override SenseValue Sense()
