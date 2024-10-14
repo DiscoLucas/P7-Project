@@ -20,7 +20,9 @@ namespace Demos.Complex.Behaviours
 
         public void Awake()
         {
+#pragma warning disable CS0618 // Type or member is obsolete
             this.collection = FindObjectOfType<ItemCollection>();
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         public void OnEnable()
