@@ -12,7 +12,9 @@ namespace Demos.Simple.Behaviours
         private void Awake()
         {
             this.nutritionValue = Random.Range(80f, 150f);
+#pragma warning disable CS0618 // Type or member is obsolete
             this.appleCollection = FindObjectOfType<AppleCollection>();
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         private void OnEnable()
