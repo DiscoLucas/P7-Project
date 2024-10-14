@@ -2,12 +2,7 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
+    public bool hasEquipped;
     // Update is called once per frame
     void Update()
     {
@@ -22,6 +17,7 @@ public class PlayerControls : MonoBehaviour
                 // Check if the object hit has the "Trigger" tag
                 if (hit.collider.CompareTag("Trigger"))
                 {
+
                     Clicker clicker = hit.collider.gameObject.GetComponent<Clicker>();
                     if (clicker != null)
                         clicker.sexualStyle();
