@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826454e3c7f400943baf947860d47a92, type: 3}
   m_Name: IsPlayerSpookedSensor
   m_EditorClassIdentifier: 
-  classType: Demos.Simple.Sensors.World.IsAliveSensor, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  key: {fileID: 0}
+  classType: IsPlayerSpookedSensor, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  key: {fileID: 11400000, guid: 9bd7401420b68c6409f27e82698a511b, type: 2}
