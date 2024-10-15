@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
-    public bool hasEquipped;
+    public GameObject Hand;
     // Update is called once per frame
     void Update()
     {
@@ -14,16 +14,28 @@ public class PlayerControls : MonoBehaviour
             // Shoot a ray from the camera's position in the forward direction
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, rayDistance))
             {
-                // Check if the object hit has the "Trigger" tag
+                // If we hit something with the trigger tag
                 if (hit.collider.CompareTag("Trigger"))
                 {
-
                     Clicker clicker = hit.collider.gameObject.GetComponent<Clicker>();
                     if (clicker != null)
                         clicker.sexualStyle();
-                    // Your logic when the player is looking at a GameObject tagged as "Trigger"
-                    Debug.Log("Player is looking at a Trigger object." + clicker.gameObject.name);
                 }
+            }//If we miss & is holding something
+            else if(Hand.transform.childCount!=0)
+            {   //Drop item
+                GameObject HeldItem = Hand.transform.GetChild(0).gameObject;
+
+                HeldItem.transform.parent= null;
+                if (HeldItem.GetComponent<Rigidbody>() != null && HeldItem.GetComponent<Collider>() != null)
+                {
+                    HeldItem.GetComponent<Rigidbody>().isKinematic = false;
+                    HeldItem.GetComponent<Collider>().enabled = true;
+                }
+            }
+            else
+            {
+                //dont do much ?? Toggles flashlight maybe???
             }
         }
     }
