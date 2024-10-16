@@ -49,10 +49,11 @@ public class PlayerMovement : MonoBehaviour
         // Press Left Shift to run
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
 
-        float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
+        float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxisRaw("Vertical") : 0;
+        float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxisRaw("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = Vector3.Normalize((forward * curSpeedX) + (right * curSpeedY))* (isRunning ? runSpeed : walkSpeed);
+
 
         #endregion
 
