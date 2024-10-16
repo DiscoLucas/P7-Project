@@ -13991,6 +13991,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c07f00103d6f1e64784b957c70b29d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p_sensor: {fileID: 0}
+  protectionSensor: {fileID: 0}
+  config: {fileID: 0}
+  dependencyInjector: {fileID: 0}
 --- !u!114 &1593526694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15510,7 +15514,7 @@ GameObject:
   - component: {fileID: 1815631517}
   - component: {fileID: 1815631516}
   - component: {fileID: 1815631519}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -16390,6 +16394,7 @@ GameObject:
   - component: {fileID: 1882770314}
   - component: {fileID: 1882770313}
   - component: {fileID: 1882770312}
+  - component: {fileID: 1882770315}
   m_Layer: 0
   m_Name: AgentConfig
   m_TagString: Untagged
@@ -16425,9 +16430,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5993c7f19b1d04ab9b2b00a84ab021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosStop: 1
-  wanderingBaseCost: 5
-  wanderingSetinRange: 10
 --- !u!4 &1882770314
 Transform:
   m_ObjectHideFlags: 0
@@ -16443,6 +16445,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1882770315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882770311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31abe164132a5b4f86a72d5997328e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config1: {fileID: 0}
+  player: {fileID: 0}
+  protectArea: {fileID: 0}
 --- !u!43 &1886330732
 Mesh:
   m_ObjectHideFlags: 0
@@ -17766,7 +17783,7 @@ GameObject:
   - component: {fileID: 2008277629}
   - component: {fileID: 2008277628}
   - component: {fileID: 2008277627}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Capsule
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -17787,7 +17804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1815631517}
   walkSpeed: 4
-  runSpeed: 6
+  runSpeed: 15
   jumpPower: 7
   gravity: 20
   maxStamina: 100
@@ -17907,7 +17924,7 @@ Transform:
   m_GameObject: {fileID: 2008277626}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5, y: 1, z: -6.5}
+  m_LocalPosition: {x: 15.03, y: 1, z: -6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18893,6 +18910,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5991814104950606064, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
+      propertyPath: goapRunner
+      value: 
+      objectReference: {fileID: 1882770312}
+    - target: {fileID: 9021286329730816563, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
+      propertyPath: config
+      value: 
+      objectReference: {fileID: 11400000, guid: cb3193e1f6eb7f8468176dcea095ee7a, type: 2}
+    - target: {fileID: 9021286329730816563, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
+      propertyPath: protectionSensor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021286329730816563, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
+      propertyPath: dependencyInjector
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18902,16 +18935,16 @@ PrefabInstance:
       addedObject: {fileID: 1593526691}
     - targetCorrespondingSourceObject: {fileID: 1671984816988992673, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1593526695}
-    - targetCorrespondingSourceObject: {fileID: 1671984816988992673, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1593526694}
+      addedObject: {fileID: 1593526692}
     - targetCorrespondingSourceObject: {fileID: 1671984816988992673, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1593526693}
     - targetCorrespondingSourceObject: {fileID: 1671984816988992673, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1593526692}
+      addedObject: {fileID: 1593526694}
+    - targetCorrespondingSourceObject: {fileID: 1671984816988992673, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1593526695}
   m_SourcePrefab: {fileID: 100100000, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

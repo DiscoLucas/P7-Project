@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f6a02d0c5696345907fb171862721c, type: 3}
+  m_Name: MonsterConfig
+  m_EditorClassIdentifier: 
+  AgentSensorRadius: 10
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  protectionAreaRadius: 5
+  meleeRange: 2.5
+  attackDelay: 2
+  meleeCost: 25
+  chaseSpeed: 6
+  chaseRange: 20
+  chaseCost: 15
+  targetPosStop: 1
+  wanderingBaseCost: 5
+  wanderingSetinRange: 20
+  idleTime: 3
+  patrolRadius: 15
+  startingAggressionLevel: 0.5
+  screamFrequency: 5
+  stalkActionCost: 10
+  screamActionCost: 2

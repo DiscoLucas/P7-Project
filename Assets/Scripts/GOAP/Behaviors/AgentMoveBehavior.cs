@@ -51,7 +51,7 @@ public class AgentMoveBehavior : MonoBehaviour
             return;
         }
 
-        Debug.Log("distance to target: " + Vector3.Distance(CurrentTarget.Position, lastPosition));
+      
         if (minMoveDistance <= Vector3.Distance(CurrentTarget.Position, lastPosition))
         {
             lastPosition = CurrentTarget.Position;
