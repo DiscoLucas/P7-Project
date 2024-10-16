@@ -22,13 +22,13 @@ MonoBehaviour:
   meleeCost: 25
   chaseSpeed: 6
   chaseRange: 20
-  chaseCost: 15
+  chaseCost: 25
   targetPosStop: 1
   wanderingBaseCost: 5
   wanderingSetinRange: 20
-  idleTime: 3
   patrolRadius: 15
+  idleTime: 3
   startingAggressionLevel: 0.5
   screamFrequency: 5
-  stalkActionCost: 10
-  screamActionCost: 2
+  stalkActionCost: 9999
+  screamActionCost: 25

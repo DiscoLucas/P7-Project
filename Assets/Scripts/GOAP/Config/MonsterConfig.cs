@@ -1,36 +1,77 @@
 using UnityEngine;
 
+/// <summary>
+/// Configuration settings for the monster's behavior and abilities.
+/// </summary>
 [CreateAssetMenu(fileName = "MonsterConfig", menuName = "Agent Config/MonsterConfig", order = 1)]
 public class MonsterConfig : ScriptableObject
 {
-    // Sensor and Detection Settings
-    public float AgentSensorRadius = 25;      // Radius to detect the player
-    public LayerMask playerLayerMask;         // Layer to detect the player
-    public int protectionAreaRadius = 5;      // Radius around the protection point
+    #region Sensor and Detection Settings
+    [Header("Sensor and Detection Settings")]
+    [Tooltip("Radius to detect the player.")]
+    public float AgentSensorRadius = 25f;
 
-    // Melee Attack Settings
-    public float meleeRange = 5;              // Range to switch to melee action
-    public float attackDelay = 2;             // Delay between attacks
-    public float meleeCost = 10;              // Cost associated with melee action
+    [Tooltip("Layer mask to identify the player.")]
+    public LayerMask playerLayerMask;
 
-    // Chasing and Movement Settings
-    public float chaseSpeed = 6;              // Speed during chase
-    public float chaseRange = 20;             // Distance at which chasing begins
+    [Tooltip("Radius around the protection point for detecting player proximity.")]
+    public int protectionAreaRadius = 5;
+    #endregion
+
+    #region Melee Attack Settings
+    [Header("Melee Attack Settings")]
+    [Tooltip("Range to switch to melee action.")]
+    public float meleeRange = 5f;
+
+    [Tooltip("Delay between attacks in seconds.")]
+    public float attackDelay = 2f;
+
+    [Tooltip("Cost associated with performing a melee action.")]
+    public float meleeCost = 10f;
+    #endregion
+
+    #region Chasing and Movement Settings
+    [Header("Chasing and Movement Settings")]
+    [Tooltip("Speed of the monster while chasing the player.")]
+    public float chaseSpeed = 6f;
+
+    [Tooltip("Distance at which the monster will start chasing the player.")]
+    public float chaseRange = 20f;
+
+    [Tooltip("Cost associated with chasing actions.")]
     public int chaseCost = 10;
+    #endregion
 
-    // Wander and Exploration Settings
-    public int targetPosStop = 1;             // Position to stop while wandering
-    public int wanderingBaseCost = 5;         // Base cost for wandering actions
-    public float wanderingSetinRange = 10;    // Range at which the wandering action activates
+    #region Wander and Exploration Settings
+    [Header("Wander and Exploration Settings")]
+    [Tooltip("Position to stop while wandering.")]
+    public int targetPosStop = 1;
 
-    // Additional Behavior Settings
-    public float idleTime = 3;                // Time spent idling between actions
-    public float patrolRadius = 15;           // Patrol radius for wandering
+    [Tooltip("Base cost for wandering actions.")]
+    public int wanderingBaseCost = 5;
 
-    // Starting aggression level
-    public float startingAggressionLevel = 0.5f; // Adjust as needed
-    public float screamFrequency = 5.0f; // Time between screams
+    [Tooltip("Range at which the wandering action activates.")]
+    public float wanderingSetinRange = 10f;
 
-    public int stalkActionCost = 10; // Cost for stalking action
-    public int screamActionCost = 5;  // Cost for scream action
+    [Tooltip("Patrol radius for wandering actions.")]
+    public float patrolRadius = 15f;
+
+    [Tooltip("Time spent idling between actions.")]
+    public float idleTime = 3f;
+    #endregion
+
+    #region Additional Behavior Settings
+    [Header("Additional Behavior Settings")]
+    [Tooltip("Starting aggression level of the monster, influencing its behavior.")]
+    public float startingAggressionLevel = 0.5f;
+
+    [Tooltip("Frequency of screams (in seconds) to get the player's attention.")]
+    public float screamFrequency = 5.0f;
+
+    [Tooltip("Cost associated with stalking action.")]
+    public int stalkActionCost = 10;
+
+    [Tooltip("Cost associated with scream action.")]
+    public int screamActionCost = 5;
+    #endregion
 }

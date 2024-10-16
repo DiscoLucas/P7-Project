@@ -1,59 +1,48 @@
 ﻿using System.Collections;
-using UnityEngine;
 using CrashKonijn.Goap;
 using CrashKonijn.Goap.Behaviours;
-using CrashKonijn.Goap.Interfaces;
-using CrashKonijn.Goap.Enums;
 using CrashKonijn.Goap.Classes;
+using CrashKonijn.Goap.Enums;
+using CrashKonijn.Goap.Interfaces;
 using UnityEngine;
-using CrashKonijn.Goap;
-using CrashKonijn.Goap.Behaviours;
+using UnityEngine.AI;
 
 namespace Assets.Scripts.GOAP.Actions
 {
-    public class ScreamAction : ActionBase<ScreamData>, IInjectableObj
+    public class ScreamAction : ActionBase<CommonDataM>
     {
-        private MonsterConfig config;
+        public override void Created() { }
 
-        public void Inject(DependencyInjector injector)
+        public override void Start(IMonoAgent agent, CommonDataM data)
         {
-            config = injector.config1 as MonsterConfig;
+            Debug.Log("Scream started " + Time.timeSinceLevelLoad);
+            data.timer = Random.Range(1f, 2f); // Scream lasts for 1-2 seconds
+                                               // Set in range to false to stop movement
+            (agent as AgentBehaviour)?.Events.TargetChanged(data.Target, false);
         }
 
-        public override void Created()
+        public override ActionRunState Perform(IMonoAgent agent, CommonDataM data, ActionContext context)
         {
-            // Initialize the action if necessary
+            data.timer -= context.DeltaTime;
+            if (data.timer <= 0)
+            {
+                return ActionRunState.Stop;
+            }
+            return ActionRunState.Continue;
         }
 
-        public override void Start(IMonoAgent agent, ScreamData data)
+        public override void End(IMonoAgent agent, CommonDataM data)
         {
-            // Logic to perform when the scream action starts
-            Debug.Log("Monster screams to attract player!");
-            // Optionally add logic for sound effects or triggering a scream animation
-        }
-
-        public override ActionRunState Perform(IMonoAgent agent, ScreamData data, ActionContext context)
-        {
-            // Logic to continue the scream action if needed
-            // This could involve timing or conditions to stop the scream
-            return ActionRunState.Stop; // Ends the scream action after one execution
-        }
-
-        public override void End(IMonoAgent agent, ScreamData data)
-        {
-            // Logic to clean up after the scream action ends
+            Debug.Log("Scream ended " + Time.timeSinceLevelLoad);
+            // Restore in range state if needed
+            (agent as AgentBehaviour)?.Events.TargetChanged(data.Target, true);
         }
     }
 
-    // Custom data class for scream action
-    public class ScreamData : IActionData, ITarget
+
+    public class ScreamData : IActionData
     {
-        public TransformTarget Target { get; set; } // Target to scream at (the player)
-
-        // Implement ITarget
-        public Vector3 Position => Target.Position; // Returns the target position
-
-        // Implement IActionData
+        public TransformTarget Target { get; set; }
         ITarget IActionData.Target
         {
             get => Target;

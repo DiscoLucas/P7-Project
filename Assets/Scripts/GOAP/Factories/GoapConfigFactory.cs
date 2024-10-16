@@ -52,11 +52,11 @@ public class GoapConfigFactory : GoapSetFactoryBase
 
         // Add new actions here
         builder.AddAction<StalkAction>()
-            .SetTarget<PlayerTarget>()
+            .SetTarget<PlayerTarget>().AddEffect<PlayerPosition>(EffectType.Increase)
             .SetBaseCost(injector.config1.stalkActionCost);
 
         builder.AddAction<ScreamAction>()
-            .SetTarget<PlayerTarget>() 
+            .SetTarget<PlayerTarget>().AddEffect<PlayerPosition>(EffectType.Increase)
             .SetBaseCost(injector.config1.screamActionCost);
     }
 

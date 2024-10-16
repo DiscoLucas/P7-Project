@@ -32,7 +32,8 @@ namespace Assets.Scripts.GOAP.Actions
             bool shouldAttack = (data.Target != null && Vector3.Distance(data.Target.Position, agent.transform.position) <= config.meleeRange);
             if (shouldAttack)
             {
-                Debug.Log("ATTACKING: " + data.Target.Position.ToString());
+                Debug.Log("BONK ATTAKING: " + data.Target.Position.ToString());
+              
             }
 
             return data.timer > 0 ? ActionRunState.Continue : ActionRunState.Stop;
