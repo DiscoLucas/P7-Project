@@ -12,21 +12,22 @@ public class PlayerControls : MonoBehaviour
             float rayDistance = 5f; // Set a reasonable ray distance (you can adjust this value)
 
             // Shoot a ray from the camera's position in the forward direction
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, rayDistance))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, rayDistance) && hit.collider.CompareTag("Trigger"))
             {
                 // If we hit something with the trigger tag
-                if (hit.collider.CompareTag("Trigger"))
-                {
-                    Clicker clicker = hit.collider.gameObject.GetComponent<Clicker>();
-                    if (clicker != null)
-                        clicker.sexualStyle();
-                }
+                Clicker clicker = hit.collider.gameObject.GetComponent<Clicker>();
+                if (clicker != null)
+                    clicker.sexualStyle();
+            
             }//If we miss & is holding something
             else if(Hand.transform.childCount!=0)
             {   //Drop item
                 GameObject HeldItem = Hand.transform.GetChild(0).gameObject;
 
-                HeldItem.transform.parent= null;
+                HeldItem.gameObject.layer = 7;
+                HeldItem.transform.rotation = Quaternion.identity;
+                HeldItem.transform.position = Camera.main.transform.position;
+                HeldItem.transform.parent = null;
                 if (HeldItem.GetComponent<Rigidbody>() != null && HeldItem.GetComponent<Collider>() != null)
                 {
                     HeldItem.GetComponent<Rigidbody>().isKinematic = false;

@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
+
     public Camera playerCamera;
     public float walkSpeed = 4f;
     public float runSpeed = 6f;
@@ -38,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
         //Debug.Log(Input.GetAxis("Mouse Y"));
 
         #region Handles Movment
