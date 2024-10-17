@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.brogrammist.jsam": {
+      "version": "https://github.com/jackyyang09/Simple-Unity-Audio-Manager.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "aaaffb8308dae132b9dd08d419f6727cc463f2bf"
+    },
     "com.tomduchene.unity-git-locks": {
       "version": "https://github.com/TomDuchene/unity-git-locks.git",
       "depth": 0,
