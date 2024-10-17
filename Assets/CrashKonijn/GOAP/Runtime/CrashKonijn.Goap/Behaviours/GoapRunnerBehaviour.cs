@@ -58,17 +58,31 @@ namespace CrashKonijn.Goap.Behaviours
         {
             if (this.isInitialized)
                 return;
-            
+
+            Debug.Log("Initializing GoapRunnerBehaviour...");
+
             this.config = GoapConfig.Default;
+            if (this.config == null)
+            {
+                Debug.LogError("GoapConfig.Default is null!");
+            }
+
             this.runner = new Classes.Runners.GoapRunner();
-            
+            if (this.runner == null)
+            {
+                Debug.LogError("GoapRunner instance is null!");
+            }
+
             if (this.configInitializer != null)
                 this.configInitializer.InitConfig(this.config);
-            
+
             this.CreateGoapSets();
-            
+
             this.isInitialized = true;
+            Debug.Log("GoapRunnerBehaviour initialized successfully.");
         }
+
+
 
         private void CreateGoapSets()
         {

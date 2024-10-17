@@ -13112,6 +13112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66693633ee720a45a06f75474afbb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platformCollider: {fileID: 0}
+  fallDelay: 3
 --- !u!43 &1427269002
 Mesh:
   m_ObjectHideFlags: 0
