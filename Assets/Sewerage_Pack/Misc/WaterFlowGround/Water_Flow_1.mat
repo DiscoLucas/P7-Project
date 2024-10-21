@@ -161,19 +161,24 @@ Material:
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 10
+    - _DstBlend2: 10
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
+    - _ExcludeFromTUAndAA: 0
     - _FlowMapTiling: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.287
     - _Glossiness_copy: 0.75
     - _GlossyReflections: 1
+    - _MaterialID: 1
+    - _MaterialTypeMask: 2
     - _Metallic: 0.641
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Opacity: 0.26
     - _OpaqueCullMode: 2
     - _Parallax: 0.02
+    - _PerPixelSorting: 0
     - _RayTracing: 0
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
@@ -194,14 +199,15 @@ Material:
     - _StencilRefGBuffer: 2
     - _StencilRefMV: 32
     - _StencilWriteMask: 6
-    - _StencilWriteMaskDepth: 8
+    - _StencilWriteMaskDepth: 9
     - _StencilWriteMaskDistortionVec: 4
-    - _StencilWriteMaskGBuffer: 14
-    - _StencilWriteMaskMV: 40
+    - _StencilWriteMaskGBuffer: 15
+    - _StencilWriteMaskMV: 41
     - _Strength: 0.5
     - _SupportDecals: 1
     - _SurfaceType: 1
     - _Tiling: 5
+    - _TransmissionEnable: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
     - _TransparentDepthPostpassEnable: 0
