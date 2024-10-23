@@ -40,7 +40,10 @@ public class GoapConfigFactory : GoapSetFactoryBase
             .SetTarget<WanderingTargetPositionTK>();
 
         builder.AddTargetSensor<PlayerTargetSensor>()
-    .SetTarget<ChaseTargetPositionTK>();
+            .SetTarget<ChaseTargetPositionTK>();
+
+        builder.AddWorldSensor<AggressionLevelSensor>() 
+            .SetKey<MonsterAggressionLevelWK>();
 
 
 
@@ -105,13 +108,12 @@ public class GoapConfigFactory : GoapSetFactoryBase
 
     private void buildGoals(GoapSetBuilder builder)
     {
-        // Wander goal
+        
         builder.AddGoal<WanderGoalM>()
             .AddCondition<WanderingStateWK>(CrashKonijn.Goap.Resolver.Comparison.GreaterThanOrEqual, injector.config1.targetPosStop);
-
-        // Chase player away goal - chase until near the last known position
         builder.AddGoal<ChasePlayerAwayGoalM>()
             .AddCondition<LastKnownPlayerPositionWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, (int)injector.config1.meleeRange);
+        builder.AddGoal<StalkGoal>();
     }
 
 }
