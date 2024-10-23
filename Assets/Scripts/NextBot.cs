@@ -16,7 +16,7 @@ public class NextBot : MonoBehaviour
     public float searchRadius = 100f;
 
     [Header("Bot behavior")]
-    public BotState State { get; private set; }
+    public BotState State;// { get; set; }
     public string StateDisplay;
     public static event Action<BotState> OnBeforeStateChange;
     public static event Action<BotState> OnAfterStateChange;
@@ -26,13 +26,7 @@ public class NextBot : MonoBehaviour
     public float walkSpeed = 2f;
     public float runSpeed = 10f; // used for running away from player. Doesn't need to be balanced.
 
-    public enum BotState
-    {
-        CHASE,
-        HIDE,
-        STALK,
-        IDLE
-    }
+    
 
     void Start()
     {
@@ -53,24 +47,25 @@ public class NextBot : MonoBehaviour
             case BotState.CHASE:
                 ChasePlayer();
                 break;
-            case BotState.HIDE:
-                Hide();
-                break;
             case BotState.STALK:
                 StalkPlayer();
                 break;
             case BotState.IDLE:
                 break;
             default:
-                throw new ArgumentOutOfRangeException(nameof(State), State, null);
+                break;
         }
         StateDisplay = State.ToString();
     }
-
-    void ChangeState(BotState newState)
+    /// <summary>
+    /// Changes the state of the bot. If the new state is the same as the current state, the state will not change.
+    /// </summary>
+    /// <param name="newState"></param>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
+    void ChangeStateOnce(BotState newState)
     {
         // guard to prevent duplicate state changes
-        //if (State == newState) return;
+        if (State == newState) return;
 
         OnBeforeStateChange?.Invoke(newState);
         State = newState;
@@ -78,9 +73,6 @@ public class NextBot : MonoBehaviour
 
         switch (newState)
         {
-            case BotState.CHASE:
-                ChasePlayer();
-                break;
             case BotState.HIDE:
                 Hide();
                 break;
@@ -109,16 +101,22 @@ public class NextBot : MonoBehaviour
         
         if (IsPlayerVisible())
         {
-            int coinFlip = Random.Range(0, 1);
+            int coinFlip = Random.Range(0, 2);
+            Debug.Log(coinFlip);
             if (coinFlip == 0) State = BotState.CHASE;
-            else State = BotState.HIDE;
+            else if (coinFlip == 1) ChangeStateOnce(BotState.HIDE);
         }
     }
 
     void Hide()
     {
+        
         agent.speed = runSpeed;
         agent.SetDestination(GetRandomNavMeshPoint());
+        if (agent.remainingDistance < 1f)
+        {
+            State = BotState.STALK;
+        }
     }
 
     bool IsPlayerVisible()
@@ -149,7 +147,8 @@ public class NextBot : MonoBehaviour
     {
         Vector3 randomPoint = Vector3.zero;
         int maxTries = 30;
-        
+        // TODO: implement error handling for when no point is found
+
         for (int i = 0; i < maxTries; i++)
         {
             // get a random point
@@ -172,4 +171,12 @@ public class NextBot : MonoBehaviour
         return randomPoint;
     }
 
+}
+[Serializable]
+public enum BotState
+{
+    CHASE,
+    HIDE,
+    STALK,
+    IDLE
 }
