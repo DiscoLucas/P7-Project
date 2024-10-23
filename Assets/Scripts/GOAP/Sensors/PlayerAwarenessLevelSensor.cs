@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.GOAP.Sensors
 {
-    public class PlayerDistanceSensor : LocalWorldSensorBase, IInjectableObj
+    public class PlayerAwarenessLevelSensor : LocalWorldSensorBase, IInjectableObj
     {
         public override void Created()
         {
@@ -20,7 +20,7 @@ namespace Assets.Scripts.GOAP.Sensors
 
         public override SenseValue Sense(IMonoAgent agent, IComponentReference references)
         {
-            return new SenseValue(references.GetCachedComponentInChildren<PlayerSensor>().ditanceToPlayer());
+            return new SenseValue(references.GetCachedComponentInChildren<PlayerAwarenessSensor>().GetPlayerAwarenessLevel());
 
         }
 

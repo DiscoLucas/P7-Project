@@ -26,13 +26,16 @@ public class PlayerAwarenessSensor : MonoBehaviour
     [SerializeField]
     private float timeLookingAtMonster = 0f;
     [SerializeField]
-    int minDistanceToPlayer = 1, maxDistanceToPlayer = 100;
+    int minDistanceToPlayer = 1, maxDistanceToPlayer = 100, movementUnit = 5;
+
+    // Variables for hiding spot calculation
+    public float maxRayDistance = 50f; // Max distance to check for a hiding spot
+    public float stepAngle = 5f; // Step angle for raycasting in the FOV
 
     void Start()
     {
         playerCamera = Camera.main;
-        fieldOfViewOfPlayer = playerCamera.fieldOfView*2;
-        // Initialize if needed
+        fieldOfViewOfPlayer = playerCamera.fieldOfView * 2;
     }
 
     void Update()
@@ -46,22 +49,18 @@ public class PlayerAwarenessSensor : MonoBehaviour
     private void CheckIfPlayerCanSeeMonster()
     {
         Vector3 directionToPlayer = playerCamera.transform.position - transform.position;
-        Vector3 directionToMonster = transform.position - playerCamera.transform.position; // From player to monster
-        float angleToMonster = Vector3.Angle(playerCamera.transform.forward, directionToMonster); // Angle from where player is looking to the monste
+        Vector3 directionToMonster = transform.position - playerCamera.transform.position;
+        float angleToMonster = Vector3.Angle(playerCamera.transform.forward, directionToMonster);
 
-        // Check if the player is within the field of view
         if (angleToMonster < fieldOfViewOfPlayer / 2f)
         {
-
             RaycastHit hit;
-            // Cast a ray from the monster to the player to see if there's anything blocking the view
             if (Physics.Raycast(transform.position, directionToPlayer, out hit))
             {
                 if (hit.collider.gameObject == player)
                 {
-                    // Player is looking at the monster without obstruction
                     monsterInSight = true;
-                    timeLookingAtMonster += lookAtTimeMinIncrease*Time.fixedDeltaTime;
+                    timeLookingAtMonster += lookAtTimeMinIncrease * Time.fixedDeltaTime;
 
                     if (timeLookingAtMonster >= minTimeToLookAtAgent)
                     {
@@ -70,7 +69,6 @@ public class PlayerAwarenessSensor : MonoBehaviour
                 }
                 else
                 {
-                    // Something is blocking the player's view
                     monsterInSight = false;
                     DecreaseAwareness();
                     timeLookingAtMonster -= lookAtTimeMinDecrease * Time.fixedDeltaTime;
@@ -79,7 +77,6 @@ public class PlayerAwarenessSensor : MonoBehaviour
         }
         else
         {
-            // Player is not looking in the direction of the monster
             monsterInSight = false;
             DecreaseAwareness();
             timeLookingAtMonster -= lookAtTimeMinDecrease * Time.fixedDeltaTime;
@@ -89,8 +86,6 @@ public class PlayerAwarenessSensor : MonoBehaviour
 
     private void IncreaseAwareness()
     {
-        
-
         if (!playerHasSeenTheAgentBefore)
         {
             playerAwarenessLevel += firstTimeplayerLookAtMonsterBonus;
@@ -100,13 +95,12 @@ public class PlayerAwarenessSensor : MonoBehaviour
         {
             float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
             float clampedDistance = Mathf.Clamp(distanceToPlayer, minDistanceToPlayer, maxDistanceToPlayer);
-            float logDistanceFactor = Mathf.Log10(clampedDistance + 1); 
+            float logDistanceFactor = Mathf.Log10(clampedDistance + 1);
             float awarenessIncrease = (minAwarenessIncrease + (10f / logDistanceFactor)) * Time.fixedDeltaTime;
             playerAwarenessLevel += awarenessIncrease;
         }
         playerAwarenessLevel = Mathf.Min(playerAwarenessLevel, 100);
     }
-
 
     private void DecreaseAwareness()
     {
@@ -116,21 +110,49 @@ public class PlayerAwarenessSensor : MonoBehaviour
         }
     }
 
+    public Vector3 FindHidingSpot()
+    {
+        Vector3 hidingSpot = Vector3.zero;
+        bool spotFound = false;
+        for (float angle = -fieldOfViewOfPlayer / 2; angle <= fieldOfViewOfPlayer / 2; angle += stepAngle)
+        {
+            Quaternion rotation = Quaternion.Euler(0, angle, 0);
+            Vector3 direction = rotation * playerCamera.transform.forward;
+
+            if (Physics.Raycast(playerCamera.transform.position, direction, out RaycastHit hit, maxRayDistance))
+            {
+                if (hit.collider != null && hit.collider.gameObject != player && hit.collider.gameObject != gameObject)
+                {
+                    Vector3 directionToHit = hit.point - transform.position;
+                    if (!Physics.Raycast(transform.position, directionToHit, maxRayDistance))
+                    {
+                        hidingSpot = hit.point;
+                        spotFound = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (!spotFound)
+        {
+            hidingSpot = transform.position + (Random.Range(0, 2) == 0 ? -player.transform.right : player.transform.right) * movementUnit; 
+        }
+
+        return hidingSpot;
+    }
+
     void OnDrawGizmos()
     {
         if (player == null) return;
-            
-        if(monsterInSight)
-            Gizmos.color = Color.green;
-        else
-            Gizmos.color = Color.red;
+
+        Gizmos.color = monsterInSight ? Color.green : Color.red;
         Vector3 directionToPlayer = playerCamera.transform.position - transform.position;
         Gizmos.DrawRay(transform.position, directionToPlayer);
-
     }
 
-    public int getPlayerAwarenessLevel() {
+    public int GetPlayerAwarenessLevel()
+    {
         return Mathf.RoundToInt(playerAwarenessLevel);
     }
-
 }

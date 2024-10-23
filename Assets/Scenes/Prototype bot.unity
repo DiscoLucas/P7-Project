@@ -6711,6 +6711,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &771662091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6215884248859638381, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
+  m_PrefabInstance: {fileID: 2267820302655155166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96efb94cf131bfe4b80c6160e8ed6a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &784348603
 GameObject:
   m_ObjectHideFlags: 0
@@ -18875,6 +18886,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 359278604519204763, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
+      propertyPath: playersRealPostion
+      value: 
+      objectReference: {fileID: 2008277632}
     - target: {fileID: 454678177451427688, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
       propertyPath: player
       value: 
@@ -18886,6 +18901,10 @@ PrefabInstance:
     - target: {fileID: 1671984816988992673, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
       propertyPath: m_Name
       value: Dumb bot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667127380081915420, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5047709899682967916, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18931,6 +18950,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2008277626}
+    - target: {fileID: 7451975681142807159, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
+      propertyPath: awarenessSensor
+      value: 
+      objectReference: {fileID: 771662091}
     - target: {fileID: 7451975681142807159, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
       propertyPath: protectionSensor
       value: 
