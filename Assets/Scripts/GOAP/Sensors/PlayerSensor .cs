@@ -10,7 +10,7 @@ namespace Assets.Scripts.GOAP.Sensors
         public SphereCollider Collider;
         public delegate void PlayerEnterEvent(Transform player);
         public delegate void PlayerExitEvent(Vector3 lastKnownPosition);
-
+        public Transform playerLastPos;
         public event PlayerEnterEvent OnPlayerEnter;
         public event PlayerExitEvent OnPlayerExit;
 
@@ -19,6 +19,10 @@ namespace Assets.Scripts.GOAP.Sensors
             Collider = GetComponent<SphereCollider>();
         }
 
+        private void Start()
+        {
+            playerLastPos.parent = null;
+        }
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out PlayerMovement player))
@@ -31,7 +35,7 @@ namespace Assets.Scripts.GOAP.Sensors
         {
             if (other.TryGetComponent(out PlayerMovement player))
             {
-                OnPlayerExit?.Invoke(other.transform.position);
+                OnPlayerExit?.Invoke(player.transform.position);
             }
         }
     }

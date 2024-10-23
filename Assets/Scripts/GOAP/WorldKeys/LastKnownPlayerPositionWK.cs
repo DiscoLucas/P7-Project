@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 using CrashKonijn.Goap.Behaviours;
-namespace Assets.Scripts.GOAP.Targets
+namespace Assets.Scripts.GOAP.WorldKeys
 {
-    public class PlayerTarget : TargetKeyBase 
+    public class LastKnownPlayerPositionWK : WorldKeyBase
     {
-
     }
 }

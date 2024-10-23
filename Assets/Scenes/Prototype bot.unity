@@ -42,7 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -2090,6 +2091,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6230db23778ad604fadc286c72f4a5bd, type: 3}
+--- !u!1 &168176405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 168176406}
+  m_Layer: 0
+  m_Name: PlayerLastPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &168176406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168176405}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1593526701}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &276760124
 Mesh:
   m_ObjectHideFlags: 0
@@ -14150,6 +14182,11 @@ MonoBehaviour:
   protectionSensor: {fileID: 1586505191}
   config: {fileID: 11400000, guid: cb3193e1f6eb7f8468176dcea095ee7a, type: 2}
   dependencyInjector: {fileID: 1882770315}
+--- !u!4 &1593526701 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5047709899682967916, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
+  m_PrefabInstance: {fileID: 2267820302655155166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1607463659
 GameObject:
   m_ObjectHideFlags: 0
@@ -16588,6 +16625,7 @@ MonoBehaviour:
   config1: {fileID: 11400000, guid: cb3193e1f6eb7f8468176dcea095ee7a, type: 2}
   player: {fileID: 2008277632}
   protectArea: {fileID: 1586505196}
+  lkppTransform: {fileID: 168176406}
 --- !u!43 &1886330732
 Mesh:
   m_ObjectHideFlags: 0
@@ -18052,7 +18090,7 @@ Transform:
   m_GameObject: {fileID: 2008277626}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.03, y: 1, z: -6.5}
+  m_LocalPosition: {x: 68.2, y: 1, z: -6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18994,6 +19032,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 359278604519204763, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
+      propertyPath: playerLastPos
+      value: 
+      objectReference: {fileID: 168176406}
     - target: {fileID: 1671984816988992673, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
       propertyPath: m_Name
       value: Dumb bot
@@ -19057,7 +19099,10 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 9021286329730816563, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5047709899682967916, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 168176406}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1671984816988992673, guid: 018e21c32affae8429b580a6ab0640fd, type: 3}
       insertIndex: -1

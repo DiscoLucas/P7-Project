@@ -7,6 +7,8 @@ namespace Assets.Scripts.GOAP.Goals
 {
     public class ChasePlayerAwayGoalM : GoalBase
     {
-
+        public ChasePlayerAwayGoalM()
+        {
+        }
     }
 }
