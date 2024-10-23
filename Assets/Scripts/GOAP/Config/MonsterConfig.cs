@@ -73,5 +73,16 @@ public class MonsterConfig : ScriptableObject
 
     [Tooltip("Cost associated with scream action.")]
     public int screamActionCost = 5;
+
+    public int stalkDistance = 10;
+
+    public int aggressionThreshold = 14;
+
+    public float stalkActionRange = 12;
+    public float screamActionRange = 13;
+    public int hideCost = 12;
+    public float hideRange = 20;
+    public int peekCost = 5;
+    public float peekRange = 9;
     #endregion
 }

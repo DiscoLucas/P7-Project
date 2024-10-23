@@ -71,6 +71,7 @@ namespace Assets.Scripts.GOAP.Actions
     // Custom data class for chase action, implementing IActionData
     public class ChaseData : IActionData
     {
-        public ITarget Target { get; set; } // Target to chase (ITarget type for compliance with IActionData)
+        public float timer { get; set; }
+        public ITarget Target { get; set; }
     }
 }

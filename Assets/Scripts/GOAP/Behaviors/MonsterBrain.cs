@@ -8,11 +8,9 @@ namespace Assets.Scripts.GOAP.Behaviors
     [RequireComponent(typeof(AgentBehaviour))]
     public class MonsterBrain : MonoBehaviour
     {
-        // Current aggression level
-        private float currentAggressionLevel;
         private AgentBehaviour agentBehaviour;
         public PlayerSensor p_sensor;
-        public ProtectionAreaSensor protectionSensor; // New sensor
+        public ProtectionAreaSensor protectionSensor;
         public MonsterConfig config;
         public DependencyInjector dependencyInjector;
 
@@ -23,13 +21,14 @@ namespace Assets.Scripts.GOAP.Behaviors
 
         void Start()
         {
-            agentBehaviour.SetGoal<WanderGoalM>(false);
+            // Start with the wander goal
+            agentBehaviour.SetGoal<WanderGoalM>(true);
             config = dependencyInjector.config1;
             p_sensor.Collider.radius = config.AgentSensorRadius;
 
             if (protectionSensor != null)
             {
-                protectionSensor.Inject(dependencyInjector); // Inject the MonsterConfig into ProtectionAreaSensor
+                protectionSensor.Inject(dependencyInjector);
             }
         }
 
@@ -73,6 +72,8 @@ namespace Assets.Scripts.GOAP.Behaviors
         {
             Debug.Log("Player detected near the protection area, switching to ChasePlayerAwayGoalM.");
             agentBehaviour.SetGoal<ChasePlayerAwayGoalM>(true);
+            
+            
         }
 
         private void protectionSensor_OnExit(Vector3 lastKnownPosition)
@@ -80,11 +81,6 @@ namespace Assets.Scripts.GOAP.Behaviors
             Debug.Log("Player exited the protection area, switching back to WanderGoalM.");
             agentBehaviour.SetGoal<WanderGoalM>(true);
         }
-        // Method to update aggression level based on conditions
-        public void UpdateAggressionLevel(float newLevel)
-        {
-            currentAggressionLevel = Mathf.Clamp(newLevel, 0f, 1f); // Ensure level stays within 0 to 1
-            Debug.Log($"Aggression Level Updated: {currentAggressionLevel}");
-        }
     }
 }
+

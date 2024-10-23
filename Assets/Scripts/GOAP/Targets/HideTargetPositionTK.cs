@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
 using CrashKonijn.Goap.Behaviours;
-namespace Assets.Scripts.GOAP.WorldKeys
+namespace Assets.Scripts.GOAP.Targets
 {
-    public class PlayerPosition : WorldKeyBase
+    public class HideTargetPositionTK : TargetKeyBase 
     {
+
     }
 }

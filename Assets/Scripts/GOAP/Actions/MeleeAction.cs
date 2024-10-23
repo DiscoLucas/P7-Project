@@ -28,15 +28,9 @@ namespace Assets.Scripts.GOAP.Actions
 
         public override ActionRunState Perform(IMonoAgent agent, AttackData data, ActionContext context)
         {
-            data.timer -= context.DeltaTime;
-            bool shouldAttack = (data.Target != null && Vector3.Distance(data.Target.Position, agent.transform.position) <= config.meleeRange);
-            if (shouldAttack)
-            {
-                Debug.Log("BONK ATTAKING: " + data.Target.Position.ToString());
-              
-            }
-
-            return data.timer > 0 ? ActionRunState.Continue : ActionRunState.Stop;
+            Debug.Log("Attacking the player!");
+            // Add logic to deal damage
+            return ActionRunState.Stop; ;
 
         }
 

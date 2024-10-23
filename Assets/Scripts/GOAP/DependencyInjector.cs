@@ -12,6 +12,11 @@ namespace Assets.Scripts.GOAP
         public MonsterConfig config1;
         public Transform player;
         public Transform protectArea;
+        /// <summary>
+        /// 
+        /// </summary>
+        public Transform lkppTransform;
+
         public override void InitConfig(GoapConfig config)
         {
             config.GoapInjector= this;

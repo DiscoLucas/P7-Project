@@ -16,7 +16,6 @@ public class WanderTargetSensorM : LocalTargetSensorBase
     public override ITarget Sense(IMonoAgent agent, IComponentReference references)
     {
         Vector3 position = GetRandomPosition(agent);
-
         return new PositionTarget(position);
     }
 
