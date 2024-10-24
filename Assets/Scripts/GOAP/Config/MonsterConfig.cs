@@ -6,6 +6,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MonsterConfig", menuName = "Agent Config/MonsterConfig", order = 1)]
 public class MonsterConfig : ScriptableObject
 {
+    public int stalkDitsanceMinDistance;
+    public int stalkMaxAgressionLevel = 50;
+    public int stalkMaxPlayerAwareness = 80;
+    public int stalkMinPlayerAwareness = 20;
     #region Sensor and Detection Settings
     [Header("Sensor and Detection Settings")]
     [Tooltip("Radius to detect the player.")]
@@ -79,7 +83,7 @@ public class MonsterConfig : ScriptableObject
     public int aggressionThreshold = 14;
 
     public float stalkActionRange = 12;
-    public float screamActionRange = 13;
+    public int screamHearingRange = 13;
     public int hideCost = 12;
     public float hideRange = 20;
     public int peekCost = 5;

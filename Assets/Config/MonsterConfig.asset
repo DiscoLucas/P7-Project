@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f6a02d0c5696345907fb171862721c, type: 3}
   m_Name: MonsterConfig
   m_EditorClassIdentifier: 
+  stalkDitsanceMinDistance: 30
+  stalkMaxAgressionLevel: 50
+  stalkMaxPlayerAwareness: 75
+  stalkMinPlayerAwareness: 10
   AgentSensorRadius: 10
   playerLayerMask:
     serializedVersion: 2
@@ -32,3 +36,11 @@ MonoBehaviour:
   screamFrequency: 5
   stalkActionCost: 9999
   screamActionCost: 25
+  stalkDistance: 10
+  aggressionThreshold: 14
+  stalkActionRange: 12
+  screamHearingRange: 13
+  hideCost: 12
+  hideRange: 20
+  peekCost: 5
+  peekRange: 9

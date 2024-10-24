@@ -11,13 +11,20 @@ namespace Assets.Scripts.GOAP.Sensors
         public delegate void PlayerEnterEvent(Transform player);
         public delegate void PlayerExitEvent(Vector3 lastKnownPosition);
         public Transform playerLastPos;
+        public Transform playersRealPostion;
         public event PlayerEnterEvent OnPlayerEnter;
         public event PlayerExitEvent OnPlayerExit;
 
         private void Awake()
         {
             Collider = GetComponent<SphereCollider>();
+            
         }
+
+        public int ditanceToPlayer() {
+            return Mathf.RoundToInt((Vector3.Distance(transform.position, playersRealPostion.position)));
+        }
+
 
         private void Start()
         {

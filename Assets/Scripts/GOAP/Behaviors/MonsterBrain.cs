@@ -11,6 +11,7 @@ namespace Assets.Scripts.GOAP.Behaviors
         private AgentBehaviour agentBehaviour;
         public PlayerSensor p_sensor;
         public ProtectionAreaSensor protectionSensor;
+        public PlayerAwarenessSensor awarenessSensor;
         public MonsterConfig config;
         public DependencyInjector dependencyInjector;
 
@@ -58,29 +59,56 @@ namespace Assets.Scripts.GOAP.Behaviors
 
         private void ps_OnEnter(Transform player)
         {
-            Debug.Log("Player detected near the monster, switching to ChasePlayerAwayGoalM.");
-            agentBehaviour.SetGoal<ChasePlayerAwayGoalM>(true);
+            EvaluateGoal(player);
         }
 
         private void ps_OnExit(Vector3 lastKnownPosition)
         {
-            Debug.Log("Player exited monster's range, switching back to WanderGoalM.");
+            // When player leaves the detection radius, return to wandering
             agentBehaviour.SetGoal<WanderGoalM>(true);
         }
 
         private void protectionSensor_OnEnter(Transform player)
         {
-            Debug.Log("Player detected near the protection area, switching to ChasePlayerAwayGoalM.");
-            agentBehaviour.SetGoal<ChasePlayerAwayGoalM>(true);
-            
-            
+            EvaluateGoal(player);
         }
 
         private void protectionSensor_OnExit(Vector3 lastKnownPosition)
         {
-            Debug.Log("Player exited the protection area, switching back to WanderGoalM.");
             agentBehaviour.SetGoal<WanderGoalM>(true);
+        }
+
+        private void EvaluateGoal(Transform player)
+        {
+            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            float playerAwareness = awarenessSensor.GetPlayerAwarenessLevel(); // Player awareness level from PlayerAwarenessSensor
+            float monsterAggression = config.startingAggressionLevel; // Monster's aggression score from MonsterConfig
+
+            // Hurt player if within melee range
+            if (distanceToPlayer <= config.meleeRange)
+            {
+                agentBehaviour.SetGoal<HurtPlayerGoal>(true);
+            }
+            // Chase player if within chase range and aggression/awareness is high
+            else if (distanceToPlayer <= config.chaseRange &&
+                     (monsterAggression >= config.aggressionThreshold ||
+                      playerAwareness >= config.stalkMaxPlayerAwareness))
+            {
+                agentBehaviour.SetGoal<ChasePlayerAwayGoalM>(true);
+            }
+            // Stalk player if within stalk range and conditions fit
+            else if (distanceToPlayer <= config.stalkActionRange &&
+                     monsterAggression < config.stalkMaxAgressionLevel &&
+                     playerAwareness >= config.stalkMinPlayerAwareness &&
+                     playerAwareness <= config.stalkMaxPlayerAwareness)
+            {
+                agentBehaviour.SetGoal<StalkGoal>(true);
+            }
+            // Default to wandering if none of the conditions are met
+            else
+            {
+                agentBehaviour.SetGoal<WanderGoalM>(true);
+            }
         }
     }
 }
-
