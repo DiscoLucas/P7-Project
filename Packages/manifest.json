@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.brogrammist.jsam": "https://github.com/jackyyang09/Simple-Unity-Audio-Manager.git",
+    "com.inspiaaa.unityhfsm": "https://github.com/Inspiaaa/UnityHFSM.git",
     "com.tomduchene.unity-git-locks": "https://github.com/TomDuchene/unity-git-locks.git",
     "com.unity.ai.navigation": "2.0.4",
     "com.unity.cinemachine": "3.1.1",
