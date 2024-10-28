@@ -16,11 +16,12 @@ MonoBehaviour:
   presetDescription: 
   files:
   - {fileID: 8300000, guid: f6b0946e3683cc144b7d500fa9129de8, type: 3}
+  - {fileID: 8300000, guid: f6b0946e3683cc144b7d500fa9129de8, type: 3}
   loopStart: 0
-  loopEnd: 0
+  loopEnd: 0.38603175
   bpm: 120
   relativeVolume: 1
-  spatialize: 0
+  spatialize: 1
   maxDistance: 0
   priority: 128
   startingPitch: 1
