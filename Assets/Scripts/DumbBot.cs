@@ -20,7 +20,6 @@ public class DumbBot : MonoBehaviour
     GameObject player;
     Vector3 playerPosition;
     float distanceToPlayer => Vector3.Distance(playerPosition, transform.position);
-    Vector3 DistanceToDestination => agent.destination - transform.position;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,7 +50,7 @@ public class DumbBot : MonoBehaviour
         fsm.SetStartState("Stalk");
 
         // configure transitions
-        fsm.AddTriggerTransition("PlayerVisible", "Stalk", ChooseRandomState());
+        fsm.AddTriggerTransition("PlayerVisible", "Stalk", ChooseRandomState()); // TODO: fix the outcome from being deterministic
         fsm.AddTransition("Chase", "Attack", t => distanceToPlayer <= attackRange); // attack player
         fsm.AddTransition(new TransitionAfter("Chase", "RunAway", chaseTime)); // run away for a certain amount of time 
         fsm.AddTransition("RunAway", "Idle", t => agent.remainingDistance < 1f); // stop running
