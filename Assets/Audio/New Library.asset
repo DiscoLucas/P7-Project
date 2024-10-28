@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: New Library
   m_EditorClassIdentifier: 
   soundCategories:
-  - 
+  - TEST
   musicCategories:
   - 
   Sounds:
@@ -30,7 +30,7 @@ MonoBehaviour:
   soundNamespace: 
   soundNamespaceGenerated: 
   soundCategoriesToList:
-  - name: 
+  - name: TEST
     files:
     - {fileID: 11400000, guid: 45db174fb7df3a343861bb3b15b23cf3, type: 2}
     foldout: 1
