@@ -1,4 +1,5 @@
-﻿using CrashKonijn.Goap.Behaviours;
+﻿using Assets.Scripts.GOAP.Behaviors;
+using CrashKonijn.Goap.Behaviours;
 using CrashKonijn.Goap.Classes;
 using CrashKonijn.Goap.Enums;
 using CrashKonijn.Goap.Interfaces;
@@ -10,9 +11,12 @@ namespace Assets.Scripts.GOAP.Actions
     public class GoToPlayerLastPosAction : ActionBase<CommonDataM>, IInjectableObj
     {
         MonsterConfig monsterConfig;
+        MonsterBrain brain;
+        bool newPosSpottede = false;
+
         public override void Created()
         {
-
+            newPosSpottede = false;
         }
 
         public override void End(IMonoAgent agent, CommonDataM data)
@@ -23,25 +27,34 @@ namespace Assets.Scripts.GOAP.Actions
         public void Inject(DependencyInjector injector)
         {
             monsterConfig = injector.config1 as MonsterConfig;
+            brain = injector.brain;
+            brain.awarenessSensor.playerSpottede.AddListener(changeTargetPos);
         }
 
+        void changeTargetPos(bool isspottede) {
+            if (isspottede) {
+                brain.p_sensor.updatePlayerPos();
+                newPosSpottede=true;
+            }
+        }
         public override ActionRunState Perform(IMonoAgent agent, CommonDataM data, ActionContext context)
         {
+            if (newPosSpottede) {
+                return ActionRunState.Stop;
+            }
+                
+
             // Check if the target was set correctly
             if (data.Target == null)
             {
-                Debug.LogError("Data target is null!");
-                return ActionRunState.Stop;  // Stop the action if no target is present
+                return ActionRunState.Stop;
             }
             data.timer = context.DeltaTime;
-            Debug.Log("Agent is null: " +(agent == null));
-            Debug.Log("Data target is null: " + (data.Target == null));
             
             Vector3 agentPos = agent.transform.position;
-            Vector3 postionPlayer =new Vector3(data.Target.Position.x,agentPos.y, data.Target.Position.z);
+            Vector3 postionPlayer =new Vector3(data.Target.Position.x, agentPos.y , data.Target.Position.z);
             bool timerOut = (data.timer <= 0);
             bool canAttack = (Vector3.Distance(postionPlayer, agentPos) >= monsterConfig.meleeRange);
-            Debug.Log("pPos: " + postionPlayer + " aPos: " + agentPos + " timeout: " + timerOut + " canattack: " + canAttack);
             if (timerOut || canAttack ) 
             {
                 return ActionRunState.Continue;

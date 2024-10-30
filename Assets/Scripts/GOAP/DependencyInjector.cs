@@ -4,12 +4,14 @@ using CrashKonijn.Goap;
 using CrashKonijn.Goap.Classes;
 using CrashKonijn.Goap.Behaviours;
 using CrashKonijn.Goap.Interfaces;
+using Assets.Scripts.GOAP.Behaviors;
 
 namespace Assets.Scripts.GOAP
 {
     public class DependencyInjector : GoapConfigInitializerBase, IGoapInjector
     {
         public MonsterConfig config1;
+        public MonsterBrain brain;
         public Transform player;
         public Transform protectArea;
         /// <summary>

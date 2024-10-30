@@ -39,11 +39,11 @@ public class AgentMoveBehavior : MonoBehaviour
 
     private void EventsOnTargetChanged(ITarget target, bool inRange)
     {
-        if (inRange) {
-            CurrentTarget = target;
-            lastPosition = CurrentTarget.Position;
-            navMeshAgent.SetDestination(target.Position);
-        }
+       
+        CurrentTarget = target;
+        lastPosition = CurrentTarget.Position;
+        navMeshAgent.SetDestination(target.Position);
+ 
         
     }
 

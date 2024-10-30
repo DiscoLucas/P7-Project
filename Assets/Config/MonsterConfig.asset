@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f6a02d0c5696345907fb171862721c, type: 3}
   m_Name: MonsterConfig
   m_EditorClassIdentifier: 
+  smelledSearchAreaMultiplyer: 2
+  goToSentCost: 2
+  smellFressness: 3
   stalkDitsanceMinDistance: 30
   stalkMaxAgressionLevel: 50
   stalkMaxPlayerAwareness: 75

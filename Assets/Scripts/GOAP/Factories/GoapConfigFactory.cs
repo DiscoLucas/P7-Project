@@ -51,47 +51,30 @@ public class GoapConfigFactory : GoapSetFactoryBase
         builder.AddWorldSensor<PlayerAwarenessLevelSensor>()
             .SetKey<PlayerAwarenessWK>();
 
+        builder.AddTargetSensor<SmellTargetPostionSensor>().SetTarget<SmellTargetPostionTK>();
+        builder.AddWorldSensor<PlayerSentFressnessSensor>().SetKey<SmelledFressnesWK>();
+        builder.AddWorldSensor<PlayerSentRadiusSensor>().SetKey<PlayerSmelledRadius>();
+
 
 
     }
 
     private void buildActions(GoapSetBuilder builder)
     {
-        // Action for melee attack
-     /*   builder.AddAction<MeleeAction>()
-            .SetTarget<ChaseTargetPositionTK>() // Now using chase target instead of PlayerTarget
-            .AddEffect<PlayerDistanceWK>(EffectType.Decrease) // Decrease the distance to the player
-            .AddEffect<MonsterAggressionLevelWK>(EffectType.Increase) // Increase the monster's aggression level
-            .SetBaseCost((int)injector.config1.meleeCost)
-            .SetInRange(injector.config1.AgentSensorRadius);
 
-        // Action for stalking the player
-        builder.AddAction<StalkAction>()
-            .SetTarget<ChaseTargetPositionTK>() // Using chase target since it's relevant for stalking
-            .AddEffect<PlayerDistanceWK>(EffectType.Decrease) // Decrease the distance to the player
-            .AddEffect<MonsterAggressionLevelWK>(EffectType.Increase) // Increase the monster's aggression level
-            .SetBaseCost(injector.config1.stalkActionCost)
-            .SetInRange(injector.config1.stalkActionRange);
-
-
-        // Action to go out of sight of the player
-        builder.AddAction<GoOutOfSightAction>()
-            .SetTarget<HideTargetPositionTK>() // Use hiding target key
-            .AddEffect<PlayerAwarenessWK>(EffectType.Decrease) // Decrease the player's awareness
-            .AddEffect<HideSpotAvailableWK>(EffectType.Decrease) // Optionally indicate that the hiding spot is not available
-            .SetBaseCost(injector.config1.hideCost)
-            .SetInRange(injector.config1.hideRange);
-
-        // Action for peeking at the player
-        */
-        
-        
-
+       
         builder.AddAction<WanderActionM>()
             .SetTarget<WanderingTargetPositionTK>()
             .AddEffect<WanderingStateWK>(EffectType.Increase)
             .SetBaseCost(injector.config1.wanderingBaseCost)
             .SetInRange(injector.config1.wanderingSetinRange);
+
+        builder.AddAction<WandreNearPlayersSmellAction>()
+            .SetTarget<SmellTargetPostionTK>()
+            .AddEffect<WanderingStateWK>(EffectType.Increase)
+            .AddEffect<PlayerDistanceWK>(EffectType.Increase)
+            .SetBaseCost(injector.config1.goToSentCost)
+            .AddCondition<SmelledFressnesWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.smellFressness* 50);
 
         builder.AddAction<GoToPlayerLastPosAction>()
             .SetTarget<ChaseTargetPositionTK>()
@@ -127,15 +110,17 @@ public class GoapConfigFactory : GoapSetFactoryBase
         
         builder.AddGoal<WanderGoalM>()
             .AddCondition<WanderingStateWK>(CrashKonijn.Goap.Resolver.Comparison.GreaterThanOrEqual, injector.config1.targetPosStop);
-        builder.AddGoal<ChasePlayerAwayGoalM>()
+
+        builder.AddGoal<HurtPlayerGoal>()
             .AddCondition<LastKnownPlayerPositionWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, (int)injector.config1.meleeRange);
 
 
         builder.AddGoal<StalkGoal>()
             .AddCondition<PlayerDistanceWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.stalkDitsanceMinDistance)
             .AddCondition<MonsterAggressionLevelWK>(CrashKonijn.Goap.Resolver.Comparison.GreaterThanOrEqual, injector.config1.stalkMaxAgressionLevel)
-            .AddCondition<PlayerAwarenessWK>(CrashKonijn.Goap.Resolver.Comparison.GreaterThanOrEqual, injector.config1.stalkMaxPlayerAwareness)
-            .AddCondition<PlayerAwarenessWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.stalkMinPlayerAwareness);
+            .AddCondition<PlayerAwarenessWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.stalkMaxPlayerAwareness)
+            .AddCondition<PlayerAwarenessWK>(CrashKonijn.Goap.Resolver.Comparison.GreaterThanOrEqual, injector.config1.stalkMinPlayerAwareness);
+            
         
      
 

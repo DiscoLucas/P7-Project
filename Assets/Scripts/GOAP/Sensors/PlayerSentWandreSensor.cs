@@ -9,7 +9,7 @@ using CrashKonijn.Goap.Sensors;
 using Assets.Scripts.GOAP.Sensors;
 using Assets.Scripts.GOAP;
 
-public class WanderTargetSensorM : LocalTargetSensorBase, IInjectableObj
+public class PlayerSentWandreSensor : LocalTargetSensorBase, IInjectableObj
 {
     MonsterConfig config;
     public override void Created() { }
@@ -18,21 +18,20 @@ public class WanderTargetSensorM : LocalTargetSensorBase, IInjectableObj
 
     public override ITarget Sense(IMonoAgent agent, IComponentReference references)
     {
-        Vector3 position = GetRandomPosition(agent);
+        Vector3 smellArea = references.GetCachedComponentInChildren<PlayerSensor>().getSentSmelledPoint().position;
+        float radius = references.GetCachedComponentInChildren<PlayerSensor>().getSentSmelledDistance() * config.smelledSearchAreaMultiplyer;
+        Vector3 position = getAreaToSearch(smellArea, radius);
 
         return new PositionTarget(position);
     }
 
-    private Vector3 GetRandomPosition(IMonoAgent agent)
+    private Vector3 getAreaToSearch(Vector3 pos, float radius)
     {
         int count = 0;
 
-        Vector3 pos = new Vector3(agent.transform.position.x, agent.transform.position.y, agent.transform.position.z);
-        float dist = config.wanderingSetinRange;
-
         while (count < 5)
         {
-            Vector2 random = UnityEngine.Random.insideUnitCircle * dist;
+            Vector2 random = UnityEngine.Random.insideUnitCircle * radius;
             Vector3 position = pos + new Vector3(
                 random.x,
                 0,
@@ -46,7 +45,7 @@ public class WanderTargetSensorM : LocalTargetSensorBase, IInjectableObj
             count++;
         }
 
-        return agent.transform.position;
+        return pos;
     }
 
     public void Inject(DependencyInjector injector)

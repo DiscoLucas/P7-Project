@@ -2,6 +2,7 @@
 using Assets.Scripts.GOAP.Sensors;
 using CrashKonijn.Goap.Behaviours;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Assets.Scripts.GOAP.Behaviors
 {
@@ -11,9 +12,13 @@ namespace Assets.Scripts.GOAP.Behaviors
         private AgentBehaviour agentBehaviour;
         public PlayerSensor p_sensor;
         public ProtectionAreaSensor protectionSensor;
+        public AgressionSensor monsterAggressionLevelSensor;
         public PlayerAwarenessSensor awarenessSensor;
         public MonsterConfig config;
         public DependencyInjector dependencyInjector;
+        public BotState currentStat;
+
+        private bool playerSpotted = false; // Flag to track if the player has been spotted
 
         private void Awake()
         {
@@ -22,6 +27,7 @@ namespace Assets.Scripts.GOAP.Behaviors
 
         void Start()
         {
+            dependencyInjector.brain = this;
             // Start with the wander goal
             agentBehaviour.SetGoal<WanderGoalM>(true);
             config = dependencyInjector.config1;
@@ -31,29 +37,45 @@ namespace Assets.Scripts.GOAP.Behaviors
             {
                 protectionSensor.Inject(dependencyInjector);
             }
+
         }
 
         private void OnEnable()
         {
-            p_sensor.OnPlayerEnter += ps_OnEnter;
-            p_sensor.OnPlayerExit += ps_OnExit;
 
             if (protectionSensor != null)
             {
                 protectionSensor.OnPlayerEnter += protectionSensor_OnEnter;
                 protectionSensor.OnPlayerExit += protectionSensor_OnExit;
             }
+
+            awarenessSensor.playerSpottede.AddListener(OnPlayerSpotted);
+
         }
 
         private void OnDisable()
         {
-            p_sensor.OnPlayerEnter -= ps_OnEnter;
-            p_sensor.OnPlayerExit -= ps_OnExit;
 
             if (protectionSensor != null)
             {
                 protectionSensor.OnPlayerEnter -= protectionSensor_OnEnter;
                 protectionSensor.OnPlayerExit -= protectionSensor_OnExit;
+            }
+
+
+            awarenessSensor.playerSpottede.RemoveListener(OnPlayerSpotted);
+            
+        }
+
+        // Called when the player is spotted or lost from sight, with a boolean value
+        private void OnPlayerSpotted(bool isSpotted)
+        {
+            playerSpotted = isSpotted;
+            if (playerSpotted)
+            {
+
+                Debug.Log("Player has been spotted!");
+                EvaluateGoal(p_sensor.playerLastPos);
             }
         }
 
@@ -64,8 +86,7 @@ namespace Assets.Scripts.GOAP.Behaviors
 
         private void ps_OnExit(Vector3 lastKnownPosition)
         {
-            // When player leaves the detection radius, return to wandering
-            agentBehaviour.SetGoal<WanderGoalM>(true);
+            EvaluateGoal(p_sensor.playerLastPos);
         }
 
         private void protectionSensor_OnEnter(Transform player)
@@ -82,33 +103,29 @@ namespace Assets.Scripts.GOAP.Behaviors
         {
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
             float playerAwareness = awarenessSensor.GetPlayerAwarenessLevel(); // Player awareness level from PlayerAwarenessSensor
-            float monsterAggression = config.startingAggressionLevel; // Monster's aggression score from MonsterConfig
+            float monsterAggression = monsterAggressionLevelSensor.aggressionLevel;
 
-            // Hurt player if within melee range
-            if (distanceToPlayer <= config.meleeRange)
+
+            Debug.Log("Chase: " + (playerSpotted && monsterAggression > config.agressionLevelBeginChase) + " Stalk:  " + (playerSpotted) + "Wander: " + (!(playerSpotted && monsterAggression > config.agressionLevelBeginChase) && !(playerSpotted)));
+            // If the player is spotted or enters the protected area, switch to chase mode
+            if (playerSpotted && monsterAggression > config.agressionLevelBeginChase)
             {
+                currentStat = BotState.CHASE;
                 agentBehaviour.SetGoal<HurtPlayerGoal>(true);
             }
-            // Chase player if within chase range and aggression/awareness is high
-            else if (distanceToPlayer <= config.chaseRange &&
-                     (monsterAggression >= config.aggressionThreshold ||
-                      playerAwareness >= config.stalkMaxPlayerAwareness))
+            else if(playerSpotted)
             {
-                agentBehaviour.SetGoal<ChasePlayerAwayGoalM>(true);
-            }
-            // Stalk player if within stalk range and conditions fit
-            else if (distanceToPlayer <= config.stalkActionRange &&
-                     monsterAggression < config.stalkMaxAgressionLevel &&
-                     playerAwareness >= config.stalkMinPlayerAwareness &&
-                     playerAwareness <= config.stalkMaxPlayerAwareness)
-            {
+                currentStat = BotState.STALK;
                 agentBehaviour.SetGoal<StalkGoal>(true);
+
             }
-            // Default to wandering if none of the conditions are met
             else
             {
+                currentStat = BotState.IDLE;
                 agentBehaviour.SetGoal<WanderGoalM>(true);
             }
+
+            Debug.Log("currentStat: " + currentStat.ToString());
         }
     }
 }

@@ -6,6 +6,7 @@ using CrashKonijn.Goap.Enums;
 using CrashKonijn.Goap.Interfaces;
 using UnityEngine;
 using UnityEngine.AI;
+using JSAM;
 
 namespace Assets.Scripts.GOAP.Actions
 {
@@ -15,27 +16,19 @@ namespace Assets.Scripts.GOAP.Actions
 
         public override void Start(IMonoAgent agent, CommonDataM data)
         {
-            Debug.Log("Scream started " + Time.timeSinceLevelLoad);
-            data.timer = Random.Range(1f, 2f); // Scream lasts for 1-2 seconds
-                                               // Set in range to false to stop movement
-            (agent as AgentBehaviour)?.Events.TargetChanged(data.Target, false);
+
         }
 
         public override ActionRunState Perform(IMonoAgent agent, CommonDataM data, ActionContext context)
         {
-            data.timer -= context.DeltaTime;
-            if (data.timer <= 0)
-            {
-                return ActionRunState.Stop;
-            }
-            return ActionRunState.Continue;
+
+            //AudioManager.PlaySound("TEST");
+            return ActionRunState.Stop;
         }
 
         public override void End(IMonoAgent agent, CommonDataM data)
         {
-            Debug.Log("Scream ended " + Time.timeSinceLevelLoad);
-            // Restore in range state if needed
-            (agent as AgentBehaviour)?.Events.TargetChanged(data.Target, true);
+
         }
     }
 

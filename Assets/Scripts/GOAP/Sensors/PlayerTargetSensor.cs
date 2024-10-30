@@ -40,12 +40,12 @@ namespace Assets.Scripts.GOAP.Sensors
 
             if (distanceToProtection <= config.protectionAreaRadius)
             {
-                lastKnownPositionTransform.position = getPostionOnMesh(player.transform.position);
+                lastKnownPositionTransform.position = getPostionOnMesh(player.transform.position, agent.transform.position);
                 return new TransformTarget(lastKnownPositionTransform); 
             }
             else if (Physics.OverlapSphereNonAlloc(agent.transform.position, config.AgentSensorRadius, colliders, config.playerLayerMask) > 0)
             {
-                lastKnownPositionTransform.position = getPostionOnMesh(colliders[0].transform.position);
+                lastKnownPositionTransform.position = getPostionOnMesh(colliders[0].transform.position, agent.transform.position);
                 return new TransformTarget(lastKnownPositionTransform);
             }
             else
@@ -54,8 +54,9 @@ namespace Assets.Scripts.GOAP.Sensors
             }
         }
 
-        public Vector3 getPostionOnMesh(Vector3 pos)
+        public Vector3 getPostionOnMesh(Vector3 pos, Vector3 agentPos)
         {
+            pos = new Vector3(pos.x, agentPos.y, pos.z);
             if (NavMesh.SamplePosition(pos, out NavMeshHit hit, 5, NavMesh.AllAreas))
             {
                 return hit.position;

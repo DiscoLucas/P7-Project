@@ -6,10 +6,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MonsterConfig", menuName = "Agent Config/MonsterConfig", order = 1)]
 public class MonsterConfig : ScriptableObject
 {
+    public float smelledSearchAreaMultiplyer = 2;
+    public int goToSentCost = 2;
+    public int smellFressness = 10;
     public int stalkDitsanceMinDistance;
     public int stalkMaxAgressionLevel = 50;
     public int stalkMaxPlayerAwareness = 80;
     public int stalkMinPlayerAwareness = 20;
+    public int agressionLevelBeginChase = 75;
     #region Sensor and Detection Settings
     [Header("Sensor and Detection Settings")]
     [Tooltip("Radius to detect the player.")]
