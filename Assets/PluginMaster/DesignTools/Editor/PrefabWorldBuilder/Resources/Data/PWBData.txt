@@ -172,7 +172,7 @@
             "_paintOnMeshesWithoutCollider": false,
             "_paintOnSelectedOnly": false,
             "_paintOnPalettePrefabs": false,
-            "_mode": 0,
+            "_mode": 1,
             "_paralellToTheSurface": true,
             "_repeat": false,
             "_flatteningSettings": {
@@ -182,7 +182,7 @@
                 "_clearDetails": true
             },
             "_flattenTerrain": false,
-            "_avoidOverlapping": false,
+            "_avoidOverlapping": true,
             "_paintTool": {
                 "_parentGlobalId": "",
                 "_autoCreateParent": true,

@@ -12,8 +12,8 @@ NavMeshProjectSettings:
   - name: Jump
     cost: 2
   - name: Vent
-    cost: 2
-  - name: 
+    cost: 4
+  - name: Water
     cost: 1
   - name: 
     cost: 1
