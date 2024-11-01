@@ -53,14 +53,14 @@ public class DumbBot : MonoBehaviour
             onEnter: state => { 
                 agent.SetDestination(GetRandomNavMeshPoint());
                 agent.speed = runSpeed;
-                Debug.Log("Remaining distance: " + agent.remainingDistance);
+                //Debug.Log("Remaining distance: " + agent.remainingDistance);
             },
             onExit: state => Debug.Log("Remaining distance after running: " + agent.remainingDistance)
             );
         fsm.AddState("EvaluateState",  
         onEnter: state => {
             newState = ChooseRandomState();
-            Debug.Log("New state is: " + newState);
+            //Debug.Log("New state is: " + newState);
             //Debug.Break();
         });
         fsm.AddState("PeekPlayer");
@@ -94,11 +94,28 @@ public class DumbBot : MonoBehaviour
         playerPosition = player.transform.position;
 
         if (currentState == "Stalk") // this should be a way to trigger the chase state without polling.
-            if (IsPlayerVisible())
+            if (IsPlayerVisible() == true) 
+            {
                 fsm.Trigger("PlayerVisible");
+            }
+                
 
-        stateDisplayText = fsm.GetActiveHierarchyPath();
-        //Debug.Log(newState);
+        //stateDisplayText = currentState;
+        UpdateStateText(currentState);
+    }
+
+    /// <summary>
+    /// Logs the state of the bot when it changes
+    /// </summary>
+    /// <param name="currentStateName"></param>
+    public void UpdateStateText(string currentStateName)
+    {
+        // check if the state has changed since last check.
+        if (currentStateName != stateDisplayText)
+        {
+            stateDisplayText = currentStateName;
+            Debug.Log("Current state: " + stateDisplayText);
+        }
     }
     string ChooseRandomState()
     {
