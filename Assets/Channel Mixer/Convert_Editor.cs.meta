@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 3c431fa44dc12df489f4af2e9f55063e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 133787
+  packageName: Channel Mixer
+  packageVersion: 1.0
+  assetPath: Assets/Channel Mixer/Convert_Editor.cs
+  uploadId: 280090

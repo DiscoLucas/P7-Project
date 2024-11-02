@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 79ec605a64b94ce47bf4d8954733ac33
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 133787
+  packageName: Channel Mixer
+  packageVersion: 1.0
+  assetPath: Assets/Channel Mixer/Converter.shader
+  uploadId: 280090
