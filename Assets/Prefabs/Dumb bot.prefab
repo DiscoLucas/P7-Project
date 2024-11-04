@@ -362,6 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d399e894843f542ab9c58f70cdb9ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 0}
   minMoveDistance: 0.25
 --- !u!114 &5991814104950606064
 MonoBehaviour:
@@ -885,7 +886,7 @@ MonoBehaviour:
   minAwarenessIncrease: 0.75
   minAwarenessDecrease: 0.01
   lookAtTimeMinIncrease: 0.5
-  lookAtTimeMinDecrease: 0.1
+  lookAtTimeMinDecrease: 0.4
   playerHasSeenTheAgentBefore: 0
   monsterInSight: 0
   tutorialDone: 1

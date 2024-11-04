@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.GOAP.Behaviors;
+using Assets.Scripts.GOAP.Sensors;
 using CrashKonijn.Goap.Behaviours;
 using CrashKonijn.Goap.Classes;
 using CrashKonijn.Goap.Enums;
@@ -13,6 +14,9 @@ namespace Assets.Scripts.GOAP.Actions
         MonsterConfig monsterConfig;
         MonsterBrain brain;
         bool newPosSpottede = false;
+        float freshness; 
+
+
 
         public override void Created()
         {

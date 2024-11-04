@@ -82,7 +82,6 @@ namespace Assets.Scripts.GOAP.Behaviors
             if (playerSpotted)
             {
 
-                Debug.Log("Player has been spotted!");
                 EvaluateGoal(p_sensor.playerLastPos);
             }
         }
@@ -116,34 +115,46 @@ namespace Assets.Scripts.GOAP.Behaviors
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
             float playerAwareness = awarenessSensor.GetPlayerAwarenessLevel(); // Player awareness level from PlayerAwarenessSensor
             float monsterAggression = monsterAggressionLevelSensor.aggressionLevel;
-            Debug.Log("Chase: " + (playerSpotted && monsterAggression > config.agressionLevelBeginChase) + " Stalk:  " + (playerSpotted) + "Wander: " + (!(playerSpotted && monsterAggression > config.agressionLevelBeginChase) && !(playerSpotted)));
-            currentStat = BotState.STALK;
-            agentBehaviour.EndAction();
-            agentBehaviour.SetGoal<HurtPlayerGoal>(true);
+            
      
             if (playerSpotted && monsterAggression > config.agressionLevelBeginChase)
              {
-                 currentStat = BotState.CHASE;
-                 agentBehaviour.EndAction();
-                 agentBehaviour.SetGoal<HurtPlayerGoal>(true);
+                changeState(BotState.CHASE);
              }
              else if(playerSpotted)
              {
-                 currentStat = BotState.STALK;
-                 agentBehaviour.EndAction();
-                 agentBehaviour.SetGoal<StalkGoal>(true);
+                changeState(BotState.STALK);
 
-             }
+            }
              else
              {
-                 currentStat = BotState.IDLE;
-                 agentBehaviour.EndAction();
-                 agentBehaviour.SetGoal<WanderGoalM>(false);
-             }
-            
-            agentBehaviour.Run();
-            
-            Debug.Log("currentStat: " + currentStat.ToString());
+                changeState(BotState.IDLE);
+            }
+
+        }
+
+        void changeState(BotState state)
+        {
+            if (state != currentStat) {
+                agentBehaviour.EndAction();
+                currentStat = state;
+                if (state == BotState.CHASE)
+                {
+                    agentBehaviour.SetGoal<HurtPlayerGoal>(true);
+                }
+                else if (state == BotState.STALK)
+                {
+                    agentBehaviour.SetGoal<StalkGoal>(true);
+                }
+                else {
+                    agentBehaviour.SetGoal<WanderGoalM>(false);
+                }
+
+                Debug.Log("Current Goal Change: " + state.ToString());
+                currentStat = state;
+                agentBehaviour.Run();
+            }
+
         }
     }
 }

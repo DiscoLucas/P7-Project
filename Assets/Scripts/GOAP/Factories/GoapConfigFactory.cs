@@ -106,6 +106,7 @@ public class GoapConfigFactory : GoapSetFactoryBase
         builder.AddAction<HideFromPlayer>()
             .SetTarget<HideTargetPositionTK>()
             .AddEffect<PlayerAwarenessWK>(EffectType.Decrease)
+            .AddEffect<MonsterAggressionLevelWK>(EffectType.Increase)
             .AddCondition<PlayerDistanceWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.stalkDitsanceMinDistance)
             .SetBaseCost(injector.config1.hideCost)
             .SetInRange(injector.config1.peekRange);
@@ -114,13 +115,16 @@ public class GoapConfigFactory : GoapSetFactoryBase
         builder.AddAction<PeekAtPlayerAction>()
              .SetTarget<PeekAtPlayerPositionTK>()
              .AddEffect<PlayerAwarenessWK>(EffectType.Increase)
+             .AddEffect<MonsterAggressionLevelWK>(EffectType.Increase)
              .AddCondition<PlayerDistanceWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.stalkDitsanceMinDistance)
              .SetBaseCost(injector.config1.peekCost)
              .SetInRange(injector.config1.peekRange);
 
         builder.AddAction<ScreamAction>()
-             .AddEffect<PlayerAwarenessWK>(EffectType.Increase).SetBaseCost(injector.config1.screamActionCost)
-             .SetBaseCost(injector.config1.screamActionCost)
+             .AddEffect<PlayerAwarenessWK>(EffectType.Increase).SetBaseCost(injector.config1.screamActionCostbase
+             )
+             .AddEffect<MonsterAggressionLevelWK>(EffectType.Increase)
+             .SetBaseCost(injector.config1.screamActionCostbase)
              .AddCondition<PlayerDistanceWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.screamHearingRange);
     }
 

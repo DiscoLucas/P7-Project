@@ -7,8 +7,12 @@ using UnityEngine;
 
 namespace Assets.Scripts.GOAP.Actions
 {
-    public class PeekAtPlayerAction : WanderActionM
+    public class PeekAtPlayerAction : PlayerVisibilityBasedAction
     {
-
+        public override int calculateBase(int playerAwareness, float midpoint)
+        {
+            return (int)Mathf.Lerp(config.peakCostRange.x, config.peakCostRange.y, 1 - ((playerAwareness - config.stalkMinPlayerAwareness) / (midpoint - config.stalkMinPlayerAwareness)));
+        }
     }
+
 }

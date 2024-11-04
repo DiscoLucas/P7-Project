@@ -7,8 +7,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.GOAP.Actions
 {
-    public class HideFromPlayer : WanderActionM
+    public class HideFromPlayer : PlayerVisibilityBasedAction
     {
 
     }
+
 }
