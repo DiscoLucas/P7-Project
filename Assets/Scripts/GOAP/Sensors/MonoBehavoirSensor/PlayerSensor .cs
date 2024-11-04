@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.GOAP.Behaviors;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.GOAP.Sensors
@@ -10,11 +11,12 @@ namespace Assets.Scripts.GOAP.Sensors
         public SphereCollider Collider;
         public delegate void PlayerEnterEvent(Transform player);
         public delegate void PlayerExitEvent(Vector3 lastKnownPosition);
-        public Transform playerLastPos, smellTargetLastPos;
+        public Transform playerLastPos, smellTargetLastPos, hidespot, peakSpot;
         public Transform playersRealPostion;
         public event PlayerEnterEvent OnPlayerEnter;
         public event PlayerExitEvent OnPlayerExit;
         public PlayerPositionMapTracker playerPositionMapTracker;
+        public MonsterBrain brain;
         [SerializeField]
         float playerSmellFreshness = float.MaxValue, distanceToSmellPoint = 0;
         bool playerHaveBeenSmelled = false;
@@ -46,6 +48,8 @@ namespace Assets.Scripts.GOAP.Sensors
         {
             playerLastPos.parent = null;
             smellTargetLastPos.parent = null;
+            hidespot.parent = null;
+            peakSpot.parent = null;
             playerPositionMapTracker.playerPostionsSummeries.AddListener(playerPostionHaveBeenSummeries);
         }
 

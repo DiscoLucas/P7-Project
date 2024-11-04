@@ -28,7 +28,7 @@ namespace Assets.Scripts.GOAP.Actions
 
         public override ActionRunState Perform(IMonoAgent agent, AttackData data, ActionContext context)
         {
-            Debug.Log("Attacking the player!");
+            Debug.LogError("Attacking the player!");
             // Add logic to deal damage
             return ActionRunState.Stop; ;
 

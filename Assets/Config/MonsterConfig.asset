@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: MonsterConfig
   m_EditorClassIdentifier: 
   smelledSearchAreaMultiplyer: 2
-  goToSentCost: 2
+  goToSentminCost: 2
+  goToSenMaxCost: 40
   smellFressness: 3
   stalkDitsanceMinDistance: 30
   stalkMaxAgressionLevel: 50
   stalkMaxPlayerAwareness: 75
   stalkMinPlayerAwareness: 10
-  AgentSensorRadius: 10
+  agressionLevelBeginChase: 75
+  AgentSensorRadius: 50
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 8
@@ -31,12 +33,9 @@ MonoBehaviour:
   chaseRange: 20
   chaseCost: 25
   targetPosStop: 1
-  wanderingBaseCost: 5
+  wanderingBaseCost: 25
   wanderingSetinRange: 20
-  patrolRadius: 15
-  idleTime: 3
   startingAggressionLevel: 0.5
-  screamFrequency: 5
   stalkActionCost: 9999
   screamActionCost: 25
   stalkDistance: 10

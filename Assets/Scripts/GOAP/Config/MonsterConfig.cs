@@ -7,15 +7,16 @@ using UnityEngine;
 public class MonsterConfig : ScriptableObject
 {
     public float smelledSearchAreaMultiplyer = 2;
-    public int goToSentCost = 2;
+    public int goToSentminCost = 2;
+    public int goToSenMaxCost = 40;
     public int smellFressness = 10;
     public int stalkDitsanceMinDistance;
     public int stalkMaxAgressionLevel = 50;
     public int stalkMaxPlayerAwareness = 80;
-    public int stalkMinPlayerAwareness = 20;
+    public int stalkMinPlayerAwareness = 40;
     public int agressionLevelBeginChase = 75;
-    #region Sensor and Detection Settings
-    [Header("Sensor and Detection Settings")]
+
+
     [Tooltip("Radius to detect the player.")]
     public float AgentSensorRadius = 25f;
 
@@ -24,10 +25,8 @@ public class MonsterConfig : ScriptableObject
 
     [Tooltip("Radius around the protection point for detecting player proximity.")]
     public int protectionAreaRadius = 5;
-    #endregion
 
-    #region Melee Attack Settings
-    [Header("Melee Attack Settings")]
+
     [Tooltip("Range to switch to melee action.")]
     public float meleeRange = 5f;
 
@@ -36,10 +35,8 @@ public class MonsterConfig : ScriptableObject
 
     [Tooltip("Cost associated with performing a melee action.")]
     public float meleeCost = 10f;
-    #endregion
 
-    #region Chasing and Movement Settings
-    [Header("Chasing and Movement Settings")]
+
     [Tooltip("Speed of the monster while chasing the player.")]
     public float chaseSpeed = 6f;
 
@@ -48,10 +45,7 @@ public class MonsterConfig : ScriptableObject
 
     [Tooltip("Cost associated with chasing actions.")]
     public int chaseCost = 10;
-    #endregion
 
-    #region Wander and Exploration Settings
-    [Header("Wander and Exploration Settings")]
     [Tooltip("Position to stop while wandering.")]
     public int targetPosStop = 1;
 
@@ -61,20 +55,8 @@ public class MonsterConfig : ScriptableObject
     [Tooltip("Range at which the wandering action activates.")]
     public float wanderingSetinRange = 10f;
 
-    [Tooltip("Patrol radius for wandering actions.")]
-    public float patrolRadius = 15f;
-
-    [Tooltip("Time spent idling between actions.")]
-    public float idleTime = 3f;
-    #endregion
-
-    #region Additional Behavior Settings
-    [Header("Additional Behavior Settings")]
     [Tooltip("Starting aggression level of the monster, influencing its behavior.")]
     public float startingAggressionLevel = 0.5f;
-
-    [Tooltip("Frequency of screams (in seconds) to get the player's attention.")]
-    public float screamFrequency = 5.0f;
 
     [Tooltip("Cost associated with stalking action.")]
     public int stalkActionCost = 10;
@@ -92,5 +74,6 @@ public class MonsterConfig : ScriptableObject
     public float hideRange = 20;
     public int peekCost = 5;
     public float peekRange = 9;
-    #endregion
+
+
 }

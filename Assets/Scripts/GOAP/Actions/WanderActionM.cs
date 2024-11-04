@@ -8,7 +8,7 @@ using Assets.Scripts.GOAP;
 
 public class WanderActionM : ActionBase<CommonDataM>, IInjectableObj
 {
-    MonsterConfig config;
+    public MonsterConfig config;
     float maxTimer = 6;
     public override void Created()
     {

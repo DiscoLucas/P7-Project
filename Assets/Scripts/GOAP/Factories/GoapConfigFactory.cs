@@ -51,9 +51,20 @@ public class GoapConfigFactory : GoapSetFactoryBase
         builder.AddWorldSensor<PlayerAwarenessLevelSensor>()
             .SetKey<PlayerAwarenessWK>();
 
-        builder.AddTargetSensor<SmellTargetPostionSensor>().SetTarget<SmellTargetPostionTK>();
-        builder.AddWorldSensor<PlayerSentFressnessSensor>().SetKey<SmelledFressnesWK>();
-        builder.AddWorldSensor<PlayerSentRadiusSensor>().SetKey<PlayerSmelledRadius>();
+        builder.AddTargetSensor<SmellTargetPostionSensor>()
+            .SetTarget<SmellTargetPostionTK>();
+
+        builder.AddWorldSensor<PlayerSentFressnessSensor>()
+            .SetKey<SmelledFressnesWK>();
+
+        builder.AddWorldSensor<PlayerSentRadiusSensor>()
+            .SetKey<PlayerSmelledRadius>();
+
+        builder.AddTargetSensor<FindHideSpotSensor>()
+            .SetTarget<HideTargetPositionTK>();
+
+        builder.AddTargetSensor<FindPeakSpotSensor>()
+            .SetTarget<PeekAtPlayerPositionTK>();
 
 
 
@@ -62,39 +73,36 @@ public class GoapConfigFactory : GoapSetFactoryBase
     private void buildActions(GoapSetBuilder builder)
     {
 
-       
+        //Wandre action
         builder.AddAction<WanderActionM>()
-            .SetTarget<WanderingTargetPositionTK>()
-            .AddEffect<WanderingStateWK>(EffectType.Increase)
-            .SetBaseCost(injector.config1.wanderingBaseCost)
-            .SetInRange(injector.config1.wanderingSetinRange);
+             .SetTarget<WanderingTargetPositionTK>()
+             .AddEffect<WanderingStateWK>(EffectType.Increase)
+             .SetBaseCost(injector.config1.wanderingBaseCost)
+             .SetInRange(injector.config1.wanderingSetinRange);
 
-        builder.AddAction<WandreNearPlayersSmellAction>()
-            .SetTarget<SmellTargetPostionTK>()
-            .AddEffect<WanderingStateWK>(EffectType.Increase)
-            .AddEffect<PlayerDistanceWK>(EffectType.Increase)
-            .SetBaseCost(injector.config1.goToSentCost)
-            .AddCondition<SmelledFressnesWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.smellFressness* 50);
-
+         builder.AddAction<WandreNearPlayersSmellAction>()
+             .SetTarget<SmellTargetPostionTK>()
+             .AddEffect<PlayerDistanceWK>(EffectType.Decrease)
+             .AddEffect<WanderingStateWK>(EffectType.Increase)
+             .SetBaseCost(injector.config1.goToSentminCost)
+             .AddCondition<SmelledFressnesWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.smellFressness* 50);
+        //Move actions
         builder.AddAction<GoToPlayerLastPosAction>()
-            .SetTarget<ChaseTargetPositionTK>()
-            .AddEffect<LastKnownPlayerPositionWK>(EffectType.Decrease)
-            .AddEffect<PlayerDistanceWK>(EffectType.Decrease)
-            .SetBaseCost(injector.config1.chaseCost)
-            .SetInRange(injector.config1.chaseRange);
+          .SetTarget<ChaseTargetPositionTK>()
+          .AddEffect<LastKnownPlayerPositionWK>(EffectType.Decrease)
+          .AddEffect<PlayerDistanceWK>(EffectType.Decrease)
+          .SetBaseCost(injector.config1.chaseCost)
+          .SetInRange(injector.config1.chaseRange);
 
-        builder.AddAction<ScreamAction>()
-            .AddEffect<PlayerAwarenessWK>(EffectType.Increase).SetBaseCost(injector.config1.screamActionCost)
-            .SetBaseCost(injector.config1.screamActionCost)
-            .AddCondition<PlayerDistanceWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.screamHearingRange);
+        //Hurt player
+          builder.AddAction<MeleeAction>()
+          .SetTarget<ChaseTargetPositionTK>()
+          .AddEffect<playerHealthWK>(EffectType.Decrease)
+          .AddCondition<PlayerDistanceWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, (int)injector.config1.meleeRange)
+          .SetBaseCost((int)injector.config1.meleeCost)
+          .SetInRange(injector.config1.meleeRange);
 
-        builder.AddAction<PeekAtPlayerAction>()
-            .SetTarget<PeekAtPlayerPositionTK>() 
-            .AddEffect<PlayerAwarenessWK>(EffectType.Increase)
-            .AddCondition<PlayerDistanceWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.stalkDitsanceMinDistance)
-            .SetBaseCost(injector.config1.peekCost)
-            .SetInRange(injector.config1.peekRange);
-
+        //lose attention
         builder.AddAction<HideFromPlayer>()
             .SetTarget<HideTargetPositionTK>()
             .AddEffect<PlayerAwarenessWK>(EffectType.Decrease)
@@ -102,151 +110,35 @@ public class GoapConfigFactory : GoapSetFactoryBase
             .SetBaseCost(injector.config1.hideCost)
             .SetInRange(injector.config1.peekRange);
 
+        //Get attention
+        builder.AddAction<PeekAtPlayerAction>()
+             .SetTarget<PeekAtPlayerPositionTK>()
+             .AddEffect<PlayerAwarenessWK>(EffectType.Increase)
+             .AddCondition<PlayerDistanceWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.stalkDitsanceMinDistance)
+             .SetBaseCost(injector.config1.peekCost)
+             .SetInRange(injector.config1.peekRange);
 
+        builder.AddAction<ScreamAction>()
+             .AddEffect<PlayerAwarenessWK>(EffectType.Increase).SetBaseCost(injector.config1.screamActionCost)
+             .SetBaseCost(injector.config1.screamActionCost)
+             .AddCondition<PlayerDistanceWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.screamHearingRange);
     }
 
     private void buildGoals(GoapSetBuilder builder)
     {
-        
+
         builder.AddGoal<WanderGoalM>()
-            .AddCondition<WanderingStateWK>(CrashKonijn.Goap.Resolver.Comparison.GreaterThanOrEqual, injector.config1.targetPosStop);
+            .AddCondition<WanderingStateWK>(CrashKonijn.Goap.Resolver.Comparison.GreaterThanOrEqual, injector.config1.targetPosStop); 
 
         builder.AddGoal<HurtPlayerGoal>()
-            .AddCondition<LastKnownPlayerPositionWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, (int)injector.config1.meleeRange);
+            .AddCondition<playerHealthWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, 0);
 
 
         builder.AddGoal<StalkGoal>()
-            .AddCondition<PlayerDistanceWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.stalkDitsanceMinDistance)
             .AddCondition<MonsterAggressionLevelWK>(CrashKonijn.Goap.Resolver.Comparison.GreaterThanOrEqual, injector.config1.stalkMaxAgressionLevel)
-            .AddCondition<PlayerAwarenessWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.stalkMaxPlayerAwareness)
-            .AddCondition<PlayerAwarenessWK>(CrashKonijn.Goap.Resolver.Comparison.GreaterThanOrEqual, injector.config1.stalkMinPlayerAwareness);
-            
-        
-     
-
-
-
+            .AddCondition<PlayerAwarenessWK>(CrashKonijn.Goap.Resolver.Comparison.GreaterThanOrEqual, injector.config1.stalkMinPlayerAwareness)
+            .AddCondition<PlayerAwarenessWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, injector.config1.stalkMaxPlayerAwareness);
     }
 
 }
 
-/*public class GoapConfigFactory : GoapSetFactoryBase
-{
-    private DependencyInjector injector;
-
-    public override IGoapSetConfig Create()
-    {
-        injector = GetComponent<DependencyInjector>();
-        GoapSetBuilder builder = new("Monsterset");
-        buildGoals(builder);
-        buildActions(builder);
-        buildSensors(builder);
-        return builder.Build();
-    }
-
-    private void buildSensors(GoapSetBuilder builder)
-    {
-        // Use your existing WanderTargetSensorM and PlayerTargetSensor
-        builder.AddTargetSensor<WanderTargetSensorM>()
-            .SetTarget<WanderingTargetPositionTK>(); // Linked to Wandering
-
-        builder.AddTargetSensor<PlayerTargetSensor>()
-            .SetTarget<ChaseTargetPositionTK>(); // Set to chase the player when detected
-
-        /*  
-
-          // Adding an additional sensor for hiding spots, leveraging HideTargetPositionTK
-          builder.AddTargetSensor<PlayerTargetSensor>() // You can reuse this sensor if it fits
-              .SetTarget<HideTargetPositionTK>(); // Hide from the player
-
-          // Adding world sensors for specific game conditions
-          builder.AddWorldSensor<PlayerLookAtMonsterSensor>() // For player awareness of monster
-              .SetKey<PlayerAwarenessWK>(); // Monitor player's awareness
-
-          builder.AddWorldSensor<MonsterAggressionLevelSensor>()
-              .SetKey<MonsterAggressionLevelWK>(); // Track monster's aggression level
-
-          builder.AddWorldSensor<PlayerDistanceSensor>() // Track distance between player and monster
-              .SetKey<PlayerDistanceWK>(); // Control decisions based on distance
-
-    }
-
-
-
-
-
-    private void buildActions(GoapSetBuilder builder)
-    {
-        // Action for melee attack
-        builder.AddAction<MeleeAction>()
-            .SetTarget<ChaseTargetPositionTK>() // Now using chase target instead of PlayerTarget
-            .AddEffect<PlayerDistanceWK>(EffectType.Decrease) // Decrease the distance to the player
-            .AddEffect<MonsterAggressionLevelWK>(EffectType.Increase) // Increase the monster's aggression level
-            .SetBaseCost((int)injector.config1.meleeCost)
-            .SetInRange(injector.config1.AgentSensorRadius);
-
-        // Action for stalking the player
-        builder.AddAction<StalkAction>()
-            .SetTarget<ChaseTargetPositionTK>() // Using chase target since it's relevant for stalking
-            .AddEffect<PlayerDistanceWK>(EffectType.Decrease) // Decrease the distance to the player
-            .AddEffect<MonsterAggressionLevelWK>(EffectType.Increase) // Increase the monster's aggression level
-            .SetBaseCost(injector.config1.stalkActionCost)
-            .SetInRange(injector.config1.stalkActionRange);
-
-        // Action for screaming to scare the player
-        builder.AddAction<ScreamAction>()
-            .SetTarget<ScreamTargetPositionTK>() // Using scream-specific target
-            .AddEffect<PlayerAwarenessWK>(EffectType.Decrease) // Decrease player's awareness of the monster
-            .AddEffect<MonsterAggressionLevelWK>(EffectType.Increase) // Increase the monster's aggression level after screaming
-            .SetBaseCost(injector.config1.screamActionCost)
-            .SetInRange(injector.config1.screamActionRange);
-
-        // Action to go out of sight of the player
-        builder.AddAction<GoOutOfSightAction>()
-            .SetTarget<HideTargetPositionTK>() // Use hiding target key
-            .AddEffect<PlayerAwarenessWK>(EffectType.Decrease) // Decrease the player's awareness
-            .AddEffect<HideSpotAvailableWK>(EffectType.Decrease) // Optionally indicate that the hiding spot is not available
-            .SetBaseCost(injector.config1.hideCost)
-            .SetInRange(injector.config1.hideRange);
-
-        // Action for peeking at the player
-        builder.AddAction<PeekAtPlayerAction>()
-            .SetTarget<PeekAtPlayerPositionTK>() // Using peeking target
-            .AddEffect<PlayerAwarenessWK>(EffectType.Decrease) // Decrease player's awareness
-            .AddEffect<MonsterAggressionLevelWK>(EffectType.Increase) // Increase monster's aggression level slightly
-            .SetBaseCost(injector.config1.peekCost)
-            .SetInRange(injector.config1.peekRange);
-
-        builder.AddAction<WanderActionM>()
-        .SetTarget<WanderingTargetPositionTK>() // Set appropriate target key for wandering
-        .SetBaseCost(injector.config1.wanderActionCost)
-        .SetInRange(injector.config1.wanderActionRange);
-    }
-
-
-    private void buildGoals(GoapSetBuilder builder)
-    {
-        // Wander Goal
-        builder.AddGoal<WanderGoalM>()
-            .AddCondition<WanderingStateWK>(CrashKonijn.Goap.Resolver.Comparison.GreaterThanOrEqual, injector.config1.targetPosStop);
-
-        // Chase Player Away Goal
-        builder.AddGoal<ChasePlayerAwayGoalM>()
-            .AddCondition<LastKnownPlayerPositionWK>(CrashKonijn.Goap.Resolver.Comparison.GreaterThan, 0);
-        /*
-            // Stalk Player Goal
-            builder.AddGoal<StalkGoal>()
-                .AddCondition<LastKnownPlayerPositionWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThan, injector.config1.stalkDistance);
-
-            // Hide Goal
-            builder.AddGoal<HideGoal>()
-                .AddCondition<PlayerAwarenessWK>(CrashKonijn.Goap.Resolver.Comparison.SmallerThanOrEqual, 0);
-
-
-            // Hurt Player Goal
-            builder.AddGoal<HurtPlayerGoal>()
-                .AddCondition<MonsterAggressionLevelWK>(CrashKonijn.Goap.Resolver.Comparison.GreaterThanOrEqual, injector.config1.aggressionThreshold);
- 
-    }
-}
-*/
