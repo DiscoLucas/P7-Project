@@ -1,6 +1,8 @@
-﻿using Assets.Scripts.GOAP.Goals;
+﻿using Assets.Scripts.GOAP.Actions;
+using Assets.Scripts.GOAP.Goals;
 using Assets.Scripts.GOAP.Sensors;
 using CrashKonijn.Goap.Behaviours;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -32,12 +34,18 @@ namespace Assets.Scripts.GOAP.Behaviors
             agentBehaviour.SetGoal<WanderGoalM>(true);
             config = dependencyInjector.config1;
             p_sensor.Collider.radius = config.AgentSensorRadius;
+            p_sensor.playerPositionMapTracker.playerPostionsSummeries.AddListener(playerPostionSmelled);
 
             if (protectionSensor != null)
             {
                 protectionSensor.Inject(dependencyInjector);
             }
 
+        }
+
+        private void playerPostionSmelled(Vector3 arg0, float arg1)
+        {
+            EvaluateGoal(p_sensor.playerLastPos);
         }
 
         private void OnEnable()
@@ -74,7 +82,6 @@ namespace Assets.Scripts.GOAP.Behaviors
             if (playerSpotted)
             {
 
-                Debug.Log("Player has been spotted!");
                 EvaluateGoal(p_sensor.playerLastPos);
             }
         }
@@ -96,7 +103,11 @@ namespace Assets.Scripts.GOAP.Behaviors
 
         private void protectionSensor_OnExit(Vector3 lastKnownPosition)
         {
-            agentBehaviour.SetGoal<WanderGoalM>(true);
+        }
+
+
+        public void EvaluateGoal() {
+            EvaluateGoal(p_sensor.playerLastPos);
         }
 
         private void EvaluateGoal(Transform player)
@@ -104,28 +115,46 @@ namespace Assets.Scripts.GOAP.Behaviors
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
             float playerAwareness = awarenessSensor.GetPlayerAwarenessLevel(); // Player awareness level from PlayerAwarenessSensor
             float monsterAggression = monsterAggressionLevelSensor.aggressionLevel;
-
-
-            Debug.Log("Chase: " + (playerSpotted && monsterAggression > config.agressionLevelBeginChase) + " Stalk:  " + (playerSpotted) + "Wander: " + (!(playerSpotted && monsterAggression > config.agressionLevelBeginChase) && !(playerSpotted)));
-            // If the player is spotted or enters the protected area, switch to chase mode
+            
+     
             if (playerSpotted && monsterAggression > config.agressionLevelBeginChase)
-            {
-                currentStat = BotState.CHASE;
-                agentBehaviour.SetGoal<HurtPlayerGoal>(true);
-            }
-            else if(playerSpotted)
-            {
-                currentStat = BotState.STALK;
-                agentBehaviour.SetGoal<StalkGoal>(true);
+             {
+                changeState(BotState.CHASE);
+             }
+             else if(playerSpotted)
+             {
+                changeState(BotState.STALK);
 
             }
-            else
-            {
-                currentStat = BotState.IDLE;
-                agentBehaviour.SetGoal<WanderGoalM>(true);
+             else
+             {
+                changeState(BotState.IDLE);
             }
 
-            Debug.Log("currentStat: " + currentStat.ToString());
+        }
+
+        void changeState(BotState state)
+        {
+            if (state != currentStat) {
+                agentBehaviour.EndAction();
+                currentStat = state;
+                if (state == BotState.CHASE)
+                {
+                    agentBehaviour.SetGoal<HurtPlayerGoal>(true);
+                }
+                else if (state == BotState.STALK)
+                {
+                    agentBehaviour.SetGoal<StalkGoal>(true);
+                }
+                else {
+                    agentBehaviour.SetGoal<WanderGoalM>(false);
+                }
+
+                Debug.Log("Current Goal Change: " + state.ToString());
+                currentStat = state;
+                agentBehaviour.Run();
+            }
+
         }
     }
 }

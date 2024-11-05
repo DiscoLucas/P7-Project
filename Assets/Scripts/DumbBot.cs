@@ -9,7 +9,11 @@ public class DumbBot : MonoBehaviour
     StateMachine fsm;
     public NavMeshAgent agent;
 
+    [Header("Debugging")]
     public string stateDisplayText = "";
+    private float oldDistance;
+    bool isCoroutineRunning = false;
+    public bool enableDistanceLogger;
 
     [Header("Speed Settings")]
     public float walkSpeed = 2f;
@@ -44,24 +48,41 @@ public class DumbBot : MonoBehaviour
         fsm.AddState("Stalk",
             onLogic: state => agent.SetDestination(playerPosition),
             onEnter: state => agent.speed = walkSpeed);
+
         fsm.AddState("Chase",
             onLogic: state => agent.SetDestination(playerPosition),
             onEnter: state => agent.speed = chaseSpeed);
+
         fsm.AddState("Idle",
-            onEnter: state => StartCoroutine(TriggerAfterDelay("StartStalking", RandomIdleTime())));
+            onEnter: state => {
+                agent.isStopped = true;
+                StartCoroutine(TriggerAfterDelay("StartStalking", RandomIdleTime()));
+                },
+            onExit: state => agent.isStopped = false
+            );
+
         fsm.AddState("RunAway",
-            onEnter: state => { 
-                agent.SetDestination(GetRandomNavMeshPoint());
+            onEnter: state => 
+            { 
+                var point = GetRandomNavMeshPoint();
+                Debug.Log("Running away to: " + point);
+                agent.SetDestination(point);
                 agent.speed = runSpeed;
-                //Debug.Log("Remaining distance: " + agent.remainingDistance);
+            },
+            onLogic: state =>
+            {
+                if (Vector3.Distance(agent.destination, agent.transform.position) <= 2.5f)
+                {
+                    Debug.Log("Reached destination");
+                    fsm.Trigger("HidePointReached");
+                }
+                   
             },
             onExit: state => Debug.Log("Remaining distance after running: " + agent.remainingDistance)
             );
         fsm.AddState("EvaluateState",  
         onEnter: state => {
             newState = ChooseRandomState();
-            //Debug.Log("New state is: " + newState);
-            //Debug.Break();
         });
         fsm.AddState("PeekPlayer");
         fsm.AddState("Attack",
@@ -75,9 +96,10 @@ public class DumbBot : MonoBehaviour
         fsm.AddTriggerTransition("PlayerVisible", "Stalk", "EvaluateState"); // TODO: fix EvaluateState. It works sometimes, but its REALLY fucky.
         fsm.AddTransition("EvaluateState", "RunAway", t => newState == "RunAway");
         fsm.AddTransition("EvaluateState", "Chase", t => newState == "Chase");
-        //fsm.AddTransition("Chase", "Attack", t => distanceToPlayer <= attackRange); // attack player
+        fsm.AddTransition("Chase", "Attack", t => distanceToPlayer <= attackRange); // attack player
         fsm.AddTransition(new TransitionAfter("Chase", "RunAway", chaseTime)); // run away for a certain amount of time 
-        fsm.AddTransition("RunAway", "Idle", t => !float.IsInfinity(agent.remainingDistance) && agent.remainingDistance < 1f); // stop running
+        //fsm.AddTransition("RunAway", "Idle", t => !float.IsInfinity(agent.remainingDistance) && agent.remainingDistance < 1f); // stop running
+        fsm.AddTriggerTransition("HidePointReached", "RunAway", "Idle");
         fsm.AddTriggerTransition("StartStalking", "Idle", "Stalk");
         
         fsm.Init();
@@ -86,7 +108,6 @@ public class DumbBot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(agent.remainingDistance);
         fsm.OnLogic();
         StateBase<string> state = fsm.ActiveState;
         string currentState = fsm.ActiveStateName;
@@ -98,10 +119,36 @@ public class DumbBot : MonoBehaviour
             {
                 fsm.Trigger("PlayerVisible");
             }
-                
+        /*
+        if (currentState == "RunAway")
+        {
+            if (agent.remainingDistance < 1f)
+            {
+                if (!float.IsInfinity(agent.remainingDistance))
+                {
+                    // check if corutine is already running
+                    if (!isCoroutineRunning) StartCoroutine(TriggerAfterDelay("HidePointReached", 1f));
+                }
+            }
+        }
+        */
+        
+        if (enableDistanceLogger) DistanceDebugger(agent.remainingDistance);
 
-        //stateDisplayText = currentState;
+
+
         UpdateStateText(currentState);
+
+    }
+
+    void DistanceDebugger(float newDistance)
+    {
+        // guard for checking remaing distance logging
+        if (newDistance != oldDistance)
+        {
+            oldDistance = agent.remainingDistance;
+            Debug.Log("Remaining distance: " + oldDistance);
+        }
     }
 
     /// <summary>
@@ -120,7 +167,7 @@ public class DumbBot : MonoBehaviour
     string ChooseRandomState()
     {
         int coinFlip = Random.Range(0, 2);
-        Debug.Log("coinflip resulted in: " + coinFlip);
+        //Debug.Log("coinflip resulted in: " + coinFlip);
         if (coinFlip == 0) return "Chase";
         else return "RunAway";
     }
@@ -146,6 +193,7 @@ public class DumbBot : MonoBehaviour
         Vector3 randomPoint = Vector3.zero;
         int maxTries = 100;
         bool validPointFound = false;
+        var path = new NavMeshPath();
 
         for (int i = 0; i < maxTries; i++)
         {
@@ -159,11 +207,20 @@ public class DumbBot : MonoBehaviour
             {
                 float distanceFromPlayer = Vector3.Distance(hit.position, playerPosition);
 
-                if (distanceFromPlayer >= minDistanceToPlayer && agent.pathStatus != NavMeshPathStatus.PathInvalid)
+                if (distanceFromPlayer >= minDistanceToPlayer)
                 {
-                    randomPoint = hit.position;
-                    validPointFound = true;
-                    break;
+                    // Calculate the path to check if the point is reachable
+                    agent.CalculatePath(hit.position, path);
+
+                    if (path.status == NavMeshPathStatus.PathComplete)
+                    {
+                        
+                        randomPoint = hit.position;
+                        validPointFound = true;
+                        Debug.Log("Found a valid point: " + randomPoint);
+                        break;
+                    }
+                    
                 }
             }
 
@@ -176,15 +233,19 @@ public class DumbBot : MonoBehaviour
 
         if (!validPointFound)
         {
-            randomPoint = home.position;;
+            randomPoint = home.position;
         }
 
         return randomPoint;
     }
     private IEnumerator TriggerAfterDelay(string triggerName, float delay)
     {
+        isCoroutineRunning = true;
+        //Debug.Log("Waiting for " + delay + " seconds before triggering " + triggerName);
         yield return new WaitForSeconds(delay);
         fsm.Trigger(triggerName); // Trigger the transition after the delay
+        Debug.Log("triggered " + triggerName);
+        isCoroutineRunning = false;
     }
 
 }

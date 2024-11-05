@@ -21,7 +21,7 @@ public class PlayerAwarenessSensor : MonoBehaviour
     [SerializeField]
     bool playerHasSeenTheAgentBefore = false;
     [SerializeField]
-    bool monsterInSight = false;
+    public bool monsterInSight = false;
     [SerializeField]
     bool tutorialDone = true;
     [SerializeField]

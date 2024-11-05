@@ -13,18 +13,18 @@ namespace Assets.Scripts.GOAP.Sensors
         public event PlayerEnterEvent OnPlayerEnter;
         public event PlayerExitEvent OnPlayerExit;
 
-        private MonsterConfig config; // Reference to MonsterConfig
+        private MonsterConfig config; 
 
         public void Inject(DependencyInjector injector)
         {
-            config = injector.config1 as MonsterConfig; // Get MonsterConfig from DependencyInjector
-            Collider.radius = config.protectionAreaRadius; // Set the collider radius based on config value
+            config = injector.config1 as MonsterConfig; 
+            Collider.radius = config.protectionAreaRadius; 
         }
 
         private void Awake()
         {
             Collider = GetComponent<SphereCollider>();
-            Collider.isTrigger = true; // Make sure the collider is set as a trigger
+            Collider.isTrigger = true; 
         }
 
         private void OnTriggerEnter(Collider other)

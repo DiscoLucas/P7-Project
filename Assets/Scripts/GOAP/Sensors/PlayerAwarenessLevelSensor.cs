@@ -8,6 +8,7 @@ namespace Assets.Scripts.GOAP.Sensors
 {
     public class PlayerAwarenessLevelSensor : LocalWorldSensorBase, IInjectableObj
     {
+        MonsterConfig config;
         public override void Created()
         {
 
@@ -15,12 +16,14 @@ namespace Assets.Scripts.GOAP.Sensors
 
         public void Inject(DependencyInjector injector)
         {
-
+            config = injector.config1;
         }
 
         public override SenseValue Sense(IMonoAgent agent, IComponentReference references)
         {
-            return new SenseValue(references.GetCachedComponentInChildren<PlayerAwarenessSensor>().GetPlayerAwarenessLevel());
+            int paLevel = references.GetCachedComponentInChildren<PlayerAwarenessSensor>().GetPlayerAwarenessLevel();
+          
+            return new SenseValue(paLevel);
 
         }
 

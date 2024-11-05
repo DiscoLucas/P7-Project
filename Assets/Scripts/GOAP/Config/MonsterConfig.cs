@@ -7,80 +7,40 @@ using UnityEngine;
 public class MonsterConfig : ScriptableObject
 {
     public float smelledSearchAreaMultiplyer = 2;
-    public int goToSentCost = 2;
     public int smellFressness = 10;
     public int stalkDitsanceMinDistance;
     public int stalkMaxAgressionLevel = 50;
     public int stalkMaxPlayerAwareness = 80;
-    public int stalkMinPlayerAwareness = 20;
+    public int stalkMinPlayerAwareness = 40;
     public int agressionLevelBeginChase = 75;
-    #region Sensor and Detection Settings
-    [Header("Sensor and Detection Settings")]
-    [Tooltip("Radius to detect the player.")]
+
+    public float minWalkingDistance = 0.25f;
+
     public float AgentSensorRadius = 25f;
 
-    [Tooltip("Layer mask to identify the player.")]
     public LayerMask playerLayerMask;
 
-    [Tooltip("Radius around the protection point for detecting player proximity.")]
-    public int protectionAreaRadius = 5;
-    #endregion
 
-    #region Melee Attack Settings
-    [Header("Melee Attack Settings")]
-    [Tooltip("Range to switch to melee action.")]
+    public int protectionAreaRadius = 5;
+
     public float meleeRange = 5f;
 
-    [Tooltip("Delay between attacks in seconds.")]
     public float attackDelay = 2f;
 
-    [Tooltip("Cost associated with performing a melee action.")]
-    public float meleeCost = 10f;
-    #endregion
-
-    #region Chasing and Movement Settings
-    [Header("Chasing and Movement Settings")]
-    [Tooltip("Speed of the monster while chasing the player.")]
     public float chaseSpeed = 6f;
-
-    [Tooltip("Distance at which the monster will start chasing the player.")]
     public float chaseRange = 20f;
 
-    [Tooltip("Cost associated with chasing actions.")]
-    public int chaseCost = 10;
-    #endregion
-
-    #region Wander and Exploration Settings
-    [Header("Wander and Exploration Settings")]
-    [Tooltip("Position to stop while wandering.")]
     public int targetPosStop = 1;
 
-    [Tooltip("Base cost for wandering actions.")]
-    public int wanderingBaseCost = 5;
 
-    [Tooltip("Range at which the wandering action activates.")]
+
     public float wanderingSetinRange = 10f;
 
-    [Tooltip("Patrol radius for wandering actions.")]
-    public float patrolRadius = 15f;
-
-    [Tooltip("Time spent idling between actions.")]
-    public float idleTime = 3f;
-    #endregion
-
-    #region Additional Behavior Settings
-    [Header("Additional Behavior Settings")]
-    [Tooltip("Starting aggression level of the monster, influencing its behavior.")]
     public float startingAggressionLevel = 0.5f;
 
-    [Tooltip("Frequency of screams (in seconds) to get the player's attention.")]
-    public float screamFrequency = 5.0f;
 
-    [Tooltip("Cost associated with stalking action.")]
-    public int stalkActionCost = 10;
 
-    [Tooltip("Cost associated with scream action.")]
-    public int screamActionCost = 5;
+    
 
     public int stalkDistance = 10;
 
@@ -88,9 +48,30 @@ public class MonsterConfig : ScriptableObject
 
     public float stalkActionRange = 12;
     public int screamHearingRange = 13;
-    public int hideCost = 12;
-    public float hideRange = 20;
-    public int peekCost = 5;
     public float peekRange = 9;
-    #endregion
+    public float hideRange = 20;
+
+
+    public int hideCost = 12;
+    public Vector2 hideCostRange = new Vector2(12,40);
+    public int peekCost = 5;
+    public Vector2 peakCostRange = new Vector2(12, 40);
+
+    public int screamActionCostbase = 5;
+    public Vector2 screamActionCostRange = new Vector2(2, 100);
+
+    public int wanderingBaseCost = 5;
+    public Vector2 wanderingCostRange = new Vector2(2, 30);
+
+    public int chaseCost = 10;
+    public Vector2 chaseCostRange = new Vector2(15, 45);
+
+    public float meleeCost = 10f;
+    public Vector2 meleeCostRange = new Vector2(0, 100);
+
+    public int goToSentminCost = 2;
+    public int goToSenMaxCost = 40;
+
+    public float lowAwarenessCostMultiplier = 0.5f;
+    public float highAwarenessCostMultiplier = 1;
 }

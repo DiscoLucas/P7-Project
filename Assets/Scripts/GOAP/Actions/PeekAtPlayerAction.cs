@@ -7,27 +7,12 @@ using UnityEngine;
 
 namespace Assets.Scripts.GOAP.Actions
 {
-    public class PeekAtPlayerAction : ActionBase<CommonDataM>
+    public class PeekAtPlayerAction : PlayerVisibilityBasedAction
     {
-        public override void Created()
+        public override int calculateBase(int playerAwareness, float midpoint)
         {
-
-        }
-
-        public override void End(IMonoAgent agent, CommonDataM data)
-        {
-
-        }
-
-        public override ActionRunState Perform(IMonoAgent agent, CommonDataM data, ActionContext context)
-        {
-            // Logic to peek behind the player
-            return ActionRunState.Stop;
-        }
-
-        public override void Start(IMonoAgent agent, CommonDataM data)
-        {
-
+            return (int)Mathf.Lerp(config.peakCostRange.x, config.peakCostRange.y, 1 - ((playerAwareness - config.stalkMinPlayerAwareness) / (midpoint - config.stalkMinPlayerAwareness)));
         }
     }
+
 }

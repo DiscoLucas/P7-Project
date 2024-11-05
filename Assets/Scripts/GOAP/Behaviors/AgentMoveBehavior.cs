@@ -6,7 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent), typeof(AgentBehaviour))]
 public class AgentMoveBehavior : MonoBehaviour
 {
-    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
     private AgentBehaviour agentBehaviour;
     private ITarget CurrentTarget;
     [SerializeField] private float minMoveDistance = 0.25f;
@@ -41,10 +41,16 @@ public class AgentMoveBehavior : MonoBehaviour
     {
        
         CurrentTarget = target;
+        navMeshAgent.isStopped = false;
         lastPosition = CurrentTarget.Position;
         navMeshAgent.SetDestination(target.Position);
+        
  
         
+    }
+
+    public void stopMoveing() {
+        navMeshAgent.Stop();
     }
 
     private void Update()
@@ -54,12 +60,12 @@ public class AgentMoveBehavior : MonoBehaviour
             return;
         }
 
-      
-        if (minMoveDistance <= Vector3.Distance(CurrentTarget.Position, lastPosition))
+       else if (minMoveDistance <= Vector3.Distance(CurrentTarget.Position, lastPosition))
         {
             lastPosition = CurrentTarget.Position;
             navMeshAgent.SetDestination(CurrentTarget.Position);
         }
+
     }
 }
 
