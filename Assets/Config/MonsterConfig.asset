@@ -17,7 +17,7 @@ MonoBehaviour:
   stalkDitsanceMinDistance: 30
   stalkMaxAgressionLevel: 50
   stalkMaxPlayerAwareness: 70
-  stalkMinPlayerAwareness: 45
+  stalkMinPlayerAwareness: 50
   agressionLevelBeginChase: 75
   minWalkingDistance: 0.01
   AgentSensorRadius: 50
@@ -43,7 +43,7 @@ MonoBehaviour:
   peekCost: 5
   peakCostRange: {x: 12, y: 40}
   screamActionCostbase: 5
-  screamActionCostRange: {x: 2, y: 100}
+  screamActionCostRange: {x: 12, y: 100}
   wanderingBaseCost: 25
   wanderingCostRange: {x: 2, y: 30}
   chaseCost: 25
@@ -52,3 +52,5 @@ MonoBehaviour:
   meleeCostRange: {x: 0, y: 100}
   goToSentminCost: 2
   goToSenMaxCost: 40
+  lowAwarenessCostMultiplier: 0.5
+  highAwarenessCostMultiplier: 1
