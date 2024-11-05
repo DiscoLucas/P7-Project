@@ -17,7 +17,7 @@ public class PlayerPositionMapTracker : MonoBehaviour
 
     [Tooltip("List of recent positions the player has visited for active game usage")]
     public List<Vector3> recentPlayerPositions = new List<Vector3>();
-    public Color gizmoColor;
+    public Color gizmoColor, smellAreaGizmoColor;
     public bool enableLoggin = false;
     public int fixedUpdateCounterUpdatePos = 0, fixedUpdateCounterSummerize = 0, updateRate = 4, summariePostionTime = 2;
 
@@ -28,9 +28,6 @@ public class PlayerPositionMapTracker : MonoBehaviour
     private void Start()
     {
         playerPositionMap.enableLogging = enableLoggin;
-        if (!enableLoggin) {
-            playerPositionMap.allLoggedPositions.Clear();
-        }
         summariePostionTime *= 50;
         if (dynamicBuffer) {
             maxRecentPositions = summariePostionTime/updateRate;
@@ -91,6 +88,8 @@ public class PlayerPositionMapTracker : MonoBehaviour
         }
 
         recentPlayerPositions.Add(position);
+        playerPositionMap.addPosition(position);
+
     }
 
     private void OnDrawGizmosSelected()
@@ -100,7 +99,7 @@ public class PlayerPositionMapTracker : MonoBehaviour
             Gizmos.color = gizmoColor;
             Gizmos.DrawCube(recentPlayerPositions[i], Vector3.one);
         }
-        Gizmos.color = Color.red;
+        Gizmos.color = smellAreaGizmoColor;
         Gizmos.DrawSphere(summriePostion, averageDistance);
     }
 
