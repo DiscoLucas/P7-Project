@@ -19,7 +19,7 @@ namespace Assets.Scripts.GOAP.Actions
 
         public override void Start(IMonoAgent agent, CommonDataM data)
         {
-            agent.GetComponent<AgentMoveBehavior>().stopMoveing();
+            agent.GetComponent<AgentMoveBehavior>().stopMoving();
         }
 
         public override ActionRunState Perform(IMonoAgent agent, CommonDataM data, ActionContext context)

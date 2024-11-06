@@ -13,6 +13,12 @@ namespace Assets.Scripts.GOAP.Actions
         {
             return (int)Mathf.Lerp(config.peakCostRange.x, config.peakCostRange.y, 1 - ((playerAwareness - config.stalkMinPlayerAwareness) / (midpoint - config.stalkMinPlayerAwareness)));
         }
+
+        public override void Start(IMonoAgent agent, CommonDataM data)
+        {
+            base.Start(agent, data);
+            agent.GetComponent<AgentSpeedBehavior>().changeSpeed(BotState.STALK, false);
+        }
     }
 
 }

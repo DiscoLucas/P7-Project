@@ -7,6 +7,8 @@ using UnityEngine;
 public class MonsterConfig : ScriptableObject
 {
     [Header("General Settings")]
+    public float AgentSensorRadius = 50f;
+
     public float smelledSearchAreaMultiplyer = 2;
     public int smellFressness = 3;
     public int stalkDitsanceMinDistance = 30;
@@ -15,7 +17,7 @@ public class MonsterConfig : ScriptableObject
     public int stalkMinPlayerAwareness = 50;
     public int agressionLevelBeginChase = 75;
     public float minWalkingDistance = 0.01f;
-    public float AgentSensorRadius = 50f;
+
     public LayerMask playerLayerMask;
     public int protectionAreaRadius = 5;
 
@@ -26,6 +28,7 @@ public class MonsterConfig : ScriptableObject
     [Header("Chase Settings")]
     public float chaseSpeed = 6f;
     public float chaseRange = 20f;
+    public float distanceToMonsterForStartChaseAlways = 5;
     public int targetPosStop = 1;
 
     [Header("Wandering Settings")]
@@ -57,4 +60,13 @@ public class MonsterConfig : ScriptableObject
     public int goToSenMaxCost = 40;
     public float lowAwarenessCostMultiplier = 0.5f;
     public float highAwarenessCostMultiplier = 1;
+
+    [Header("Agent movementSpeed")]
+    public float baseIdleSpeed = 2f;
+    public float baseStalkSpeed = 3f;
+    public float baseChaseSpeed = 6f;
+    public float maxAggressionMultiplier = 1.5f;
+
+    public float hideSpeedModifier = 0.5f;
+    public float peekSpeedModifier = 1.2f;
 }
