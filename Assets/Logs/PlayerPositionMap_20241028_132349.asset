@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4c6d10805960c4bacf3922f9b94bd3, type: 3}
   m_Name: PlayerPositionMap_20241028_132349
   m_EditorClassIdentifier: 
-  enableLogging: 1
+  enableLogging: 0
   allLoggedPositions: []
-  maxRecentPositions: 20
