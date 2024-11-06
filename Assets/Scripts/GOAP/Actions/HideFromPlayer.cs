@@ -9,7 +9,11 @@ namespace Assets.Scripts.GOAP.Actions
 {
     public class HideFromPlayer : PlayerVisibilityBasedAction
     {
-
+        public override void Start(IMonoAgent agent, CommonDataM data)
+        {
+            base.Start(agent, data);
+            agent.GetComponent<AgentSpeedBehavior>().changeSpeed(BotState.STALK, true);
+        }
     }
 
 }

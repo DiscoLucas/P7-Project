@@ -25,7 +25,6 @@ public class NextBot : MonoBehaviour
     public float chaseSpeed = 5f;
     public float walkSpeed = 2f;
     public float runSpeed = 10f; // used for running away from player. Doesn't need to be balanced.
-
     
 
     void Start()

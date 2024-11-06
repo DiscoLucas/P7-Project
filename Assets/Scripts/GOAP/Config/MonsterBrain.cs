@@ -19,12 +19,15 @@ namespace Assets.Scripts.GOAP.Behaviors
         public MonsterConfig config;
         public DependencyInjector dependencyInjector;
         public BotState currentStat;
+        public AgentSpeedBehavior speedBehavior;
 
         private bool playerSpotted = false; // Flag to track if the player has been spotted
 
         private void Awake()
         {
             agentBehaviour = GetComponent<AgentBehaviour>();
+            if(speedBehavior == null)
+                speedBehavior = GetComponent<AgentSpeedBehavior>();
         }
 
         void Start()
@@ -114,26 +117,26 @@ namespace Assets.Scripts.GOAP.Behaviors
         {
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
             float playerAwareness = awarenessSensor.GetPlayerAwarenessLevel(); // Player awareness level from PlayerAwarenessSensor
-            float monsterAggression = monsterAggressionLevelSensor.aggressionLevel;
+            int monsterAggression = monsterAggressionLevelSensor.aggressionLevel;
             
      
             if (playerSpotted && monsterAggression > config.agressionLevelBeginChase)
              {
-                changeState(BotState.CHASE);
+                changeState(BotState.CHASE, monsterAggression);
              }
              else if(playerSpotted)
              {
-                changeState(BotState.STALK);
+                changeState(BotState.STALK, monsterAggression);
 
             }
              else
              {
-                changeState(BotState.IDLE);
+                changeState(BotState.IDLE, monsterAggression);
             }
 
         }
 
-        void changeState(BotState state)
+        void changeState(BotState state, int monsterAggression)
         {
             if (state != currentStat) {
                 agentBehaviour.EndAction();
@@ -152,6 +155,7 @@ namespace Assets.Scripts.GOAP.Behaviors
 
                 Debug.Log("Current Goal Change: " + state.ToString());
                 currentStat = state;
+                speedBehavior.changeSpeed(currentStat, monsterAggression);
                 agentBehaviour.Run();
             }
 
