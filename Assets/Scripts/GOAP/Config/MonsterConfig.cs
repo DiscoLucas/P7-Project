@@ -17,6 +17,8 @@ public class MonsterConfig : ScriptableObject
     public int stalkMinPlayerAwareness = 50;
     public int agressionLevelBeginChase = 75;
     public float minWalkingDistance = 0.01f;
+    [Tooltip("In seconds")]
+    public int screamInterval = 5;
 
     public LayerMask playerLayerMask;
     public int protectionAreaRadius = 5;

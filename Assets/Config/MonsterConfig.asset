@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f6a02d0c5696345907fb171862721c, type: 3}
   m_Name: MonsterConfig
   m_EditorClassIdentifier: 
+  AgentSensorRadius: 50
   smelledSearchAreaMultiplyer: 2
   smellFressness: 3
   stalkDitsanceMinDistance: 30
@@ -20,7 +21,7 @@ MonoBehaviour:
   stalkMinPlayerAwareness: 50
   agressionLevelBeginChase: 75
   minWalkingDistance: 0.01
-  AgentSensorRadius: 50
+  screamInterval: 5
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 8
@@ -28,16 +29,17 @@ MonoBehaviour:
   meleeRange: 2.5
   attackDelay: 2
   chaseSpeed: 6
-  chaseRange: 20
+  chaseRange: 13
+  distanceToMonsterForStartChaseAlways: 5
   targetPosStop: 1
   wanderingSetinRange: 20
   startingAggressionLevel: 0.5
   stalkDistance: 10
   aggressionThreshold: 14
   stalkActionRange: 12
-  screamHearingRange: 13
-  peekRange: 20
-  hideRange: 20
+  screamHearingRange: 20
+  peekRange: 25
+  hideRange: 15
   hideCost: 12
   hideCostRange: {x: 12, y: 40}
   peekCost: 5
