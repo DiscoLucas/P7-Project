@@ -1,5 +1,6 @@
     public enum NewLibrarySounds {
-        TEST
+        TEST,
+        THEALIEN
     }
     public enum NewLibraryMusic {
     }
