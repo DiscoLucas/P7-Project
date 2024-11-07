@@ -1,5 +1,5 @@
+using JSAM;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityHFSM;
@@ -14,6 +14,8 @@ public class DumbBot : MonoBehaviour
     private float oldDistance;
     bool isCoroutineRunning = false;
     public bool enableDistanceLogger;
+    float stateTimer;
+    [SerializeField] float maxStateDuration = 60f;
 
     [Header("Speed Settings")]
     public float walkSpeed = 2f;
@@ -34,36 +36,53 @@ public class DumbBot : MonoBehaviour
     Vector3 playerPosition;
     public Transform home;
     float distanceToPlayer => Vector3.Distance(playerPosition, transform.position);
+    public SoundFileObject sound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindWithTag("Player");
+
+        if (player == null || agent == null || home == null)
+        {
+            Debug.LogError("DumbBot is missing required references.");
+            enabled = false;
+            return;
+        }
+
         playerPosition = player.transform.position;
 
         fsm = new StateMachine();
-        
+
         // configure states
         fsm.AddState("Stalk",
             onLogic: state => agent.SetDestination(playerPosition),
             onEnter: state => agent.speed = walkSpeed);
 
         fsm.AddState("Chase",
-            onLogic: state => agent.SetDestination(playerPosition),
-            onEnter: state => agent.speed = chaseSpeed);
+            onLogic: state =>
+            {
+                agent.SetDestination(playerPosition);
+            },
+            onEnter: state => {
+                agent.speed = chaseSpeed;
+                AudioManager.PlaySound(sound, transform.position);
+            });
+
 
         fsm.AddState("Idle",
             onEnter: state => {
                 agent.isStopped = true;
+                AudioManager.StopSound(sound);
                 StartCoroutine(TriggerAfterDelay("StartStalking", RandomIdleTime()));
-                },
+            },
             onExit: state => agent.isStopped = false
             );
 
         fsm.AddState("RunAway",
-            onEnter: state => 
-            { 
+            onEnter: state =>
+            {
                 var point = GetRandomNavMeshPoint();
                 Debug.Log("Running away to: " + point);
                 agent.SetDestination(point);
@@ -73,14 +92,11 @@ public class DumbBot : MonoBehaviour
             {
                 if (Vector3.Distance(agent.destination, agent.transform.position) <= 2.5f)
                 {
-                    Debug.Log("Reached destination");
                     fsm.Trigger("HidePointReached");
                 }
-                   
-            },
-            onExit: state => Debug.Log("Remaining distance after running: " + agent.remainingDistance)
+            }
             );
-        fsm.AddState("EvaluateState",  
+        fsm.AddState("EvaluateState",
         onEnter: state => {
             newState = ChooseRandomState();
         });
@@ -89,6 +105,12 @@ public class DumbBot : MonoBehaviour
             onEnter: state => Debug.Log("*Teleports behind you* nothing personal kid."));
         fsm.AddState("GoHome",
             onEnter: state => agent.SetDestination(home.position));
+        fsm.AddState("Respawn",
+            onEnter: state =>
+            {
+                agent.Warp(home.position);
+                agent.ResetPath();
+            });
 
         fsm.SetStartState("Stalk");
 
@@ -101,13 +123,23 @@ public class DumbBot : MonoBehaviour
         //fsm.AddTransition("RunAway", "Idle", t => !float.IsInfinity(agent.remainingDistance) && agent.remainingDistance < 1f); // stop running
         fsm.AddTriggerTransition("HidePointReached", "RunAway", "Idle");
         fsm.AddTriggerTransition("StartStalking", "Idle", "Stalk");
-        
+        fsm.AddTriggerTransitionFromAny("Stuck", "Respawn", forceInstantly: true);
+        fsm.AddTransition("Respawn", "Stalk");
+        fsm.StateChanged += state => stateTimer = 0;
+
         fsm.Init();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        stateTimer += Time.deltaTime;
+        if (stateTimer >= maxStateDuration)
+        {
+            Debug.LogError("Bot state has been active for too long, forcing a transition to respawn.");
+            fsm.Trigger("Stuck");
+            stateTimer = 0;
+        }
         fsm.OnLogic();
         StateBase<string> state = fsm.ActiveState;
         string currentState = fsm.ActiveStateName;
@@ -119,23 +151,8 @@ public class DumbBot : MonoBehaviour
             {
                 fsm.Trigger("PlayerVisible");
             }
-        /*
-        if (currentState == "RunAway")
-        {
-            if (agent.remainingDistance < 1f)
-            {
-                if (!float.IsInfinity(agent.remainingDistance))
-                {
-                    // check if corutine is already running
-                    if (!isCoroutineRunning) StartCoroutine(TriggerAfterDelay("HidePointReached", 1f));
-                }
-            }
-        }
-        */
         
         if (enableDistanceLogger) DistanceDebugger(agent.remainingDistance);
-
-
 
         UpdateStateText(currentState);
 
@@ -217,10 +234,9 @@ public class DumbBot : MonoBehaviour
                         
                         randomPoint = hit.position;
                         validPointFound = true;
-                        Debug.Log("Found a valid point: " + randomPoint);
+                        //Debug.Log("Found a valid point: " + randomPoint);
                         break;
                     }
-                    
                 }
             }
 
@@ -240,11 +256,11 @@ public class DumbBot : MonoBehaviour
     }
     private IEnumerator TriggerAfterDelay(string triggerName, float delay)
     {
+        if (isCoroutineRunning) yield break;
         isCoroutineRunning = true;
         //Debug.Log("Waiting for " + delay + " seconds before triggering " + triggerName);
         yield return new WaitForSeconds(delay);
         fsm.Trigger(triggerName); // Trigger the transition after the delay
-        Debug.Log("triggered " + triggerName);
         isCoroutineRunning = false;
     }
 

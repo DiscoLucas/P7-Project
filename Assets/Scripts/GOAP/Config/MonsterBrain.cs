@@ -20,6 +20,7 @@ namespace Assets.Scripts.GOAP.Behaviors
         public DependencyInjector dependencyInjector;
         public BotState currentStat;
         public AgentSpeedBehavior speedBehavior;
+        public AgentSoundBehaviors soundBehavior;
 
         private bool playerSpotted = false; // Flag to track if the player has been spotted
 
@@ -144,16 +145,17 @@ namespace Assets.Scripts.GOAP.Behaviors
                 if (state == BotState.CHASE)
                 {
                     agentBehaviour.SetGoal<HurtPlayerGoal>(true);
+                    soundBehavior.playChaseTheme();
                 }
                 else if (state == BotState.STALK)
                 {
                     agentBehaviour.SetGoal<StalkGoal>(true);
+
                 }
                 else {
                     agentBehaviour.SetGoal<WanderGoalM>(false);
+                    soundBehavior.stopChaseTheme();
                 }
-
-                Debug.Log("Current Goal Change: " + state.ToString());
                 currentStat = state;
                 speedBehavior.changeSpeed(currentStat, monsterAggression);
                 agentBehaviour.Run();

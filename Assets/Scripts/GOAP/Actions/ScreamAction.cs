@@ -20,11 +20,12 @@ namespace Assets.Scripts.GOAP.Actions
         public override void Start(IMonoAgent agent, CommonDataM data)
         {
             agent.GetComponent<AgentMoveBehavior>().stopMoving();
+            agent.GetComponent<AgentSoundBehaviors>().playerScream();
         }
 
         public override ActionRunState Perform(IMonoAgent agent, CommonDataM data, ActionContext context)
         {
-            Debug.Log("Screaming");
+
             return ActionRunState.Stop;
         }
 
@@ -39,12 +40,14 @@ namespace Assets.Scripts.GOAP.Actions
         {
             PlayerSensor playerSensor = references.GetCachedComponentInChildren<PlayerSensor>();
             PlayerAwarenessSensor awarenessSensor = references.GetCachedComponentInChildren<PlayerAwarenessSensor>();
+            float timeCost = agent.GetComponent<AgentSoundBehaviors>().getLastScreamTimeCost();
             float distanceToPlayer = Vector3.Distance(agent.transform.position, playerSensor.playersRealPostion.position);
             float playerAwareness = awarenessSensor.playerAwarenessLevel;
             float awarenessMidpoint = (config.stalkMaxPlayerAwareness + config.stalkMinPlayerAwareness) / 2f;
             float awarenessMultiplier = playerAwareness < awarenessMidpoint ? config.lowAwarenessCostMultiplier : config.highAwarenessCostMultiplier;
             float distanceFactor = Mathf.InverseLerp(config.screamActionCostRange.x, config.screamActionCostRange.y, distanceToPlayer);
-            return Mathf.Lerp(config.screamActionCostRange.x, config.screamActionCostRange.y, distanceFactor) * awarenessMultiplier;
+            float lerp = distanceFactor / 2 + timeCost / 2;
+            return Mathf.Lerp(config.screamActionCostRange.x, config.screamActionCostRange.y, lerp) * awarenessMultiplier;
         }
     }
 
@@ -55,7 +58,7 @@ namespace Assets.Scripts.GOAP.Actions
         ITarget IActionData.Target
         {
             get => Target;
-            set => Target = value as TransformTarget; // Ensure the target is set correctly
+            set => Target = value as TransformTarget;
         }
     }
 }

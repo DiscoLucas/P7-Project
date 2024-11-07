@@ -72,10 +72,6 @@ namespace Assets.Scripts.GOAP.Actions
             {
                 Debug.LogError("Data target is null in Start method.");
             }
-            else
-            {
-                Debug.Log("Target acquired: " + data.Target.Position);
-            }
 
             data.timer = 10;
         }
