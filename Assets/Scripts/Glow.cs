@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Glow : MonoBehaviour
 {
-    public Material glowMat;
+    public Material[] glowMats;
     public float glowAmount;
     public float glowRate;
     float glow;
@@ -11,6 +11,10 @@ public class Glow : MonoBehaviour
     void Update()
     {
         glow+= glowRate*Time.deltaTime;
-        glowMat.SetFloat("_GlowAmount", Mathf.Sin(glow)*glowAmount);
+        foreach(var mat in glowMats)
+        {
+            mat.SetFloat("_GlowAmount", Mathf.Sin(glow)*glowAmount);
+        }
+        
     }
 }
