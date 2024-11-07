@@ -1,51 +1,29 @@
 using UnityEngine;
-using System.Collections.Generic;
-using NUnit.Framework;
-using System.Collections;
+[RequireComponent(typeof(Rigidbody))]
 
 public class PlatformFall : MonoBehaviour
 {
-    List<Rigidbody> rb;
+    Rigidbody rb;
     public Collider platformCollider;
     public float fallDelay = 3f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = new List<Rigidbody>();
-
-        //rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         platformCollider = GetComponent<Collider>();
-        
-
-        // get rigidbody from all of the children
-        GetComponentsInChildren<Rigidbody>(true, rb);
-
-        foreach (var r in rb)
-        {
-            r.useGravity = false;
-        }
+        rb.useGravity = false;
     }
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.CompareTag("Player"))
-        {
-            foreach (var r in rb)
-            {
-                CollapsePlatform(r, fallDelay);
-
-            }
-        }
-            
+        if (collider.CompareTag("Player")) Invoke(nameof(CollapsePlatform), fallDelay);
     }
 
-    IEnumerable CollapsePlatform(Rigidbody rb, float delayTime)
+    void CollapsePlatform()
     {
-        //gameObject.transform.localScale = new Vector3(0.99f, 0.99f, 0.99f);
+        gameObject.transform.localScale = new Vector3(0.99f, 0.99f, 0.99f);
         rb.useGravity = true;
         // TODO: play sound effect
-
-        return null;
     }
 }

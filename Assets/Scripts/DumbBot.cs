@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityHFSM;
-using JSAM;
 
 public class DumbBot : MonoBehaviour
 {
@@ -35,7 +34,6 @@ public class DumbBot : MonoBehaviour
     Vector3 playerPosition;
     public Transform home;
     float distanceToPlayer => Vector3.Distance(playerPosition, transform.position);
-    public SoundFileObject sound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -52,20 +50,12 @@ public class DumbBot : MonoBehaviour
             onEnter: state => agent.speed = walkSpeed);
 
         fsm.AddState("Chase",
-            onLogic: state =>
-            {
-                agent.SetDestination(playerPosition);
-            },
-            onEnter: state => { 
-                agent.speed = chaseSpeed;
-                AudioManager.PlaySound(sound, transform.position);
-            });
-
+            onLogic: state => agent.SetDestination(playerPosition),
+            onEnter: state => agent.speed = chaseSpeed);
 
         fsm.AddState("Idle",
             onEnter: state => {
                 agent.isStopped = true;
-                AudioManager.StopSound(sound);
                 StartCoroutine(TriggerAfterDelay("StartStalking", RandomIdleTime()));
                 },
             onExit: state => agent.isStopped = false
@@ -83,9 +73,12 @@ public class DumbBot : MonoBehaviour
             {
                 if (Vector3.Distance(agent.destination, agent.transform.position) <= 2.5f)
                 {
+                    Debug.Log("Reached destination");
                     fsm.Trigger("HidePointReached");
                 }
-            }
+                   
+            },
+            onExit: state => Debug.Log("Remaining distance after running: " + agent.remainingDistance)
             );
         fsm.AddState("EvaluateState",  
         onEnter: state => {
@@ -224,7 +217,7 @@ public class DumbBot : MonoBehaviour
                         
                         randomPoint = hit.position;
                         validPointFound = true;
-                        //Debug.Log("Found a valid point: " + randomPoint);
+                        Debug.Log("Found a valid point: " + randomPoint);
                         break;
                     }
                     
