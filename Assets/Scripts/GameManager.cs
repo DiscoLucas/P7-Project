@@ -6,12 +6,15 @@ public class GameManager : SingletonPersistent<GameManager>
     public static event Action<GameState> OnBeforeStateChanged;
     public static event Action<GameState> OnAfterStateChanged;
 
+    Die die;
+
     public GameState State { get; private set; }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         ChangeState(GameState.Starting);
+        die = Die.Instance;
     }
 
     public void ChangeState(GameState newState)
@@ -55,7 +58,7 @@ public class GameManager : SingletonPersistent<GameManager>
 
     private void HandleGameOver()
     {
-        throw new NotImplementedException();
+        die.KillPlayer();
     }
 
     private void HandlePause()

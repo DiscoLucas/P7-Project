@@ -8,6 +8,8 @@ public class DumbBot : MonoBehaviour
 {
     StateMachine fsm;
     public NavMeshAgent agent;
+    GameManager gameManager;
+    Die die;
 
     [Header("Debugging")]
     public string stateDisplayText = "";
@@ -16,6 +18,7 @@ public class DumbBot : MonoBehaviour
     public bool enableDistanceLogger;
     float stateTimer;
     [SerializeField] float maxStateDuration = 60f;
+    public bool alwaysChase;
 
     [Header("Speed Settings")]
     public float walkSpeed = 2f;
@@ -24,11 +27,14 @@ public class DumbBot : MonoBehaviour
 
     [Header("Timer Settings")]
     public float chaseTime = 30f;
+    public float timeToKill = 1f;
     private float RandomIdleTime() { return Random.Range(1f, 5f);}
 
     public float attackRange = 1f;
     public float minDistanceToPlayer = 20f;
     public float searchRadius = 100f;
+    public float insanityRange = 5f;
+    public float targetDistanceThreshold = 2.5f;
 
     public string newState;
 
@@ -43,6 +49,9 @@ public class DumbBot : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindWithTag("Player");
+        die = Die.Instance;
+        gameManager = GameManager.Instance;
+
 
         if (player == null || agent == null || home == null)
         {
@@ -90,7 +99,7 @@ public class DumbBot : MonoBehaviour
             },
             onLogic: state =>
             {
-                if (Vector3.Distance(agent.destination, agent.transform.position) <= 2.5f)
+                if (Vector3.Distance(agent.destination, agent.transform.position) <= targetDistanceThreshold)
                 {
                     fsm.Trigger("HidePointReached");
                 }
@@ -102,7 +111,21 @@ public class DumbBot : MonoBehaviour
         });
         fsm.AddState("PeekPlayer");
         fsm.AddState("Attack",
-            onEnter: state => Debug.Log("*Teleports behind you* nothing personal kid."));
+            onLogic: state => 
+            { 
+                // if player is in range for 1 second, kill player
+                timeToKill -= Time.deltaTime;
+                if (timeToKill <= 0)
+                {
+                    fsm.Trigger("KillPlayer");
+                }
+            },
+            onExit: state => timeToKill = 1f
+            );
+
+        fsm.AddState("KillPlayer",
+            onEnter: state => gameManager.ChangeState(GameState.GameOver));
+
         fsm.AddState("GoHome",
             onEnter: state => agent.SetDestination(home.position));
         fsm.AddState("Respawn",
@@ -118,7 +141,8 @@ public class DumbBot : MonoBehaviour
         fsm.AddTriggerTransition("PlayerVisible", "Stalk", "EvaluateState"); // TODO: fix EvaluateState. It works sometimes, but its REALLY fucky.
         fsm.AddTransition("EvaluateState", "RunAway", t => newState == "RunAway");
         fsm.AddTransition("EvaluateState", "Chase", t => newState == "Chase");
-        fsm.AddTransition("Chase", "Attack", t => distanceToPlayer <= attackRange); // attack player
+        fsm.AddTwoWayTransition("Chase", "Attack", t => distanceToPlayer <= attackRange); // attack player
+        fsm.AddTriggerTransition("KillPlayer", "Attack", "KillPlayer");
         fsm.AddTransition(new TransitionAfter("Chase", "RunAway", chaseTime)); // run away for a certain amount of time 
         //fsm.AddTransition("RunAway", "Idle", t => !float.IsInfinity(agent.remainingDistance) && agent.remainingDistance < 1f); // stop running
         fsm.AddTriggerTransition("HidePointReached", "RunAway", "Idle");
@@ -140,6 +164,7 @@ public class DumbBot : MonoBehaviour
             fsm.Trigger("Stuck");
             stateTimer = 0;
         }
+
         fsm.OnLogic();
         StateBase<string> state = fsm.ActiveState;
         string currentState = fsm.ActiveStateName;
@@ -155,7 +180,7 @@ public class DumbBot : MonoBehaviour
         if (enableDistanceLogger) DistanceDebugger(agent.remainingDistance);
 
         UpdateStateText(currentState);
-
+        //die.SanityEffect(distanceToPlayer);
     }
 
     void DistanceDebugger(float newDistance)
@@ -183,6 +208,8 @@ public class DumbBot : MonoBehaviour
     }
     string ChooseRandomState()
     {
+        if (alwaysChase) return "Chase";
+
         int coinFlip = Random.Range(0, 2);
         //Debug.Log("coinflip resulted in: " + coinFlip);
         if (coinFlip == 0) return "Chase";
@@ -191,6 +218,7 @@ public class DumbBot : MonoBehaviour
 
     bool IsPlayerVisible()
     {
+        // TODO: add a check for continous visibility for more than just a frame.
         RaycastHit hit;
         Vector3 direction = player.transform.position - transform.position;
         if (Physics.Raycast(transform.position, direction, out hit))
