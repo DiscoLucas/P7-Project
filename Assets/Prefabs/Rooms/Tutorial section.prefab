@@ -4909,6 +4909,7 @@ MonoBehaviour:
         m_CallState: 2
   KeyHolder: {fileID: 0}
   Key: {fileID: 5290223658399928978}
+  MyAnimation: {fileID: 0}
 --- !u!1 &4903105518318699243
 GameObject:
   m_ObjectHideFlags: 0
@@ -11811,9 +11812,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1829152819833206, guid: defb79e68c8d4cf40bc2d3546e43d038, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2190485102019011916}
-    - targetCorrespondingSourceObject: {fileID: 1829152819833206, guid: defb79e68c8d4cf40bc2d3546e43d038, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8676308047768357527}
   m_SourcePrefab: {fileID: 100100000, guid: defb79e68c8d4cf40bc2d3546e43d038, type: 3}
 --- !u!4 &5288273514693630876 stripped
 Transform:
@@ -11854,6 +11852,7 @@ MonoBehaviour:
         m_CallState: 2
   KeyHolder: {fileID: 0}
   Key: {fileID: 0}
+  MyAnimation: {fileID: 0}
 --- !u!114 &2716984369799953211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11915,21 +11914,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &8676308047768357527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5290223658399928978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04026509aa304e849acab75126fb2bf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  glowMat: {fileID: 2100000, guid: b5e4a7100aee81a46bd80907b199e123, type: 2}
-  glowAmount: 0.03
-  glowRate: 3
 --- !u!1001 &5434793421871645086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13755,6 +13739,7 @@ MonoBehaviour:
         m_CallState: 2
   KeyHolder: {fileID: 0}
   Key: {fileID: 0}
+  MyAnimation: {fileID: 0}
 --- !u!4 &6498042818711071669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4498633682106292, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
