@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundCategories:
   - TEST
+  - Ambiance
   musicCategories:
   - 
   Sounds:
   - {fileID: 11400000, guid: 45db174fb7df3a343861bb3b15b23cf3, type: 2}
   - {fileID: 11400000, guid: e8c5e228781d9a24db0f7423a0364499, type: 2}
   - {fileID: 11400000, guid: 38dff4f5c6972424e84052f00e529904, type: 2}
+  - {fileID: 11400000, guid: 11c1593ffaaea5a40a9315d51a42c5a2, type: 2}
+  - {fileID: 11400000, guid: a15cc06a8afa47f4db7bab0618ef166a, type: 2}
+  - {fileID: 11400000, guid: ffe67b3f5197a824ba4c98677cf076d7, type: 2}
   Music: []
   useCustomNames: 0
   generatedName: NewLibrary
@@ -36,7 +40,13 @@ MonoBehaviour:
     files:
     - {fileID: 11400000, guid: 45db174fb7df3a343861bb3b15b23cf3, type: 2}
     - {fileID: 11400000, guid: e8c5e228781d9a24db0f7423a0364499, type: 2}
+    foldout: 1
+  - name: Ambiance
+    files:
     - {fileID: 11400000, guid: 38dff4f5c6972424e84052f00e529904, type: 2}
+    - {fileID: 11400000, guid: 11c1593ffaaea5a40a9315d51a42c5a2, type: 2}
+    - {fileID: 11400000, guid: a15cc06a8afa47f4db7bab0618ef166a, type: 2}
+    - {fileID: 11400000, guid: ffe67b3f5197a824ba4c98677cf076d7, type: 2}
     foldout: 1
   musicCategoriesToList:
   - name: 
