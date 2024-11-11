@@ -1,6 +1,10 @@
     public enum NewLibrarySounds {
         TEST,
-        THEALIEN
+        THEALIEN,
+        WaterDrop,
+        ElecticalBuzz,
+        LeverAct,
+        Generator
     }
     public enum NewLibraryMusic {
     }

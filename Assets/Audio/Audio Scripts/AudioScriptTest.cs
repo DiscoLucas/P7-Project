@@ -20,6 +20,7 @@ public class AudioScriptTest : MonoBehaviour
         {
             AudioManager.PlaySound(test, pos.position);
             Debug.Log("This sound " + test + " is playing");
+
         }
     }
 }
