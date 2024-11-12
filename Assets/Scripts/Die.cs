@@ -92,21 +92,38 @@ public class Die : Singleton<Die>
     /// </summary>
     /// <param name="playerDistance">Distance from the bot to the player.</param>
     /// <param name="insanityRange">How close the player needs to be for the effect to start.</param>
-    public void SanityEffect(float playerDistance, float insanityRange = 5f)
+    public void SanityEffect(float playerDistance, float insanityRange = 10f)
     {
         if (playerDistance < insanityRange)
         {
+            float t = 1 - (playerDistance / insanityRange); // Closer distance increases effect intensity
+
             if (volume.profile.TryGet(out Vignette vignette))
-                vignette.intensity.value = Mathf.Lerp(vignetteStart, vignetteEnd, playerDistance / insanityRange);
-            
+                vignette.intensity.value = Mathf.Lerp(vignetteStart, vignetteEnd, t);
+
             if (volume.profile.TryGet(out ColorAdjustments colorAdjustments))
-                colorAdjustments.saturation.value = Mathf.Lerp(satturationStart, saturationEnd, playerDistance / insanityRange);
-            
+                colorAdjustments.saturation.value = Mathf.Lerp(satturationStart, saturationEnd, t);
+
             if (volume.profile.TryGet(out ChromaticAberration chromaticAberration))
-                chromaticAberration.intensity.value = Mathf.Lerp(choromaStart, choromaEnd, playerDistance / insanityRange);
-            
+                chromaticAberration.intensity.value = Mathf.Lerp(choromaStart, choromaEnd, t);
+
             if (volume.profile.TryGet(out FilmGrain filmGrain))
-                filmGrain.intensity.value = Mathf.Lerp(filmGrainStart, filmGrainEnd, playerDistance / insanityRange);
+                filmGrain.intensity.value = Mathf.Lerp(filmGrainStart, filmGrainEnd, t);
+        }
+        else
+        {
+            // Reset effects to starting values when player is out of range
+            if (volume.profile.TryGet(out Vignette vignette))
+                vignette.intensity.value = vignetteStart;
+
+            if (volume.profile.TryGet(out ColorAdjustments colorAdjustments))
+                colorAdjustments.saturation.value = satturationStart;
+
+            if (volume.profile.TryGet(out ChromaticAberration chromaticAberration))
+                chromaticAberration.intensity.value = choromaStart;
+
+            if (volume.profile.TryGet(out FilmGrain filmGrain))
+                filmGrain.intensity.value = filmGrainStart;
         }
     }
 

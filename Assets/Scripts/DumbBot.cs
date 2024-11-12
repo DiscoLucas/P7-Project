@@ -55,7 +55,12 @@ public class DumbBot : MonoBehaviour
 
         if (player == null || agent == null || home == null)
         {
-            Debug.LogError("DumbBot is missing required references.");
+            string missingReferences = "";
+            if (player == null) missingReferences += "player, ";
+            if (agent == null) missingReferences += "agent, ";
+            if (home == null) missingReferences += "home, ";
+
+            Debug.LogError("DumbBot is missing required references: " + missingReferences.TrimEnd(',', ' '));
             enabled = false;
             return;
         }
@@ -180,7 +185,8 @@ public class DumbBot : MonoBehaviour
         if (enableDistanceLogger) DistanceDebugger(agent.remainingDistance);
 
         UpdateStateText(currentState);
-        //die.SanityEffect(distanceToPlayer);
+        if (currentState != "KillPlayer")
+            die.SanityEffect(distanceToPlayer);
     }
 
     void DistanceDebugger(float newDistance)
