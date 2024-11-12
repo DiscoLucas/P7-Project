@@ -17,15 +17,15 @@ MonoBehaviour:
   files:
   - {fileID: 8300000, guid: 88948898fb496f74480a8ede605acd12, type: 3}
   loopStart: 0
-  loopEnd: 0
+  loopEnd: 31.006666
   bpm: 120
-  relativeVolume: 1
+  relativeVolume: 0.005
   spatialize: 1
-  maxDistance: 0
-  priority: 128
+  maxDistance: 20
+  priority: 192
   startingPitch: 1
   pitchShift: 0.05
-  loopMode: 0
+  loopMode: 1
   delay: 0
   ignoreTimeScale: 0
   maxPlayingInstances: 10

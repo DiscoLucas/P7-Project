@@ -21,10 +21,7 @@ public class RandomWaterDropSFX : MonoBehaviour
         if (Time.time >= nextPlayTime)
         {
             AudioManager.PlaySound(waterDropSound, transform.position);
-
-            // Schedule the next sound play after a new random interval
             nextPlayTime = Time.time + Random.Range(minRandomTime, maxRandomTime);
-
             //Debug.Log("Next Play Time: " + nextPlayTime);
         }
     }

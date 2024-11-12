@@ -26,7 +26,7 @@ MonoBehaviour:
   loopStart: 0
   loopEnd: 0
   bpm: 120
-  relativeVolume: 0.35
+  relativeVolume: 0.02
   spatialize: 0
   maxDistance: 0
   priority: 128
@@ -57,11 +57,11 @@ MonoBehaviour:
     enabled: 0
     distortionLevel: 0
   echoFilter:
-    enabled: 0
-    delay: 0
-    decayRatio: 0
-    wetMix: 0
-    dryMix: 0
+    enabled: 1
+    delay: 500
+    decayRatio: 0.8
+    wetMix: 1
+    dryMix: 0.2
   lowPassFilter:
     enabled: 0
     cutoffFrequency: 0
@@ -71,21 +71,21 @@ MonoBehaviour:
     cutoffFrequency: 0
     highpassResonanceQ: 0
   reverbFilter:
-    enabled: 0
-    reverbPreset: 0
+    enabled: 1
+    reverbPreset: 22
     dryLevel: 0
     room: 0
     roomHF: 0
     roomLF: 0
-    decayTime: 0
-    decayHFRatio: 0
-    reflectionsLevel: 0
+    decayTime: 1
+    decayHFRatio: 0.5
+    reflectionsLevel: -10000
     reflectionsDelay: 0
     reverbLevel: 0
-    reverbDelay: 0
-    hFReference: 0
-    lFReference: 0
-    diffusion: 0
-    density: 0
+    reverbDelay: 0.04
+    hFReference: 5000
+    lFReference: 250
+    diffusion: 100
+    density: 100
   neverRepeat: 0
   lastClipIndex: -1
