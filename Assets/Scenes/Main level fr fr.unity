@@ -6665,7 +6665,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1249974685}
   - component: {fileID: 1249974686}
-  - component: {fileID: 1249974687}
   m_Layer: 0
   m_Name: Lever Activation
   m_TagString: Untagged
@@ -6706,20 +6705,6 @@ MonoBehaviour:
   onEnable: 0
   onDisable: 2
   onDestroy: 0
---- !u!114 &1249974687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249974684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d6878c1c241e02419b3e7e8c5849665, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leverAct: {fileID: 11400000, guid: a15cc06a8afa47f4db7bab0618ef166a, type: 2}
-  LeverPosition: {fileID: 1917949262}
 --- !u!114 &1287723634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10546,6 +10531,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1830569057672312, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1917949272}
+    - targetCorrespondingSourceObject: {fileID: 1830569057672312, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1917949276}
   m_SourcePrefab: {fileID: 100100000, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
 --- !u!4 &1917949262 stripped
 Transform:
@@ -10597,10 +10585,10 @@ MonoBehaviour:
           m_StringArgument: Down
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1493120771}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
+      - m_Target: {fileID: 1917949276}
+        m_TargetAssemblyTypeName: LeverSoundActivation, Assembly-CSharp
+        m_MethodName: ActivateLeverSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10609,10 +10597,10 @@ MonoBehaviour:
           m_StringArgument: Close
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1249974687}
-        m_TargetAssemblyTypeName: LeverSoundActivation, Assembly-CSharp
-        m_MethodName: ActivateLeverSound
-        m_Mode: 1
+      - m_Target: {fileID: 1493120771}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10646,6 +10634,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Up
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1917949276}
+        m_TargetAssemblyTypeName: LeverSoundActivation, Assembly-CSharp
+        m_MethodName: ActivateLeverSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Open
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1493120771}
@@ -10684,6 +10684,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1917949276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917949263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6878c1c241e02419b3e7e8c5849665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leverAct: {fileID: 11400000, guid: a15cc06a8afa47f4db7bab0618ef166a, type: 2}
+  LeverPosition: {fileID: 1917949262}
 --- !u!114 &1930598865
 MonoBehaviour:
   m_ObjectHideFlags: 0
