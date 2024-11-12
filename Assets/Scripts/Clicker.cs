@@ -4,14 +4,13 @@ using UnityEngine.Events;
 public class Clicker : MonoBehaviour
 {
     public bool switched;
-    [SerializeField] UnityEvent Event;
-    [SerializeField] UnityEvent EventOpp;
+    [SerializeField] UnityEvent Ingress;
+    [SerializeField] UnityEvent Egress; //This would be in a lever inheritance
     [Space]
     [SerializeField] GameObject KeyHolder;
     [SerializeField] GameObject Key;
-    [SerializeField] Animation MyAnimation;
 
-    public void SwitchState(){
+    public void SwitchState(){  //This would be in a lever inheritance
         if(switched){
             switched=false;
         }else{
@@ -20,37 +19,23 @@ public class Clicker : MonoBehaviour
     }
 
     public void sexualStyle() { //This is like a button, that is pressed once and then Stuff A happens. We need it to become like a lever, where you switch it and Stuff A happens. But if you switch it again the opposite of Stuff A happens.
-        if (Key != null)
+        if (Key != null) //Do the thing if player has key
         {
             if (Key.transform.parent == KeyHolder.transform)
             {
-                if(switched){
-                Event.Invoke();
+                if(switched){  //This would be in a lever inheritance, but will stay in a simpler form originally
+                Ingress.Invoke();
                 }else{
-                EventOpp.Invoke();
+                Egress.Invoke();
                 }
-
-                if (MyAnimation != null)
-                {
-                    MyAnimation.Play();
-                }
-            }
-            else
-            {
-                //display some error message
             }
         }
-        else 
+        else //Do the thing regardlessly, because no key exists
         {
-            if(switched){
-            Event.Invoke();
+            if(switched){  //This would be in a lever inheritance, but will stay in a simpler form originally
+            Ingress.Invoke();
             }else{
-            EventOpp.Invoke();
-            }
-
-            if (MyAnimation != null)
-            {
-                MyAnimation.Play();
+            Egress.Invoke();
             }
         }
     }
