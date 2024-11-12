@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class HeatmapVisualizer : MonoBehaviour
 {
-    public PlayerPositionMap map;
+    public SessionLog map;
+    public bool isPlayer = true;
     public float minLineWidth = 0.1f; 
     public float maxLineWidth = 0.5f; 
 
@@ -27,8 +28,12 @@ public class HeatmapVisualizer : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = 0;
         positionVisitCount.Clear();
-
-        foreach (Vector3 position in map.allLoggedPositions)
+        List<Vector3> postions;
+        if (isPlayer)
+            postions = map.allPlayerLoggedPositions;
+        else
+            postions = map.allMonsterLoggedPositions;
+        foreach (Vector3 position in postions)
         {
             Vector3 roundedPosition = new Vector3(
                 Mathf.Round(position.x / roundingSensitivity) * roundingSensitivity,

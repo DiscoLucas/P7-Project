@@ -15,7 +15,7 @@ namespace Assets.Scripts.GOAP.Sensors
         public Transform playersRealPostion;
         public event PlayerEnterEvent OnPlayerEnter;
         public event PlayerExitEvent OnPlayerExit;
-        public PlayerPositionMapTracker playerPositionMapTracker;
+        public SessionLogTracker sessionLogTracker;
         public MonsterBrain brain;
         [SerializeField]
         float playerSmellFreshness = float.MaxValue, distanceToSmellPoint = 0;
@@ -29,6 +29,9 @@ namespace Assets.Scripts.GOAP.Sensors
 
         private void FixedUpdate()
         {
+            if (sessionLogTracker == null) {
+                getSessionLogTrakor();
+            }
             if (playerHaveBeenSmelled) {
                 playerSmellFreshness += 1;
 
@@ -43,14 +46,17 @@ namespace Assets.Scripts.GOAP.Sensors
         public void updatePlayerPos() {
             playerLastPos.position = new Vector3(playersRealPostion.position.x, playerLastPos.position.y, playersRealPostion.position.z);
         }
-
+        void getSessionLogTrakor() {
+            sessionLogTracker = SessionLogTracker.Instance;
+            sessionLogTracker.playerPostionsSummeries.AddListener(playerPostionHaveBeenSummeries);
+        }
         private void Start()
         {
             playerLastPos.parent = null;
             smellTargetLastPos.parent = null;
             hidespot.parent = null;
             peakSpot.parent = null;
-            playerPositionMapTracker.playerPostionsSummeries.AddListener(playerPostionHaveBeenSummeries);
+            getSessionLogTrakor();
         }
 
         public void playerPostionHaveBeenSummeries(Vector3 pos, float dist) { 

@@ -58,23 +58,32 @@ public class MainMenuLogic : MonoBehaviour
                 loadningSlider.value = progressProcent;
                 log = $"{loadninglogText}{progressProcent}% ({Mathf.FloorToInt(elapsedTime)}s)";
                 loadningScreenLog.SetText(log);
+                yield return null;
             }
             else {
+                float realProgress = Mathf.Clamp01(ao.progress / 0.9f);
+                int progressProcent = (int)(realProgress * 100);
+                loadningSlider.value = progressProcent;
                 log = lastlog;
                 for (int i = 0; i < loadningDotNumber; i++)
                 {
                     log += ".";
+                    
                 }
+                yield return null;
+
                 loadningScreenLog.SetText(lastlog);
                 loadningDotNumber++;
                 if (loadningDotNumber > maxLoadningDots)
                 {
                     loadningDotNumber = 1;
                 }
+                yield return null;
+
                 ao.allowSceneActivation = true;
                 yield return null;
             }
-            yield return null;
+
         }
     }
 
