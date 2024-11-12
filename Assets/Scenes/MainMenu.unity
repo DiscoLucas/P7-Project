@@ -1510,8 +1510,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 227.70999, y: -311.69144}
-  m_SizeDelta: {x: 433.41998, y: 65.74327}
+  m_AnchoredPosition: {x: 173.5325, y: -305.47525}
+  m_SizeDelta: {x: 325.065, y: 69.71293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &33535020
 MonoBehaviour:
@@ -3388,8 +3388,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 110.85749, y: -32.871635}
-  m_SizeDelta: {x: 221.71498, y: 65.74327}
+  m_AnchoredPosition: {x: 83.768745, y: -34.856464}
+  m_SizeDelta: {x: 167.53749, y: 69.71293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &80666471
 MonoBehaviour:
@@ -29369,9 +29369,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1824482305}
-        m_TargetAssemblyTypeName: MainMenuLogic, Assembly-CSharp
-        m_MethodName: createNewDataloggerCollection
+      - m_Target: {fileID: 1824482306}
+        m_TargetAssemblyTypeName: LoggingMenuLogic, Assembly-CSharp
+        m_MethodName: createNewSessionLog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49431,8 +49431,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 327.56747, y: -32.871635}
-  m_SizeDelta: {x: 211.70499, y: 65.74327}
+  m_AnchoredPosition: {x: 246.30124, y: -34.856464}
+  m_SizeDelta: {x: 157.5275, y: 69.71293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1253975916
 MonoBehaviour:
@@ -49478,9 +49478,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1824482305}
-        m_TargetAssemblyTypeName: MainMenuLogic, Assembly-CSharp
-        m_MethodName: updateDataloggerName
+      - m_Target: {fileID: 1824482306}
+        m_TargetAssemblyTypeName: LoggingMenuLogic, Assembly-CSharp
+        m_MethodName: updateNameSessionName
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -70167,6 +70167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1824482304}
   - component: {fileID: 1824482305}
+  - component: {fileID: 1824482306}
   m_Layer: 0
   m_Name: MenuLogic
   m_TagString: Untagged
@@ -70209,6 +70210,20 @@ MonoBehaviour:
   LoadningScreen: {fileID: 900686909}
   loadninglogText: 'Loading progress: '
   lastlog: Loadning the last stuff
+  maxLoadningDots: 3
+--- !u!114 &1824482306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824482303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6cb740e30855294eb1903e3c17ec0a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameInput: {fileID: 80666471}
 --- !u!1001 &1826333908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78881,6 +78896,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4483411128923662, guid: 7cd3cd0f15a52cc4bbc0f98a92054b49, type: 3}
   m_PrefabInstance: {fileID: 2097955495}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2100328020
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1857958380990510417, guid: 74bccfdfee9796e4194a06b3ea6a200a, type: 3}
+      propertyPath: m_Name
+      value: SessionLogAnalytics
+      objectReference: {fileID: 0}
+    - target: {fileID: 1857958380990510417, guid: 74bccfdfee9796e4194a06b3ea6a200a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159441199169961504, guid: 74bccfdfee9796e4194a06b3ea6a200a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159441199169961504, guid: 74bccfdfee9796e4194a06b3ea6a200a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159441199169961504, guid: 74bccfdfee9796e4194a06b3ea6a200a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159441199169961504, guid: 74bccfdfee9796e4194a06b3ea6a200a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159441199169961504, guid: 74bccfdfee9796e4194a06b3ea6a200a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159441199169961504, guid: 74bccfdfee9796e4194a06b3ea6a200a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159441199169961504, guid: 74bccfdfee9796e4194a06b3ea6a200a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159441199169961504, guid: 74bccfdfee9796e4194a06b3ea6a200a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159441199169961504, guid: 74bccfdfee9796e4194a06b3ea6a200a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159441199169961504, guid: 74bccfdfee9796e4194a06b3ea6a200a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 74bccfdfee9796e4194a06b3ea6a200a, type: 3}
 --- !u!1 &2100453224
 GameObject:
   m_ObjectHideFlags: 0
@@ -80501,3 +80577,4 @@ SceneRoots:
   - {fileID: 472739753}
   - {fileID: 803728395}
   - {fileID: 1824482304}
+  - {fileID: 2100328020}

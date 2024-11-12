@@ -38,7 +38,7 @@ namespace Assets.Scripts.GOAP.Behaviors
             agentBehaviour.SetGoal<WanderGoalM>(true);
             config = dependencyInjector.config1;
             p_sensor.Collider.radius = config.AgentSensorRadius;
-            p_sensor.playerPositionMapTracker.playerPostionsSummeries.AddListener(playerPostionSmelled);
+            p_sensor.sessionLogTracker.playerPostionsSummeries.AddListener(playerPostionSmelled);
 
             if (protectionSensor != null)
             {
