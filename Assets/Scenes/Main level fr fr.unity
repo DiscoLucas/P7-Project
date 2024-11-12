@@ -7661,6 +7661,7 @@ Transform:
   - {fileID: 1148058659}
   - {fileID: 786273536}
   - {fileID: 1249974685}
+  - {fileID: 1582829288}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1412626653
@@ -8550,6 +8551,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4556062253823868, guid: 7c05c1522692f9849a4f645ff7f8f90c, type: 3}
   m_PrefabInstance: {fileID: 1568062588}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1582829287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1582829288}
+  - component: {fileID: 1582829289}
+  m_Layer: 0
+  m_Name: Door Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1582829288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582829287}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1410714247}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1582829289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582829287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c6cfe8bfc0d31409a979c41b0c8d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 11400000, guid: 45db174fb7df3a343861bb3b15b23cf3, type: 2}
+  advancedMode: 0
+  onStart: 0
+  onEnable: 0
+  onDisable: 2
+  onDestroy: 0
 --- !u!114 &1588638906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10660,6 +10711,18 @@ MonoBehaviour:
           m_StringArgument: Open
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1917949276}
+        m_TargetAssemblyTypeName: LeverSoundActivation, Assembly-CSharp
+        m_MethodName: ActivateDoorSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Open
+          m_BoolArgument: 0
+        m_CallState: 2
   KeyHolder: {fileID: 1083405651}
   Key: {fileID: 0}
 --- !u!95 &1917949272
@@ -10697,7 +10760,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leverAct: {fileID: 11400000, guid: a15cc06a8afa47f4db7bab0618ef166a, type: 2}
+  doorSound: {fileID: 11400000, guid: f492ea681ccac6647bd6f82dd981c077, type: 2}
   LeverPosition: {fileID: 1917949262}
+  DoorPosition: {fileID: 1493120767}
 --- !u!114 &1930598865
 MonoBehaviour:
   m_ObjectHideFlags: 0

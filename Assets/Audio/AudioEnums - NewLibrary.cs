@@ -4,7 +4,8 @@
         WaterDrop,
         ElecticalBuzz,
         LeverAct,
-        Generator
+        Generator,
+        Door
     }
     public enum NewLibraryMusic {
     }
