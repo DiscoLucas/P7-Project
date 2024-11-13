@@ -5,7 +5,10 @@ public class GameManager : SingletonPersistent<GameManager>
 {
     public static event Action<GameState> OnBeforeStateChanged;
     public static event Action<GameState> OnAfterStateChanged;
-
+    private GameObject playerObject;
+    [Header("Menu")]
+    [SerializeField]
+    private GameHudMenu gameHud;
     Die die;
 
     public GameState State { get; private set; }
@@ -13,6 +16,7 @@ public class GameManager : SingletonPersistent<GameManager>
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerObject = GameObject.FindGameObjectsWithTag("Player")[0];
         ChangeState(GameState.Starting);
         die = Die.Instance;
     }
@@ -37,6 +41,7 @@ public class GameManager : SingletonPersistent<GameManager>
             case GameState.TutorialSection:
                 break;
             case GameState.Game:
+                 HandelCloseingGameMenus();
                 break;
             case GameState.GameOver:
                 HandleGameOver();
@@ -51,19 +56,27 @@ public class GameManager : SingletonPersistent<GameManager>
         Debug.Log($"Game State changed to {newState}");
     }
 
+    private void HandelCloseingGameMenus()
+    {
+        
+        gameHud.closeAllMenus();
+    }
+
     private void HandleWin()
     {
-        throw new NotImplementedException();
+        gameHud.openWinScreen();
     }
 
     private void HandleGameOver()
     {
+        gameHud.openDeathScreen();
         die.KillPlayer();
     }
 
     private void HandlePause()
     {
-        throw new NotImplementedException();
+        gameHud.openPauseMenu();
+        
     }
 
     private void HandleStarting()
