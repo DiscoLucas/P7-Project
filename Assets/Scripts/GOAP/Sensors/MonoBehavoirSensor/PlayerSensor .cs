@@ -56,6 +56,7 @@ namespace Assets.Scripts.GOAP.Sensors
             smellTargetLastPos.parent = null;
             hidespot.parent = null;
             peakSpot.parent = null;
+            playersRealPostion = GameManager.Instance.playerObject.transform;
             getSessionLogTrakor();
         }
 

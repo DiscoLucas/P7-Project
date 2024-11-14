@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 /// <summary>
 /// Basic Singleton.
@@ -26,7 +27,13 @@ public abstract class SingletonPersistent<T> : Singleton<T> where T : MonoBehavi
     {
         if (Instance != null)
         {
-            onDuplicateInstanceDestroyed();
+            try {
+                onDuplicateInstanceDestroyed();
+            }
+            catch (Exception e) { 
+                Debug.LogError(e.ToString());
+            }
+            
             Destroy(gameObject);
         }
         else

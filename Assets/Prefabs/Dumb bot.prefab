@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 5778685915283312767}
   m_Layer: 8
   m_Name: Dumb bot
-  m_TagString: Untagged
+  m_TagString: Monner
   m_Icon: {fileID: 2800000, guid: 8d87031f8fa311249bd89140119d923c, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -45,3 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameHud: {fileID: 0}
+  usingNextBot: 0
+  monsterTag: Monner

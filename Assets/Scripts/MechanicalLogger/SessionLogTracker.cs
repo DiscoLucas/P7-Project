@@ -31,18 +31,19 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
     public bool haveSummedPostion;
     public UnityEvent<Vector3, float> playerPostionsSummeries;
 
-    protected override void onDuplicateInstanceDestroyed()
-    {
-        SessionLogTracker.Instance.readyVaraiblesForSession(player,agentPos);
+    public void setGameVariables() { 
+        player = GameManager.Instance.playerObject;
+        agentPos = GameManager.Instance.monsterObject.transform;
+
+
     }
 
-    public void readyVaraiblesForSession(GameObject player, Transform monster) {
-        this.player = player;
-        agentPos = monster;
-    }
 
     private void Start()
     {
+        if(GameManager.Instance != null)
+            GameManager.Instance.onGameStartEvent.AddListener(setGameVariables);
+
         if(sessionLog != null)
             sessionLog.enableLogging = enableLoggin;
         summariePostionTime *= 50;
@@ -51,6 +52,14 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
         }
 
     }
+    public void onSessionStarted() {
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
+        if (agentPos == null)
+            agentPos = GameObject.FindGameObjectWithTag("Monner").transform;
+
+    }
+
 
     private void FixedUpdate()
     {

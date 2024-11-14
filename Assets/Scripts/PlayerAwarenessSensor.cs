@@ -40,8 +40,8 @@ public class PlayerAwarenessSensor : MonoBehaviour
 
     void Start()
     {
-        if(playerCamera == null)
-            playerCamera = Camera.main;
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
+        playerCamera = player.GetComponentInChildren<Camera>();
 
         playerTag = player.name;
         fieldOfViewOfPlayer = playerCamera.fieldOfView * 2;

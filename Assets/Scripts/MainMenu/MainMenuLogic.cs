@@ -22,7 +22,12 @@ public class MainMenuLogic : MenuBase
     public void createNewDataloggerCollection() {
         Debug.Log("Create a new datalogger collection");
     }
-    
+
+    public void setBotType(bool nextbot)
+    {
+        GameManager.Instance.usingNextBot = nextbot;
+    }
+
 
 
 

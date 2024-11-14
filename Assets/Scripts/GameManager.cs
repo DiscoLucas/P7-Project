@@ -1,31 +1,92 @@
 using UnityEngine;
 using System;
-
+using Assets.Scripts.GOAP.Behaviors;
+using Assets.Scripts.GOAP.Sensors;
+using Unity.VisualScripting;
+using UnityEngine.Events;
+[DefaultExecutionOrder(-1)]
 public class GameManager : SingletonPersistent<GameManager>
 {
     public static event Action<GameState> OnBeforeStateChanged;
     public static event Action<GameState> OnAfterStateChanged;
-    private GameObject playerObject;
+    public GameObject playerObject, monsterObject, protectionAreaObject;
+    public UnityEvent onGameStartEvent;
     [Header("Menu")]
     [SerializeField]
     private GameHudMenu gameHud;
     Die die;
 
-    public GameState State { get; private set; }
+    public bool usingNextBot;
+    [SerializeField]
+    string monsterTag = "Monster", eggTag = "EGG";
 
+    public GameState State { get; private set; }
 
     protected override void onDuplicateInstanceDestroyed()
     {
-        GameManager.Instance.Start();
+        GameManager.Instance.onGameStart();
+    }
+
+    private void Awake()
+    {
+        onGameStart();
+    }
+
+
+    public void onGameStart(){
+        Debug.Log("Game startede");
+        if(protectionAreaObject == null)
+            protectionAreaObject = GameObject.FindGameObjectWithTag(eggTag);
+        Debug.Log("Tried to find protection area");
+        if (gameHud == null)
+            gameHud = GameObject.FindAnyObjectByType<GameHudMenu>();
+        if (playerObject == null)
+            playerObject = GameObject.FindGameObjectsWithTag("Player")[0];
+
+        ChangeState(GameState.Starting);
+        die = Die.Instance;
+
+        if (monsterObject == null) {
+            GameObject[] monsters = GameObject.FindGameObjectsWithTag(monsterTag);
+
+            foreach (GameObject monster in monsters)
+            {
+                if (usingNextBot)
+                {
+                    DumbBot bot = monster.GetComponent<DumbBot>();
+                    if (bot != null)
+                    {
+                        monsterObject = monster;
+                    }
+                    else
+                    {
+                        monster.SetActive(false);
+                    }
+                }
+                else
+                {
+                    MonsterBrain bot = monster.GetComponent<MonsterBrain>();
+                    if (bot != null)
+                    {
+                        monsterObject = monster;
+                    }
+                    else
+                    {
+                        monster.SetActive(false);
+                    }
+                }
+            }
+        }
+
+        Debug.Log("Protection areas object is: " + protectionAreaObject + " Player is: " + playerObject + " Monster is: " + monsterObject);
+        onGameStartEvent.Invoke();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        gameHud = GameObject.FindAnyObjectByType<GameHudMenu>();
-        playerObject = GameObject.FindGameObjectsWithTag("Player")[0];
-        ChangeState(GameState.Starting);
-        die = Die.Instance;
+        onGameStart();
+
     }
 
     public void ChangeState(GameState newState)

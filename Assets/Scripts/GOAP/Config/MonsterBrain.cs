@@ -8,6 +8,7 @@ using UnityEngine.Events;
 
 namespace Assets.Scripts.GOAP.Behaviors
 {
+    
     [RequireComponent(typeof(AgentBehaviour))]
     public class MonsterBrain : MonoBehaviour
     {
@@ -33,17 +34,21 @@ namespace Assets.Scripts.GOAP.Behaviors
 
         void Start()
         {
+            dependencyInjector.player = GameManager.Instance.playerObject.transform;
+            dependencyInjector.protectArea = GameManager.Instance.protectionAreaObject.transform;
             dependencyInjector.brain = this;
             // Start with the wander goal
             agentBehaviour.SetGoal<WanderGoalM>(true);
             config = dependencyInjector.config1;
             p_sensor.Collider.radius = config.AgentSensorRadius;
             p_sensor.sessionLogTracker.playerPostionsSummeries.AddListener(playerPostionSmelled);
-
+            protectionSensor = FindAnyObjectByType<ProtectionAreaSensor>();
             if (protectionSensor != null)
             {
                 protectionSensor.Inject(dependencyInjector);
             }
+
+            
 
         }
 
