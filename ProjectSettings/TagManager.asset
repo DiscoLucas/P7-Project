@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Trigger
+  - Steam
   layers:
   - Default
   - TransparentFX
