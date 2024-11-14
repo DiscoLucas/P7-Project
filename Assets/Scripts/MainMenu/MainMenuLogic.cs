@@ -8,7 +8,11 @@ public class MainMenuLogic : MenuBase
     public TMP_InputField datalogName_InputField;
 
 
-    
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 
     public void updateDataloggerName() { 
         string name = datalogName_InputField.text;

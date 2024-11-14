@@ -68,7 +68,8 @@ public class AnimationBehaviors : MonoBehaviour
         attackActionCurrent = true;
     }
     public void onCollisionEnterAttack() {
-        Debug.LogError("Hans hænder var kastede");
+        GameManager.Instance.ChangeState(GameState.GameOver);
+
     }
     public void endAttack()
     {

@@ -5,7 +5,8 @@
         ElecticalBuzz,
         LeverAct,
         Generator,
-        Door
+        Door,
+        DoorClosing
     }
     public enum NewLibraryMusic {
     }

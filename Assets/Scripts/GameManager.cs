@@ -30,9 +30,16 @@ public class GameManager : SingletonPersistent<GameManager>
 
     public GameState State { get; private set; }
 
+
+    protected override void onDuplicateInstanceDestroyed()
+    {
+        GameManager.Instance.Start();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameHud = GameObject.FindAnyObjectByType<GameHudMenu>();
         playerObject = GameObject.FindGameObjectsWithTag("Player")[0];
         ChangeState(GameState.Starting);
         die = Die.Instance;
