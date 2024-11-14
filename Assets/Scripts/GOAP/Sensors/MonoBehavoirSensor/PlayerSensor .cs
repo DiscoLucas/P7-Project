@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.GOAP.Sensors
 {
-
+    [DefaultExecutionOrder(3)]
     [RequireComponent(typeof(SphereCollider))]
     public class PlayerSensor : MonoBehaviour
     {

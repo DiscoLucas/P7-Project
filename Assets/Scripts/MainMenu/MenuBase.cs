@@ -24,7 +24,7 @@ public class MenuBase : MonoBehaviour
         MainMenu.SetActive(false);
     }
 
-    public void exitApplication()
+    public virtual void exitApplication()
     {
         Debug.LogWarning("Due to being play in editor the application can not exit");
         Application.Quit();

@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SessionLog", menuName = "Tracking/SessionAnalytics")]
-public class SessionLog : ScriptableObject
+[Serializable]
+public class SessionLog
 {
-    [Tooltip("Log all player positions for debugging or analytics")]
-    public bool enableLogging = false;
+    public SessionLog(string name) {
+        this.name = name;
+    }
+    public string name;
 
     [Tooltip("Detailed log of all player positions if logging is enabled")]
     public List<Vector3> allPlayerLoggedPositions = new List<Vector3>();
@@ -14,7 +16,7 @@ public class SessionLog : ScriptableObject
     [Tooltip("Detailed log of all monster positions if logging is enabled")]
     public List<Vector3> allMonsterLoggedPositions = new List<Vector3>();
 
-    public bool playerDied = false;
+    public int timesDied;
     public bool gameWasCompletede = false;
 
     private DateTime startTime;
@@ -22,6 +24,7 @@ public class SessionLog : ScriptableObject
 
     [Tooltip("Total time played in seconds")]
     public float timePlayed = 0f;
+    public List<int> deathIndexs;
 
     public void startSession()
     {
@@ -32,14 +35,20 @@ public class SessionLog : ScriptableObject
     public void endSession()
     {
         endTime = DateTime.Now;
-        timePlayed = (float)(endTime - startTime).TotalSeconds;
+        float timePlayed = (float)(endTime - startTime).TotalSeconds;
+        int minutes = (int)(timePlayed / 60);
+        int seconds = (int)(timePlayed % 60);
+
+        string timePlayedString = string.Format("{0}:{1:D2}", minutes, seconds);
         Debug.Log("Session ended at: " + endTime);
-        Debug.Log("Total time played: " + timePlayed + " seconds");
+        Debug.Log("Total time played: " + timePlayedString );
     }
 
     public void updatePlayerDied()
     {
-        playerDied = true;
+        deathIndexs.Add(allMonsterLoggedPositions.Count - 1);
+        timesDied += 1;
+        SessionLogTracker.Instance.state.sessionStarted = false;
     }
 
     public void gameCompletede()
@@ -49,10 +58,7 @@ public class SessionLog : ScriptableObject
 
     public void addPosition(Vector3 playerPosition, Vector3 monsterPosition)
     {
-        if (enableLogging)
-        {
-            allPlayerLoggedPositions.Add(playerPosition);
-            allMonsterLoggedPositions.Add(monsterPosition);
-        }
+        allPlayerLoggedPositions.Add(playerPosition);
+        allMonsterLoggedPositions.Add(monsterPosition);
     }
 }

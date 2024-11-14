@@ -8,7 +8,7 @@ using UnityEngine.Events;
 
 namespace Assets.Scripts.GOAP.Behaviors
 {
-    
+    [DefaultExecutionOrder(3)]
     [RequireComponent(typeof(AgentBehaviour))]
     public class MonsterBrain : MonoBehaviour
     {
@@ -31,13 +31,6 @@ namespace Assets.Scripts.GOAP.Behaviors
             if(speedBehavior == null)
                 speedBehavior = GetComponent<AgentSpeedBehavior>();
         }
-
-        private void Update()
-        {
-            Debug.Log("GameManager null?: " + (GameManager.Instance == null));
-
-        }
-
         void Start()
         {
             dependencyInjector.player = GameManager.Instance.playerObject.transform;
@@ -53,9 +46,7 @@ namespace Assets.Scripts.GOAP.Behaviors
             {
                 protectionSensor.Inject(dependencyInjector);
             }
-
-            
-
+            gameObject.SetActive(false);
         }
 
         private void playerPostionSmelled(Vector3 arg0, float arg1)
@@ -96,7 +87,7 @@ namespace Assets.Scripts.GOAP.Behaviors
             playerSpotted = isSpotted;
             if (playerSpotted)
             {
-
+                
                 EvaluateGoal(p_sensor.playerLastPos);
             }
         }
@@ -113,11 +104,13 @@ namespace Assets.Scripts.GOAP.Behaviors
 
         private void protectionSensor_OnEnter(Transform player)
         {
+            p_sensor.playerLastPos.position = player.position; 
             EvaluateGoal(player);
         }
 
         private void protectionSensor_OnExit(Vector3 lastKnownPosition)
         {
+            p_sensor.playerLastPos.position = lastKnownPosition;
         }
 
 

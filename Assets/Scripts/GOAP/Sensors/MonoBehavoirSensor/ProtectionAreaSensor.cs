@@ -35,7 +35,7 @@ namespace Assets.Scripts.GOAP.Sensors
             {
 
                 OnPlayerEnter?.Invoke(player.transform);
-
+                
                 haveEnterede =true;
 
             }

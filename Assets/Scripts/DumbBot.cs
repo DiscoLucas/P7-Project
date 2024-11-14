@@ -160,6 +160,8 @@ public class DumbBot : MonoBehaviour
         fsm.StateChanged += state => stateTimer = 0;
 
         fsm.Init();
+
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame

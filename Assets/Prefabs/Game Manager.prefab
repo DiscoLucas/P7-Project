@@ -44,6 +44,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e788735daab814e98366b84d8a66fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerObject: {fileID: 0}
+  monsterObject: {fileID: 0}
+  protectionAreaObject: {fileID: 0}
+  onGameStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  volume: {fileID: 0}
   gameHud: {fileID: 0}
   usingNextBot: 0
   monsterTag: Monner
+  eggTag: Egg
+  initialVignette: 0
+  initialVignetteColor: {r: 0, g: 0, b: 0, a: 0}
+  initialSaturation: 0
+  initialChromaticAberration: 0
+  initialFilmGrain: 0

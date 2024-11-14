@@ -40,7 +40,7 @@ public class GameManager : SingletonPersistent<GameManager>
 
     protected override void onDuplicateInstanceDestroyed()
     {
-       // GameManager.Instance.onGameStart();
+       GameManager.Instance.onGameStart();
     }
 
 
@@ -51,53 +51,16 @@ public class GameManager : SingletonPersistent<GameManager>
         Debug.Log("Tried to find protection area");
         if (gameHud == null)
             gameHud = GameObject.FindAnyObjectByType<GameHudMenu>();
-        if (playerObject == null)
-            playerObject = GameObject.FindGameObjectsWithTag("Player")[0];
-
-        ChangeState(GameState.Starting);
-        die = Die.Instance;
-
-        if (monsterObject == null) {
-            GameObject[] monsters = GameObject.FindGameObjectsWithTag(monsterTag);
-
-            foreach (GameObject monster in monsters)
-            {
-                if (usingNextBot)
-                {
-                    DumbBot bot = monster.GetComponent<DumbBot>();
-                    if (bot != null)
-                    {
-                        monsterObject = monster;
-                    }
-                    else
-                    {
-                        monster.SetActive(false);
-                    }
-                }
-                else
-                {
-                    MonsterBrain bot = monster.GetComponent<MonsterBrain>();
-                    if (bot != null)
-                    {
-                        monsterObject = monster;
-                    }
-                    else
-                    {
-                        monster.SetActive(false);
-                    }
-                }
+        if (playerObject == null) {
+            GameObject[] objects = GameObject.FindGameObjectsWithTag("Player");
+            if (objects.Length > 0) {
+                playerObject = GameObject.FindGameObjectsWithTag("Player")[0];
             }
+            
         }
 
-        Debug.Log("Protection areas object is: " + protectionAreaObject + " Player is: " + playerObject + " Monster is: " + monsterObject);
-        onGameStartEvent.Invoke();
-    }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
-    {
-        onGameStart();
-        ChangeState(GameState.Starting);
+        ChangeState(GameState.TutorialSection);
         die = Die.Instance;
 
         postProcessing = GameObject.Find("Post processing");
@@ -129,6 +92,42 @@ public class GameManager : SingletonPersistent<GameManager>
         {
             initialFilmGrain = filmGrain.intensity.value;
         }
+
+        if (monsterObject == null) {
+            GameObject[] monsters = GameObject.FindGameObjectsWithTag(monsterTag);
+            Debug.Log("mONSTERS FOUND: " + monsters.Length);
+            foreach (GameObject monster in monsters)
+            {
+                if (usingNextBot)
+                {
+                    DumbBot bot = monster.GetComponent<DumbBot>();
+                    if (bot != null)
+                    {
+                        Debug.Log("Nextbot found");
+                        monsterObject = monster;
+                    }
+                    else
+                    {
+                        monster.SetActive(false);
+                    }
+                }
+                else
+                {
+                    MonsterBrain bot = monster.GetComponent<MonsterBrain>();
+                    if (bot != null)
+                    {
+                        Debug.Log("GoapBot found");
+                        monsterObject = monster;
+                    }
+                    else
+                    {
+                        monster.SetActive(false);
+                    }
+                }
+            }
+        }
+        Debug.Log("Protection areas object is: " + protectionAreaObject + " Player is: " + playerObject + " Monster is: " + monsterObject);
+        onGameStartEvent.Invoke();
     }
 
     public void ChangeState(GameState newState)
@@ -191,7 +190,13 @@ public class GameManager : SingletonPersistent<GameManager>
 
     private void HandleStarting()
     {
-        throw new NotImplementedException();
+
+        monsterObject.SetActive(true);
+        if (SessionLogTracker.Instance.state == null) {
+            SessionLogTracker.Instance.state = GameObject.FindObjectOfType<SessionLogState>();
+        }
+        SessionLogTracker.Instance.startLoggin();
+        ChangeState(GameState.Game);
     }
 
 

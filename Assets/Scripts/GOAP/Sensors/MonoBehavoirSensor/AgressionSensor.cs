@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.AI;
-
+[DefaultExecutionOrder(3)]
 public class AgressionSensor : MonoBehaviour
 {
     public int aggressionLevel = 0;

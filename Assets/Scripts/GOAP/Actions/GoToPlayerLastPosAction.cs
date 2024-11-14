@@ -65,11 +65,12 @@ namespace Assets.Scripts.GOAP.Actions
             }
             return ActionRunState.Stop;
         }
-
+        
         public override void Start(IMonoAgent agent, CommonDataM data)
         {
             if (data.Target == null)
             {
+               
                 Debug.LogError("Data target is null in Start method.");
             }
 
