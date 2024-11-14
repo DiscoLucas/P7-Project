@@ -3740,13 +3740,133 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1083405651}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 56101554}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 307852080350295946}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 307852080350295946}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 56101554}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 307852080350295946}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 307852080350295946}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: ActivateLeverSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: ActivateDoorSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: ActivateLeverSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: ActivateDoorSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: LeverSoundActivation, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
+      value: LeverSoundActivation, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: LeverSoundActivation, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
+      value: LeverSoundActivation, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_StringArgument
+      value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_StringArgument
+      value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_StringArgument
+      value: Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_StringArgument
+      value: Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 131853889513734340, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -3791,6 +3911,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2070994782825386043, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: DoorPosition
+      value: 
+      objectReference: {fileID: 307852080350295947}
     - target: {fileID: 2490036101236351828, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -3799,6 +3923,134 @@ PrefabInstance:
       propertyPath: KeyHolder
       value: 
       objectReference: {fileID: 1083405651}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 307852080350295945}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 307852080350295945}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 307852080350295945}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 307852080350295945}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: ActivateLeverSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: ActivateDoorSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: ActivateLeverSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: ActivateDoorSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: LeverSoundActivation, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: LeverSoundActivation, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: LeverSoundActivation, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: LeverSoundActivation, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_StringArgument
+      value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_StringArgument
+      value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_StringArgument
+      value: Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_StringArgument
+      value: Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861372003178502522, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2989791983395814487, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -3927,11 +4179,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 154877635739516637, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+    - {fileID: 5224549291881182549, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+--- !u!114 &307852080350295945 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2070994782825386043, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+  m_PrefabInstance: {fileID: 307852080350295944}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6878c1c241e02419b3e7e8c5849665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &307852080350295946 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6204492772326628275, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+  m_PrefabInstance: {fileID: 307852080350295944}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6878c1c241e02419b3e7e8c5849665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &307852080350295947 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8521121033208931724, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+  m_PrefabInstance: {fileID: 307852080350295944}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1690423159930807647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7669,6 +7950,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 1615593743909383752, guid: 7dccd1930005a9e49a1ef6a6e7b433c1, type: 3}
+      propertyPath: DoorPosition
+      value: 
+      objectReference: {fileID: 7805528775082260217}
+    - target: {fileID: 1615593743909383752, guid: 7dccd1930005a9e49a1ef6a6e7b433c1, type: 3}
+      propertyPath: LeverPosition
+      value: 
+      objectReference: {fileID: 7805528775082260216}
     - target: {fileID: 1837700113931040075, guid: 7dccd1930005a9e49a1ef6a6e7b433c1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -8074,6 +8363,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dccd1930005a9e49a1ef6a6e7b433c1, type: 3}
+--- !u!4 &7805528775082260216 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6498042818711071669, guid: 7dccd1930005a9e49a1ef6a6e7b433c1, type: 3}
+  m_PrefabInstance: {fileID: 7805528775082260215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7805528775082260217 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1793265932776683734, guid: 7dccd1930005a9e49a1ef6a6e7b433c1, type: 3}
+  m_PrefabInstance: {fileID: 7805528775082260215}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8993668603128010589
 PrefabInstance:
   m_ObjectHideFlags: 0

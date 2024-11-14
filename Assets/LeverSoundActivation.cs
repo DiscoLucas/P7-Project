@@ -1,5 +1,6 @@
 using UnityEngine;
 using JSAM;
+using System.Collections.Generic;
 
 public class LeverSoundActivation : MonoBehaviour
 {
@@ -11,13 +12,13 @@ public class LeverSoundActivation : MonoBehaviour
     public void ActivateLeverSound()
     {
         AudioManager.PlaySound(leverAct, LeverPosition.position);
-        Debug.Log("This sound " + leverAct + " is playing at " + LeverPosition);
+        //Debug.Log("This sound " + leverAct + " is playing at " + LeverPosition);
     }
 
     public void ActivateDoorSound()
     {
         AudioManager.PlaySound(doorSound, DoorPosition.position);
-        Debug.Log("This sound " + doorSound + " is playing at " + DoorPosition);
+        //Debug.Log("This sound " + doorSound + " is playing at " + DoorPosition);
     }
 
 }
