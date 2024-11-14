@@ -32,6 +32,12 @@ namespace Assets.Scripts.GOAP.Behaviors
                 speedBehavior = GetComponent<AgentSpeedBehavior>();
         }
 
+        private void Update()
+        {
+            Debug.Log("GameManager null?: " + (GameManager.Instance == null));
+
+        }
+
         void Start()
         {
             dependencyInjector.player = GameManager.Instance.playerObject.transform;

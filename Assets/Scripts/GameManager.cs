@@ -13,7 +13,6 @@ public class GameManager : SingletonPersistent<GameManager>
     public static event Action<GameState> OnAfterStateChanged;
     public GameObject playerObject, monsterObject, protectionAreaObject;
     public UnityEvent onGameStartEvent;
-    private GameObject playerObject;
     GameObject postProcessing;
     public Volume volume;
     [Header("Menu")]
@@ -39,16 +38,9 @@ public class GameManager : SingletonPersistent<GameManager>
 
     public GameState State { get; private set; }
 
-    public GameState State { get; private set; }
-
     protected override void onDuplicateInstanceDestroyed()
     {
-        GameManager.Instance.onGameStart();
-    }
-
-    private void Awake()
-    {
-        onGameStart();
+       // GameManager.Instance.onGameStart();
     }
 
 

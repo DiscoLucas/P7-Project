@@ -79,6 +79,8 @@ public class Die : Singleton<Die>
 
     private void LateUpdate()
     {
+        if(gameManager == null)
+            gameManager = GameManager.Instance;
         if (gameManager.State == GameState.GameOver)
         {
             Camera.main.transform.position = rb.transform.TransformPoint(cameraOffset);
