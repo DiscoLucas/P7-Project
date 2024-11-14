@@ -5,7 +5,7 @@ public class GameHudMenu : MenuBase
     [SerializeField]
     Transform pauseMenu;
     [SerializeField]
-    Animation  deathScreen, winScreen;
+    Transform deathScreen, winScreen;
     public void openPauseMenu() {
         changeToMenuState();
         Time.timeScale = 0;
@@ -36,13 +36,14 @@ public class GameHudMenu : MenuBase
         Time.timeScale = 0.5f;
         changeToMenuState();
         deathScreen.gameObject.SetActive(true);
-        deathScreen.Play();
+        
     }
 
     public void openWinScreen() {
         changeToMenuState();
+        Time.timeScale = 0.5f;
         winScreen.gameObject.SetActive(true);
-        winScreen.Play();
+        
     }
 
     void changeToMenuState() {
