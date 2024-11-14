@@ -20,13 +20,15 @@ namespace Assets.Scripts.GOAP.Actions
         public override void Start(IMonoAgent agent, CommonDataM data)
         {
             agent.GetComponent<AgentMoveBehavior>().stopMoving();
-            agent.GetComponent<AgentSoundBehaviors>().playerScream();
+            agent.GetComponentInChildren<AnimationBehaviors>().startScreamAction();
         }
 
         public override ActionRunState Perform(IMonoAgent agent, CommonDataM data, ActionContext context)
         {
-
-            return ActionRunState.Stop;
+            if (agent.GetComponent<AgentSoundBehaviors>().checkIfScreamStopped()) {
+                return ActionRunState.Stop;
+            }
+            return ActionRunState.Continue;
         }
 
         public override void End(IMonoAgent agent, CommonDataM data) { }

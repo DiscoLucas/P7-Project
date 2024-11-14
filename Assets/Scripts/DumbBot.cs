@@ -7,6 +7,7 @@ using UnityHFSM;
 public class DumbBot : MonoBehaviour
 {
     StateMachine fsm;
+    AnimationBehaviors animbehaviors;
     public NavMeshAgent agent;
     GameManager gameManager;
     Die die;
@@ -47,6 +48,7 @@ public class DumbBot : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        animbehaviors = GetComponentInChildren<AnimationBehaviors>();
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindWithTag("Player");
         die = Die.Instance;
@@ -122,7 +124,8 @@ public class DumbBot : MonoBehaviour
                 timeToKill -= Time.deltaTime;
                 if (timeToKill <= 0)
                 {
-                    fsm.Trigger("KillPlayer");
+                    animbehaviors.startAttack();
+                    //fsm.Trigger("KillPlayer"); <-- Should be called by the animation behavor inside onCollisionEnterAttack
                 }
             },
             onExit: state => timeToKill = 1f
