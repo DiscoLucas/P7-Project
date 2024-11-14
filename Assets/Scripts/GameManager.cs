@@ -4,6 +4,8 @@ using Assets.Scripts.GOAP.Behaviors;
 using Assets.Scripts.GOAP.Sensors;
 using Unity.VisualScripting;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 [DefaultExecutionOrder(-1)]
 public class GameManager : SingletonPersistent<GameManager>
 {
@@ -11,6 +13,9 @@ public class GameManager : SingletonPersistent<GameManager>
     public static event Action<GameState> OnAfterStateChanged;
     public GameObject playerObject, monsterObject, protectionAreaObject;
     public UnityEvent onGameStartEvent;
+    private GameObject playerObject;
+    GameObject postProcessing;
+    public Volume volume;
     [Header("Menu")]
     [SerializeField]
     private GameHudMenu gameHud;
@@ -19,6 +24,20 @@ public class GameManager : SingletonPersistent<GameManager>
     public bool usingNextBot;
     [SerializeField]
     string monsterTag = "Monster", eggTag = "EGG";
+    Vignette vignette;
+    ColorAdjustments colorAdjustments;
+    ChromaticAberration chromaticAberration;
+    FilmGrain filmGrain;
+
+    [Header("Initial post processing values")]
+    [HideInInspector] public float initialVignette;
+    [HideInInspector] public Color initialVignetteColor;
+    [HideInInspector] public float initialSaturation;
+    [HideInInspector] public float initialChromaticAberration;
+    [HideInInspector] public float initialFilmGrain;
+
+
+    public GameState State { get; private set; }
 
     public GameState State { get; private set; }
 
@@ -86,7 +105,38 @@ public class GameManager : SingletonPersistent<GameManager>
     private void Start()
     {
         onGameStart();
+        ChangeState(GameState.Starting);
+        die = Die.Instance;
 
+        postProcessing = GameObject.Find("Post processing");
+        volume = postProcessing.GetComponent<Volume>();
+
+        volume.profile.TryGet(out vignette);
+        //volume.profile.TryGet(out vignette.color);
+        volume.profile.TryGet(out colorAdjustments);
+        volume.profile.TryGet(out chromaticAberration);
+        volume.profile.TryGet(out filmGrain);
+
+        if (vignette != null)
+        {
+            initialVignette = vignette.intensity.value;
+            initialVignetteColor = vignette.color.value;
+        }
+
+        if (colorAdjustments != null)
+        {
+            initialSaturation = colorAdjustments.saturation.value;
+        }
+
+        if (chromaticAberration != null)
+        {
+            initialChromaticAberration = chromaticAberration.intensity.value;
+        }
+
+        if (filmGrain != null)
+        {
+            initialFilmGrain = filmGrain.intensity.value;
+        }
     }
 
     public void ChangeState(GameState newState)
@@ -151,6 +201,59 @@ public class GameManager : SingletonPersistent<GameManager>
     {
         throw new NotImplementedException();
     }
+
+
+    #region Sketchy post processing getter setters
+    public void SetVignetteIntensity(float intensity)
+    {
+        if (vignette != null) vignette.intensity.value = intensity;
+    }
+
+    public void SetVignetteColor(Color color)
+    {
+        if (vignette != null) vignette.color.Override(color);
+    }
+
+    public void SetColorSaturation(float saturation)
+    {
+        if (colorAdjustments != null) colorAdjustments.saturation.value = saturation;
+    }
+
+    public void SetChromaticAberration(float intensity)
+    {
+        if (chromaticAberration != null) chromaticAberration.intensity.value = intensity;
+    }
+
+    public void SetFilmGrainIntensity(float intensity)
+    {
+       if (filmGrain != null) filmGrain.intensity.value = intensity;
+    }
+
+    public float GetVignetteIntensity()
+    {
+        return vignette != null ? vignette.intensity.value : 0;
+    }
+
+    public Color GetVignetteColor()
+    {
+        return vignette != null ? vignette.color.value : Color.black;
+    }
+
+    public float GetColorSaturation()
+    {
+        return colorAdjustments != null ? colorAdjustments.saturation.value : 0;
+    }
+
+    public float GetChromaticAberration()
+    {
+        return chromaticAberration != null ? chromaticAberration.intensity.value : 0;
+    }
+
+    public float GetFilmGrainIntensity()
+    {
+        return filmGrain != null ? filmGrain.intensity.value : 0;
+    }
+    #endregion
 }
 
 [Serializable]

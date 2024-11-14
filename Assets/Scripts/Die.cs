@@ -98,32 +98,19 @@ public class Die : Singleton<Die>
         {
             float t = 1 - (playerDistance / insanityRange); // Closer distance increases effect intensity
 
-            if (volume.profile.TryGet(out Vignette vignette))
-                vignette.intensity.value = Mathf.Lerp(vignetteStart, vignetteEnd, t);
+            gameManager.SetVignetteIntensity(Mathf.Lerp(vignetteStart, vignetteEnd, t));
+            gameManager.SetColorSaturation(Mathf.Lerp(satturationStart, saturationEnd, t));
+            gameManager.SetChromaticAberration(Mathf.Lerp(choromaStart, choromaEnd, t));
+            gameManager.SetFilmGrainIntensity(Mathf.Lerp(filmGrainStart, filmGrainEnd, t));
 
-            if (volume.profile.TryGet(out ColorAdjustments colorAdjustments))
-                colorAdjustments.saturation.value = Mathf.Lerp(satturationStart, saturationEnd, t);
-
-            if (volume.profile.TryGet(out ChromaticAberration chromaticAberration))
-                chromaticAberration.intensity.value = Mathf.Lerp(choromaStart, choromaEnd, t);
-
-            if (volume.profile.TryGet(out FilmGrain filmGrain))
-                filmGrain.intensity.value = Mathf.Lerp(filmGrainStart, filmGrainEnd, t);
         }
         else
         {
             // Reset effects to starting values when player is out of range
-            if (volume.profile.TryGet(out Vignette vignette))
-                vignette.intensity.value = vignetteStart;
-
-            if (volume.profile.TryGet(out ColorAdjustments colorAdjustments))
-                colorAdjustments.saturation.value = satturationStart;
-
-            if (volume.profile.TryGet(out ChromaticAberration chromaticAberration))
-                chromaticAberration.intensity.value = choromaStart;
-
-            if (volume.profile.TryGet(out FilmGrain filmGrain))
-                filmGrain.intensity.value = filmGrainStart;
+            gameManager.SetVignetteIntensity(vignetteStart);
+            gameManager.SetColorSaturation(satturationStart);
+            gameManager.SetChromaticAberration(choromaStart);
+            gameManager.SetFilmGrainIntensity(filmGrainStart);
         }
     }
 
