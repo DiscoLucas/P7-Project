@@ -4891,7 +4891,7 @@ GameObject:
   - component: {fileID: 1131088735535157879}
   - component: {fileID: 8730812790723454080}
   m_Layer: 9
-  m_Name: Door A1
+  m_Name: Door C1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13693,6 +13693,94 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 0.38
       objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: switched
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 8730812790723454080}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1615593743909383752}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 8730812790723454080}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1615593743909383752}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ActivateDoorSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ActivateLeverSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.Animator, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: LeverSoundActivation, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.Animator, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: LeverSoundActivation, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Down
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Up
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: Open
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13704,6 +13792,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 29933620245021698}
   m_SourcePrefab: {fileID: 100100000, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+--- !u!114 &1615593743909383752 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5497181055668089417, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+  m_PrefabInstance: {fileID: 6494847037791902721}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6495549782193258617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6878c1c241e02419b3e7e8c5849665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6495549782193258617 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1830569057672312, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
