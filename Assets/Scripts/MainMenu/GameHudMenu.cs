@@ -18,6 +18,13 @@ public class GameHudMenu : MenuBase
         closeAllMenus();
     }
 
+    public void startGameWinAction() {
+        GameManager.Instance.ChangeState(GameState.Win);
+    }
+
+    public void endTurtoiale() {
+        GameManager.Instance.ChangeState(GameState.Game);
+    }
 
     public void closePauseMenu() {
         Cursor.lockState = CursorLockMode.Confined;
