@@ -1,23 +1,31 @@
 using UnityEngine;
 using JSAM;
+using System.Collections.Generic;
 
 public class LeverSoundActivation : MonoBehaviour
 {
     [SerializeField] private SoundFileObject leverAct;
-    [SerializeField] private SoundFileObject doorSound;
+    [SerializeField] private SoundFileObject openDoorSound;
+    [SerializeField] private SoundFileObject closeDoorSound;
     [SerializeField] private Transform LeverPosition;
     [SerializeField] private Transform DoorPosition;
 
     public void ActivateLeverSound()
     {
         AudioManager.PlaySound(leverAct, LeverPosition.position);
-        Debug.Log("This sound " + leverAct + " is playing at " + LeverPosition);
+        //Debug.Log("This sound " + leverAct + " is playing at " + LeverPosition);
     }
 
-    public void ActivateDoorSound()
+    public void OpenDoorSound()
     {
-        AudioManager.PlaySound(doorSound, DoorPosition.position);
-        Debug.Log("This sound " + doorSound + " is playing at " + DoorPosition);
+        AudioManager.PlaySound(openDoorSound, DoorPosition.position);
+        //Debug.Log("This sound " + doorSound + " is playing at " + DoorPosition);
+    }
+
+    public void CloseDoorSound()
+    {
+        AudioManager.PlaySound(closeDoorSound, DoorPosition.position);
+        //Debug.Log("This sound " + doorSound + " is playing at " + DoorPosition);
     }
 
 }

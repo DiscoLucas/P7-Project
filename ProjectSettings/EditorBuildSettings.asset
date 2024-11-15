@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9b29bec5badbe6f41946700e286d4ebf
   - enabled: 1
-    path: Assets/Scenes/Prototype bot.unity
-    guid: 559015c83d335164e8d8ad0052dc73b8
-  - enabled: 1
     path: Assets/Scenes/Main level fr fr.unity
     guid: e54ddf0bfca85d24f8ca68c7ce99d88b
   m_configObjects:

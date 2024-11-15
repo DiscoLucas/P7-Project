@@ -7,6 +7,7 @@ using CrashKonijn.Goap.Sensors;
 using Assets.Scripts.GOAP.WorldKeys;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
+using System;
 
 namespace Assets.Scripts.GOAP.Sensors
 {
@@ -24,16 +25,31 @@ namespace Assets.Scripts.GOAP.Sensors
         public void Inject(DependencyInjector injector)
         {
             config = injector.config1 as MonsterConfig;
-            player = injector.player;
             lastKnownPositionTransform = injector.lkppTransform;
             protectionObj = injector.protectArea;
         }
-
+        bool checkIfComponentAreThere() {
+            return (player == null || protectionObj == null);
+        }
         public override ITarget Sense(IMonoAgent agent, IComponentReference references)
         {
-            if (player == null || protectionObj == null)
+            
+            if (checkIfComponentAreThere())
             {
-                return null;
+                if (GameManager.Instance != null) {
+                    try
+                    {
+                        player = GameManager.Instance.playerObject.transform;
+                        protectionObj = GameManager.Instance.protectionAreaObject.transform;
+                    }
+                    catch (Exception e) {
+                        Debug.LogError(e.ToString());
+                    }
+                    
+                }
+                
+                if(checkIfComponentAreThere())
+                    return null;
             }
 
             float distanceToProtection = Vector3.Distance(player.position, protectionObj.position);

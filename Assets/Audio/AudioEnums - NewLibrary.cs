@@ -5,7 +5,20 @@
         ElecticalBuzz,
         LeverAct,
         Generator,
-        Door
+        Door,
+        DoorClosing,
+        Metal,
+        Rock,
+        Tile,
+        Water,
+        MetalRun,
+        RockRun,
+        TileRun,
+        WaterRun,
+        Steam,
+        WaterDrain,
+        WaterFall,
+        PlatformCrash
     }
     public enum NewLibraryMusic {
     }

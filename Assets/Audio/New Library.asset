@@ -15,6 +15,7 @@ MonoBehaviour:
   soundCategories:
   - TEST
   - Ambiance
+  - PlayerMovement
   musicCategories:
   - 
   Sounds:
@@ -25,6 +26,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a15cc06a8afa47f4db7bab0618ef166a, type: 2}
   - {fileID: 11400000, guid: ffe67b3f5197a824ba4c98677cf076d7, type: 2}
   - {fileID: 11400000, guid: f492ea681ccac6647bd6f82dd981c077, type: 2}
+  - {fileID: 11400000, guid: d1c4ee853a7b6394eb8b70e4a8c3c2f8, type: 2}
+  - {fileID: 11400000, guid: d6f07b252bb7c7b40b0425e9828a0b26, type: 2}
+  - {fileID: 11400000, guid: 608659725884e804b92a514c08ac025c, type: 2}
+  - {fileID: 11400000, guid: eb1b193130f5ad74a881ddf1ad9fe738, type: 2}
+  - {fileID: 11400000, guid: 92f56e5f7f5c6274499f341861c3cbd0, type: 2}
+  - {fileID: 11400000, guid: f56761d2352ae8042844915a0d74ed2b, type: 2}
+  - {fileID: 11400000, guid: 737dbe8c2bbd0464e90d3876a442fbc7, type: 2}
+  - {fileID: 11400000, guid: 599e047a801682b40a16dbae0d2093ac, type: 2}
+  - {fileID: 11400000, guid: c5096240db2b26d4aa4da4a37c9f081f, type: 2}
+  - {fileID: 11400000, guid: a7a9e5663c1da9047b6d4b2c48b54fe3, type: 2}
+  - {fileID: 11400000, guid: 6be9ceea74893cc46a2955da766c402a, type: 2}
+  - {fileID: 11400000, guid: a99bb4316c35cc846a6f9c2a53c9b453, type: 2}
+  - {fileID: 11400000, guid: 1497b1013329f43479da844f1778095d, type: 2}
   Music: []
   useCustomNames: 0
   generatedName: NewLibrary
@@ -49,6 +63,22 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a15cc06a8afa47f4db7bab0618ef166a, type: 2}
     - {fileID: 11400000, guid: ffe67b3f5197a824ba4c98677cf076d7, type: 2}
     - {fileID: 11400000, guid: f492ea681ccac6647bd6f82dd981c077, type: 2}
+    - {fileID: 11400000, guid: d1c4ee853a7b6394eb8b70e4a8c3c2f8, type: 2}
+    - {fileID: 11400000, guid: a7a9e5663c1da9047b6d4b2c48b54fe3, type: 2}
+    - {fileID: 11400000, guid: 6be9ceea74893cc46a2955da766c402a, type: 2}
+    - {fileID: 11400000, guid: a99bb4316c35cc846a6f9c2a53c9b453, type: 2}
+    - {fileID: 11400000, guid: 1497b1013329f43479da844f1778095d, type: 2}
+    foldout: 1
+  - name: PlayerMovement
+    files:
+    - {fileID: 11400000, guid: d6f07b252bb7c7b40b0425e9828a0b26, type: 2}
+    - {fileID: 11400000, guid: 608659725884e804b92a514c08ac025c, type: 2}
+    - {fileID: 11400000, guid: eb1b193130f5ad74a881ddf1ad9fe738, type: 2}
+    - {fileID: 11400000, guid: 92f56e5f7f5c6274499f341861c3cbd0, type: 2}
+    - {fileID: 11400000, guid: f56761d2352ae8042844915a0d74ed2b, type: 2}
+    - {fileID: 11400000, guid: 737dbe8c2bbd0464e90d3876a442fbc7, type: 2}
+    - {fileID: 11400000, guid: 599e047a801682b40a16dbae0d2093ac, type: 2}
+    - {fileID: 11400000, guid: c5096240db2b26d4aa4da4a37c9f081f, type: 2}
     foldout: 1
   musicCategoriesToList:
   - name: 

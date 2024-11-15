@@ -5,6 +5,7 @@ using CrashKonijn.Goap.Behaviours;
 using CrashKonijn.Goap.Interfaces;
 using CrashKonijn.Goap.Enums;
 using CrashKonijn.Goap.Classes;
+using Unity.VisualScripting;
 
 namespace Assets.Scripts.GOAP.Actions
 {
@@ -15,10 +16,9 @@ namespace Assets.Scripts.GOAP.Actions
         {
 
         }
-
         public override void End(IMonoAgent agent, AttackData data)
         {
-           //Stop attacking
+           
         }
 
         public void Inject(DependencyInjector injector)
@@ -28,15 +28,18 @@ namespace Assets.Scripts.GOAP.Actions
 
         public override ActionRunState Perform(IMonoAgent agent, AttackData data, ActionContext context)
         {
-            Debug.LogError("Attacking the player!");
-            // Add logic to deal damage
-            return ActionRunState.Stop; ;
+            if(agent.GetComponentInChildren<AnimationBehaviors>().canEndAttack())
+                return ActionRunState.Stop;
+
+            return ActionRunState.Continue;
 
         }
 
         public override void Start(IMonoAgent agent, AttackData data)
         {
+            agent.GetComponent<AgentMoveBehavior>().stopMoving();
             data.timer = config.attackDelay;
+            agent.GetComponentInChildren<AnimationBehaviors>().startAttack();
         }
     }
 }

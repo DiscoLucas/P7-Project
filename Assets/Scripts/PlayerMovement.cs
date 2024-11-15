@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     float rotationX = 0;
 
     public bool canMove = true;
-
+    bool pause = false;
     [SerializeField] private float m_StepInterval;
     [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
     [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         #region Handles Rotation
         characterController.Move(moveDirection * Time.deltaTime);
 
-        if (canMove)
+        if (canMove && !pause)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
@@ -95,6 +95,21 @@ public class PlayerMovement : MonoBehaviour
         if (currentStamina < maxStamina)
         {
             currentStamina += staminaRegen * Time.deltaTime;
+        }
+
+        #endregion
+
+        #region handle pause menu
+        if (Input.GetButtonUp("Cancel"))
+        {
+            pause = !pause;
+            if (pause)
+            {
+                GameManager.Instance.ChangeState(GameState.PauseMenu);
+            }
+            else {
+                GameManager.Instance.ChangeState(GameState.Game);
+            }
         }
 
         #endregion

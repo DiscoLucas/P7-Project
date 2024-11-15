@@ -28,7 +28,7 @@ public class PlayerControls : MonoBehaviour
             else if(Hand.transform.childCount!=0)
             {   //Drop item
                 GameObject HeldItem = Hand.transform.GetChild(0).gameObject;
-
+                Hand.transform.GetChild(0).gameObject.GetComponent<Clicker>().Egress.Invoke();
                 HeldItem.gameObject.layer = 7;
                 HeldItem.transform.rotation = Quaternion.identity;
                 HeldItem.transform.position = Camera.main.transform.position;

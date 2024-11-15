@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Trigger
+  - Steam
+  - Monner
+  - Egg
   layers:
   - Default
   - TransparentFX
@@ -16,10 +19,10 @@ TagManager:
   - PickUps
   - EnemyLayer
   - Enviroment
-  - 
-  - 
-  - 
-  - 
+  - Metal
+  - Rock
+  - Tile
+  - Water
   - 
   - 
   - 

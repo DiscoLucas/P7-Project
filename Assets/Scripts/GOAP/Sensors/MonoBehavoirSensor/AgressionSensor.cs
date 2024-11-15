@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.AI;
-
+[DefaultExecutionOrder(3)]
 public class AgressionSensor : MonoBehaviour
 {
     public int aggressionLevel = 0;
@@ -29,6 +29,7 @@ public class AgressionSensor : MonoBehaviour
         path = new NavMeshPath();
         maxTime *= 60;
         timeWhenStart = Time.realtimeSinceStartup;
+        protectionArea = GameManager.Instance.protectionAreaObject.transform;
     }
 
     private void FixedUpdate()

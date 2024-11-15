@@ -10,10 +10,9 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
 {
     public GameObject player;
     public Transform agentPos;
-    public SessionLog sessionLog; // Reference to the map
+    public SessionLog sessionLog = null;
     public float logInterval = 0.5f;
-
-    public bool sessionStartede = false;
+    
     private string loggerFolder = "Logs";
     [Tooltip("Maximum recent positions to track for gameplay")]
     public int maxRecentPositions = 20;
@@ -23,96 +22,110 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
     [Tooltip("List of recent positions the player has visited for active game usage")]
     public List<Vector3> recentPlayerPositions = new List<Vector3>();
     public Color gizmoColor, smellAreaGizmoColor;
-    public bool enableLoggin = false;
     public int fixedUpdateCounterUpdatePos = 0, fixedUpdateCounterSummerize = 0, updateRate = 4, summariePostionTime = 2;
 
     public Vector3 summriePostion = Vector3.zero;
     public float averageDistance = 0;
     public bool haveSummedPostion;
     public UnityEvent<Vector3, float> playerPostionsSummeries;
+    public SessionLogState state;
+    public void setGameVariables() { 
+        player = GameManager.Instance.playerObject;
+        agentPos = GameManager.Instance.monsterObject.transform;
+        state = GameObject.FindAnyObjectByType<SessionLogState>();
 
-    protected override void onDuplicateInstanceDestroyed()
-    {
-        SessionLogTracker.Instance.readyVaraiblesForSession(player,agentPos);
     }
 
-    public void readyVaraiblesForSession(GameObject player, Transform monster) {
-        this.player = player;
-        agentPos = monster;
-    }
 
     private void Start()
     {
-        if(sessionLog != null)
-            sessionLog.enableLogging = enableLoggin;
+        sessionLog = null;
+        if(GameManager.Instance != null)
+            GameManager.Instance.onGameStartEvent.AddListener(setGameVariables);
         summariePostionTime *= 50;
         if (dynamicBuffer) {
             maxRecentPositions = summariePostionTime/updateRate;
         }
 
     }
+    public void onSessionStarted() {
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
+        if (agentPos == null)
+            agentPos = GameObject.FindGameObjectWithTag("Monner").transform;
+
+    }
+
 
     private void FixedUpdate()
     {
-        if (sessionStartede) {
-            fixedUpdateCounterUpdatePos++;
-            fixedUpdateCounterSummerize++;
-            if (fixedUpdateCounterSummerize >= summariePostionTime)
-            {
-                Vector3 avgPos = Vector3.zero;
-                haveSummedPostion = true;
-
-
-                float dist = 0;
-                for (int i = 0; i < recentPlayerPositions.Count; i++)
-                {
-                    avgPos += recentPlayerPositions[i];
+        if (state != null) {
+            if (state.sessionStarted) { 
+                if (!state.onSessionStart) {
+                    onSessionStarted();
+                    state.onSessionStart = true;
                 }
-
-                avgPos /= recentPlayerPositions.Count;
-                summriePostion = avgPos;
-
-                foreach (var pos in recentPlayerPositions)
+                fixedUpdateCounterUpdatePos++;
+                fixedUpdateCounterSummerize++;
+                if (fixedUpdateCounterSummerize >= summariePostionTime)
                 {
-                    dist += Vector3.Distance(summriePostion, pos);
+                    Vector3 avgPos = Vector3.zero;
+                    haveSummedPostion = true;
+
+
+                    float dist = 0;
+                    for (int i = 0; i < recentPlayerPositions.Count; i++)
+                    {
+                        avgPos += recentPlayerPositions[i];
+                    }
+
+                    avgPos /= recentPlayerPositions.Count;
+                    summriePostion = avgPos;
+
+                    foreach (var pos in recentPlayerPositions)
+                    {
+                        dist += Vector3.Distance(summriePostion, pos);
+                    }
+
+                    dist /= recentPlayerPositions.Count;
+
+                    averageDistance = dist;
+                    fixedUpdateCounterSummerize = 0;
+                    playerPostionsSummeries.Invoke(avgPos, averageDistance);
                 }
+                if (fixedUpdateCounterUpdatePos >= updateRate)
+                {
+                    fixedUpdateCounterUpdatePos = 0;
+                    Vector3 player_npos = new Vector3(
+                       player.transform.position.x,
+                       player.transform.position.y,
+                       player.transform.position.z
+                    );
 
-                dist /= recentPlayerPositions.Count;
-
-                averageDistance = dist;
-                fixedUpdateCounterSummerize = 0;
-                playerPostionsSummeries.Invoke(avgPos, averageDistance);
-            }
-            if (fixedUpdateCounterUpdatePos >= updateRate)
-            {
-                fixedUpdateCounterUpdatePos = 0;
-                Vector3 player_npos = new Vector3(
-                   player.transform.position.x,
-                   player.transform.position.y,
-                   player.transform.position.z
-                );
-
-                Vector3 monster_npos = new Vector3(
-                   agentPos.position.x,
-                   agentPos.position.y,
-                   agentPos.transform.position.z
-                );
-                addPosition(player_npos, monster_npos);
+                    Vector3 monster_npos = new Vector3(
+                       agentPos.position.x,
+                       agentPos.position.y,
+                       agentPos.transform.position.z
+                    );
+                    addPosition(player_npos, monster_npos);
+                }
             }
         } 
     }
 
     public void addPosition(Vector3 player_npos, Vector3 monster_npos)
     {
-
+        
         if (recentPlayerPositions.Count >= maxRecentPositions)
         {
             recentPlayerPositions.RemoveAt(0); 
         }
 
         recentPlayerPositions.Add(player_npos);
-        sessionLog.addPosition(player_npos, monster_npos);
-
+        if (sessionLog != null)
+            sessionLog.addPosition(player_npos, monster_npos);
+        else
+            Debug.LogWarning("The Session log have not been createde");
     }
 
     private void OnDrawGizmosSelected()
@@ -129,14 +142,23 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
     [ContextMenu("End Session And SaveAs CSV")]
     public void EndSessionAndSaveAsCSV()
     {
+        Debug.Log("Session log is null: " + (sessionLog == null));
+
         if (sessionLog != null)
         {
-            
+            state.sessionStarted = false;
             sessionLog.endSession();
             ExportSessionLogToCSV(sessionLog);
-            DestroyImmediate(sessionLog, true); 
             sessionLog = null;
         }
+    }
+
+
+
+    public void startLoggin()
+    {
+        state.sessionStarted = true;
+
     }
 
     public void ExportSessionLogToCSV(SessionLog sessionLog)
@@ -149,21 +171,29 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
             Directory.CreateDirectory(Path.Combine(Application.persistentDataPath, loggerFolder));
         }
         Debug.Log("saved at: " + filePath);
+        
+        
         using (StreamWriter writer = new StreamWriter(filePath))
         {
             // Write session information
             writer.WriteLine("Session Name: " + sessionLog.name);
             writer.WriteLine("Total Time Played (seconds): " + sessionLog.timePlayed);
-            writer.WriteLine("Player Died: " + sessionLog.playerDied);
+            writer.WriteLine("Player Died: " + sessionLog.timePlayed);
             writer.WriteLine("Game Completed: " + sessionLog.gameWasCompletede);
             writer.WriteLine("----");
-            writer.WriteLine("Player Position X;Player Position Y;Player Position Z;Monster Position X;Monster Position Y;Monster Position Z");
+            writer.WriteLine("Player Position X;Player Position Y;Player Position Z;Monster Position X;Monster Position Y;Monster Position Z;CurrentDeath") ;
 
+            int currentDeathIndex = 0;
             for (int i = 0; i < sessionLog.allPlayerLoggedPositions.Count; i++)
             {
+                if (sessionLog.deathIndexs.Count > currentDeathIndex + 1) {
+                    if (sessionLog.deathIndexs[currentDeathIndex + 1] == i) { 
+                        currentDeathIndex = i;
+                    }
+                }
                 Vector3 playerPos = sessionLog.allPlayerLoggedPositions[i];
                 Vector3 monsterPos = sessionLog.allMonsterLoggedPositions[i];
-                string line = $"{playerPos.x};{playerPos.y};{playerPos.z};{monsterPos.x};{monsterPos.y};{monsterPos.z}";
+                string line = $"{playerPos.x};{playerPos.y};{playerPos.z};{monsterPos.x};{monsterPos.y};{monsterPos.z};{sessionLog.deathIndexs[currentDeathIndex]}";
                 writer.WriteLine(line);
                 Debug.Log(line);
             }
@@ -175,26 +205,26 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
     public string sessionLogFolderName = "SessionLogs";
     public SessionLog createSessionLog()
     {
-        // Create a new SessionLog in memory (not saved to disk yet)
-        SessionLog newMap = ScriptableObject.CreateInstance<SessionLog>();
-        newMap.name = newSessionlogName; // You can set the session name dynamically here
-
-        // If you want to set additional data immediately, do it here
-        // For example: newMap.startSession();
-
+        string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+        SessionLog newMap = new SessionLog($"{newSessionlogName}_{timestamp}");
         Debug.Log("New session log created in memory with name: " + newMap.name);
 
         return newMap;
     }
 
+    protected override void onDuplicateInstanceDestroyed()
+    {
+        SessionLogTracker.Instance.recentPlayerPositions.Clear();
 
+    }
 
+  
 
     public string createFilepath(string filename)
     {
-        string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+        
         string folderPath = Path.Combine(Application.dataPath, sessionLogFolderName);
-        string filePath = Path.Combine(folderPath, $"{filename}_{timestamp}.asset"); 
+        string filePath = Path.Combine(folderPath, $"{filename}.asset"); 
 
         // Create the directory if it doesn't exist
         if (!Directory.Exists(folderPath))

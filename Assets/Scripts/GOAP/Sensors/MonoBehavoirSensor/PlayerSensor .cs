@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.GOAP.Sensors
 {
-
+    [DefaultExecutionOrder(3)]
     [RequireComponent(typeof(SphereCollider))]
     public class PlayerSensor : MonoBehaviour
     {
@@ -56,6 +56,7 @@ namespace Assets.Scripts.GOAP.Sensors
             smellTargetLastPos.parent = null;
             hidespot.parent = null;
             peakSpot.parent = null;
+            playersRealPostion = GameManager.Instance.playerObject.transform;
             getSessionLogTrakor();
         }
 

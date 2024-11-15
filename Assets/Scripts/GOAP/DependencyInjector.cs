@@ -5,6 +5,7 @@ using CrashKonijn.Goap.Classes;
 using CrashKonijn.Goap.Behaviours;
 using CrashKonijn.Goap.Interfaces;
 using Assets.Scripts.GOAP.Behaviors;
+using Unity.VisualScripting;
 
 namespace Assets.Scripts.GOAP
 {
@@ -14,6 +15,9 @@ namespace Assets.Scripts.GOAP
         public MonsterBrain brain;
         public Transform player;
         public Transform protectArea;
+        
+        
+
         /// <summary>
         /// 
         /// </summary>

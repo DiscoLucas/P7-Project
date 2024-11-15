@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 165455381404817544}
   - component: {fileID: 5195220755652352942}
   - component: {fileID: 3059166976333159990}
+  - component: {fileID: 5752926171952386549}
   m_Layer: 0
   m_Name: Point Light (2)
   m_TagString: Untagged
@@ -368,6 +369,24 @@ MonoBehaviour:
   m_ObsoleteUseShadowQualitySettings: 0
   m_ObsoleteCustomShadowResolution: 512
   m_ObsoleteContactShadows: 0
+--- !u!114 &5752926171952386549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024176779525259660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c6cfe8bfc0d31409a979c41b0c8d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 11400000, guid: 11c1593ffaaea5a40a9315d51a42c5a2, type: 2}
+  advancedMode: 0
+  onStart: 1
+  onEnable: 0
+  onDisable: 2
+  onDestroy: 0
 --- !u!1 &2712438048172541396
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +403,7 @@ GameObject:
   - component: {fileID: 174241218791558104}
   - component: {fileID: 8641875584331051961}
   - component: {fileID: 3605153304429667820}
+  - component: {fileID: 3032946295873666447}
   m_Layer: 3
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -549,6 +569,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hand: {fileID: 2731341130619779888}
+  interactCoolDown: 0
+  interactCoolDownTarget: 0.5
 --- !u!114 &3605153304429667820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,6 +591,25 @@ MonoBehaviour:
   choromaEnd: 1
   filmGrainEnd: 1
   tiltForce: 1
+--- !u!114 &3032946295873666447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2712438048172541396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980b218f881e4fa468a22e814d365040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 100
+  damageInterval: 0.5
+  steamDamage: 5
+  shakeDuration: 0.1
+  shakeMagnitude: 0.05
+  mainCamera: {fileID: 0}
 --- !u!1 &2731341130619779888
 GameObject:
   m_ObjectHideFlags: 0

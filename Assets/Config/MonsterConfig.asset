@@ -25,18 +25,18 @@ MonoBehaviour:
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 8
-  protectionAreaRadius: 5
+  protectionAreaRadius: 10
   meleeRange: 2.5
   attackDelay: 2
   chaseSpeed: 6
   chaseRange: 13
-  distanceToMonsterForStartChaseAlways: 5
+  distanceToMonsterForStartChaseAlways: 6
   targetPosStop: 1
-  wanderingSetinRange: 20
+  wanderingSetinRange: 30
   startingAggressionLevel: 0.5
   stalkDistance: 10
   aggressionThreshold: 14
-  stalkActionRange: 12
+  stalkActionRange: 25
   screamHearingRange: 20
   peekRange: 25
   hideRange: 15
@@ -57,8 +57,8 @@ MonoBehaviour:
   lowAwarenessCostMultiplier: 0.5
   highAwarenessCostMultiplier: 1
   baseIdleSpeed: 2
-  baseStalkSpeed: 5
-  baseChaseSpeed: 10
-  maxAggressionMultiplier: 1.5
-  hideSpeedModifier: 0.9
-  peekSpeedModifier: 1.2
+  baseStalkSpeed: 4
+  baseChaseSpeed: 5
+  maxAggressionMultiplier: 1.1
+  hideSpeedModifier: 0.8
+  peekSpeedModifier: 1.09
