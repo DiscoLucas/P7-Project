@@ -11,7 +11,6 @@ public class EndOfTurtoialeAction : MonoBehaviour
         Debug.Log("Turtoial Ended");
         
 
-        GameManager.Instance.ChangeState(GameState.Starting);
 
     }
 }

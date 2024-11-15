@@ -64,14 +64,43 @@ public class GameManager : SingletonPersistent<GameManager>
         die = Die.Instance;
 
         postProcessing = GameObject.Find("Post processing");
+        if (postProcessing == null)
+        {
+            Debug.LogError("Post processing GameObject not found"); 
+            return;
+        }
         volume = postProcessing.GetComponent<Volume>();
+        if (volume == null)
+        {
+            Debug.LogError("Volume component not found on the Post processing GameObject");
+            return;
+        }
 
-        volume.profile.TryGet(out vignette);
+        if (volume.profile == null)
+        {
+            Debug.LogError("Volume profile not found on the Volume component");
+            return;
+        }
+
+        if (volume.profile.TryGet(out vignette))
+        {
+            initialVignette = vignette.intensity.value;
+            initialVignetteColor = vignette.color.value;
+        }
         //volume.profile.TryGet(out vignette.color);
-        volume.profile.TryGet(out colorAdjustments);
-        volume.profile.TryGet(out chromaticAberration);
-        volume.profile.TryGet(out filmGrain);
-
+        if (volume.profile.TryGet(out colorAdjustments))
+        {
+            initialSaturation = colorAdjustments.saturation.value;
+        }
+        if (volume.profile.TryGet(out chromaticAberration))
+        {
+            initialChromaticAberration = chromaticAberration.intensity.value;
+        }
+        if (volume.profile.TryGet(out filmGrain))
+        {
+            initialFilmGrain = filmGrain.intensity.value;
+        }
+        /*
         if (vignette != null)
         {
             initialVignette = vignette.intensity.value;
@@ -92,7 +121,7 @@ public class GameManager : SingletonPersistent<GameManager>
         {
             initialFilmGrain = filmGrain.intensity.value;
         }
-
+        */
         if (monsterObject == null) {
             GameObject[] monsters = GameObject.FindGameObjectsWithTag(monsterTag);
             Debug.Log("mONSTERS FOUND: " + monsters.Length);
@@ -164,6 +193,7 @@ public class GameManager : SingletonPersistent<GameManager>
         OnAfterStateChanged?.Invoke(newState);
         Debug.Log($"Game State changed to {newState}");
     }
+
 
     private void HandelCloseingGameMenus()
     {
