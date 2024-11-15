@@ -24,6 +24,7 @@ public class PlatformFall : MonoBehaviour
         foreach (var r in rb)
         {
             r.useGravity = false;
+            r.isKinematic = true;
         }
     }
 
@@ -31,10 +32,11 @@ public class PlatformFall : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
+
+            GameManager.Instance.ChangeState(GameState.Starting);
             foreach (var r in rb)
             {
                 CollapsePlatform(r, fallDelay);
-
             }
         }
             
@@ -44,6 +46,7 @@ public class PlatformFall : MonoBehaviour
     {
         //gameObject.transform.localScale = new Vector3(0.99f, 0.99f, 0.99f);
         rb.useGravity = true;
+        rb.isKinematic = false;
         // TODO: play sound effect
 
         return null;
