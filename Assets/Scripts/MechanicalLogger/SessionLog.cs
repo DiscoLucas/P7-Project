@@ -7,6 +7,7 @@ public class SessionLog
 {
     public SessionLog(string name) {
         this.name = name;
+        deathIndexs.Add(0);
     }
     public string name;
 

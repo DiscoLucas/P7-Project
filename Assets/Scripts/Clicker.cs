@@ -5,7 +5,7 @@ public class Clicker : MonoBehaviour
 {
     public bool switched;
     [SerializeField] UnityEvent Ingress;
-    [SerializeField] UnityEvent Egress; //This would be in a lever inheritance
+    public UnityEvent Egress; //This would be in a lever inheritance
     [Space]
     [SerializeField] GameObject KeyHolder;
     [SerializeField] GameObject Key;
@@ -23,7 +23,7 @@ public class Clicker : MonoBehaviour
         {
             if (Key.transform.parent == KeyHolder.transform)
             {
-                if(switched){  //This would be in a lever inheritance, but will stay in a simpler form originally
+                if(!switched){  //This would be in a lever inheritance, but will stay in a simpler form originally
                 Ingress.Invoke();
                 }else{
                 Egress.Invoke();
@@ -32,7 +32,7 @@ public class Clicker : MonoBehaviour
         }
         else //Do the thing regardlessly, because no key exists
         {
-            if(switched){  //This would be in a lever inheritance, but will stay in a simpler form originally
+            if(!switched){  //This would be in a lever inheritance, but will stay in a simpler form originally
             Ingress.Invoke();
             }else{
             Egress.Invoke();

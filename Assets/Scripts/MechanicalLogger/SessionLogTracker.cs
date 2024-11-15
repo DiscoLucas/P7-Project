@@ -171,6 +171,8 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
             Directory.CreateDirectory(Path.Combine(Application.persistentDataPath, loggerFolder));
         }
         Debug.Log("saved at: " + filePath);
+        
+        
         using (StreamWriter writer = new StreamWriter(filePath))
         {
             // Write session information
@@ -181,11 +183,17 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
             writer.WriteLine("----");
             writer.WriteLine("Player Position X;Player Position Y;Player Position Z;Monster Position X;Monster Position Y;Monster Position Z;CurrentDeath") ;
 
+            int currentDeathIndex = 0;
             for (int i = 0; i < sessionLog.allPlayerLoggedPositions.Count; i++)
             {
+                if (sessionLog.deathIndexs.Count > currentDeathIndex + 1) {
+                    if (sessionLog.deathIndexs[currentDeathIndex + 1] == i) { 
+                        currentDeathIndex = i;
+                    }
+                }
                 Vector3 playerPos = sessionLog.allPlayerLoggedPositions[i];
                 Vector3 monsterPos = sessionLog.allMonsterLoggedPositions[i];
-                string line = $"{playerPos.x};{playerPos.y};{playerPos.z};{monsterPos.x};{monsterPos.y};{monsterPos.z}";
+                string line = $"{playerPos.x};{playerPos.y};{playerPos.z};{monsterPos.x};{monsterPos.y};{monsterPos.z};{sessionLog.deathIndexs[currentDeathIndex]}";
                 writer.WriteLine(line);
                 Debug.Log(line);
             }
