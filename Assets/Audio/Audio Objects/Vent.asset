@@ -10,24 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d15ae218647a2d4f85e14306846c10c, type: 3}
-  m_Name: Rock
+  m_Name: Vent
   m_EditorClassIdentifier: 
   safeName: 
   presetDescription: 
   files:
-  - {fileID: 8300000, guid: 1f0199a4c6005ec4abbb302f71bc036d, type: 3}
-  - {fileID: 8300000, guid: 53e2adf2ac488ef46bb2b4074de9e363, type: 3}
-  - {fileID: 8300000, guid: a03a96c5d1e99b4409ddd79098abd9ab, type: 3}
-  - {fileID: 8300000, guid: 7187dc81f98b8be4eb97bfc4dd9a5abf, type: 3}
-  - {fileID: 8300000, guid: e3cfcb32689b274419ac73380ea96888, type: 3}
-  - {fileID: 8300000, guid: 314d37dfb74502a4094b835d0e0d6c23, type: 3}
-  - {fileID: 8300000, guid: f0f794c67e9233d468a38d165590d253, type: 3}
-  - {fileID: 8300000, guid: 1a7741daba5446e46a40f8074aae75dc, type: 3}
-  - {fileID: 8300000, guid: 0bc66974c41ff8c4fa15f46d21ad3548, type: 3}
+  - {fileID: 8300000, guid: 95c5737d0a3302d44b659d31f62c18fd, type: 3}
   loopStart: 0
   loopEnd: 0
   bpm: 120
-  relativeVolume: 0.5
+  relativeVolume: 0.2
   spatialize: 1
   maxDistance: 0
   priority: 128

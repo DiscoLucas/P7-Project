@@ -18,7 +18,8 @@
         Steam,
         WaterDrain,
         WaterFall,
-        PlatformCrash
+        PlatformCrash,
+        Vent
     }
     public enum NewLibraryMusic {
     }

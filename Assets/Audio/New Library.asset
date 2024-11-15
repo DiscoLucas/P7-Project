@@ -39,6 +39,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6be9ceea74893cc46a2955da766c402a, type: 2}
   - {fileID: 11400000, guid: a99bb4316c35cc846a6f9c2a53c9b453, type: 2}
   - {fileID: 11400000, guid: 1497b1013329f43479da844f1778095d, type: 2}
+  - {fileID: 11400000, guid: f11b1a78f0c0b654bb400a06b48580b4, type: 2}
   Music: []
   useCustomNames: 0
   generatedName: NewLibrary
@@ -68,6 +69,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 6be9ceea74893cc46a2955da766c402a, type: 2}
     - {fileID: 11400000, guid: a99bb4316c35cc846a6f9c2a53c9b453, type: 2}
     - {fileID: 11400000, guid: 1497b1013329f43479da844f1778095d, type: 2}
+    - {fileID: 11400000, guid: f11b1a78f0c0b654bb400a06b48580b4, type: 2}
     foldout: 1
   - name: PlayerMovement
     files:
