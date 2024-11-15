@@ -19,10 +19,21 @@ public class AgentSoundBehaviors : MonoBehaviour
         screamActiveAction = true;
     }
 
+    /// <summary>
+    /// Screaming sound starts playing
+    /// </summary>
     public void playerScream() {
         
         timeWhenScream = Time.timeSinceLevelLoad;
         AudioManager.PlaySound(scream, transform.position);
+    }
+
+    /// <summary>
+    /// Hit sound playing
+    /// </summary>
+    /// <param name="hitsound"></param>
+    public void hitsound(Transform hitsound) { 
+        
     }
 
     public bool checkIfScreamStopped() {
@@ -34,7 +45,9 @@ public class AgentSoundBehaviors : MonoBehaviour
         return false;
     }
 
-
+    /// <summary>
+    /// Play the chase theme
+    /// </summary>
     public void playChaseTheme() { 
         AudioManager.PlaySound(chaseTheme, transform.position);
     }
