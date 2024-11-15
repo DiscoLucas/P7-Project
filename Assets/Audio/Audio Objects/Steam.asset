@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 90b36623deb389e41abc2c5b866d3931, type: 3}
   - {fileID: 8300000, guid: c2a6ef839a960e840b9bf29a8f8a7b50, type: 3}
   loopStart: 0
-  loopEnd: 0
+  loopEnd: 7.070104
   bpm: 120
   relativeVolume: 0.15
   spatialize: 1
@@ -30,7 +30,7 @@ MonoBehaviour:
   priority: 128
   startingPitch: 1
   pitchShift: 0.05
-  loopMode: 0
+  loopMode: 1
   delay: 0
   ignoreTimeScale: 0
   maxPlayingInstances: 10
@@ -41,7 +41,7 @@ MonoBehaviour:
   fadeOutDuration: 0
   bypassEffects: 0
   bypassListenerEffects: 0
-  bypassReverbZones: 0
+  bypassReverbZones: 1
   chorusFilter:
     enabled: 0
     dryMix: 0

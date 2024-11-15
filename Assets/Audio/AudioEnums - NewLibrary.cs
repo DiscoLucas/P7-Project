@@ -17,7 +17,8 @@
         WaterRun,
         Steam,
         WaterDrain,
-        WaterFall
+        WaterFall,
+        PlatformCrash
     }
     public enum NewLibraryMusic {
     }
