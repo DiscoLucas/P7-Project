@@ -4080,7 +4080,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1.0500001, y: 1.7420001, z: 0.081}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.95800006, y: -0.010000001, z: 0}
   m_TimeToStationary: 0.5
@@ -4872,10 +4872,67 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 0.087000005, y: 1.245, z: 0.711}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.042000003, y: 0.004, z: -0.689}
   m_TimeToStationary: 0.5
+--- !u!1001 &1769828071
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1729722351057992, guid: a86df9855c9740348a3f4bbace71f5ec, type: 3}
+      propertyPath: m_Name
+      value: Decal_Grunge_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560511287384082, guid: a86df9855c9740348a3f4bbace71f5ec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 40.36165
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560511287384082, guid: a86df9855c9740348a3f4bbace71f5ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.519236
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560511287384082, guid: a86df9855c9740348a3f4bbace71f5ec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 155.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560511287384082, guid: a86df9855c9740348a3f4bbace71f5ec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00000034272674
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560511287384082, guid: a86df9855c9740348a3f4bbace71f5ec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0000003465915
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560511287384082, guid: a86df9855c9740348a3f4bbace71f5ec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560511287384082, guid: a86df9855c9740348a3f4bbace71f5ec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560511287384082, guid: a86df9855c9740348a3f4bbace71f5ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560511287384082, guid: a86df9855c9740348a3f4bbace71f5ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560511287384082, guid: a86df9855c9740348a3f4bbace71f5ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a86df9855c9740348a3f4bbace71f5ec, type: 3}
 --- !u!1 &1779103820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3155186363078282378, guid: a2f7cd9e8d4db3144a1e1afcd3d00844, type: 3}
@@ -6260,7 +6317,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1.0500001, y: 1.7420001, z: 0.081}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.95800006, y: -0.010000001, z: 0}
   m_TimeToStationary: 0.5
@@ -9655,3 +9712,4 @@ SceneRoots:
   - {fileID: 303598698}
   - {fileID: 1110418358}
   - {fileID: 1416199333}
+  - {fileID: 1769828071}
