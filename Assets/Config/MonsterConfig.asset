@@ -58,7 +58,7 @@ MonoBehaviour:
   highAwarenessCostMultiplier: 1
   baseIdleSpeed: 2
   baseStalkSpeed: 5
-  baseChaseSpeed: 10
-  maxAggressionMultiplier: 1.5
+  baseChaseSpeed: 6
+  maxAggressionMultiplier: 1.1
   hideSpeedModifier: 0.9
   peekSpeedModifier: 1.2

@@ -28,7 +28,8 @@ public class DumbBot : MonoBehaviour
 
     [Header("Timer Settings")]
     public float chaseTime = 30f;
-    public float timeToKill = 1f;
+    public float timeToKill = 0.2f;
+    float initialTimeToKill;
     private float RandomIdleTime() { return Random.Range(1f, 5f);}
 
     public float attackRange = 1f;
@@ -53,7 +54,7 @@ public class DumbBot : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         die = Die.Instance;
         gameManager = GameManager.Instance;
-
+        initialTimeToKill = timeToKill;
 
         if (player == null || agent == null || home == null)
         {
@@ -128,7 +129,7 @@ public class DumbBot : MonoBehaviour
                     //fsm.Trigger("KillPlayer"); <-- Should be called by the animation behavor inside onCollisionEnterAttack
                 }
             },
-            onExit: state => timeToKill = 1f
+            onExit: state => timeToKill = initialTimeToKill
             );
 
         fsm.AddState("KillPlayer",
@@ -157,7 +158,7 @@ public class DumbBot : MonoBehaviour
         fsm.AddTriggerTransition("StartStalking", "Idle", "Stalk");
         fsm.AddTriggerTransitionFromAny("Stuck", "Respawn", forceInstantly: true);
         fsm.AddTransition("Respawn", "Stalk");
-        fsm.StateChanged += state => stateTimer = 0;
+        //fsm.StateChanged += state => stateTimer = 0;
 
         fsm.Init();
 
@@ -167,13 +168,20 @@ public class DumbBot : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        stateTimer += Time.deltaTime;
-        if (stateTimer >= maxStateDuration)
+        
+        if (agent.hasPath == false)
         {
-            Debug.LogError("Bot state has been active for too long, forcing a transition to respawn.");
-            fsm.Trigger("Stuck");
-            stateTimer = 0;
+            stateTimer += Time.deltaTime;
+            if (stateTimer >= maxStateDuration)
+            {
+                Debug.LogError("Bot state has been active for too long, forcing a transition to respawn.");
+                fsm.Trigger("Stuck");
+                stateTimer = 0;
+            }
         }
+        else stateTimer = 0;
+        
+        
 
         fsm.OnLogic();
         StateBase<string> state = fsm.ActiveState;
