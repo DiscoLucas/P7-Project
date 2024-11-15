@@ -6,7 +6,15 @@
         LeverAct,
         Generator,
         Door,
-        DoorClosing
+        DoorClosing,
+        Metal,
+        Rock,
+        Tile,
+        Water,
+        MetalRun,
+        RockRun,
+        TileRun,
+        WaterRun
     }
     public enum NewLibraryMusic {
     }

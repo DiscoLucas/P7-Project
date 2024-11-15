@@ -15,6 +15,7 @@ MonoBehaviour:
   soundCategories:
   - TEST
   - Ambiance
+  - PlayerMovement
   musicCategories:
   - 
   Sounds:
@@ -26,6 +27,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ffe67b3f5197a824ba4c98677cf076d7, type: 2}
   - {fileID: 11400000, guid: f492ea681ccac6647bd6f82dd981c077, type: 2}
   - {fileID: 11400000, guid: d1c4ee853a7b6394eb8b70e4a8c3c2f8, type: 2}
+  - {fileID: 11400000, guid: d6f07b252bb7c7b40b0425e9828a0b26, type: 2}
+  - {fileID: 11400000, guid: 608659725884e804b92a514c08ac025c, type: 2}
+  - {fileID: 11400000, guid: eb1b193130f5ad74a881ddf1ad9fe738, type: 2}
+  - {fileID: 11400000, guid: 92f56e5f7f5c6274499f341861c3cbd0, type: 2}
   Music: []
   useCustomNames: 0
   generatedName: NewLibrary
@@ -51,6 +56,13 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ffe67b3f5197a824ba4c98677cf076d7, type: 2}
     - {fileID: 11400000, guid: f492ea681ccac6647bd6f82dd981c077, type: 2}
     - {fileID: 11400000, guid: d1c4ee853a7b6394eb8b70e4a8c3c2f8, type: 2}
+    foldout: 1
+  - name: PlayerMovement
+    files:
+    - {fileID: 11400000, guid: d6f07b252bb7c7b40b0425e9828a0b26, type: 2}
+    - {fileID: 11400000, guid: 608659725884e804b92a514c08ac025c, type: 2}
+    - {fileID: 11400000, guid: eb1b193130f5ad74a881ddf1ad9fe738, type: 2}
+    - {fileID: 11400000, guid: 92f56e5f7f5c6274499f341861c3cbd0, type: 2}
     foldout: 1
   musicCategoriesToList:
   - name: 
