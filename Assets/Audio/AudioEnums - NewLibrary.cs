@@ -14,7 +14,10 @@
         MetalRun,
         RockRun,
         TileRun,
-        WaterRun
+        WaterRun,
+        Steam,
+        WaterDrain,
+        WaterFall
     }
     public enum NewLibraryMusic {
     }
