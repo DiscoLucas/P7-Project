@@ -19,10 +19,10 @@ TagManager:
   - PickUps
   - EnemyLayer
   - Enviroment
-  - 
-  - 
-  - 
-  - 
+  - Metal
+  - Rock
+  - Tile
+  - Water
   - 
   - 
   - 
