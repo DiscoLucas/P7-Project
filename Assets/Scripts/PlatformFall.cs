@@ -2,12 +2,16 @@ using UnityEngine;
 using System.Collections.Generic;
 using NUnit.Framework;
 using System.Collections;
+using JSAM;
 
 public class PlatformFall : MonoBehaviour
 {
     List<Rigidbody> rb;
     public Collider platformCollider;
     public float fallDelay = 3f;
+
+    [SerializeField] private SoundFileObject platformCrash;
+    [SerializeField] private Transform platformCrashTransform;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -48,7 +52,7 @@ public class PlatformFall : MonoBehaviour
         rb.useGravity = true;
         rb.isKinematic = false;
         // TODO: play sound effect
-
+        AudioManager.PlaySound(platformCrash, platformCrashTransform.position);
         return null;
     }
 }

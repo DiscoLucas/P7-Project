@@ -19,14 +19,14 @@ MonoBehaviour:
   loopStart: 0
   loopEnd: 0
   bpm: 120
-  relativeVolume: 0.5
+  relativeVolume: 0.558
   spatialize: 1
   maxDistance: 0
   priority: 128
-  startingPitch: 1
-  pitchShift: 0.05
+  startingPitch: 1.16
+  pitchShift: 0
   loopMode: 0
-  delay: 0
+  delay: 0.2
   ignoreTimeScale: 0
   maxPlayingInstances: 10
   channelOverride: 0
