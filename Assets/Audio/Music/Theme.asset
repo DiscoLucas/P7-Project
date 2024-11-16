@@ -19,11 +19,11 @@ MonoBehaviour:
   loopStart: 0
   loopEnd: 219.42857
   bpm: 120
-  relativeVolume: 1
+  relativeVolume: 0.5
   spatialize: 0
   maxDistance: 0
   priority: 128
-  startingPitch: 0.3
+  startingPitch: 1
   pitchShift: 0
   loopMode: 1
   delay: 0
@@ -34,9 +34,9 @@ MonoBehaviour:
   fadeInOut: 0
   fadeInDuration: 0
   fadeOutDuration: 0
-  bypassEffects: 0
-  bypassListenerEffects: 0
-  bypassReverbZones: 0
+  bypassEffects: 1
+  bypassListenerEffects: 1
+  bypassReverbZones: 1
   chorusFilter:
     enabled: 0
     dryMix: 0
@@ -65,20 +65,20 @@ MonoBehaviour:
     highpassResonanceQ: 0
   reverbFilter:
     enabled: 0
-    reverbPreset: 0
+    reverbPreset: 1
     dryLevel: 0
     room: 0
     roomHF: 0
     roomLF: 0
-    decayTime: 0
-    decayHFRatio: 0
-    reflectionsLevel: 0
+    decayTime: 1
+    decayHFRatio: 0.5
+    reflectionsLevel: -10000
     reflectionsDelay: 0
     reverbLevel: 0
-    reverbDelay: 0
-    hFReference: 0
-    lFReference: 0
-    diffusion: 0
-    density: 0
+    reverbDelay: 0.04
+    hFReference: 5000
+    lFReference: 250
+    diffusion: 100
+    density: 100
   neverRepeat: 0
   lastClipIndex: -1

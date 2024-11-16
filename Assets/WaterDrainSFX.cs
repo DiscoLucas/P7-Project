@@ -9,5 +9,6 @@ public class WaterDrainSFX : MonoBehaviour
     public void PlayWaterDrainSFX()
     {
         AudioManager.PlaySound(waterDrainSFX, waterDrainTransform.position);
+        Debug.Log("Water drain sound effect played");
     }
 }
