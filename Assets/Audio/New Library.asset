@@ -40,7 +40,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a99bb4316c35cc846a6f9c2a53c9b453, type: 2}
   - {fileID: 11400000, guid: 1497b1013329f43479da844f1778095d, type: 2}
   - {fileID: 11400000, guid: f11b1a78f0c0b654bb400a06b48580b4, type: 2}
-  Music: []
+  Music:
+  - {fileID: 11400000, guid: 1851a6424d09e6349908d4ae440ce410, type: 2}
   useCustomNames: 0
   generatedName: NewLibrary
   musicEnum: NewLibraryMusic
@@ -84,5 +85,6 @@ MonoBehaviour:
     foldout: 1
   musicCategoriesToList:
   - name: 
-    files: []
+    files:
+    - {fileID: 11400000, guid: 1851a6424d09e6349908d4ae440ce410, type: 2}
     foldout: 1

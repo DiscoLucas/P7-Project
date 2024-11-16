@@ -22,4 +22,5 @@
         Vent
     }
     public enum NewLibraryMusic {
+        Theme
     }
