@@ -10,38 +10,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d15ae218647a2d4f85e14306846c10c, type: 3}
-  m_Name: Steam
+  m_Name: Player Grunts
   m_EditorClassIdentifier: 
   safeName: 
   presetDescription: 
   files:
-  - {fileID: 8300000, guid: 3be3224a005b19348b11be5bebb69341, type: 3}
-  - {fileID: 8300000, guid: 35ff2364376fe9d46afe48e2462c36b6, type: 3}
-  - {fileID: 8300000, guid: fccb9d48c5bad21489cacb46298bf479, type: 3}
-  - {fileID: 8300000, guid: 03937ef18b3a12a48a2f91276711c91a, type: 3}
-  - {fileID: 8300000, guid: 90b36623deb389e41abc2c5b866d3931, type: 3}
-  - {fileID: 8300000, guid: c2a6ef839a960e840b9bf29a8f8a7b50, type: 3}
+  - {fileID: 8300000, guid: 4ff20b35bc5e3554992c09ec9009a359, type: 3}
+  - {fileID: 8300000, guid: 82ad46dc79e222f49b3ad7a08f660d52, type: 3}
+  - {fileID: 8300000, guid: 0140f244c7fe46e4c80c869ea06fc182, type: 3}
+  - {fileID: 8300000, guid: bae2f526b68dfbc459a70542673a3f6f, type: 3}
+  - {fileID: 8300000, guid: d03bf810d029ade4b93072b883ceffc2, type: 3}
+  - {fileID: 8300000, guid: b7065cebcda513d4c953d4dd03240947, type: 3}
+  - {fileID: 8300000, guid: 6ece891fc0d31124eb46ffe870e3f61c, type: 3}
+  - {fileID: 8300000, guid: cfd50ca914b9eb14fb2179b8c5ee2853, type: 3}
+  - {fileID: 8300000, guid: b4666484bf588f849b102eff5f94240a, type: 3}
+  - {fileID: 8300000, guid: 0ff1e628397a1864782c1ad179967337, type: 3}
   loopStart: 0
-  loopEnd: 7.070104
+  loopEnd: 0
   bpm: 120
-  relativeVolume: 0.15
-  spatialize: 1
-  maxDistance: 5
+  relativeVolume: 1
+  spatialize: 0
+  maxDistance: 0
   priority: 128
   startingPitch: 1
   pitchShift: 0.05
-  loopMode: 1
+  loopMode: 0
   delay: 0
   ignoreTimeScale: 0
   maxPlayingInstances: 10
   channelOverride: 0
-  mixerGroupOverride: {fileID: -7849317721551672127, guid: f3939c92bcaedfc488f1768332ba0f01, type: 2}
+  mixerGroupOverride: {fileID: 0}
   fadeInOut: 0
   fadeInDuration: 0
   fadeOutDuration: 0
   bypassEffects: 0
   bypassListenerEffects: 0
-  bypassReverbZones: 1
+  bypassReverbZones: 0
   chorusFilter:
     enabled: 0
     dryMix: 0

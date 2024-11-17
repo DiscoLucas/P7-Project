@@ -23,7 +23,10 @@
         Crunch,
         Scream,
         Crageling,
-        MonsterFootSteps
+        MonsterFootSteps,
+        ChaseThemeLightMotive,
+        Hit,
+        PlayerGrunts
     }
     public enum NewLibraryMusic {
         Theme

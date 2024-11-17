@@ -3,6 +3,7 @@ using UnityEngine.Rendering;
 using System;
 using UnityEngine.Rendering.HighDefinition;
 using System.Collections;
+using JSAM;
 
 public class Die : Singleton<Die>
 {
@@ -36,7 +37,8 @@ public class Die : Singleton<Die>
     public float choromaEnd = 1;
     public float filmGrainEnd = 1;
     public float tiltForce = 1; // Force applied to the camera when the player dies
-    
+    public SoundFileObject deathSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -139,6 +141,7 @@ public class Die : Singleton<Die>
         if (volume.profile.TryGet(out FilmGrain filmGrain))
             currentChoroma = filmGrain.intensity.value;
 
+        AudioManager.PlaySound(deathSound, cameraObj.transform.position);
 
         // Transition to the death effects
         StartCoroutine(TransitionToDeathEffects());

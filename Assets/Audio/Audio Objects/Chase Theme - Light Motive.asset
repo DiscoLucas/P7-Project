@@ -10,38 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d15ae218647a2d4f85e14306846c10c, type: 3}
-  m_Name: Steam
+  m_Name: Chase Theme - Light Motive
   m_EditorClassIdentifier: 
   safeName: 
   presetDescription: 
   files:
-  - {fileID: 8300000, guid: 3be3224a005b19348b11be5bebb69341, type: 3}
-  - {fileID: 8300000, guid: 35ff2364376fe9d46afe48e2462c36b6, type: 3}
-  - {fileID: 8300000, guid: fccb9d48c5bad21489cacb46298bf479, type: 3}
-  - {fileID: 8300000, guid: 03937ef18b3a12a48a2f91276711c91a, type: 3}
-  - {fileID: 8300000, guid: 90b36623deb389e41abc2c5b866d3931, type: 3}
-  - {fileID: 8300000, guid: c2a6ef839a960e840b9bf29a8f8a7b50, type: 3}
+  - {fileID: 8300000, guid: e104b6b9d058b1140bcb9be271c370ca, type: 3}
   loopStart: 0
-  loopEnd: 7.070104
+  loopEnd: 0
   bpm: 120
-  relativeVolume: 0.15
-  spatialize: 1
-  maxDistance: 5
+  relativeVolume: 0.21
+  spatialize: 0
+  maxDistance: 0
   priority: 128
   startingPitch: 1
   pitchShift: 0.05
-  loopMode: 1
+  loopMode: 0
   delay: 0
   ignoreTimeScale: 0
   maxPlayingInstances: 10
   channelOverride: 0
-  mixerGroupOverride: {fileID: -7849317721551672127, guid: f3939c92bcaedfc488f1768332ba0f01, type: 2}
+  mixerGroupOverride: {fileID: 0}
   fadeInOut: 0
   fadeInDuration: 0
   fadeOutDuration: 0
   bypassEffects: 0
   bypassListenerEffects: 0
-  bypassReverbZones: 1
+  bypassReverbZones: 0
   chorusFilter:
     enabled: 0
     dryMix: 0
