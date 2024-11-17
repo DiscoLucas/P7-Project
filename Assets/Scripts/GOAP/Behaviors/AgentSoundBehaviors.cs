@@ -7,6 +7,8 @@ public class AgentSoundBehaviors : MonoBehaviour
     public MonsterConfig config;
     public SoundFileObject scream;
     public SoundFileObject chaseTheme;
+    public SoundFileObject Crageling;
+    public SoundFileObject hitsound;
     bool screamActiveAction = false;
     public float getLastScreamTimeCost() {
         float cost = 0;
@@ -32,8 +34,9 @@ public class AgentSoundBehaviors : MonoBehaviour
     /// Hit sound playing
     /// </summary>
     /// <param name="hitsound"></param>
-    public void hitsound(Transform hitsound) { 
-        
+    public void playHitsound(Transform hitsound) {
+        AudioManager.PlaySound(this.hitsound, hitsound.position);
+
     }
 
     public bool checkIfScreamStopped() {
@@ -55,5 +58,11 @@ public class AgentSoundBehaviors : MonoBehaviour
     public void stopChaseTheme()
     {
         AudioManager.StopSound(chaseTheme);
+    }
+
+    public void playCrageling()
+    {
+        //Play crageling sound at a random time on the agent
+        AudioManager.PlaySound(Crageling, transform.position);
     }
 }

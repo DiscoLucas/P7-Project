@@ -16,6 +16,7 @@ MonoBehaviour:
   - TEST
   - Ambiance
   - PlayerMovement
+  - Monster
   musicCategories:
   - 
   Sounds:
@@ -40,6 +41,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a99bb4316c35cc846a6f9c2a53c9b453, type: 2}
   - {fileID: 11400000, guid: 1497b1013329f43479da844f1778095d, type: 2}
   - {fileID: 11400000, guid: f11b1a78f0c0b654bb400a06b48580b4, type: 2}
+  - {fileID: 11400000, guid: f0822da04bda9834f9198cdf67b03d1a, type: 2}
+  - {fileID: 11400000, guid: 1b893385bb8d2a641a46fd441e050eb2, type: 2}
+  - {fileID: 11400000, guid: e8003fb9a29705f4388d7a8f7b83e453, type: 2}
+  - {fileID: 11400000, guid: 5a6cb0efc064afd4fb58b103e43dec96, type: 2}
   Music:
   - {fileID: 11400000, guid: 1851a6424d09e6349908d4ae440ce410, type: 2}
   useCustomNames: 0
@@ -82,6 +87,13 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 737dbe8c2bbd0464e90d3876a442fbc7, type: 2}
     - {fileID: 11400000, guid: 599e047a801682b40a16dbae0d2093ac, type: 2}
     - {fileID: 11400000, guid: c5096240db2b26d4aa4da4a37c9f081f, type: 2}
+    foldout: 1
+  - name: Monster
+    files:
+    - {fileID: 11400000, guid: f0822da04bda9834f9198cdf67b03d1a, type: 2}
+    - {fileID: 11400000, guid: 1b893385bb8d2a641a46fd441e050eb2, type: 2}
+    - {fileID: 11400000, guid: e8003fb9a29705f4388d7a8f7b83e453, type: 2}
+    - {fileID: 11400000, guid: 5a6cb0efc064afd4fb58b103e43dec96, type: 2}
     foldout: 1
   musicCategoriesToList:
   - name: 

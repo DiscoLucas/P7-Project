@@ -19,7 +19,11 @@
         WaterDrain,
         WaterFall,
         PlatformCrash,
-        Vent
+        Vent,
+        Crunch,
+        Scream,
+        Crageling,
+        MonsterFootSteps
     }
     public enum NewLibraryMusic {
         Theme
