@@ -11,6 +11,7 @@ public class DumbBot : MonoBehaviour
     public NavMeshAgent agent;
     GameManager gameManager;
     Die die;
+    VentFeedback currentVent;
 
     [Header("Debugging")]
     public string stateDisplayText = "";
@@ -168,7 +169,7 @@ public class DumbBot : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+        // TODO: change this to check if the agent is stuck instead of just checking if it has a path.
         if (agent.hasPath == false)
         {
             stateTimer += Time.deltaTime;
@@ -309,6 +310,21 @@ public class DumbBot : MonoBehaviour
         yield return new WaitForSeconds(delay);
         fsm.Trigger(triggerName); // Trigger the transition after the delay
         isCoroutineRunning = false;
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        //if (!other.CompareTag("Vent")) return;
+        VentFeedback vent = other.GetComponent<VentFeedback>();
+        if (vent != null && vent != currentVent) // bruh im tweakin
+        {
+            Debug.Log(vent + " is the current vent");
+            // if isVenting is true that means that this isn't the first vent trigger.
+            if (currentVent.isVenting) currentVent.OnMonsterExit();
+            currentVent.OnMonsterEnter();
+            currentVent = vent;
+            
+        }
     }
 
 }
