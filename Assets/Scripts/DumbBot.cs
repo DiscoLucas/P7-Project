@@ -12,6 +12,7 @@ public class DumbBot : MonoBehaviour
     GameManager gameManager;
     Die die;
     VentFeedback currentVent;
+    Collider ventCollider;
 
     [Header("Debugging")]
     public string stateDisplayText = "";
@@ -56,6 +57,7 @@ public class DumbBot : MonoBehaviour
         die = Die.Instance;
         gameManager = GameManager.Instance;
         initialTimeToKill = timeToKill;
+        ventCollider = GetComponent<Collider>();
 
         if (player == null || agent == null || home == null)
         {
@@ -314,14 +316,20 @@ public class DumbBot : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Triggered");
         //if (!other.CompareTag("Vent")) return;
         VentFeedback vent = other.GetComponent<VentFeedback>();
         if (vent != null && vent != currentVent) // bruh im tweakin
         {
             Debug.Log(vent + " is the current vent");
             // if isVenting is true that means that this isn't the first vent trigger.
-            if (currentVent.isVenting) currentVent.OnMonsterExit();
-            currentVent.OnMonsterEnter();
+            if (vent.isVenting)
+            {
+                vent.OnMonsterExit();
+                currentVent = vent;
+                return;
+            }
+            vent.OnMonsterEnter();
             currentVent = vent;
             
         }
