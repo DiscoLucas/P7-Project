@@ -27,7 +27,8 @@
         ChaseThemeLightMotive,
         Hit,
         PlayerGrunts,
-        VentCrawling
+        VentCrawling,
+        ValveTurn
     }
     public enum NewLibraryMusic {
         Theme
