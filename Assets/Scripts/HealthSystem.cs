@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Rendering;
+using JSAM;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class HealthSystem : MonoBehaviour
     public float shakeMagnitude = 0.05f;
     bool isTakingDamage;
     private bool isDead;
+    [SerializeField] private SoundFileObject damageSound;
 
     [Header("Regen")]
     public float regenDelay = 1;
@@ -55,6 +57,10 @@ public class HealthSystem : MonoBehaviour
         if (isDead) return;
 
         currentHealth -= damage;
+        if (!AudioManager.IsSoundPlaying(damageSound))
+        {
+            AudioManager.PlaySound(damageSound);
+        }
         UpdateVignetteColor();
         StopCoroutine(Regen()); // Stop regen if taking damage
         StartCoroutine(ScreenShake());
