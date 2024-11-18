@@ -11,6 +11,7 @@ public class DumbBot : MonoBehaviour
     public NavMeshAgent agent;
     GameManager gameManager;
     Die die;
+    VentFeedback currentVent;
 
     [Header("Debugging")]
     public string stateDisplayText = "";
@@ -309,6 +310,27 @@ public class DumbBot : MonoBehaviour
         yield return new WaitForSeconds(delay);
         fsm.Trigger(triggerName); // Trigger the transition after the delay
         isCoroutineRunning = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Triggered");
+        //if (!other.CompareTag("Vent")) return;
+        VentFeedback vent = other.GetComponent<VentFeedback>();
+        if (vent != null && vent != currentVent) // bruh im tweakin
+        {
+            Debug.Log(vent + " is the current vent");
+            // if isVenting is true that means that this isn't the first vent trigger.
+            if (vent.isVenting)
+            {
+                vent.OnMonsterExit();
+                currentVent = vent;
+                return;
+            }
+            vent.OnMonsterEnter();
+            currentVent = vent;
+
+        }
     }
 
 }
