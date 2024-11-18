@@ -45,4 +45,10 @@ public class PlayerControls : MonoBehaviour
             }
         }
     }
+
+    public void destoryCurrentHeldItem() {
+        GameObject HeldItem = Hand.transform.GetChild(0).gameObject;
+        if(HeldItem != null)
+            Destroy(HeldItem);
+    }
 }
