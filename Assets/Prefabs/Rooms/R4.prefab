@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 3683448657763161507}
   - component: {fileID: 7100068220320927067}
   - component: {fileID: 8894707186219706895}
-  - component: {fileID: 7604608963230598829}
+  - component: {fileID: 8582571764533195155}
   m_Layer: 0
   m_Name: Door A2
   m_TagString: Untagged
@@ -483,7 +483,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!208 &7604608963230598829
+--- !u!208 &8582571764533195155
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 2585289023550904363}
   - component: {fileID: 8275406974582049387}
   - component: {fileID: 5066797153884233547}
-  - component: {fileID: 819546741287470125}
+  - component: {fileID: 3269575789482766218}
   m_Layer: 0
   m_Name: Door A1
   m_TagString: Untagged
@@ -757,7 +757,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!208 &819546741287470125
+--- !u!208 &3269575789482766218
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4296,7 +4296,10 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5967959590153952431, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4498633682106292, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7035368861065340664}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1830569057672312, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
       insertIndex: -1
@@ -4307,6 +4310,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1830569057672312, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5971741910268326010}
+    - targetCorrespondingSourceObject: {fileID: 1830569057672312, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8624043385339894404}
   m_SourcePrefab: {fileID: 100100000, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
 --- !u!1 &1897599437018035586 stripped
 GameObject:
@@ -4425,7 +4431,7 @@ MonoBehaviour:
           m_StringArgument: Drain
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5971741910268326010}
+      - m_Target: {fileID: 8624043385339894404}
         m_TargetAssemblyTypeName: WaterDrainSFX, Assembly-CSharp
         m_MethodName: PlayWaterDrainSFX
         m_Mode: 1
@@ -4562,6 +4568,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterDrainSFX: {fileID: 11400000, guid: 6be9ceea74893cc46a2955da766c402a, type: 2}
   waterDrainTransform: {fileID: 1899634197975473742}
+--- !u!114 &8624043385339894404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897599437018035586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace2ff0904e410f4d8e1442e04efb234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterDrainSFX: {fileID: 11400000, guid: 6be9ceea74893cc46a2955da766c402a, type: 2}
+  waterDrainTransform: {fileID: 0}
 --- !u!4 &1899634197975473742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4498633682106292, guid: 6c7922e2383f66544aa70589c6e39bba, type: 3}
@@ -8763,6 +8783,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4694226947413848, guid: b65100889c6221241a402b267311e0c7, type: 3}
   m_PrefabInstance: {fileID: 6904773873102639279}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7038508459531669192
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1899634197975473742}
+    m_Modifications:
+    - target: {fileID: 1235349359297998, guid: 64bfdf2f612ab3347b927eb0637dd604, type: 3}
+      propertyPath: m_Name
+      value: SW_Modules_Transition_Tile_Pipe_2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337104101533744, guid: 64bfdf2f612ab3347b927eb0637dd604, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -36.990005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337104101533744, guid: 64bfdf2f612ab3347b927eb0637dd604, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337104101533744, guid: 64bfdf2f612ab3347b927eb0637dd604, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 173.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337104101533744, guid: 64bfdf2f612ab3347b927eb0637dd604, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071059
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337104101533744, guid: 64bfdf2f612ab3347b927eb0637dd604, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337104101533744, guid: 64bfdf2f612ab3347b927eb0637dd604, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071078
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337104101533744, guid: 64bfdf2f612ab3347b927eb0637dd604, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337104101533744, guid: 64bfdf2f612ab3347b927eb0637dd604, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337104101533744, guid: 64bfdf2f612ab3347b927eb0637dd604, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337104101533744, guid: 64bfdf2f612ab3347b927eb0637dd604, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64bfdf2f612ab3347b927eb0637dd604, type: 3}
+--- !u!4 &7035368861065340664 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4337104101533744, guid: 64bfdf2f612ab3347b927eb0637dd604, type: 3}
+  m_PrefabInstance: {fileID: 7038508459531669192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7427934169801209092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10088,7 +10170,7 @@ PrefabInstance:
       addedObject: {fileID: 276454935091115996}
     - targetCorrespondingSourceObject: {fileID: 1983870187085144, guid: 74abdba8f8b63e2448b85d89c3ea623a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8802999173440717999}
+      addedObject: {fileID: 2763923097962111100}
   m_SourcePrefab: {fileID: 100100000, guid: 74abdba8f8b63e2448b85d89c3ea623a, type: 3}
 --- !u!4 &9214559414443639628 stripped
 Transform:
@@ -10122,7 +10204,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!208 &8802999173440717999
+--- !u!208 &2763923097962111100
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
