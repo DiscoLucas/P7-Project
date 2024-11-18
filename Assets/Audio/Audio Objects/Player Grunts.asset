@@ -32,7 +32,7 @@ MonoBehaviour:
   spatialize: 0
   maxDistance: 0
   priority: 128
-  startingPitch: 1
+  startingPitch: 0.7
   pitchShift: 0.05
   loopMode: 0
   delay: 0
