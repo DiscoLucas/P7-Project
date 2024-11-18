@@ -26,7 +26,8 @@
         MonsterFootSteps,
         ChaseThemeLightMotive,
         Hit,
-        PlayerGrunts
+        PlayerGrunts,
+        VentCrawling
     }
     public enum NewLibraryMusic {
         Theme
