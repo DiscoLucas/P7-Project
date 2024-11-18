@@ -335,25 +335,5 @@ public class DumbBot : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Triggered");
-        //if (!other.CompareTag("Vent")) return;
-        VentFeedback vent = other.GetComponent<VentFeedback>();
-        if (vent != null && vent != currentVent) // bruh im tweakin
-        {
-            Debug.Log(vent + " is the current vent");
-            // if isVenting is true that means that this isn't the first vent trigger.
-            if (vent.isVenting)
-            {
-                vent.OnMonsterExit();
-                currentVent = vent;
-                return;
-            }
-            vent.OnMonsterEnter();
-            currentVent = vent;
-
-        }
-    }
 
 }
