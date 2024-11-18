@@ -27,7 +27,7 @@ public class SessionLog
     public SessionLog(string name)
     {
         this.name = name;
-        deathIndexs.Add(0);
+        
     }
 
     public void startSession()
@@ -62,6 +62,9 @@ public class SessionLog
 
     public void addPosition(Vector3 playerPosition, Vector3 monsterPosition)
     {
+        if (allPlayerLoggedPositions.Count < 1) {
+            deathIndexs.Add(0);
+        }
         allPlayerLoggedPositions.Add(playerPosition);
         allMonsterLoggedPositions.Add(monsterPosition);
     }
