@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Audio/Audio Objects/FootSteps/Metal.asset.meta
 guid: d6f07b252bb7c7b40b0425e9828a0b26
+========
+guid: 23e164a80b950474e96a0dc177ac5fba
+>>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de:Assets/Audio/Audio Objects/Chase.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Audio/Audio Objects/FootSteps/Rock Run.asset.meta
+guid: 737dbe8c2bbd0464e90d3876a442fbc7
+========
 guid: f0822da04bda9834f9198cdf67b03d1a
+>>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de:Assets/Audio/Audio Objects/Crunch.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

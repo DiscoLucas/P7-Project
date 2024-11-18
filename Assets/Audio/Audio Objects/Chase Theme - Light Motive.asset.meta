@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Audio/Audio Objects/FootSteps/Metal Run.asset.meta
+guid: f56761d2352ae8042844915a0d74ed2b
+========
 guid: c9b8843239f7c0f4b9db7ed9fbb1e9f6
+>>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de:Assets/Audio/Audio Objects/Chase Theme - Light Motive.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

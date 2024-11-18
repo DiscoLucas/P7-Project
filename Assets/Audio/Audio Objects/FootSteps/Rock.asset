@@ -27,7 +27,11 @@ MonoBehaviour:
   loopStart: 0
   loopEnd: 0
   bpm: 120
+<<<<<<< HEAD
+  relativeVolume: 1
+=======
   relativeVolume: 0.5
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
   spatialize: 1
   maxDistance: 0
   priority: 128

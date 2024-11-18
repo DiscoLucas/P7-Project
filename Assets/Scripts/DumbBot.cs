@@ -12,6 +12,7 @@ public class DumbBot : MonoBehaviour
     GameManager gameManager;
     Die die;
     VentFeedback currentVent;
+    Collider ventCollider;
 
     [Header("Debugging")]
     public string stateDisplayText = "";
@@ -56,6 +57,7 @@ public class DumbBot : MonoBehaviour
         die = Die.Instance;
         gameManager = GameManager.Instance;
         initialTimeToKill = timeToKill;
+        ventCollider = GetComponent<Collider>();
 
         if (player == null || agent == null || home == null)
         {
@@ -169,7 +171,7 @@ public class DumbBot : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+        // TODO: change this to check if the agent is stuck instead of just checking if it has a path.
         if (agent.hasPath == false)
         {
             stateTimer += Time.deltaTime;
@@ -310,6 +312,27 @@ public class DumbBot : MonoBehaviour
         yield return new WaitForSeconds(delay);
         fsm.Trigger(triggerName); // Trigger the transition after the delay
         isCoroutineRunning = false;
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Triggered");
+        //if (!other.CompareTag("Vent")) return;
+        VentFeedback vent = other.GetComponent<VentFeedback>();
+        if (vent != null && vent != currentVent) // bruh im tweakin
+        {
+            Debug.Log(vent + " is the current vent");
+            // if isVenting is true that means that this isn't the first vent trigger.
+            if (vent.isVenting)
+            {
+                vent.OnMonsterExit();
+                currentVent = vent;
+                return;
+            }
+            vent.OnMonsterEnter();
+            currentVent = vent;
+            
+        }
     }
 
     private void OnTriggerEnter(Collider other)
