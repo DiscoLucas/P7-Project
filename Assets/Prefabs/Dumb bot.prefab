@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 7451975681142807159}
   - component: {fileID: 8303573413186381367}
   - component: {fileID: 5778685915283312767}
+  - component: {fileID: 7220951536901827033}
   m_Layer: 8
   m_Name: Dumb bot
   m_TagString: Monner
@@ -241,7 +242,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.6868105, y: 1, z: 2.815364}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3074719559393894502}
@@ -335,7 +336,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.48, y: 1, z: 1.01}
   m_Center: {x: 0, y: 0, z: 0}
@@ -394,7 +395,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 80
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
@@ -452,8 +453,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: cb3193e1f6eb7f8468176dcea095ee7a, type: 2}
-  scream: {fileID: 11400000, guid: 45db174fb7df3a343861bb3b15b23cf3, type: 2}
+  scream: {fileID: 11400000, guid: 1b893385bb8d2a641a46fd441e050eb2, type: 2}
   chaseTheme: {fileID: 11400000, guid: e8c5e228781d9a24db0f7423a0364499, type: 2}
+  Crageling: {fileID: 11400000, guid: e8003fb9a29705f4388d7a8f7b83e453, type: 2}
+  hitsound: {fileID: 11400000, guid: 85ff7412f114ccd429301976c20c7960, type: 2}
+--- !u!114 &7220951536901827033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671984816988992673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e913fb7e7b7b6554db8e9bda48a2545f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterDropSound: {fileID: 11400000, guid: e8003fb9a29705f4388d7a8f7b83e453, type: 2}
+  minRandomTime: 5
+  maxRandomTime: 40
 --- !u!1 &1778207823351320560
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +581,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5778685915283312767}
+        m_TargetAssemblyTypeName: AgentSoundBehaviors, Assembly-CSharp
+        m_MethodName: playHitsound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8223155014996916289}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1140,6 +1170,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5778685915283312767}
+        m_TargetAssemblyTypeName: AgentSoundBehaviors, Assembly-CSharp
+        m_MethodName: playHitsound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6433585069217860045}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   egress:
     m_PersistentCalls:
       m_Calls: []
@@ -1180,23 +1222,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 236d1999e83325f419a17eb1d85c9b0b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 50.825886
+      value: 53.76296
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 236d1999e83325f419a17eb1d85c9b0b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 50.825886
+      value: 53.76296
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 236d1999e83325f419a17eb1d85c9b0b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 203.30354
+      value: 53.76296
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 236d1999e83325f419a17eb1d85c9b0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.015
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 236d1999e83325f419a17eb1d85c9b0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.507
+      value: -0.53900003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 236d1999e83325f419a17eb1d85c9b0b, type: 3}
       propertyPath: m_LocalPosition.z

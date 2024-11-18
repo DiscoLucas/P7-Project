@@ -36,6 +36,7 @@ public class AnimationBehaviors : MonoBehaviour
         }
         else { 
             maxValue = nextbot.runSpeed;
+            soundBehaviors = transform.parent.GetComponentInChildren<AgentSoundBehaviors>();
         }
 
     }
