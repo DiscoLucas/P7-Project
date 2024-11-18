@@ -11,11 +11,7 @@ GameObject:
   - component: {fileID: 5357418276210232029}
   - component: {fileID: 9146198195366744937}
   - component: {fileID: 5801476294598633372}
-<<<<<<< HEAD
-  m_Layer: 9
-=======
   m_Layer: 4
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
   m_Name: SW_Pavement_6 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,12 +339,8 @@ GameObject:
   - component: {fileID: 544798170178882134}
   - component: {fileID: 2554409913052742391}
   - component: {fileID: 5571710161070328345}
-<<<<<<< HEAD
-  m_Layer: 9
-=======
   - component: {fileID: 2006065310442060430}
   m_Layer: 0
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
   m_Name: Door B1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,8 +459,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
-<<<<<<< HEAD
-=======
 --- !u!208 &2006065310442060430
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -485,7 +475,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.95800006, y: -0.010000001, z: 0}
   m_TimeToStationary: 0.5
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
 --- !u!1 &3851313007545801189
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,11 +487,7 @@ GameObject:
   - component: {fileID: 4806713761333988848}
   - component: {fileID: 9121295967522186533}
   - component: {fileID: 8505090280194560368}
-<<<<<<< HEAD
-  m_Layer: 9
-=======
   m_Layer: 0
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
   m_Name: SW_Fence_Big_Door_Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -696,11 +681,7 @@ GameObject:
   - component: {fileID: 6927035179159194420}
   - component: {fileID: 403786404037016010}
   - component: {fileID: 3973195924907831263}
-<<<<<<< HEAD
-  m_Layer: 9
-=======
   m_Layer: 4
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
   m_Name: SW_Pavement_6 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1375,13 +1356,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Room_Ground (35)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 1100226430412860, guid: 3ff93aa7a77985145958ee19d745be72, type: 3}
       propertyPath: m_Layer
       value: 4
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 4647551558409372, guid: 3ff93aa7a77985145958ee19d745be72, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.5142975
@@ -1510,13 +1488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Tile_Turn (1)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 1555534500881842, guid: ab85eab93c908f243940012937440761, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 1575807053865272, guid: ab85eab93c908f243940012937440761, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -1647,13 +1622,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1022473066297446199}
     m_Modifications:
-<<<<<<< HEAD
-=======
     - target: {fileID: 1372612149180168, guid: 20845f796ab99cf4fad4e48198831a36, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 1519335454241658, guid: 20845f796ab99cf4fad4e48198831a36, type: 3}
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Stairs
@@ -2974,13 +2946,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1022473066297446199}
     m_Modifications:
-<<<<<<< HEAD
-=======
     - target: {fileID: 1372612149180168, guid: 20845f796ab99cf4fad4e48198831a36, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 1519335454241658, guid: 20845f796ab99cf4fad4e48198831a36, type: 3}
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Stairs (2)
@@ -3331,13 +3300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Tile_5m (5)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 1298507862171924, guid: 6fa31c259cec1f94ea618b8ff5504392, type: 3}
       propertyPath: m_Layer
       value: 4
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 1308806222957656, guid: 6fa31c259cec1f94ea618b8ff5504392, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -5122,13 +5088,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Tile_5m (3)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 1298507862171924, guid: 6fa31c259cec1f94ea618b8ff5504392, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 1308806222957656, guid: 6fa31c259cec1f94ea618b8ff5504392, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -5271,13 +5234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Room_Ground (37)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 1100226430412860, guid: 3ff93aa7a77985145958ee19d745be72, type: 3}
       propertyPath: m_Layer
       value: 4
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 4647551558409372, guid: 3ff93aa7a77985145958ee19d745be72, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.514313
@@ -5340,13 +5300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Tile_5m (6)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 1298507862171924, guid: 6fa31c259cec1f94ea618b8ff5504392, type: 3}
       propertyPath: m_Layer
       value: 4
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 1308806222957656, guid: 6fa31c259cec1f94ea618b8ff5504392, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -5599,13 +5556,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Tile_5m (1)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 1298507862171924, guid: 6fa31c259cec1f94ea618b8ff5504392, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 1308806222957656, guid: 6fa31c259cec1f94ea618b8ff5504392, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -6024,13 +5978,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1022473066297446199}
     m_Modifications:
-<<<<<<< HEAD
-=======
     - target: {fileID: 1372612149180168, guid: 20845f796ab99cf4fad4e48198831a36, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 1519335454241658, guid: 20845f796ab99cf4fad4e48198831a36, type: 3}
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Stairs (1)
@@ -6319,13 +6270,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Tile_5m (4)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 1298507862171924, guid: 6fa31c259cec1f94ea618b8ff5504392, type: 3}
       propertyPath: m_Layer
       value: 4
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 1308806222957656, guid: 6fa31c259cec1f94ea618b8ff5504392, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -8154,13 +8102,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Tile_5m (2)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 1298507862171924, guid: 6fa31c259cec1f94ea618b8ff5504392, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 1308806222957656, guid: 6fa31c259cec1f94ea618b8ff5504392, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -9231,13 +9176,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Tile_5m (7)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 1298507862171924, guid: 6fa31c259cec1f94ea618b8ff5504392, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 1308806222957656, guid: 6fa31c259cec1f94ea618b8ff5504392, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -9442,13 +9384,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Room_Ground (34)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 1100226430412860, guid: 3ff93aa7a77985145958ee19d745be72, type: 3}
       propertyPath: m_Layer
       value: 4
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 4647551558409372, guid: 3ff93aa7a77985145958ee19d745be72, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.514328
@@ -9737,13 +9676,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Tile_Turn (2)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 1555534500881842, guid: ab85eab93c908f243940012937440761, type: 3}
       propertyPath: m_Layer
       value: 4
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 1575807053865272, guid: ab85eab93c908f243940012937440761, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -10406,13 +10342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_6_Tunnel_Utility_Room_Ground (36)
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 1100226430412860, guid: 3ff93aa7a77985145958ee19d745be72, type: 3}
       propertyPath: m_Layer
       value: 4
       objectReference: {fileID: 0}
->>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 4647551558409372, guid: 3ff93aa7a77985145958ee19d745be72, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.51429
