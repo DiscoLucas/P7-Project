@@ -5,10 +5,7 @@ using UnityEngine;
 [Serializable]
 public class SessionLog
 {
-    public SessionLog(string name) {
-        this.name = name;
-        deathIndexs.Add(0);
-    }
+
     public string name;
 
     [Tooltip("Detailed log of all player positions if logging is enabled")]
@@ -25,7 +22,13 @@ public class SessionLog
 
     [Tooltip("Total time played in seconds")]
     public float timePlayed = 0f;
-    public List<int> deathIndexs;
+    public List<int> deathIndexs = new List<int>();
+
+    public SessionLog(string name)
+    {
+        this.name = name;
+        deathIndexs.Add(0);
+    }
 
     public void startSession()
     {

@@ -177,7 +177,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Physics.SphereCast(transform.position + new Vector3(0, yOffset, 0f), radius, Vector3.down, out groundInfo, yOffset + .1f, groundLayer.value);
-        Debug.Log(groundInfo.collider.gameObject.layer.ToString());
+        //Debug.Log(groundInfo.collider.gameObject.layer.ToString());
 
         if (characterController.velocity.magnitude > 0 && characterController.isGrounded && !AudioManager.IsSoundPlaying(currentSoundObj))
         {
