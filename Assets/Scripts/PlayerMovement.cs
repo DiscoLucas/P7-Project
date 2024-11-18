@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using JSAM;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
@@ -32,6 +33,18 @@ public class PlayerMovement : MonoBehaviour
 
 
     CharacterController characterController;
+
+    [SerializeField] private Transform playerFeet;
+    [SerializeField] private float radius = 2;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float yOffset = 1f;
+    private RaycastHit groundInfo;
+    [SerializeField] private SoundFileObject WaterWalk;
+    [SerializeField] private SoundFileObject MetalWalk;
+    [SerializeField] private SoundFileObject RockWalk;
+    [SerializeField] private SoundFileObject TileWalk;
+    [SerializeField] private SoundFileObject currentSoundObj;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -159,5 +172,40 @@ public class PlayerMovement : MonoBehaviour
     private void ReduceStamina(float reductionAmount)
     {
         currentStamina -= reductionAmount;
+    }
+
+    private void FixedUpdate()
+    {
+        Physics.SphereCast(transform.position + new Vector3(0, yOffset, 0f), radius, Vector3.down, out groundInfo, yOffset + .1f, groundLayer.value);
+        Debug.Log(groundInfo.collider.gameObject.layer.ToString());
+
+        if (characterController.velocity.magnitude > 0 && characterController.isGrounded && !AudioManager.IsSoundPlaying(currentSoundObj))
+        {
+            //Check layer of the ground and play the appropriate
+            if (groundInfo.collider.gameObject.layer == 4)
+            {
+                AudioManager.PlaySound(WaterWalk, playerFeet.position);
+                currentSoundObj = WaterWalk;
+            }
+            else if (groundInfo.collider.gameObject.layer == 10)
+            {
+                AudioManager.PlaySound(MetalWalk, playerFeet.position);
+                currentSoundObj = MetalWalk;
+            }
+            else if (groundInfo.collider.gameObject.layer == 11)
+            {
+                AudioManager.PlaySound(RockWalk, playerFeet.position);
+                currentSoundObj = RockWalk;
+            }
+            else if (groundInfo.collider.gameObject.layer == 12)
+            {
+                AudioManager.PlaySound(TileWalk, playerFeet.position);
+                currentSoundObj = TileWalk;
+            }
+
+
+        }
+
+        
     }
 }

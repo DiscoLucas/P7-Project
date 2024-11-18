@@ -155,13 +155,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024176779525259660}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.70710707, z: -0, w: 0.70710653}
+  m_LocalRotation: {x: -0, y: 0.1305268, z: -0, w: 0.9914448}
   m_LocalPosition: {x: 0.00000071525574, y: -0.65, z: -0.0000026151538}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 259831231900652288}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
 --- !u!108 &5195220755652352942
 Light:
   m_ObjectHideFlags: 0
@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 174241218791558104}
   - component: {fileID: 8641875584331051961}
   - component: {fileID: 3605153304429667820}
-  - component: {fileID: 3032946295873666447}
+  - component: {fileID: 8384002065240336512}
   m_Layer: 3
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -425,6 +425,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 259831231900652288}
+  - {fileID: 1670835201545083222}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3982700675334106288
@@ -524,7 +525,7 @@ CharacterController:
   m_Height: 1.9
   m_Radius: 0.4
   m_SlopeLimit: 45
-  m_StepOffset: 0.15
+  m_StepOffset: 0.25
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -556,6 +557,17 @@ MonoBehaviour:
   m_FootstepSounds: []
   m_JumpSound: {fileID: 0}
   m_LandSound: {fileID: 0}
+  playerFeet: {fileID: 1670835201545083222}
+  radius: 2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 7184
+  yOffset: 1
+  WaterWalk: {fileID: 11400000, guid: 92f56e5f7f5c6274499f341861c3cbd0, type: 2}
+  MetalWalk: {fileID: 11400000, guid: d6f07b252bb7c7b40b0425e9828a0b26, type: 2}
+  RockWalk: {fileID: 11400000, guid: 608659725884e804b92a514c08ac025c, type: 2}
+  TileWalk: {fileID: 11400000, guid: eb1b193130f5ad74a881ddf1ad9fe738, type: 2}
+  currentSoundObj: {fileID: 11400000, guid: d6f07b252bb7c7b40b0425e9828a0b26, type: 2}
 --- !u!114 &8641875584331051961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,8 +602,9 @@ MonoBehaviour:
   saturationEnd: -80
   choromaEnd: 1
   filmGrainEnd: 1
-  tiltForce: 1
---- !u!114 &3032946295873666447
+  tiltForce: 2
+  deathSound: {fileID: 11400000, guid: f0822da04bda9834f9198cdf67b03d1a, type: 2}
+--- !u!114 &8384002065240336512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -671,6 +684,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 259831231900652288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7058897421599919167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1670835201545083222}
+  m_Layer: 3
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1670835201545083222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058897421599919167}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.921, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8611041314194076477}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8032509347555711719
 GameObject:
@@ -814,6 +858,8 @@ GameObject:
   - component: {fileID: 4705299290197460461}
   - component: {fileID: 7712249151874854423}
   - component: {fileID: 7805829069089060491}
+  - component: {fileID: 8217816641721518335}
+  - component: {fileID: 2617545986418300566}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -859,7 +905,7 @@ Camera:
   m_ShutterSpeed: 0.004
   m_Aperture: 1.2
   m_FocusDistance: 10
-  m_FocalLength: 6.19
+  m_FocalLength: 3.031089
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -874,13 +920,13 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 31.572687
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 663
+    m_Bits: 7831
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1087,3 +1133,51 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!164 &8217816641721518335
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627659891866202074}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: -1000
+  m_DecayTime: 2.81
+  m_DecayHFRatio: 0.14
+  m_ReflectionsLevel: 429
+  m_ReverbLevel: 1023
+  m_ReverbDelay: 0.021
+  m_Diffusion: 80
+  m_Density: 60
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 22
+--- !u!169 &2617545986418300566
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627659891866202074}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.22727273
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

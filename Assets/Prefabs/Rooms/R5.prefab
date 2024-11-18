@@ -13472,7 +13472,10 @@ Transform:
   - {fileID: 6422444634824562425}
   - {fileID: 2517855718904021504}
   - {fileID: 724897242524861675}
+<<<<<<< HEAD
   - {fileID: 3364908599416976024}
+=======
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
   - {fileID: 7040160757757469212}
   - {fileID: 1709197548024387445}
   - {fileID: 5704786274756230096}
@@ -13492,7 +13495,10 @@ Transform:
   - {fileID: 2157666440360708168}
   - {fileID: 4964498257157527360}
   - {fileID: 5999615754855842629}
+<<<<<<< HEAD
   - {fileID: 3097127163892831439}
+=======
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
   - {fileID: 4589768550241106820}
   - {fileID: 8589623958893618195}
   - {fileID: 6889866858022499973}
@@ -20824,6 +20830,13 @@ PrefabInstance:
       value: SW_Walking_Platforms_Wall_Grid_5m
       objectReference: {fileID: 0}
     - target: {fileID: 1727756662411730, guid: f7842e70dd074ba488df21826e65f6f2, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727756662411730, guid: f7842e70dd074ba488df21826e65f6f2, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -21086,6 +21099,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -21294,6 +21314,10 @@ PrefabInstance:
     - target: {fileID: 1806246664940036, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_5m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806246664940036, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4084092260998528, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
       propertyPath: m_RootOrder
@@ -22036,6 +22060,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_5x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1370003828396774, guid: 7a36dec94da6ad54d8b5462201d9941e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370003828396774, guid: 7a36dec94da6ad54d8b5462201d9941e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -22270,6 +22301,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -22635,6 +22673,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_5_Tile_Ground_5x5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1561498204819844, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4337307973885974, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
       propertyPath: m_RootOrder
       value: 221
@@ -22783,6 +22825,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8512397987759253816}
     m_Modifications:
+    - target: {fileID: 1073260979635760, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113773338252042, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390338617597512, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400202970384276, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425549360182784, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467971073486818, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584414136058678, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630207472839922, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633030353881132, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782466515760666, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860608791578386, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1925085943372962, guid: a6019d791d1976d46bf08159bf372883, type: 3}
       propertyPath: m_Name
       value: SW_Stairs_Group_11_Steps (1)
@@ -23136,6 +23222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Tile_1m
       objectReference: {fileID: 0}
+    - target: {fileID: 1300052049134796, guid: eb2d01491e683454d9342394aa60840a, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4376308438702752, guid: eb2d01491e683454d9342394aa60840a, type: 3}
       propertyPath: m_RootOrder
       value: 77
@@ -23338,6 +23428,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8512397987759253816}
     m_Modifications:
+    - target: {fileID: 1073260979635760, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113773338252042, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390338617597512, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400202970384276, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425549360182784, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467971073486818, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584414136058678, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630207472839922, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633030353881132, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782466515760666, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860608791578386, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1925085943372962, guid: a6019d791d1976d46bf08159bf372883, type: 3}
       propertyPath: m_Name
       value: SW_Stairs_Group_11_Steps
@@ -25560,6 +25694,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Tile_2m (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1781587491799358, guid: 25f009ab751fc894bb1acc3ec0f1a139, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4637089293777444, guid: 25f009ab751fc894bb1acc3ec0f1a139, type: 3}
       propertyPath: m_RootOrder
       value: 79
@@ -26236,6 +26374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_Stairs
       objectReference: {fileID: 0}
+    - target: {fileID: 1776664213448814, guid: b037d6b14b024c14ca6242f16cb58d9b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4390250562478170, guid: b037d6b14b024c14ca6242f16cb58d9b, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -26379,6 +26521,10 @@ PrefabInstance:
     - target: {fileID: 1058425096227900, guid: 4de60a6aea789af43ae39edba1f4c8ab, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_2m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1058425096227900, guid: 4de60a6aea789af43ae39edba1f4c8ab, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4643675161545760, guid: 4de60a6aea789af43ae39edba1f4c8ab, type: 3}
       propertyPath: m_RootOrder
@@ -26795,6 +26941,13 @@ PrefabInstance:
       value: SW_Walking_Platforms_Wall_Grid_1m_NoSupport
       objectReference: {fileID: 0}
     - target: {fileID: 1604888370547496, guid: c2475fa4e56689c4d84ede813b68de34, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1604888370547496, guid: c2475fa4e56689c4d84ede813b68de34, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -27497,6 +27650,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -28247,6 +28407,10 @@ PrefabInstance:
     - target: {fileID: 1776664213448814, guid: b037d6b14b024c14ca6242f16cb58d9b, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_Stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776664213448814, guid: b037d6b14b024c14ca6242f16cb58d9b, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4390250562478170, guid: b037d6b14b024c14ca6242f16cb58d9b, type: 3}
       propertyPath: m_RootOrder
@@ -30574,6 +30738,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_5_Tile_Ground_Yellow_3x4m
       objectReference: {fileID: 0}
+    - target: {fileID: 1988327296844178, guid: 59828c3d30eca5849a461cb80e29702c, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4305552306293876, guid: 59828c3d30eca5849a461cb80e29702c, type: 3}
       propertyPath: m_RootOrder
       value: 239
@@ -30907,6 +31075,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -31202,6 +31377,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Tile_5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1946607856518612, guid: ef9df979fd0cec441904b32fb17fc9ad, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4269471847860830, guid: ef9df979fd0cec441904b32fb17fc9ad, type: 3}
       propertyPath: m_RootOrder
       value: 80
@@ -31355,6 +31534,13 @@ PrefabInstance:
       value: SW_Walking_Platforms_Wall_Grid_5m
       objectReference: {fileID: 0}
     - target: {fileID: 1727756662411730, guid: f7842e70dd074ba488df21826e65f6f2, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727756662411730, guid: f7842e70dd074ba488df21826e65f6f2, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -32696,6 +32882,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Tile_1m
       objectReference: {fileID: 0}
+    - target: {fileID: 1300052049134796, guid: eb2d01491e683454d9342394aa60840a, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4376308438702752, guid: eb2d01491e683454d9342394aa60840a, type: 3}
       propertyPath: m_RootOrder
       value: 78
@@ -32770,6 +32960,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_T
       objectReference: {fileID: 0}
+    - target: {fileID: 1470199581530258, guid: 41eed85d6a4daf740ba7e7d5979470d9, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4447647312316542, guid: 41eed85d6a4daf740ba7e7d5979470d9, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -32837,6 +33031,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -33059,6 +33260,13 @@ PrefabInstance:
       value: SW_5_Corridor_Small_Floor_03
       objectReference: {fileID: 0}
     - target: {fileID: 1354059934657928, guid: 0222b9a5baf01014b8ebd9cdf0bba924, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354059934657928, guid: 0222b9a5baf01014b8ebd9cdf0bba924, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -33606,6 +33814,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8512397987759253816}
     m_Modifications:
+    - target: {fileID: 1400202970384276, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467971073486818, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630207472839922, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633030353881132, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782466515760666, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1925085943372962, guid: a6019d791d1976d46bf08159bf372883, type: 3}
       propertyPath: m_Name
       value: SW_Stairs_Group_11_Steps (2)
@@ -34079,6 +34307,10 @@ PrefabInstance:
     - target: {fileID: 1561498204819844, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
       propertyPath: m_Name
       value: SW_5_Tile_Ground_5x5m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561498204819844, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4337307973885974, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
       propertyPath: m_RootOrder
@@ -35793,6 +36025,10 @@ PrefabInstance:
     - target: {fileID: 1063015204444560, guid: f5b49391c9d1af748b58b556b2e8c1a0, type: 3}
       propertyPath: m_Name
       value: SW_5_Tile_Ground_Yellow_4x5m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063015204444560, guid: f5b49391c9d1af748b58b556b2e8c1a0, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4017204186473838, guid: f5b49391c9d1af748b58b556b2e8c1a0, type: 3}
       propertyPath: m_RootOrder
@@ -38923,6 +39159,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -38993,6 +39236,13 @@ PrefabInstance:
       value: SW_5_Corridor_Small_Floor_04
       objectReference: {fileID: 0}
     - target: {fileID: 1577653608454122, guid: c5d55c493e2972e428441ca60b481c34, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577653608454122, guid: c5d55c493e2972e428441ca60b481c34, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -39221,6 +39471,10 @@ PrefabInstance:
     - target: {fileID: 1493596444601954, guid: 36cc8e50d2225194c83f4f41d7442110, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_T_Short
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493596444601954, guid: 36cc8e50d2225194c83f4f41d7442110, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4236851349625104, guid: 36cc8e50d2225194c83f4f41d7442110, type: 3}
       propertyPath: m_RootOrder
@@ -40405,6 +40659,13 @@ PrefabInstance:
       value: SW_Walking_Platforms_Wall_Grid_5m
       objectReference: {fileID: 0}
     - target: {fileID: 1727756662411730, guid: f7842e70dd074ba488df21826e65f6f2, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727756662411730, guid: f7842e70dd074ba488df21826e65f6f2, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -41843,6 +42104,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -42556,6 +42824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_Stairs
       objectReference: {fileID: 0}
+    - target: {fileID: 1776664213448814, guid: b037d6b14b024c14ca6242f16cb58d9b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4390250562478170, guid: b037d6b14b024c14ca6242f16cb58d9b, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -42932,6 +43204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_Corner_Short
       objectReference: {fileID: 0}
+    - target: {fileID: 1853104779802362, guid: 151f0ffce60fca54eb71bdcc7d085e6d, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4278186605220708, guid: 151f0ffce60fca54eb71bdcc7d085e6d, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -43002,6 +43278,53 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8512397987759253816}
     m_Modifications:
+<<<<<<< HEAD
+=======
+    - target: {fileID: 1073260979635760, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113773338252042, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390338617597512, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400202970384276, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425549360182784, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467971073486818, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584414136058678, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630207472839922, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633030353881132, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782466515760666, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860608791578386, guid: a6019d791d1976d46bf08159bf372883, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - target: {fileID: 1925085943372962, guid: a6019d791d1976d46bf08159bf372883, type: 3}
       propertyPath: m_Name
       value: SW_Stairs_Group_11_Steps (3)
@@ -43253,6 +43576,10 @@ PrefabInstance:
     - target: {fileID: 1940789404295614, guid: 847ca97860d12d04fac0f1b83814e0a5, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Tile_Corner_Short (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940789404295614, guid: 847ca97860d12d04fac0f1b83814e0a5, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4472456277814790, guid: 847ca97860d12d04fac0f1b83814e0a5, type: 3}
       propertyPath: m_RootOrder
@@ -43789,6 +44116,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -44101,6 +44435,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -44397,6 +44738,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -44465,6 +44813,10 @@ PrefabInstance:
     - target: {fileID: 1173539868722988, guid: 4a85e9a342806764abf088aa89022932, type: 3}
       propertyPath: m_Name
       value: SW_5_Tile_Ground_3x5m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173539868722988, guid: 4a85e9a342806764abf088aa89022932, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4538430492641420, guid: 4a85e9a342806764abf088aa89022932, type: 3}
       propertyPath: m_RootOrder
@@ -45876,6 +46228,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_5_Tile_Ground_5x5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1561498204819844, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4337307973885974, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
       propertyPath: m_RootOrder
       value: 222
@@ -46301,6 +46657,10 @@ PrefabInstance:
     - target: {fileID: 1940789404295614, guid: 847ca97860d12d04fac0f1b83814e0a5, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Tile_Corner_Short
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940789404295614, guid: 847ca97860d12d04fac0f1b83814e0a5, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4472456277814790, guid: 847ca97860d12d04fac0f1b83814e0a5, type: 3}
       propertyPath: m_RootOrder
@@ -47356,7 +47716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1177682154042778, guid: 47d680c47be3f6348921ac687afce1c9, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4112679381543472, guid: 47d680c47be3f6348921ac687afce1c9, type: 3}
       propertyPath: m_RootOrder
@@ -48176,6 +48536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_Stairs
       objectReference: {fileID: 0}
+    - target: {fileID: 1776664213448814, guid: b037d6b14b024c14ca6242f16cb58d9b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4390250562478170, guid: b037d6b14b024c14ca6242f16cb58d9b, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -48498,6 +48862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_T (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1470199581530258, guid: 41eed85d6a4daf740ba7e7d5979470d9, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4447647312316542, guid: 41eed85d6a4daf740ba7e7d5979470d9, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -48570,6 +48938,10 @@ PrefabInstance:
     - target: {fileID: 1776664213448814, guid: b037d6b14b024c14ca6242f16cb58d9b, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_Stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776664213448814, guid: b037d6b14b024c14ca6242f16cb58d9b, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4390250562478170, guid: b037d6b14b024c14ca6242f16cb58d9b, type: 3}
       propertyPath: m_RootOrder
@@ -49715,6 +50087,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_5_Tile_Ground_Yellow_4x5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1063015204444560, guid: f5b49391c9d1af748b58b556b2e8c1a0, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4017204186473838, guid: f5b49391c9d1af748b58b556b2e8c1a0, type: 3}
       propertyPath: m_RootOrder
       value: 240
@@ -50536,6 +50912,10 @@ PrefabInstance:
     - target: {fileID: 1806246664940036, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_5m (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806246664940036, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4084092260998528, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
       propertyPath: m_RootOrder
@@ -51362,6 +51742,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Tile_Corner_Short (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1940789404295614, guid: 847ca97860d12d04fac0f1b83814e0a5, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4472456277814790, guid: 847ca97860d12d04fac0f1b83814e0a5, type: 3}
       propertyPath: m_RootOrder
       value: 83
@@ -51924,6 +52308,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Tile_5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1946607856518612, guid: ef9df979fd0cec441904b32fb17fc9ad, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4269471847860830, guid: ef9df979fd0cec441904b32fb17fc9ad, type: 3}
       propertyPath: m_RootOrder
       value: 81
@@ -52204,6 +52592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_5_Tile_Ground_3x5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1173539868722988, guid: 4a85e9a342806764abf088aa89022932, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4538430492641420, guid: 4a85e9a342806764abf088aa89022932, type: 3}
       propertyPath: m_RootOrder
       value: 217
@@ -52269,6 +52661,10 @@ PrefabInstance:
     - target: {fileID: 1561498204819844, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
       propertyPath: m_Name
       value: SW_5_Tile_Ground_5x5m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561498204819844, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4337307973885974, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
       propertyPath: m_RootOrder
@@ -52561,6 +52957,10 @@ PrefabInstance:
     - target: {fileID: 1571186885255586, guid: 2185c94052ff7ea4081673f20b0600e8, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_1m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571186885255586, guid: 2185c94052ff7ea4081673f20b0600e8, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4413061987734362, guid: 2185c94052ff7ea4081673f20b0600e8, type: 3}
       propertyPath: m_RootOrder
@@ -53895,6 +54295,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -53965,6 +54372,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -54549,6 +54963,10 @@ PrefabInstance:
     - target: {fileID: 1470199581530258, guid: 41eed85d6a4daf740ba7e7d5979470d9, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_T (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470199581530258, guid: 41eed85d6a4daf740ba7e7d5979470d9, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4447647312316542, guid: 41eed85d6a4daf740ba7e7d5979470d9, type: 3}
       propertyPath: m_RootOrder
@@ -55600,6 +56018,10 @@ PrefabInstance:
     - target: {fileID: 1806246664940036, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_5m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806246664940036, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4084092260998528, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
       propertyPath: m_RootOrder
@@ -56928,6 +57350,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -56996,6 +57425,10 @@ PrefabInstance:
     - target: {fileID: 1561498204819844, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
       propertyPath: m_Name
       value: SW_5_Tile_Ground_5x5m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561498204819844, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4337307973885974, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
       propertyPath: m_RootOrder
@@ -57641,6 +58074,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_5_Tile_Ground_5x5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1561498204819844, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4337307973885974, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
       propertyPath: m_RootOrder
       value: 229
@@ -57941,6 +58378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1806246664940036, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4084092260998528, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -58126,6 +58567,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -58438,6 +58886,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -59048,6 +59503,10 @@ PrefabInstance:
     - target: {fileID: 1063015204444560, guid: f5b49391c9d1af748b58b556b2e8c1a0, type: 3}
       propertyPath: m_Name
       value: SW_5_Tile_Ground_Yellow_4x5m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063015204444560, guid: f5b49391c9d1af748b58b556b2e8c1a0, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4017204186473838, guid: f5b49391c9d1af748b58b556b2e8c1a0, type: 3}
       propertyPath: m_RootOrder
@@ -59781,6 +60240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Tile_2m (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1781587491799358, guid: 25f009ab751fc894bb1acc3ec0f1a139, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4637089293777444, guid: 25f009ab751fc894bb1acc3ec0f1a139, type: 3}
       propertyPath: m_RootOrder
       value: 79
@@ -59988,6 +60451,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -60056,6 +60526,10 @@ PrefabInstance:
     - target: {fileID: 1791494669477814, guid: ff1a91bd6c5817545a67bf468f30e445, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_4m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791494669477814, guid: ff1a91bd6c5817545a67bf468f30e445, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4082616968975578, guid: ff1a91bd6c5817545a67bf468f30e445, type: 3}
       propertyPath: m_RootOrder
@@ -61355,6 +61829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1806246664940036, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4084092260998528, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -61452,6 +61930,10 @@ PrefabInstance:
     - target: {fileID: 1781587491799358, guid: 25f009ab751fc894bb1acc3ec0f1a139, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Tile_2m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781587491799358, guid: 25f009ab751fc894bb1acc3ec0f1a139, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4637089293777444, guid: 25f009ab751fc894bb1acc3ec0f1a139, type: 3}
       propertyPath: m_RootOrder
@@ -61659,6 +62141,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_5_Tile_Ground_5x5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1561498204819844, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4337307973885974, guid: 897c27f22d5659f4ab540a8a624df3e4, type: 3}
       propertyPath: m_RootOrder
       value: 226
@@ -61726,6 +62212,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -62045,6 +62538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_1m
       objectReference: {fileID: 0}
+    - target: {fileID: 1571186885255586, guid: 2185c94052ff7ea4081673f20b0600e8, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4413061987734362, guid: 2185c94052ff7ea4081673f20b0600e8, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -62182,6 +62679,13 @@ PrefabInstance:
       value: SW_Walking_Platforms_Wall_Grid_Corner_Outer
       objectReference: {fileID: 0}
     - target: {fileID: 1319133900806264, guid: 0b62e78058b53ce4dbf8fa2b9dcedf07, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319133900806264, guid: 0b62e78058b53ce4dbf8fa2b9dcedf07, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -62728,6 +63232,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_2.5x5m_01
       objectReference: {fileID: 0}
     - target: {fileID: 1877881394389510, guid: 6519af97e129eda4db1892e78eeae5bd, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877881394389510, guid: 6519af97e129eda4db1892e78eeae5bd, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -63125,6 +63636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_Stairs
       objectReference: {fileID: 0}
+    - target: {fileID: 1776664213448814, guid: b037d6b14b024c14ca6242f16cb58d9b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4390250562478170, guid: b037d6b14b024c14ca6242f16cb58d9b, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -63420,6 +63935,13 @@ PrefabInstance:
       value: SW_5_Corridor_Small_Floor_01
       objectReference: {fileID: 0}
     - target: {fileID: 1216850051701326, guid: 1aa69217465a4cd43a1499fe3248e417, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216850051701326, guid: 1aa69217465a4cd43a1499fe3248e417, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -64738,6 +65260,13 @@ PrefabInstance:
       value: SW_5_Corridor_Small_Floor_03 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1354059934657928, guid: 0222b9a5baf01014b8ebd9cdf0bba924, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354059934657928, guid: 0222b9a5baf01014b8ebd9cdf0bba924, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -65122,6 +65651,10 @@ PrefabInstance:
     - target: {fileID: 1925748235165282, guid: c38b829d9cdeca648b54f378fa5e7f06, type: 3}
       propertyPath: m_Name
       value: SW_5_Tile_Ground_3x3m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925748235165282, guid: c38b829d9cdeca648b54f378fa5e7f06, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4583071156069004, guid: c38b829d9cdeca648b54f378fa5e7f06, type: 3}
       propertyPath: m_RootOrder
@@ -66859,6 +67392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Tile_5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1946607856518612, guid: ef9df979fd0cec441904b32fb17fc9ad, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4269471847860830, guid: ef9df979fd0cec441904b32fb17fc9ad, type: 3}
       propertyPath: m_RootOrder
       value: 82
@@ -66924,6 +67461,10 @@ PrefabInstance:
     - target: {fileID: 1280160421626914, guid: 010fcdd979671f64890949e72e334232, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Tile_T_Short
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280160421626914, guid: 010fcdd979671f64890949e72e334232, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4138265766947924, guid: 010fcdd979671f64890949e72e334232, type: 3}
       propertyPath: m_RootOrder
@@ -67668,6 +68209,10 @@ PrefabInstance:
     - target: {fileID: 1173539868722988, guid: 4a85e9a342806764abf088aa89022932, type: 3}
       propertyPath: m_Name
       value: SW_5_Tile_Ground_3x5m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173539868722988, guid: 4a85e9a342806764abf088aa89022932, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4538430492641420, guid: 4a85e9a342806764abf088aa89022932, type: 3}
       propertyPath: m_RootOrder
@@ -68974,6 +69519,13 @@ PrefabInstance:
       value: SW_Walking_Platforms_Wall_Grid_3m
       objectReference: {fileID: 0}
     - target: {fileID: 1162819568102782, guid: 95808edc9c314b14dac1defc945b31bb, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1162819568102782, guid: 95808edc9c314b14dac1defc945b31bb, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -70389,6 +70941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_5_Tile_Ground_Yellow_4x5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1063015204444560, guid: f5b49391c9d1af748b58b556b2e8c1a0, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4017204186473838, guid: f5b49391c9d1af748b58b556b2e8c1a0, type: 3}
       propertyPath: m_RootOrder
       value: 242
@@ -70616,6 +71172,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -70756,6 +71319,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -70907,6 +71477,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1806246664940036, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4084092260998528, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -70996,6 +71570,10 @@ PrefabInstance:
     - target: {fileID: 1806246664940036, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_5m (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806246664940036, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4084092260998528, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
       propertyPath: m_RootOrder
@@ -71671,6 +72249,13 @@ PrefabInstance:
       value: SW_Walking_Platforms_Wall_Grid_5m
       objectReference: {fileID: 0}
     - target: {fileID: 1727756662411730, guid: f7842e70dd074ba488df21826e65f6f2, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727756662411730, guid: f7842e70dd074ba488df21826e65f6f2, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -71753,6 +72338,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -72103,6 +72695,10 @@ PrefabInstance:
     - target: {fileID: 1058425096227900, guid: 4de60a6aea789af43ae39edba1f4c8ab, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_2m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1058425096227900, guid: 4de60a6aea789af43ae39edba1f4c8ab, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4643675161545760, guid: 4de60a6aea789af43ae39edba1f4c8ab, type: 3}
       propertyPath: m_RootOrder
@@ -72642,6 +73238,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_5m (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1806246664940036, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4084092260998528, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -72746,6 +73346,13 @@ PrefabInstance:
       value: SW_Walking_Platforms_Wall_Grid_3m
       objectReference: {fileID: 0}
     - target: {fileID: 1162819568102782, guid: 95808edc9c314b14dac1defc945b31bb, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1162819568102782, guid: 95808edc9c314b14dac1defc945b31bb, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -73053,6 +73660,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_5_Tile_Ground_3x5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1173539868722988, guid: 4a85e9a342806764abf088aa89022932, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4538430492641420, guid: 4a85e9a342806764abf088aa89022932, type: 3}
       propertyPath: m_RootOrder
       value: 218
@@ -73120,6 +73731,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -73190,6 +73808,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_2.5x5m_01
       objectReference: {fileID: 0}
     - target: {fileID: 1877881394389510, guid: 6519af97e129eda4db1892e78eeae5bd, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877881394389510, guid: 6519af97e129eda4db1892e78eeae5bd, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -73876,6 +74501,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -74028,6 +74660,13 @@ PrefabInstance:
       value: SW_Walking_Platforms_Wall_Grid_Corner_Inner
       objectReference: {fileID: 0}
     - target: {fileID: 1783880526375314, guid: 2ba47cd6a625eac47981d743a9acad41, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783880526375314, guid: 2ba47cd6a625eac47981d743a9acad41, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -74449,6 +75088,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SW_5_Tile_Ground_3x5m
       objectReference: {fileID: 0}
+    - target: {fileID: 1173539868722988, guid: 4a85e9a342806764abf088aa89022932, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4538430492641420, guid: 4a85e9a342806764abf088aa89022932, type: 3}
       propertyPath: m_RootOrder
       value: 215
@@ -74516,6 +75159,13 @@ PrefabInstance:
       value: SW_5_Tunnels_Floor_10x10m
       objectReference: {fileID: 0}
     - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167834703117310, guid: 4990e51fc9c13584794d728574a9fb1e, type: 3}
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -74806,6 +75456,10 @@ PrefabInstance:
     - target: {fileID: 1806246664940036, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
       propertyPath: m_Name
       value: SW_Catwalk_Group_Tile_5m (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806246664940036, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4084092260998528, guid: b671e97adb9ad024d96c5b32dfcab969, type: 3}
       propertyPath: m_RootOrder

@@ -222,7 +222,11 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+<<<<<<< HEAD
     - _GlowAmount: -0.010409261
+=======
+    - _GlowAmount: -0.005764774
+>>>>>>> d8ff0a25eebdcaf804ad56977352ccb038d6b0de
     - _HeightAmplitude: 0.02
     - _HeightCenter: 0.5
     - _HeightMapParametrization: 0
