@@ -20,15 +20,12 @@
         WaterFall,
         PlatformCrash,
         Vent,
-        Crunch,
         Scream,
         Crageling,
         MonsterFootSteps,
-        ChaseThemeLightMotive,
         Hit,
         PlayerGrunts,
-        VentCrawling,
-        ValveTurn
+        VentCrawling
     }
     public enum NewLibraryMusic {
         Theme

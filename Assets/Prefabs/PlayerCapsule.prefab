@@ -622,7 +622,11 @@ MonoBehaviour:
   steamDamage: 5
   shakeDuration: 0.1
   shakeMagnitude: 0.05
-  mainCamera: {fileID: 0}
+  damageSound: {fileID: 11400000, guid: 5426e8ebc484ad540bd20af22f4a4435, type: 2}
+  regenDelay: 1
+  regenInterval: 0.033333335
+  regenAmount: 2
+  canRegen: 0
 --- !u!1 &2731341130619779888
 GameObject:
   m_ObjectHideFlags: 0

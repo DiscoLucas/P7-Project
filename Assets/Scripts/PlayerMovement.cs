@@ -179,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
         Physics.SphereCast(transform.position + new Vector3(0, yOffset, 0f), radius, Vector3.down, out groundInfo, yOffset + .1f, groundLayer.value);
         //Debug.Log(groundInfo.collider.gameObject.layer.ToString());
 
-        if (characterController.velocity.magnitude > 0 && characterController.isGrounded && !AudioManager.IsSoundPlaying(currentSoundObj))
+        if (characterController.velocity.magnitude > 0 && characterController.isGrounded && !AudioManager.IsSoundPlaying(currentSoundObj) && groundInfo.collider != null)
         {
             //Check layer of the ground and play the appropriate
             if (groundInfo.collider.gameObject.layer == 4)
