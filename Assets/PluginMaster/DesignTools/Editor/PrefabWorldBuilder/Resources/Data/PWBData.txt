@@ -20,7 +20,7 @@
     "_tempCollidersAction": 1,
     "_paletteManager": {
         "_selectedPaletteIdx": 0,
-        "_selectedBrushIdx": 0,
+        "_selectedBrushIdx": 2,
         "_showBrushName": false,
         "_viewList": false,
         "_showTabsInMultipleRows": false,
@@ -930,14 +930,14 @@
             },
             "_brushShape": 0,
             "_density": 50,
-            "_orientAlongBrushstroke": false,
+            "_orientAlongBrushstroke": true,
             "_additionalOrientationAngle": {
                 "x": 0.0,
                 "y": 0.0,
                 "z": 0.0
             },
             "_spacingType": 0,
-            "_minSpacing": 1.0,
+            "_minSpacing": 3.9999990463256838,
             "_randomizePositions": true,
             "_randomness": 1.0,
             "_simData": {
@@ -2872,7 +2872,7 @@
             "_origin": {
                 "x": 0.0,
                 "y": 0.0,
-                "z": 142.3958282470703
+                "z": 8.630465507507325
             },
             "_rotation": {
                 "x": 0.0,

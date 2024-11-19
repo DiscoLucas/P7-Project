@@ -2,10 +2,10 @@ using UnityEngine;
 using System;
 using Assets.Scripts.GOAP.Behaviors;
 using Assets.Scripts.GOAP.Sensors;
-using Unity.VisualScripting;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
+using System.IO.Ports;
 [DefaultExecutionOrder(-1)]
 public class GameManager : SingletonPersistent<GameManager>
 {
@@ -35,6 +35,8 @@ public class GameManager : SingletonPersistent<GameManager>
     [HideInInspector] public float initialChromaticAberration;
     [HideInInspector] public float initialFilmGrain;
 
+    
+
 
     public GameState State { get; private set; }
 
@@ -42,9 +44,8 @@ public class GameManager : SingletonPersistent<GameManager>
     {
        GameManager.Instance.onGameStart();
     }
-
-
-    public void onGameStart(){
+    public void onGameStart()
+    {
         Debug.Log("Game startede");
         if(protectionAreaObject == null)
             protectionAreaObject = GameObject.FindGameObjectWithTag(eggTag);
@@ -58,7 +59,6 @@ public class GameManager : SingletonPersistent<GameManager>
             }
             
         }
-
 
         ChangeState(GameState.TutorialSection);
         die = Die.Instance;
