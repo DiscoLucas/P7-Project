@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using JSAM;
+using Unity.VisualScripting;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
-
+    bool lastGroundCheck = false;
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
 
@@ -76,19 +77,23 @@ public class PlayerMovement : MonoBehaviour
         #region Handles Jumping
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded && currentStamina > staminaCunsumption_Jump)
         {
+            playJumpGrunt();
             moveDirection.y = jumpPower;
-            ReduceStamina(staminaCunsumption_Jump);
+            //ReduceStamina(staminaCunsumption_Jump);
         }
         else
         {
             moveDirection.y = movementDirectionY;
         }
 
+        if (!lastGroundCheck && characterController.isGrounded) {
+            playerLanding();
+        }
+
         if (!characterController.isGrounded)
         {
             moveDirection.y -= gravity * Time.deltaTime;
         }
-
         #endregion
 
         #region Handles Rotation
@@ -168,10 +173,26 @@ public class PlayerMovement : MonoBehaviour
 
 
         #endregion*/
+
+        lastGroundCheck = characterController.isGrounded;
     }
     private void ReduceStamina(float reductionAmount)
     {
         currentStamina -= reductionAmount;
+    }
+
+    /// <summary>
+    /// play grunt sound
+    /// </summary>
+    public void playJumpGrunt() { 
+    
+    }
+
+    /// <summary>
+    /// Play the landing sound
+    /// </summary>
+    public void playerLanding() { 
+    
     }
 
     private void FixedUpdate()

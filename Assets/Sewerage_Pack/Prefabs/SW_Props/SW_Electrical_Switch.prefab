@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4938574450415608
 Transform:
@@ -128,7 +128,7 @@ GameObject:
   m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4498633682106292
 Transform:
@@ -165,7 +165,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leverAct: {fileID: 11400000, guid: a15cc06a8afa47f4db7bab0618ef166a, type: 2}
-  doorSound: {fileID: 11400000, guid: f492ea681ccac6647bd6f82dd981c077, type: 2}
+  openDoorSound: {fileID: 0}
+  closeDoorSound: {fileID: 0}
   LeverPosition: {fileID: 4498633682106292}
   DoorPosition: {fileID: 0}

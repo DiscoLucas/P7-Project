@@ -525,7 +525,7 @@ CharacterController:
   m_Height: 1.9
   m_Radius: 0.4
   m_SlopeLimit: 45
-  m_StepOffset: 0.25
+  m_StepOffset: 0.75
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -544,8 +544,8 @@ MonoBehaviour:
   playerCamera: {fileID: 6753942693560391754}
   walkSpeed: 4
   runSpeed: 6
-  jumpPower: 7
-  gravity: 20
+  jumpPower: 9
+  gravity: 40
   maxStamina: 100
   currentStamina: 0
   staminaRegen: 10
