@@ -10,7 +10,7 @@ public class SteamSFX : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.PlaySound(steam, transform);
+        AudioManager.PlaySound(steam, Transform);
     }
 
     public void disableSteamSFX()

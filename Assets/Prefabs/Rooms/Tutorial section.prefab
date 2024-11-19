@@ -1,164 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &246035570345885799
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2596060792187793370}
-  - component: {fileID: 7374076061701611342}
-  - component: {fileID: 7503795199285750418}
-  m_Layer: 9
-  m_Name: valvepoint
-  m_TagString: Trigger
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2596060792187793370
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246035570345885799}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -37.5834, y: 405.6406, z: 247.4277}
-  m_LocalScale: {x: 0.7778338, y: 0.43202, z: 0.797425}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1522425270235175651}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &7374076061701611342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246035570345885799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55215250066470a459abf7a4d3359d9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switched: 0
-  Ingress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4765485175444590949}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4808199437683039778}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4726159281498216477}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SteamSFX, Assembly-CSharp
-        m_MethodName: disableSteamSFX
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6539097347564042614}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 657962706187223482}
-        m_TargetAssemblyTypeName: SteamSFX, Assembly-CSharp
-        m_MethodName: disableSteamSFX
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  Egress:
-    m_PersistentCalls:
-      m_Calls: []
-  KeyHolder: {fileID: 0}
-  Key: {fileID: 5290223658399928978}
---- !u!65 &7503795199285750418
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246035570345885799}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1120544285230740250
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,8 +252,6 @@ GameObject:
   - component: {fileID: 4765485175444590949}
   - component: {fileID: 1533988189746064452}
   - component: {fileID: 4808199437683039778}
-  - component: {fileID: 657962706187223482}
-  - component: {fileID: 1879650137937174711}
   m_Layer: 9
   m_Name: Door C2
   m_TagString: Trigger
@@ -5257,38 +5096,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.029159546, y: 5, z: 2}
   m_Center: {x: 0.48542023, y: -2, z: 0}
---- !u!114 &657962706187223482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441809228845528464}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3b1db245a2d6974f838fface37ddda5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  steam: {fileID: 11400000, guid: a7a9e5663c1da9047b6d4b2c48b54fe3, type: 2}
-  valve: {fileID: 11400000, guid: e1ed86f909ec62347b4cc2bf20c86944, type: 2}
-  Transform: {fileID: 7780192584781547098}
-  valvePosition: {fileID: 0}
---- !u!114 &1879650137937174711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441809228845528464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3b1db245a2d6974f838fface37ddda5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  steam: {fileID: 11400000, guid: a7a9e5663c1da9047b6d4b2c48b54fe3, type: 2}
-  valve: {fileID: 0}
-  Transform: {fileID: 7780192584781547098}
-  valvePosition: {fileID: 0}
 --- !u!1 &1707497654555976160
 GameObject:
   m_ObjectHideFlags: 0
@@ -7265,7 +7072,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8550637782826674902}
   - component: {fileID: 6482505823317687929}
-  - component: {fileID: 7849357384515715045}
   - component: {fileID: 8204445637718642722}
   - component: {fileID: 4569158098564342730}
   m_Layer: 9
@@ -7378,27 +7184,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 8204445637718642722}
+        m_TargetAssemblyTypeName: SteamSFX, Assembly-CSharp
+        m_MethodName: playValveSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   Egress:
     m_PersistentCalls:
       m_Calls: []
   KeyHolder: {fileID: 0}
   Key: {fileID: 5290223658399928978}
---- !u!114 &7849357384515715045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3862293592124984135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3b1db245a2d6974f838fface37ddda5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  steam: {fileID: 11400000, guid: a7a9e5663c1da9047b6d4b2c48b54fe3, type: 2}
-  valve: {fileID: 0}
-  Transform: {fileID: 8550637782826674902}
-  valvePosition: {fileID: 0}
 --- !u!114 &8204445637718642722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7412,9 +7214,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   steam: {fileID: 11400000, guid: a7a9e5663c1da9047b6d4b2c48b54fe3, type: 2}
-  valve: {fileID: 0}
-  Transform: {fileID: 8550637782826674902}
-  valvePosition: {fileID: 0}
+  valve: {fileID: 11400000, guid: e1ed86f909ec62347b4cc2bf20c86944, type: 2}
+  Transform: {fileID: 1007714846567805351}
+  valvePosition: {fileID: 8550637782826674902}
 --- !u!65 &4569158098564342730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7545,182 +7347,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300092, guid: ed026f9f32ca93f43ba67928492330df, type: 3}
---- !u!1 &4657147627814275416
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5661097960094067843}
-  - component: {fileID: 1904446965344590064}
-  - component: {fileID: 8225614982839949197}
-  - component: {fileID: 1366017425133925354}
-  m_Layer: 9
-  m_Name: valvepoint
-  m_TagString: Trigger
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5661097960094067843
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4657147627814275416}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -37.5834, y: 405.6406, z: 247.4277}
-  m_LocalScale: {x: 0.7778338, y: 0.43202, z: 0.797425}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1522425270235175651}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &1904446965344590064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4657147627814275416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55215250066470a459abf7a4d3359d9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switched: 0
-  Ingress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4765485175444590949}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4808199437683039778}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4726159281498216477}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8225614982839949197}
-        m_TargetAssemblyTypeName: SteamSFX, Assembly-CSharp
-        m_MethodName: disableSteamSFX
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6338281446918585086}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerControls, Assembly-CSharp
-        m_MethodName: destoryCurrentHeldItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 657962706187223482}
-        m_TargetAssemblyTypeName: SteamSFX, Assembly-CSharp
-        m_MethodName: playValveSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  Egress:
-    m_PersistentCalls:
-      m_Calls: []
-  KeyHolder: {fileID: 0}
-  Key: {fileID: 5290223658399928978}
---- !u!114 &8225614982839949197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4657147627814275416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3b1db245a2d6974f838fface37ddda5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  steam: {fileID: 11400000, guid: a7a9e5663c1da9047b6d4b2c48b54fe3, type: 2}
-  valve: {fileID: 11400000, guid: e1ed86f909ec62347b4cc2bf20c86944, type: 2}
-  Transform: {fileID: 7780192584781547098}
-  valvePosition: {fileID: 5661097960094067843}
---- !u!65 &1366017425133925354
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4657147627814275416}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4726159281498216477
 GameObject:
   m_ObjectHideFlags: 0
@@ -9887,9 +9513,7 @@ Transform:
   - {fileID: 6536575431773057144}
   - {fileID: 8550637782826674902}
   - {fileID: 1386033220326710368}
-  - {fileID: 5661097960094067843}
   - {fileID: 7780192584781547098}
-  - {fileID: 2596060792187793370}
   - {fileID: 6498042818711071669}
   - {fileID: 5288273514693630876}
   m_Father: {fileID: 4752617849534435207}
