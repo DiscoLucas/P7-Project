@@ -28,7 +28,9 @@ public class AnimationBehaviors : MonoBehaviour
     [SerializeField]
     SoundFileObject monsterFootSteps;
     [SerializeField]
-    float maxFootstepRate = 0.5f;
+    float minFootstepRate = 0.5f;
+    [SerializeField]
+    float maxFootstepRate = 0.2f;
     [SerializeField]
     float footstepTimer = 0;
 
@@ -58,13 +60,13 @@ public class AnimationBehaviors : MonoBehaviour
         float idealState = (Mathf.Sin(Time.fixedTime * oscillationSpeed) + 1) / 2;
         animator.SetFloat(idealVariable, idealState);
         animator.SetFloat(speedVariable, smoothSpeed);
-        float footstepInterval = Mathf.Lerp(2f, maxFootstepRate, currentSpeed / 100f);
-        footstepTimer += Time.fixedDeltaTime;
-        if(footstepTimer >= footstepInterval && currentSpeed>0)
-        {
-            AudioManager.PlaySound(monsterFootSteps);
-            footstepTimer = 0;
-        }
+        //float footstepInterval = Mathf.Lerp(minFootstepRate, maxFootstepRate, currentSpeed / 100f);
+        //footstepTimer += Time.fixedDeltaTime;
+        //if(footstepTimer >= footstepInterval && currentSpeed>0)
+        //{
+            //AudioManager.PlaySound(monsterFootSteps);
+            //footstepTimer = 0;
+        //}
 
     }
     public void startScream() {
@@ -95,5 +97,10 @@ public class AnimationBehaviors : MonoBehaviour
 
     public bool canEndAttack() {
         return attackActionCurrent;
+    }
+
+    public void Step()
+    {
+        AudioManager.PlaySound(monsterFootSteps, transform.position);
     }
 }
