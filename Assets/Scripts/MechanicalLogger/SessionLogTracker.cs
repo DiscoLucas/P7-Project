@@ -6,14 +6,14 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
-using System.IO.Ports;
+//using System.IO.Ports;
 
 public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
 {
     public GameObject player;
     public Transform agentPos;
     public SessionLog sessionLog = null;
-    public SerialPort serialPort;
+    //public SerialPort serialPort;
     public float logInterval = 0.5f;
     
     private string loggerFolder = "Logs";
@@ -78,14 +78,7 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
                     Vector3 avgPos = Vector3.zero;
                     haveSummedPostion = true;
 
-                    if (serialPort.IsOpen)
-                    {
-                        Debug.Log(serialPort.ReadLine());
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Serial port is not open");
-                    }
+                    
 
                     float dist = 0;
                     for (int i = 0; i < recentPlayerPositions.Count; i++)
@@ -160,7 +153,6 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
 
         if (sessionLog != null)
         {
-            if (serialPort != null) serialPort.Close();
             
             state.sessionStarted = false;
             sessionLog.endSession();

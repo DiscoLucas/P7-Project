@@ -23,7 +23,7 @@ MonoBehaviour:
       dilationIterations: 1
       squaredDistWeighting: 1
     virtualOffsetSettings:
-      useVirtualOffset: 0
+      useVirtualOffset: 1
       validityThreshold: 0.25
       outOfGeoOffset: 0.01
       searchMultiplier: 0.2
@@ -182,7 +182,7 @@ MonoBehaviour:
     m_Keys:
     - Default
     m_Values:
-    - sceneHash: -451197005
+    - sceneHash: 948324813
       cellDataAsset:
         m_AssetGUID: 6aa6e83d794228543ad1dc753fdc7466
         m_StreamableAssetPath: APVStreamingAssets\0ef319b026c07894ebbac5313797d319\6aa6e83d794228543ad1dc753fdc7466.bytes
@@ -265,18 +265,18 @@ MonoBehaviour:
       - offset: 0
         elementCount: 8
       - offset: 128
-        elementCount: 15
-      - offset: 368
-        elementCount: 11
+        elementCount: 26
       - offset: 544
+        elementCount: 11
+      - offset: 720
         elementCount: 20
-      - offset: 864
+      - offset: 1040
         elementCount: 8
-      - offset: 992
-        elementCount: 34
-      - offset: 1536
-        elementCount: 10
-      - offset: 1696
+      - offset: 1168
+        elementCount: 46
+      - offset: 1904
+        elementCount: 11
+      - offset: 2080
         elementCount: 29
     m_Asset: {fileID: 0}
   cellSupportDataAsset:
@@ -334,8 +334,8 @@ MonoBehaviour:
   supportValidityChunkSize: 32768
   supportTouchupChunkSize: 32768
   supportLayerMaskChunkSize: 0
-  supportOffsetsChunkSize: 0
-  supportDataChunkSize: 163840
+  supportOffsetsChunkSize: 98304
+  supportDataChunkSize: 262144
   lightingScenario: Default
   version: 1
   freezePlacement: 0

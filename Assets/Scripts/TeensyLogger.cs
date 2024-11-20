@@ -1,6 +1,5 @@
 using System.IO.Ports;
 using UnityEngine;
-
 public class TeensyLogger : MonoBehaviour
 {
     SerialPort serialPort;
@@ -9,8 +8,16 @@ public class TeensyLogger : MonoBehaviour
 
     void Start()
     {
-        serialPort = new SerialPort(portName, baudRate);
-        serialPort.Open();
+        try
+        {
+            serialPort = new SerialPort(portName, baudRate);
+            serialPort.Open();
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Error opening serial port: " + e.Message);
+        }
+        
     }
 
     void Update()

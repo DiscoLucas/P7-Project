@@ -5,7 +5,6 @@ using Assets.Scripts.GOAP.Sensors;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
-using System.IO.Ports;
 [DefaultExecutionOrder(-1)]
 public class GameManager : SingletonPersistent<GameManager>
 {
