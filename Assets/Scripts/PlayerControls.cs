@@ -5,18 +5,32 @@ public class PlayerControls : MonoBehaviour
     public GameObject Hand;
     public float interactCoolDown;
     public float interactCoolDownTarget = 0.5f;
+    public string interactKEy = "e";
+    [SerializeField]
+    float rayDistance = 5f;
+    [SerializeField]
+    Transform hudMessage;
     // Update is called once per frame
     void Update()
     {
-        if(interactCoolDown<interactCoolDownTarget)
-        interactCoolDown+=Time.deltaTime;
-        if (Input.GetKeyDown("e") && interactCoolDown>interactCoolDownTarget)
+        RaycastHit hit;
+        
+        bool canInteract = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, rayDistance) && hit.collider.CompareTag("Trigger");
+        if (canInteract)
+            hudMessage.gameObject.SetActive(true);
+        else if(hudMessage.gameObject.active)
+            hudMessage.gameObject.SetActive(false);
+
+
+        if (interactCoolDown<interactCoolDownTarget)
+            interactCoolDown+=Time.deltaTime;
+
+        if (Input.GetKeyDown(interactKEy) && interactCoolDown>interactCoolDownTarget)
         {
-            RaycastHit hit;
-            float rayDistance = 5f; // Set a reasonable ray distance (you can adjust this value)
+            
 
             // Shoot a ray from the camera's position in the forward direction
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, rayDistance) && hit.collider.CompareTag("Trigger"))
+            if (canInteract)
             {
                 interactCoolDown=0;
                 // If we hit something with the trigger tag

@@ -551,7 +551,7 @@ MonoBehaviour:
   staminaRegen: 10
   staminaCunsumption_Jump: 40
   lookSpeed: 2
-  lookXLimit: 45
+  lookXLimit: 90
   canMove: 1
   m_StepInterval: 0
   m_FootstepSounds: []
