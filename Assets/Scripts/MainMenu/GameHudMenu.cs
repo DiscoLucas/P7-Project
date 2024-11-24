@@ -52,8 +52,7 @@ public class GameHudMenu : MenuBase
         base.exitApplication();
     }
     public void closePauseMenu() {
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
+
         GameManager.Instance.ChangeState(GameState.Game);
     }
 
@@ -80,7 +79,7 @@ public class GameHudMenu : MenuBase
     }
     public void closeAllMenus() {
         Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         EggMessage.gameObject.SetActive(false);
         pauseMenu.gameObject.SetActive(false);

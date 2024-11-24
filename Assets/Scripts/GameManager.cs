@@ -201,7 +201,7 @@ public class GameManager : SingletonPersistent<GameManager>
 
     private void HandelCloseingGameMenus()
     {
-        
+        playerObject.GetComponent<PlayerMovement>().pause = false;
         gameHud.closeAllMenus();
     }
 

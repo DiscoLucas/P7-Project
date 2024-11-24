@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     float rotationX = 0;
 
     public bool canMove = true;
-    bool pause = false;
+    public bool pause = false;
     [SerializeField] private float m_StepInterval;
     [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
     [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
