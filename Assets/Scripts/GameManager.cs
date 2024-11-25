@@ -41,7 +41,7 @@ public class GameManager : SingletonPersistent<GameManager>
 
     protected override void onDuplicateInstanceDestroyed()
     {
-       GameManager.Instance.onGameStart();
+       //GameManager.Instance.onGameStart();
     }
 
     public void findMonster() {
@@ -96,6 +96,13 @@ public class GameManager : SingletonPersistent<GameManager>
             
         }
 
+        GameObject spawnpoint = GameObject.FindWithTag("Spawnpoint");
+        if (spawnpoint != null && playerObject != null)
+        {
+            Debug.Log("Moving player to spawnpoint");
+            playerObject.transform.position = spawnpoint.transform.position;
+        }
+
         ChangeState(GameState.TutorialSection);
         die = Die.Instance;
 
@@ -136,35 +143,10 @@ public class GameManager : SingletonPersistent<GameManager>
         {
             initialFilmGrain = filmGrain.intensity.value;
         }
-        /*
-        if (vignette != null)
-        {
-            initialVignette = vignette.intensity.value;
-            initialVignetteColor = vignette.color.value;
-        }
-
-        if (colorAdjustments != null)
-        {
-            initialSaturation = colorAdjustments.saturation.value;
-        }
-
-        if (chromaticAberration != null)
-        {
-            initialChromaticAberration = chromaticAberration.intensity.value;
-        }
-
-        if (filmGrain != null)
-        {
-            initialFilmGrain = filmGrain.intensity.value;
-        }
-        */
-        findMonster();
-        Debug.Log("Protection areas object is: " + protectionAreaObject + " Player is: " + playerObject + " Monster is: " + monsterObject);
-        GameObject spawnpoint = GameObject.FindWithTag("Spawnpoint");
-        if (spawnpoint != null && playerObject != null) { 
-            playerObject.transform.position = spawnpoint.transform.position;
-        }
+        
         onGameStartEvent.Invoke();
+        //findMonster();
+        Debug.Log("Protection areas object is: " + protectionAreaObject + " Player is: " + playerObject + " Monster is: " + monsterObject);
     }
 
     public void ChangeState(GameState newState)

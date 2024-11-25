@@ -46,7 +46,6 @@ namespace Assets.Scripts.GOAP.Behaviors
             {
                 protectionSensor.Inject(dependencyInjector);
             }
-            gameObject.SetActive(false);
         }
 
         private void playerPostionSmelled(Vector3 arg0, float arg1)

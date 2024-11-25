@@ -1312,7 +1312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 232.06726, y: 61.27842, z: 255.87213}
+  size: {x: 232.06726, y: 61.27842, z: 255.87215}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -1352,7 +1352,7 @@ Transform:
   m_GameObject: {fileID: 194227620}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2662811, y: 0.32584667, z: 78.46826}
+  m_LocalPosition: {x: 2.2662811, y: 0.32584667, z: 78.46827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3536,6 +3536,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 355614787508175024, guid: 29ca40df84c55fa47a538ed369335cdc, type: 3}
+      propertyPath: monster_Goap
+      value: 
+      objectReference: {fileID: 1118457487}
+    - target: {fileID: 355614787508175024, guid: 29ca40df84c55fa47a538ed369335cdc, type: 3}
+      propertyPath: monster_Next
+      value: 
+      objectReference: {fileID: 8993668603128010590}
     - target: {fileID: 828737223092878728, guid: 29ca40df84c55fa47a538ed369335cdc, type: 3}
       propertyPath: m_Name
       value: GameloopEssiensails
@@ -11022,7 +11030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1223006707642592323, guid: 670998a4d50dbf14bb41ba28c33a53e4, type: 3}
       propertyPath: usingNextBot
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2974484450839979161, guid: 670998a4d50dbf14bb41ba28c33a53e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11356,6 +11364,14 @@ PrefabInstance:
     - target: {fileID: 6540778114553724997, guid: 7dccd1930005a9e49a1ef6a6e7b433c1, type: 3}
       propertyPath: m_Center.z
       value: 0.21681523
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360244747237210550, guid: 7dccd1930005a9e49a1ef6a6e7b433c1, type: 3}
+      propertyPath: m_Size.z
+      value: 1.9317322
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360244747237210550, guid: 7dccd1930005a9e49a1ef6a6e7b433c1, type: 3}
+      propertyPath: m_Center.z
+      value: 265.23413
       objectReference: {fileID: 0}
     - target: {fileID: 7789051505343361505, guid: 7dccd1930005a9e49a1ef6a6e7b433c1, type: 3}
       propertyPath: m_IsActive
