@@ -1994,56 +1994,6 @@ MonoBehaviour:
   onEnable: 0
   onDisable: 2
   onDestroy: 0
---- !u!1 &374842761
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 374842762}
-  - component: {fileID: 374842763}
-  m_Layer: 0
-  m_Name: MetalJump
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &374842762
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374842761}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1550511263}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &374842763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374842761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c6cfe8bfc0d31409a979c41b0c8d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audio: {fileID: 11400000, guid: 43901922a43187e4d95ad6ff09350b65, type: 2}
-  advancedMode: 0
-  onStart: 0
-  onEnable: 0
-  onDisable: 2
-  onDestroy: 0
 --- !u!1 &388126449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,61 +2178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc152bbc63519ca4e91533f85fc5da5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &479866427 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7750521069254065778, guid: 8a696078125d7574e9fba02e9e5cd5a8, type: 3}
-  m_PrefabInstance: {fileID: 554344596}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &482522335
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 482522336}
-  - component: {fileID: 482522337}
-  m_Layer: 0
-  m_Name: WaterLand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &482522336
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 482522335}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1550511263}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &482522337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 482522335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c6cfe8bfc0d31409a979c41b0c8d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audio: {fileID: 11400000, guid: 10b1342d714b08f45990627f057d8a2f, type: 2}
-  advancedMode: 0
-  onStart: 0
-  onEnable: 0
-  onDisable: 2
-  onDestroy: 0
 --- !u!1001 &487136803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2662,9 +2557,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7750521069254065778, guid: 8a696078125d7574e9fba02e9e5cd5a8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1550511263}
     - targetCorrespondingSourceObject: {fileID: 4523726863855443079, guid: 8a696078125d7574e9fba02e9e5cd5a8, type: 3}
       insertIndex: 4
       addedObject: {fileID: 788779639}
@@ -3277,56 +3169,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4884951655754544, guid: 51f79e90646d7264d93f7db008bb6090, type: 3}
   m_PrefabInstance: {fileID: 689874124}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &716266369
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 716266370}
-  - component: {fileID: 716266371}
-  m_Layer: 0
-  m_Name: RockJump
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &716266370
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716266369}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1550511263}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &716266371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716266369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c6cfe8bfc0d31409a979c41b0c8d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audio: {fileID: 11400000, guid: 9640853a3b9e56d49b01950cefc56538, type: 2}
-  advancedMode: 0
-  onStart: 0
-  onEnable: 0
-  onDisable: 2
-  onDestroy: 0
 --- !u!43 &727491497
 Mesh:
   m_ObjectHideFlags: 0
@@ -5298,6 +5140,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 174241218791558104, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: jumpSoundRock
+      value: 
+      objectReference: {fileID: 11400000, guid: 9640853a3b9e56d49b01950cefc56538, type: 2}
+    - target: {fileID: 174241218791558104, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: jumpSoundTile
+      value: 
+      objectReference: {fileID: 11400000, guid: 79f2cc6af38ef424b87f6f70213e8966, type: 2}
+    - target: {fileID: 174241218791558104, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: landSoundRock
+      value: 
+      objectReference: {fileID: 11400000, guid: 537c5089e06e13f40a018645cd13db7b, type: 2}
+    - target: {fileID: 174241218791558104, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: landSoundTile
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e5650bf539038443ba31c85416aa5cf, type: 2}
+    - target: {fileID: 174241218791558104, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: jumpSoundMetal
+      value: 
+      objectReference: {fileID: 11400000, guid: 43901922a43187e4d95ad6ff09350b65, type: 2}
+    - target: {fileID: 174241218791558104, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: jumpSoundWater
+      value: 
+      objectReference: {fileID: 11400000, guid: 10b1342d714b08f45990627f057d8a2f, type: 2}
+    - target: {fileID: 174241218791558104, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: landSoundMetal
+      value: 
+      objectReference: {fileID: 11400000, guid: 3651a02894139fb479b914351337d38c, type: 2}
+    - target: {fileID: 174241218791558104, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: landSoundWater
+      value: 
+      objectReference: {fileID: 11400000, guid: 10b1342d714b08f45990627f057d8a2f, type: 2}
+    - target: {fileID: 2617545986418300566, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2712438048172541396, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
@@ -5306,6 +5184,10 @@ PrefabInstance:
       propertyPath: deathSound
       value: 
       objectReference: {fileID: 11400000, guid: 5426e8ebc484ad540bd20af22f4a4435, type: 2}
+    - target: {fileID: 8384002065240336512, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: lowPassfitlerAudio
+      value: 
+      objectReference: {fileID: 1926321183}
     - target: {fileID: 8611041314194076477, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
       propertyPath: m_LocalPosition.x
       value: 50.4
@@ -6608,56 +6490,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4921907811175825067, guid: acd06d37d3d5d4440abb38250405d068, type: 3}
   m_PrefabInstance: {fileID: 3236736905264691592}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1392188544
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1392188545}
-  - component: {fileID: 1392188546}
-  m_Layer: 0
-  m_Name: WaterJump
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1392188545
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392188544}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1550511263}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1392188546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392188544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c6cfe8bfc0d31409a979c41b0c8d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audio: {fileID: 11400000, guid: 10b1342d714b08f45990627f057d8a2f, type: 2}
-  advancedMode: 0
-  onStart: 0
-  onEnable: 0
-  onDisable: 2
-  onDestroy: 0
 --- !u!23 &1404412343 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3524052634857947758, guid: a2f7cd9e8d4db3144a1e1afcd3d00844, type: 3}
@@ -6829,106 +6661,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2e987b72770c214cbbda7b293413729, type: 3}
---- !u!1 &1426575021
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1426575022}
-  - component: {fileID: 1426575023}
-  m_Layer: 0
-  m_Name: MetalLand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1426575022
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426575021}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1550511263}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1426575023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426575021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c6cfe8bfc0d31409a979c41b0c8d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audio: {fileID: 11400000, guid: 3651a02894139fb479b914351337d38c, type: 2}
-  advancedMode: 0
-  onStart: 0
-  onEnable: 0
-  onDisable: 2
-  onDestroy: 0
---- !u!1 &1457688346
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1457688347}
-  - component: {fileID: 1457688348}
-  m_Layer: 0
-  m_Name: TileJump
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1457688347
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1457688346}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1550511263}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1457688348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1457688346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c6cfe8bfc0d31409a979c41b0c8d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audio: {fileID: 11400000, guid: 79f2cc6af38ef424b87f6f70213e8966, type: 2}
-  advancedMode: 0
-  onStart: 0
-  onEnable: 0
-  onDisable: 2
-  onDestroy: 0
 --- !u!43 &1463275654
 Mesh:
   m_ObjectHideFlags: 0
@@ -7262,45 +6994,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4956374773160368, guid: 35ecc78e323d01f4faf93688e4e2a82f, type: 3}
   m_PrefabInstance: {fileID: 1550219124}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1550511262
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1550511263}
-  m_Layer: 0
-  m_Name: Jumping
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1550511263
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1550511262}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1426575022}
-  - {fileID: 2119653124}
-  - {fileID: 1587180035}
-  - {fileID: 482522336}
-  - {fileID: 374842762}
-  - {fileID: 716266370}
-  - {fileID: 1457688347}
-  - {fileID: 1392188545}
-  m_Father: {fileID: 479866427}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1567554480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7370,56 +7063,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35ecc78e323d01f4faf93688e4e2a82f, type: 3}
---- !u!1 &1587180034
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1587180035}
-  - component: {fileID: 1587180036}
-  m_Layer: 0
-  m_Name: TileLand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1587180035
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1587180034}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1550511263}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1587180036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1587180034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c6cfe8bfc0d31409a979c41b0c8d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audio: {fileID: 11400000, guid: 2e5650bf539038443ba31c85416aa5cf, type: 2}
-  advancedMode: 0
-  onStart: 0
-  onEnable: 0
-  onDisable: 2
-  onDestroy: 0
 --- !u!1 &1589482041
 GameObject:
   m_ObjectHideFlags: 0
@@ -8955,6 +8598,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6878c1c241e02419b3e7e8c5849665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!169 &1926321183 stripped
+AudioLowPassFilter:
+  m_CorrespondingSourceObject: {fileID: 2617545986418300566, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+  m_PrefabInstance: {fileID: 1083405650}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1941926842
 GameObject:
   m_ObjectHideFlags: 0
@@ -9585,56 +9233,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118458235}
   m_Mesh: {fileID: 4300154, guid: 444b4069faddeb14fa19e3138aa71e0b, type: 3}
---- !u!1 &2119653123
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2119653124}
-  - component: {fileID: 2119653125}
-  m_Layer: 0
-  m_Name: RockLand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2119653124
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119653123}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1550511263}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2119653125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119653123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c6cfe8bfc0d31409a979c41b0c8d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audio: {fileID: 11400000, guid: 537c5089e06e13f40a018645cd13db7b, type: 2}
-  advancedMode: 0
-  onStart: 0
-  onEnable: 0
-  onDisable: 2
-  onDestroy: 0
 --- !u!1 &2132364097
 GameObject:
   m_ObjectHideFlags: 0

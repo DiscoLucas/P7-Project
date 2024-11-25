@@ -28,12 +28,18 @@ public class HealthSystem : MonoBehaviour
     GameManager gameManager;
     Camera mainCamera;
 
+    [Header("Low-pass Filter")]
+    public AudioLowPassFilter lowPassfitlerAudio;
+    public float minLowPassFilterCutoff = 500;
+    public float maxLowPassFilterCutoff = 22000;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         gameManager = GameManager.Instance;
         mainCamera = Camera.main;
+
 
         currentHealth = maxHealth;
     }
@@ -93,6 +99,11 @@ public class HealthSystem : MonoBehaviour
             UpdateVignetteColor();
             yield return new WaitForSeconds(regenInterval);
         }
+
+        if (currentHealth == maxHealth)
+        {
+            lowPassfitlerAudio.enabled = false;
+        }
     }
 
     void UpdateVignetteColor()
@@ -100,6 +111,10 @@ public class HealthSystem : MonoBehaviour
         float healthColor = (float)currentHealth / maxHealth;
         Color newColor = Color.Lerp(Color.red, gameManager.initialVignetteColor, healthColor);
         gameManager.SetVignetteColor(newColor);
+
+        lowPassfitlerAudio.enabled = true;
+        float cutoffFrequency = Mathf.Lerp(minLowPassFilterCutoff, maxLowPassFilterCutoff, healthColor);
+        lowPassfitlerAudio.cutoffFrequency = cutoffFrequency;
     }
 
     IEnumerator ScreenShake()
