@@ -47,6 +47,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 85ff7412f114ccd429301976c20c7960, type: 2}
   - {fileID: 11400000, guid: 5426e8ebc484ad540bd20af22f4a4435, type: 2}
   - {fileID: 11400000, guid: 90b6fab496b37e84590fff27eaf37703, type: 2}
+  - {fileID: 11400000, guid: 10b1342d714b08f45990627f057d8a2f, type: 2}
+  - {fileID: 11400000, guid: 2e5650bf539038443ba31c85416aa5cf, type: 2}
+  - {fileID: 11400000, guid: 79f2cc6af38ef424b87f6f70213e8966, type: 2}
+  - {fileID: 11400000, guid: 537c5089e06e13f40a018645cd13db7b, type: 2}
+  - {fileID: 11400000, guid: 9640853a3b9e56d49b01950cefc56538, type: 2}
+  - {fileID: 11400000, guid: 43901922a43187e4d95ad6ff09350b65, type: 2}
+  - {fileID: 11400000, guid: 3651a02894139fb479b914351337d38c, type: 2}
   Music:
   - {fileID: 11400000, guid: 1851a6424d09e6349908d4ae440ce410, type: 2}
   useCustomNames: 0
@@ -91,6 +98,13 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 599e047a801682b40a16dbae0d2093ac, type: 2}
     - {fileID: 11400000, guid: c5096240db2b26d4aa4da4a37c9f081f, type: 2}
     - {fileID: 11400000, guid: 5426e8ebc484ad540bd20af22f4a4435, type: 2}
+    - {fileID: 11400000, guid: 10b1342d714b08f45990627f057d8a2f, type: 2}
+    - {fileID: 11400000, guid: 2e5650bf539038443ba31c85416aa5cf, type: 2}
+    - {fileID: 11400000, guid: 79f2cc6af38ef424b87f6f70213e8966, type: 2}
+    - {fileID: 11400000, guid: 537c5089e06e13f40a018645cd13db7b, type: 2}
+    - {fileID: 11400000, guid: 9640853a3b9e56d49b01950cefc56538, type: 2}
+    - {fileID: 11400000, guid: 43901922a43187e4d95ad6ff09350b65, type: 2}
+    - {fileID: 11400000, guid: 3651a02894139fb479b914351337d38c, type: 2}
     foldout: 1
   - name: Monster
     files:

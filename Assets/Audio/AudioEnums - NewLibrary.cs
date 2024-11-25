@@ -25,7 +25,14 @@
         MonsterFootSteps,
         Hit,
         PlayerGrunts,
-        VentCrawling
+        VentCrawling,
+        WaterJump,
+        TileJumpLand,
+        TileJump,
+        RockJumpLand,
+        RockJump,
+        MetalJump,
+        MetalJumpLand
     }
     public enum NewLibraryMusic {
         Theme
