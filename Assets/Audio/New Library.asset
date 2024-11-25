@@ -18,7 +18,7 @@ MonoBehaviour:
   - PlayerMovement
   - Monster
   musicCategories:
-  - 
+  - New Category
   Sounds:
   - {fileID: 11400000, guid: 45db174fb7df3a343861bb3b15b23cf3, type: 2}
   - {fileID: 11400000, guid: e8c5e228781d9a24db0f7423a0364499, type: 2}
@@ -100,7 +100,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 85ff7412f114ccd429301976c20c7960, type: 2}
     foldout: 1
   musicCategoriesToList:
-  - name: 
+  - name: New Category
     files:
     - {fileID: 11400000, guid: 1851a6424d09e6349908d4ae440ce410, type: 2}
     foldout: 1

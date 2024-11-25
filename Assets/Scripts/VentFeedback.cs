@@ -20,6 +20,11 @@ public class VentFeedback : MonoBehaviour
     private bool isExitVent; // Tracks if the vent is being used as an exit
     public bool isVenting; // true when the monster is in the vent
 
+    [SerializeField]
+    private SoundFileObject ventEnter;
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,6 +46,7 @@ public class VentFeedback : MonoBehaviour
         linkedVent.isExitVent = true;
         StartCoroutine(FlickerLight());
         //Debug.Log("Monster is in the vent");
+        AudioManager.PlaySound(ventEnter, GameManager.Instance.monsterObject.transform);
         AudioManager.PlaySound(rumblingSound, GameManager.Instance.monsterObject.transform);
 }
     /// <summary>

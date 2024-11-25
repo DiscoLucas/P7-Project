@@ -157,6 +157,7 @@ MonoBehaviour:
   maxFlickerInterval: 0.2
   rumblingSound: {fileID: 11400000, guid: 90b6fab496b37e84590fff27eaf37703, type: 2}
   isVenting: 0
+  ventEnter: {fileID: 11400000, guid: f11b1a78f0c0b654bb400a06b48580b4, type: 2}
 --- !u!1 &4865756706933197396
 GameObject:
   m_ObjectHideFlags: 0
