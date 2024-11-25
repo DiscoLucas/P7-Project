@@ -5073,6 +5073,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 165455381404817544, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 165455381404817544, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 165455381404817544, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 165455381404817544, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 165455381404817544, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2712438048172541396, guid: 658bed1057fd0eb4a9b539321cc64791, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
@@ -9088,11 +9108,11 @@ PrefabInstance:
       objectReference: {fileID: 1083405651}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Egress.m_PersistentCalls.m_Calls.Array.size
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.size
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[9].m_Mode
@@ -9100,6 +9120,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[10].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[11].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[12].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
@@ -9127,9 +9155,25 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[13].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[14].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[10].m_Target
       value: 
       objectReference: {fileID: 1007453809}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[11].m_Target
+      value: 
+      objectReference: {fileID: 3843549}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[12].m_Target
+      value: 
+      objectReference: {fileID: 1775100654}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
@@ -9155,11 +9199,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1007453809}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[13].m_Target
+      value: 
+      objectReference: {fileID: 3843549}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[14].m_Target
+      value: 
+      objectReference: {fileID: 1775100654}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[9].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[10].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[11].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[12].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
@@ -9171,11 +9231,27 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[11].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[12].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[11].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[12].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[13].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[14].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
@@ -9187,11 +9263,27 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[13].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[14].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[9].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[10].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[11].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[12].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
@@ -9203,7 +9295,23 @@ PrefabInstance:
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[13].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[14].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[10].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[11].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[12].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
@@ -9219,7 +9327,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[13].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[10].m_Arguments.m_StringArgument
+      value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[11].m_Arguments.m_StringArgument
+      value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[12].m_Arguments.m_StringArgument
       value: Close
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
@@ -9231,6 +9351,14 @@ PrefabInstance:
       value: Drain
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[13].m_Arguments.m_StringArgument
+      value: Drain
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[14].m_Arguments.m_StringArgument
+      value: Drain
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[9].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -9239,11 +9367,27 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[11].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Egress.m_PersistentCalls.m_Calls.Array.data[12].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[11].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
       propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[12].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[13].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 113467601288327023, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
+      propertyPath: Ingress.m_PersistentCalls.m_Calls.Array.data[14].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1745544583537947355, guid: 5d7f1f7dd84e5bb458d7b342ae4dab18, type: 3}
@@ -9872,7 +10016,9 @@ PrefabInstance:
       value: -5.009
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2949787712740358901, guid: 8b681d47345b8c34fb29183be418d276, type: 3}
+    - {fileID: 3769590347584824495, guid: 8b681d47345b8c34fb29183be418d276, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2549991845892299284, guid: 8b681d47345b8c34fb29183be418d276, type: 3}
       insertIndex: -1
@@ -10662,7 +10808,9 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5519288041859896698, guid: 819b7f82570a0844c98dd8c193a17c58, type: 3}
+    - {fileID: 5518892812009602709, guid: 819b7f82570a0844c98dd8c193a17c58, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 819b7f82570a0844c98dd8c193a17c58, type: 3}
