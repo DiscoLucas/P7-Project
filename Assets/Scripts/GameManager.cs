@@ -160,6 +160,10 @@ public class GameManager : SingletonPersistent<GameManager>
         */
         findMonster();
         Debug.Log("Protection areas object is: " + protectionAreaObject + " Player is: " + playerObject + " Monster is: " + monsterObject);
+        GameObject spawnpoint = GameObject.FindWithTag("Spawnpoint");
+        if (spawnpoint != null && playerObject != null) { 
+            playerObject.transform.position = spawnpoint.transform.position;
+        }
         onGameStartEvent.Invoke();
     }
 
