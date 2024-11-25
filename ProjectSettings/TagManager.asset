@@ -8,6 +8,7 @@ TagManager:
   - Steam
   - Monner
   - Egg
+  - Spawnpoint
   layers:
   - Default
   - TransparentFX
