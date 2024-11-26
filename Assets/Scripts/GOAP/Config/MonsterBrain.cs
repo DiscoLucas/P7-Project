@@ -8,7 +8,7 @@ using UnityEngine.Events;
 
 namespace Assets.Scripts.GOAP.Behaviors
 {
-    [DefaultExecutionOrder(3)]
+    [DefaultExecutionOrder(7)]
     [RequireComponent(typeof(AgentBehaviour))]
     public class MonsterBrain : MonoBehaviour
     {
