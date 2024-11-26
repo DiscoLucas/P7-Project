@@ -41,10 +41,11 @@ public abstract class SingletonPersistent<T> : Singleton<T> where T : MonoBehavi
         }
         else
         {
+            base.Awake();
             Debug.Log("Creation of singleton" + gameObject.name);
             DontDestroyOnLoad(gameObject);
         }
-        base.Awake();
+        
         Debug.Log("singleton Createde" + gameObject.name);
     }
 

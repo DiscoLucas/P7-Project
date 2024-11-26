@@ -1,11 +1,11 @@
 using UnityEngine;
-[DefaultExecutionOrder(-2)]
+[DefaultExecutionOrder(5)]
 public class GameManagerActivator : MonoBehaviour
 {
     public GameObject monster_Goap, monster_Next;
     void Start()
     {
-        if (GameManager.Instance.usingNextBot)
+        if (GameManager.Instance.getUsingNextBot())
         {
             GameManager.Instance.monsterObject = monster_Next;
             Debug.Log("Change to the nextbot");

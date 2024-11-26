@@ -29,7 +29,8 @@ public class AgressionSensor : MonoBehaviour
         path = new NavMeshPath();
         maxTime *= 60;
         timeWhenStart = Time.realtimeSinceStartup;
-        protectionArea = GameManager.Instance.protectionAreaObject.transform;
+        
+        
     }
 
     private void FixedUpdate()

@@ -5,7 +5,7 @@ using Assets.Scripts.GOAP.Sensors;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
-[DefaultExecutionOrder(-1)]
+[DefaultExecutionOrder(-2)]
 public class GameManager : SingletonPersistent<GameManager>
 {
     public static event Action<GameState> OnBeforeStateChanged;
@@ -19,7 +19,6 @@ public class GameManager : SingletonPersistent<GameManager>
     private GameHudMenu gameHud;
     Die die;
 
-    public bool usingNextBot;
     [SerializeField]
     string monsterTag = "Monster", eggTag = "EGG";
     Vignette vignette;
@@ -27,15 +26,32 @@ public class GameManager : SingletonPersistent<GameManager>
     ChromaticAberration chromaticAberration;
     FilmGrain filmGrain;
 
+    public SceneLoadPackage sceneLoadPackage = null;
+
+
     [Header("Initial post processing values")]
     [HideInInspector] public float initialVignette;
     [HideInInspector] public Color initialVignetteColor;
     [HideInInspector] public float initialSaturation;
     [HideInInspector] public float initialChromaticAberration;
     [HideInInspector] public float initialFilmGrain;
+    public void setpackage() {
+        if (sceneLoadPackage == null) {
+            sceneLoadPackage = GetComponent<SceneLoadPackage>();
+        }
+    }
 
-    
+    public void setUsingNextBot(bool b) {
+        setpackage();
+        sceneLoadPackage.usingNextBot = b;
+    }
 
+    public bool getUsingNextBot() {
+        setpackage();
+
+        
+        return sceneLoadPackage.usingNextBot;
+    }
 
     public GameState State { get; private set; }
 
@@ -51,7 +67,7 @@ public class GameManager : SingletonPersistent<GameManager>
             Debug.Log("mONSTERS FOUND: " + monsters.Length);
             foreach (GameObject monster in monsters)
             {
-                if (usingNextBot)
+                if (getUsingNextBot())
                 {
                     DumbBot bot = monster.GetComponent<DumbBot>();
                     if (bot != null)
@@ -99,8 +115,12 @@ public class GameManager : SingletonPersistent<GameManager>
         GameObject spawnpoint = GameObject.FindWithTag("Spawnpoint");
         if (spawnpoint != null && playerObject != null)
         {
-            Debug.Log("Moving player to spawnpoint");
+            Debug.Log("Moving player to spawnpoint FROM: " + playerObject.transform.position + " to: " + spawnpoint.transform.position);
             playerObject.transform.position = spawnpoint.transform.position;
+            Debug.Log("moved to: " + playerObject.transform.position);
+          //  var newobj = Instantiate(playerObject);
+           // playerObject.SetActive(false);
+           // playerObject = newobj;
         }
 
         ChangeState(GameState.TutorialSection);

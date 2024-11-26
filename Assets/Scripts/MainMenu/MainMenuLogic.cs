@@ -25,7 +25,7 @@ public class MainMenuLogic : MenuBase
 
     public void setBotType(bool nextbot)
     {
-        GameManager.Instance.usingNextBot = nextbot;
+        GameManager.Instance.setUsingNextBot(nextbot);
     }
 
 

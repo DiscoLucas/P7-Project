@@ -56,8 +56,9 @@ namespace Assets.Scripts.GOAP.Sensors
             smellTargetLastPos.parent = null;
             hidespot.parent = null;
             peakSpot.parent = null;
-            playersRealPostion = GameManager.Instance.playerObject.transform;
             getSessionLogTrakor();
+            if(playersRealPostion == null)
+                playersRealPostion = GameManager.Instance.playerObject.transform;
         }
 
         public void playerPostionHaveBeenSummeries(Vector3 pos, float dist) { 

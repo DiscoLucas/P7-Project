@@ -36609,12 +36609,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6448699684971344432, guid: 670998a4d50dbf14bb41ba28c33a53e4, type: 3}
       propertyPath: m_Name
-      value: Game Manager
+      value: GameManager(Main menu)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6448699684971344432, guid: 670998a4d50dbf14bb41ba28c33a53e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1494049818}
   m_SourcePrefab: {fileID: 100100000, guid: 670998a4d50dbf14bb41ba28c33a53e4, type: 3}
 --- !u!1001 &968636807
 PrefabInstance:
@@ -52208,18 +52211,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1824482305}
         m_TargetAssemblyTypeName: MainMenuLogic, Assembly-CSharp
-        m_MethodName: loadScene
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1824482305}
-        m_TargetAssemblyTypeName: MainMenuLogic, Assembly-CSharp
         m_MethodName: setBotType
         m_Mode: 6
         m_Arguments:
@@ -52265,6 +52256,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1824482305}
+        m_TargetAssemblyTypeName: MainMenuLogic, Assembly-CSharp
+        m_MethodName: loadScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!222 &1335454979
 CanvasRenderer:
@@ -57565,6 +57568,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4169694602017338, guid: 217f693fe11520e40a2800cd075f9972, type: 3}
   m_PrefabInstance: {fileID: 1491320139}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1494049815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6448699684971344432, guid: 670998a4d50dbf14bb41ba28c33a53e4, type: 3}
+  m_PrefabInstance: {fileID: 965822496}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1494049818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494049815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc0add6c7a001d842b536b16e69e62d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usingNextBot: 0
 --- !u!1001 &1494721237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72680,18 +72701,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1824482305}
         m_TargetAssemblyTypeName: MainMenuLogic, Assembly-CSharp
-        m_MethodName: loadScene
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1824482305}
-        m_TargetAssemblyTypeName: MainMenuLogic, Assembly-CSharp
         m_MethodName: setBotType
         m_Mode: 6
         m_Arguments:
@@ -72737,6 +72746,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1824482305}
+        m_TargetAssemblyTypeName: MainMenuLogic, Assembly-CSharp
+        m_MethodName: loadScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!222 &1922217193
 CanvasRenderer:
