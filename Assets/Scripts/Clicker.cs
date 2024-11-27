@@ -4,8 +4,8 @@ using UnityEngine.Events;
 public class Clicker : MonoBehaviour
 {
     public bool switched;
-    [SerializeField] UnityEvent Ingress;
-    public UnityEvent Egress; //This would be in a lever inheritance
+    [SerializeField] public UnityEvent Ingress; //they are now public
+    public UnityEvent Egress; //This would be in a lever inheritance!
     [Space]
     [SerializeField] GameObject KeyHolder;
     [SerializeField] GameObject Key;
@@ -38,5 +38,5 @@ public class Clicker : MonoBehaviour
             Egress.Invoke();
             }
         }
-    }
+    } //bruh
 }
