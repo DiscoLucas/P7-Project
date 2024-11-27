@@ -96,7 +96,7 @@ MonoBehaviour:
       type: {class: DrawRenderersCustomPass, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
       data:
         m_Name: Custom Pass
-        enabled: 1
+        enabled: 0
         targetColorBuffer: 0
         targetDepthBuffer: 0
         clearFlags: 0
@@ -155,13 +155,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024176779525259660}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.1305268, z: -0, w: 0.9914448}
-  m_LocalPosition: {x: 0.00000071525574, y: -0.65, z: -0.0000026151538}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 259831231900652288}
-  m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &5195220755652352942
 Light:
   m_ObjectHideFlags: 0
@@ -404,6 +404,7 @@ GameObject:
   - component: {fileID: 8641875584331051961}
   - component: {fileID: 3605153304429667820}
   - component: {fileID: 8384002065240336512}
+  - component: {fileID: 8480383018151101165}
   m_Layer: 3
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -553,6 +554,7 @@ MonoBehaviour:
   lookSpeed: 2
   lookXLimit: 90
   canMove: 1
+  pause: 0
   m_StepInterval: 0
   m_FootstepSounds: []
   m_JumpSound: {fileID: 0}
@@ -568,6 +570,14 @@ MonoBehaviour:
   RockWalk: {fileID: 11400000, guid: 608659725884e804b92a514c08ac025c, type: 2}
   TileWalk: {fileID: 11400000, guid: eb1b193130f5ad74a881ddf1ad9fe738, type: 2}
   currentSoundObj: {fileID: 11400000, guid: d6f07b252bb7c7b40b0425e9828a0b26, type: 2}
+  jumpSoundWater: {fileID: 11400000, guid: 10b1342d714b08f45990627f057d8a2f, type: 2}
+  jumpSoundMetal: {fileID: 11400000, guid: 43901922a43187e4d95ad6ff09350b65, type: 2}
+  jumpSoundRock: {fileID: 11400000, guid: 9640853a3b9e56d49b01950cefc56538, type: 2}
+  jumpSoundTile: {fileID: 11400000, guid: 79f2cc6af38ef424b87f6f70213e8966, type: 2}
+  landSoundWater: {fileID: 11400000, guid: 10b1342d714b08f45990627f057d8a2f, type: 2}
+  landSoundMetal: {fileID: 11400000, guid: 3651a02894139fb479b914351337d38c, type: 2}
+  landSoundRock: {fileID: 11400000, guid: 537c5089e06e13f40a018645cd13db7b, type: 2}
+  landSoundTile: {fileID: 11400000, guid: 2e5650bf539038443ba31c85416aa5cf, type: 2}
 --- !u!114 &8641875584331051961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,6 +593,9 @@ MonoBehaviour:
   Hand: {fileID: 2731341130619779888}
   interactCoolDown: 0
   interactCoolDownTarget: 0.5
+  interactKEy: e
+  rayDistance: 5
+  hudMessage: {fileID: 0}
 --- !u!114 &3605153304429667820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,7 +616,7 @@ MonoBehaviour:
   choromaEnd: 1
   filmGrainEnd: 1
   tiltForce: 2
-  deathSound: {fileID: 11400000, guid: f0822da04bda9834f9198cdf67b03d1a, type: 2}
+  deathSound: {fileID: 11400000, guid: 5426e8ebc484ad540bd20af22f4a4435, type: 2}
 --- !u!114 &8384002065240336512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,6 +640,24 @@ MonoBehaviour:
   regenInterval: 0.033333335
   regenAmount: 2
   canRegen: 0
+  lowPassfitlerAudio: {fileID: 2617545986418300566}
+  minLowPassFilterCutoff: 500
+  maxLowPassFilterCutoff: 22000
+--- !u!114 &8480383018151101165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2712438048172541396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f01d814675afb409695c0e13a0c574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderMats:
+  - {fileID: 2100000, guid: 4a0943183211ade4d8f1b390f83e6963, type: 2}
+  - {fileID: 2100000, guid: 5e25a9e6e9e067947bf3ba16eaaf3873, type: 2}
 --- !u!1 &2731341130619779888
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,7 +683,7 @@ Transform:
   m_GameObject: {fileID: 2731341130619779888}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -1, z: 2}
+  m_LocalPosition: {x: 0, y: -0.9, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -720,134 +751,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8611041314194076477}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8032509347555711719
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2060776708001926093}
-  - component: {fileID: 9196597811815848650}
-  m_Layer: 0
-  m_Name: CustomPass
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2060776708001926093
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8032509347555711719}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.65, z: 15}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 259831231900652288}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9196597811815848650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8032509347555711719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  fadeRadius: 0
-  priority: 0
-  customPasses:
-  - rid: 2906322940333654123
-  - rid: 2906322940333654124
-  injectionPoint: 1
-  m_TargetCamera: {fileID: 0}
-  useTargetCamera: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 2906322940333654123
-      type: {class: DrawRenderersCustomPass, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
-      data:
-        m_Name: Custom Pass
-        enabled: 1
-        targetColorBuffer: 0
-        targetDepthBuffer: 0
-        clearFlags: 0
-        passFoldout: 0
-        m_Version: 0
-        filterFoldout: 1
-        rendererFoldout: 1
-        renderQueueType: 10
-        layerMask:
-          serializedVersion: 2
-          m_Bits: 32
-        sortingCriteria: -1
-        overrideMode: 1
-        overrideMaterial: {fileID: 0}
-        overrideMaterialPassIndex: 0
-        overrideMaterialPassName: Forward
-        overrideShader: {fileID: 0}
-        overrideShaderPassIndex: 0
-        overrideShaderPassName: Forward
-        overrideDepthState: 1
-        depthCompareFunction: 8
-        depthWrite: 1
-        overrideStencil: 0
-        stencilReferenceValue: 64
-        stencilWriteMask: 192
-        stencilReadMask: 192
-        stencilCompareFunction: 8
-        stencilPassOperation: 0
-        stencilFailOperation: 0
-        stencilDepthFailOperation: 0
-        shaderPass: 0
-    - rid: 2906322940333654124
-      type: {class: DrawRenderersCustomPass, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
-      data:
-        m_Name: Custom Pass
-        enabled: 1
-        targetColorBuffer: 0
-        targetDepthBuffer: 0
-        clearFlags: 0
-        passFoldout: 0
-        m_Version: 0
-        filterFoldout: 1
-        rendererFoldout: 1
-        renderQueueType: 10
-        layerMask:
-          serializedVersion: 2
-          m_Bits: 32
-        sortingCriteria: -1
-        overrideMode: 1
-        overrideMaterial: {fileID: 0}
-        overrideMaterialPassIndex: 0
-        overrideMaterialPassName: Forward
-        overrideShader: {fileID: 0}
-        overrideShaderPassIndex: 0
-        overrideShaderPassName: Forward
-        overrideDepthState: 1
-        depthCompareFunction: 4
-        depthWrite: 1
-        overrideStencil: 0
-        stencilReferenceValue: 64
-        stencilWriteMask: 192
-        stencilReadMask: 192
-        stencilCompareFunction: 8
-        stencilPassOperation: 0
-        stencilFailOperation: 0
-        stencilDepthFailOperation: 0
-        shaderPass: 0
 --- !u!1 &8627659891866202074
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,7 +788,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2514559353404539453}
-  - {fileID: 2060776708001926093}
   - {fileID: 165455381404817544}
   - {fileID: 8339779619998988559}
   - {fileID: 6953180176139564021}
@@ -930,7 +832,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 7831
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1167,7 +1069,7 @@ AudioLowPassFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8627659891866202074}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_LowpassResonanceQ: 1
   lowpassLevelCustomCurve:
