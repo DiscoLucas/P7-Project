@@ -26,7 +26,7 @@ uint8_t dummy;
 void setup()
 {
 
-  Serial.begin(9600);
+  Serial.begin(11520);
   pinMode(intPin, INPUT_PULLUP); // pin connects to the interrupt output pin of the MAX30102
   Serial.println("Initializing MAX30102...");
   delay(1000);
@@ -38,15 +38,20 @@ void setup()
   }  
   Serial.println("MAX30102 initialized successfully");
   maxim_max30102_read_reg(REG_INTR_STATUS_1, &dummy); // reads and clears the interrupt status register
-  while (!Serial)  // wait for the serial port to connect. Needed for native USB port only
-  {
-      // wait for serial port to connect. Needed for native USB port only
-  }
+  
 }
 
 
 void loop() 
 {
+  if (Serial.available() > 0)
+  {
+    char command = Serial.read();
+    if (command == 'S')
+    {
+
+    }
+  }
   uint32_t red, ir;
   if (maxim_max30102_read_fifo(&red, &ir)) {
     Serial.print("Red LED: ");
