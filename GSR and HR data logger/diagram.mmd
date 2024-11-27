@@ -1,0 +1,16 @@
+classDiagram
+    class MaximHeartRateOxygen {
+        +maxim_heart_rate_and_oxygen_saturation(pun_ir_buffer, n_ir_buffer_length, pun_red_buffer, pn_spo2, pch_spo2_valid, pn_heart_rate, pch_hr_valid)
+        +maxim_find_peaks(pn_locs, n_npks, pn_x, n_size, n_min_height, n_min_distance, n_max_num)
+        +maxim_peaks_above_min_height(pn_locs, n_npks, pn_x, n_size, n_min_height)
+        +maxim_remove_close_peaks(pn_locs, pn_npks, pn_x, n_min_distance)
+        +maxim_sort_ascend(pn_x, n_size)
+        +maxim_sort_indices_descend(pn_x, pn_indx, n_size)
+    }
+
+    MaximHeartRateOxygen --> maxim_heart_rate_and_oxygen_saturation : Core Calculation
+    maxim_heart_rate_and_oxygen_saturation --> maxim_find_peaks : Uses
+    maxim_find_peaks --> maxim_peaks_above_min_height : Uses
+    maxim_find_peaks --> maxim_remove_close_peaks : Uses
+    maxim_peaks_above_min_height --> maxim_sort_ascend : Calls
+    maxim_remove_close_peaks --> maxim_sort_indices_descend : Calls
