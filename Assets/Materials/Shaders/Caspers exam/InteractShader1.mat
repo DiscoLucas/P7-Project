@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: InteractShadeMat
+  m_Name: InteractShader1
   m_Shader: {fileID: -6465566751694194690, guid: 941f6321258308a43b2aae612fe6a4e0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -65,8 +65,10 @@ Material:
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
     - _ExcludeFromTUAndAA: 0
+    - _Falloff: 1.5
     - _MaterialID: 1
     - _MaterialTypeMask: 2
+    - _MaxEmmision: 0.3
     - _OpaqueCullMode: 2
     - _PerPixelSorting: 0
     - _RayTracing: 0
@@ -102,11 +104,11 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     - _freq: 4
-    - _intensity: 0
+    - _intensity: 0.4
     m_Colors:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _LightPos: {r: 9.79, g: 1.9950571, b: -1.45, a: 0}
+    - _LightPos: {r: 23.765709, g: 1.9950571, b: -19.57522, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &1416097389921442765
