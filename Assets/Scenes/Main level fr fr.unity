@@ -2184,7 +2184,7 @@ MonoBehaviour:
   Sound: {fileID: 11400000, guid: d1c4ee853a7b6394eb8b70e4a8c3c2f8, type: 2}
   soundTransform: {fileID: 394234125}
   waterFall: {fileID: 11400000, guid: a99bb4316c35cc846a6f9c2a53c9b453, type: 2}
-  waterFallPos: {fileID: 1223563811}
+  waterFallPos: {fileID: 1055179285}
 --- !u!1 &353738584
 GameObject:
   m_ObjectHideFlags: 0
@@ -6546,6 +6546,11 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!4 &1055179285 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2461733332848337208, guid: ac5b07f257cd9704baec12873066d0ca, type: 3}
+  m_PrefabInstance: {fileID: 4414703272112526329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1064618981
 PrefabInstance:
   m_ObjectHideFlags: 0
