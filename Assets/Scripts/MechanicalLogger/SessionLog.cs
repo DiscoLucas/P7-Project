@@ -17,6 +17,7 @@ public class SessionLog
     public int timesDied;
     public bool gameWasCompletede = false;
 
+    
     private DateTime startTime;
     private DateTime endTime;
 

@@ -48,16 +48,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   agentPos: {fileID: 0}
-  sessionLog: {fileID: 0}
+  sessionLog:
+    name: 
+    allPlayerLoggedPositions: []
+    allMonsterLoggedPositions: []
+    timesDied: 0
+    gameWasCompletede: 0
+    timePlayed: 0
+    deathIndexs: 
   logInterval: 0.5
   maxRecentPositions: 200
   recentPlayerPositions: []
   gizmoColor: {r: 0, g: 1, b: 0.6819525, a: 0.5882353}
   smellAreaGizmoColor: {r: 1, g: 0.03915451, b: 0, a: 0.65882355}
-  enableLoggin: 1
   fixedUpdateCounterUpdatePos: 0
   fixedUpdateCounterSummerize: 0
-  updateRate: 4
+  updateRate: 3
   summariePostionTime: 15
   summriePostion: {x: 0, y: 0, z: 0}
   averageDistance: 0
@@ -65,6 +71,9 @@ MonoBehaviour:
   playerPostionsSummeries:
     m_PersistentCalls:
       m_Calls: []
+  state: {fileID: 0}
+  newSessionlogName: NewSessionLog
+  sessionLogFolderName: SessionLogs
 --- !u!1 &2866323108000222216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,7 +2353,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ab9462ea31f1243bf438df0e650717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 11400000, guid: 639f926e21ae0f34e947dd073bd00c50, type: 2}
+  map:
+    name: 
+    allPlayerLoggedPositions: []
+    allMonsterLoggedPositions: []
+    timesDied: 0
+    gameWasCompletede: 0
+    timePlayed: 0
+    deathIndexs: 
   isPlayer: 1
   minLineWidth: 1
   maxLineWidth: 3.65
@@ -4658,7 +4674,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ab9462ea31f1243bf438df0e650717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 11400000, guid: 639f926e21ae0f34e947dd073bd00c50, type: 2}
+  map:
+    name: 
+    allPlayerLoggedPositions: []
+    allMonsterLoggedPositions: []
+    timesDied: 0
+    gameWasCompletede: 0
+    timePlayed: 0
+    deathIndexs: 
   isPlayer: 1
   minLineWidth: 1
   maxLineWidth: 3.65

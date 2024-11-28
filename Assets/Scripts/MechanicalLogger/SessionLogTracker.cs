@@ -166,6 +166,7 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
     public void startLoggin()
     {
         state.sessionStarted = true;
+        sessionLog.startSession();
 
     }
 

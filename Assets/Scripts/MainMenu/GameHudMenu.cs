@@ -21,6 +21,8 @@ public class GameHudMenu : MenuBase
     public void openPauseMenu() {
         changeToMenuState();
         Time.timeScale = 0;
+        interactMessage.gameObject.SetActive(false);
+        EggMessage.gameObject.SetActive(false);
         pauseMenu.gameObject.SetActive(true);
         
     }

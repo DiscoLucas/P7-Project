@@ -13,52 +13,47 @@ MonoBehaviour:
   m_Name: MonsterConfig
   m_EditorClassIdentifier: 
   AgentSensorRadius: 50
-  smelledSearchAreaMultiplyer: 2
-  smellFressness: 3
-  stalkDitsanceMinDistance: 30
-  stalkMaxAgressionLevel: 50
-  stalkMaxPlayerAwareness: 70
-  stalkMinPlayerAwareness: 50
-  agressionLevelBeginChase: 75
-  minWalkingDistance: 0.01
-  screamInterval: 5
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 8
-  protectionAreaRadius: 10
-  meleeRange: 2.5
-  attackDelay: 2
-  chaseSpeed: 6
-  chaseRange: 13
-  distanceToMonsterForStartChaseAlways: 6
+  protectionAreaRadius: 15
+  minWalkingDistance: 0.01
   targetPosStop: 1
-  wanderingSetinRange: 30
-  startingAggressionLevel: 0.5
-  stalkDistance: 10
-  aggressionThreshold: 14
-  stalkActionRange: 25
-  screamHearingRange: 20
+  baseIdleSpeed: 4
+  baseStalkSpeed: 4.2
+  baseChaseSpeed: 5
+  hideSpeedModifier: 0.8
+  peekSpeedModifier: 1.09
+  maxAggressionMultiplier: 1.1
+  agressionLevelBeginChase: 90
+  stalkMaxAgressionLevel: 85
+  lowAwarenessCostMultiplier: 0.6
+  highAwarenessCostMultiplier: 1.1
+  wanderingSetinRange: 40
+  smelledSearchAreaMultiplyer: 2
+  smellFressness: 3
+  stalkDitsanceMinDistance: 30
+  stalkMinPlayerAwareness: 25
+  stalkMaxPlayerAwareness: 60
   peekRange: 25
   hideRange: 15
+  screamHearingRange: 15
+  screamInterval: 5
+  chaseRange: 9
+  distanceToMonsterForStartChaseAlways: 7
+  meleeRange: 2.5
+  attackDelay: 2
   hideCost: 12
-  hideCostRange: {x: 12, y: 40}
+  hideCostRange: {x: 12, y: 30}
   peekCost: 5
-  peakCostRange: {x: 12, y: 40}
+  peakCostRange: {x: 12, y: 20}
   screamActionCostbase: 5
-  screamActionCostRange: {x: 12, y: 100}
+  screamActionCostRange: {x: 11, y: 100}
   wanderingBaseCost: 25
   wanderingCostRange: {x: 2, y: 30}
   chaseCost: 25
-  chaseCostRange: {x: 15, y: 45}
+  chaseCostRange: {x: 15, y: 30}
   meleeCost: 25
   meleeCostRange: {x: 0, y: 100}
   goToSentminCost: 2
   goToSenMaxCost: 40
-  lowAwarenessCostMultiplier: 0.5
-  highAwarenessCostMultiplier: 1
-  baseIdleSpeed: 2
-  baseStalkSpeed: 4
-  baseChaseSpeed: 5
-  maxAggressionMultiplier: 1.1
-  hideSpeedModifier: 0.8
-  peekSpeedModifier: 1.09
