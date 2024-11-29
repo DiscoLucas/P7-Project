@@ -19,6 +19,6 @@ public class Pickupable : MonoBehaviour
         Rigidbody.isKinematic = true;
         transform.localPosition = Vector3.zero;
         transform.localEulerAngles = Vector3.zero;
-        //gameObject.layer = 5;
+        gameObject.layer = 5;
     }
 }

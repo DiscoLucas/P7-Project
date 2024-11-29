@@ -108,7 +108,7 @@ Material:
     m_Colors:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _LightPos: {r: 52.715744, g: -3.409332, b: 10.516459, a: 0}
+    - _LightPos: {r: -24.314209, g: 3.495057, b: -14.872602, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &1416097389921442765

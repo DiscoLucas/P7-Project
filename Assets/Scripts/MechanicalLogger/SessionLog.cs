@@ -22,7 +22,7 @@ public class SessionLog
     private DateTime endTime;
 
     [Tooltip("Total time played in seconds")]
-    public float timePlayed = 0f;
+    public string timePlayed = "None";
     public List<int> deathIndexs = new List<int>();
 
     public SessionLog(string name)
@@ -47,6 +47,7 @@ public class SessionLog
         string timePlayedString = string.Format("{0}:{1:D2}", minutes, seconds);
         Debug.Log("Session ended at: " + endTime);
         Debug.Log("Total time played: " + timePlayedString );
+        this.timePlayed = timePlayedString;
     }
 
     public void updatePlayerDied()
