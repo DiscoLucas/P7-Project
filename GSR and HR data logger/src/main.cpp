@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include "algorithm.h"
 #include "max30102.h"
+#include <Wire.h>
 
 int maxBrightness = 255;
 
@@ -23,13 +24,21 @@ int32_t heartRate;
 int8_t heartRateValid;
 uint8_t dummy;
 
+bool isTransmitting = false;
+void EndTransmission()
+{
+  digitalWriteFast(LED_BUILTIN, LOW);
+  isTransmitting = false;
+  Serial.println("Ending transmission");
+}
+
 void setup()
 {
-
-  Serial.begin(11520);
+  while (!Serial && millis() < 5000);
+  //Serial.begin(11520);
+  pinMode(LED_BUILTIN, OUTPUT);
   pinMode(intPin, INPUT_PULLUP); // pin connects to the interrupt output pin of the MAX30102
   Serial.println("Initializing MAX30102...");
-  delay(1000);
   maxim_max30102_reset(); //resets the MAX30102
   if (!maxim_max30102_init())
   {
@@ -41,17 +50,8 @@ void setup()
   
 }
 
-
-void loop() 
+void hr()
 {
-  if (Serial.available() > 0)
-  {
-    char command = Serial.read();
-    if (command == 'S')
-    {
-
-    }
-  }
   uint32_t red, ir;
   if (maxim_max30102_read_fifo(&red, &ir)) {
     Serial.print("Red LED: ");
@@ -162,4 +162,42 @@ void loop()
     }
     maxim_heart_rate_and_oxygen_saturation(irBuffer, irBufferLength, redBuffer, &spo2, &spo2Valid, &heartRate, &heartRateValid);
   }
+}
+void counter(){
+  while (isTransmitting)
+  {
+    static unsigned cnt = 0;
+    Serial.println(cnt++);
+    if (Serial.read() == 'E')
+    {
+      EndTransmission();
+    }
+    delay(50);
+  }
+}
+
+void loop() 
+{
+  //Serial.println(Serial.read());
+  if (Serial.available() > 0)
+  {
+    char command = Serial.read();
+    switch (command){
+      case 'S': // start transmision
+        digitalWriteFast(LED_BUILTIN, HIGH);
+        isTransmitting = true;
+        Serial.println("Starting transmision");
+        counter();
+        break;
+
+      case 'E': // end transmision
+        EndTransmission();
+        break;
+      default:
+        Serial.println(command + "is an invalid command");
+        digitalWriteFast(LED_BUILTIN, LOW);
+        break;
+    }
+  }
+
 }

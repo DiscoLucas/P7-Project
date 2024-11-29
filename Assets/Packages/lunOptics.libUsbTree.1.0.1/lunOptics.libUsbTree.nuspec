@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>lunOptics.libUsbTree</id>
+    <version>1.0.1</version>
+    <authors>luni64</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/luni64/LibUsbTree</projectUrl>
+    <description>Package Description</description>
+    <copyright>lunOptics</copyright>
+    <tags>USB UsbDevices Cfgmgr32</tags>
+    <repository url="https://github.com/luni64/TeensySharp" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6" />
+      <group targetFramework="net5.0" />
+      <group targetFramework=".NETStandard2.0" />
+      <group targetFramework=".NETStandard2.1" />
+    </dependencies>
+  </metadata>
+</package>
