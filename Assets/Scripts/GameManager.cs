@@ -207,19 +207,26 @@ public class GameManager : SingletonPersistent<GameManager>
 
     private void HandelCloseingGameMenus()
     {
+        
         playerObject.GetComponent<PlayerMovement>().pause = false;
         gameHud.closeAllMenus();
     }
 
     private void HandleWin()
     {
-        gameHud.openWinScreen();
+        if (State != GameState.GameOver) {
+            SessionLogTracker.Instance.sessionLog.gameCompletede();
+            gameHud.openWinScreen();
+        }
     }
 
     private void HandleGameOver()
     {
-        gameHud.openDeathScreen();
-        die.KillPlayer();
+        if (State != GameState.Win) {
+            SessionLogTracker.Instance.onCountDeath();
+            gameHud.openDeathScreen();
+            die.KillPlayer();
+        }
     }
 
     private void HandlePause()
@@ -244,6 +251,9 @@ public class GameManager : SingletonPersistent<GameManager>
         ChangeState(GameState.Game);
     }
 
+    public bool inGame() { 
+        return (State == GameState.Game || State == GameState.TutorialSection);
+    }
 
     #region Sketchy post processing getter setters
     public void SetVignetteIntensity(float intensity)

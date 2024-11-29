@@ -42,7 +42,6 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
 
     }
 
-
     private void Start()
     {
         sessionLog = null;
@@ -61,7 +60,6 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
             agentPos = GameObject.FindGameObjectWithTag("Monner").transform;
 
     }
-
 
     private void FixedUpdate()
     {
@@ -161,8 +159,6 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
         }
     }
 
-
-
     public void startLoggin()
     {
         state.sessionStarted = true;
@@ -249,8 +245,6 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
 
     }
 
-
-
     public string CreateFilePath(string filename)
     {
         if (string.IsNullOrWhiteSpace(filename) || filename.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
@@ -277,6 +271,13 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
         return filePath;
     }
 
+
+    public void onCountDeath() {
+        if (sessionLog != null) {
+            sessionLog.updatePlayerDied();
+            
+        }
+    }
 
 
 }
