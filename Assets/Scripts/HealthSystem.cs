@@ -7,6 +7,8 @@ public class HealthSystem : MonoBehaviour
 {
     public int currentHealth;
     public int maxHealth = 100;
+    [Header("Vignette")]
+    public AnimationCurve vignetteCurve;
 
     [Header("Damage")]
     public float damageInterval = 0.5f;
@@ -39,7 +41,6 @@ public class HealthSystem : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         gameManager = GameManager.Instance;
         mainCamera = Camera.main;
-
 
         currentHealth = maxHealth;
     }
@@ -112,6 +113,10 @@ public class HealthSystem : MonoBehaviour
         Color newColor = Color.Lerp(Color.red, gameManager.initialVignetteColor, healthColor);
         gameManager.SetVignetteColor(newColor);
 
+        float vignetteIntensity = vignetteCurve.Evaluate(1-healthColor);
+
+
+        gameManager.SetVignetteIntensity(vignetteIntensity);
         lowPassfitlerAudio.enabled = true;
         float cutoffFrequency = Mathf.Lerp(minLowPassFilterCutoff, maxLowPassFilterCutoff, healthColor);
         lowPassfitlerAudio.cutoffFrequency = cutoffFrequency;

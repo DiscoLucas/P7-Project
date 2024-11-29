@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.Apple;
 public class MainMenuLogic : MenuBase
 {
     public TMP_InputField datalogName_InputField;

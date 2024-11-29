@@ -1,5 +1,5 @@
 using UnityEngine;
-[DefaultExecutionOrder(5)]
+[DefaultExecutionOrder(-199)]
 public class GameManagerActivator : MonoBehaviour
 {
     public GameObject monster_Goap, monster_Next;
@@ -18,6 +18,7 @@ public class GameManagerActivator : MonoBehaviour
         
         GameManager.Instance.onGameStart();
         Debug.Log("Protection areas object is: " + GameManager.Instance.protectionAreaObject + " Player is: " + GameManager.Instance.playerObject + " Monster is: " + GameManager.Instance.monsterObject);
+        Debug.Log("postion of player: " + GameManager.Instance.playerObject.transform.position);
         monster_Goap.SetActive(false);
         monster_Next.SetActive(false);
 

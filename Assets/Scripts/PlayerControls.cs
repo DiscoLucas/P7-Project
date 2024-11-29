@@ -10,15 +10,18 @@ public class PlayerControls : MonoBehaviour
     float rayDistance = 5f;
     [SerializeField]
     Transform hudMessage;
+
+    [SerializeField]
+    PlayerMovement playerControls;
     // Update is called once per frame
     void Update()
     {
         RaycastHit hit;
         
         bool canInteract = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, rayDistance) && hit.collider.CompareTag("Trigger");
-        if (canInteract)
+        if (canInteract && !playerControls.pause)
             hudMessage.gameObject.SetActive(true);
-        else if(hudMessage.gameObject.active)
+        else if(hudMessage.gameObject.active && playerControls.pause)
             hudMessage.gameObject.SetActive(false);
 
 
@@ -58,6 +61,12 @@ public class PlayerControls : MonoBehaviour
                 //dont do much ?? Toggles flashlight maybe???
             }
         }
+    }
+
+    private void Start()
+    {
+        if(playerControls == null)
+            playerControls = GetComponent<PlayerMovement>();
     }
 
     public void destoryCurrentHeldItem() {

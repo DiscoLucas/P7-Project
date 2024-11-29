@@ -49,6 +49,7 @@ public abstract class SingletonPersistent<T> : Singleton<T> where T : MonoBehavi
         Debug.Log("singleton Createde" + gameObject.name);
     }
 
+
     /// <summary>
     /// Called when a duplicate instance of the singleton is destroyed.
     /// </summary>

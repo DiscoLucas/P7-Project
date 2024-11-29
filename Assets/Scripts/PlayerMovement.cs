@@ -5,6 +5,7 @@ using JSAM;
 using Unity.VisualScripting;
 using JetBrains.Annotations;
 using System.Drawing.Text;
+using System;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
@@ -62,6 +63,18 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         currentStamina = maxStamina;
+        Debug.Log("pos: " +transform.position);
+
+        GameObject spawnpoint = GameObject.FindWithTag("Spawnpoint");
+        if (spawnpoint != null )
+        {
+            Debug.Log("Moving player to spawnpoint FROM: " + transform.position + " to: " + spawnpoint.transform.position);
+            transform.position = spawnpoint.transform.position;
+            Debug.Log("moved to: " + transform.position);
+            //  var newobj = Instantiate(playerObject);
+            // playerObject.SetActive(false);
+            // playerObject = newobj;
+        }
     }
 
     void Update()
@@ -205,6 +218,7 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     public void playerLanding() {
 
+        
         CheckGroundLayer(landSoundWater, landSoundMetal, landSoundRock, landSoundTile, playerFeet);
 
     }
@@ -213,35 +227,41 @@ public class PlayerMovement : MonoBehaviour
     {
         Physics.SphereCast(transform.position + new Vector3(0, yOffset, 0f), radius, Vector3.down, out groundInfo, yOffset + .1f, groundLayer.value);
         //Debug.Log(groundInfo.collider.gameObject.layer.ToString());
-
-        if (characterController.velocity.magnitude > 0 && characterController.isGrounded && !AudioManager.IsSoundPlaying(currentSoundObj) && groundInfo.collider != null)
-        {
-            CheckGroundLayer(WaterWalk, MetalWalk, RockWalk, TileWalk, playerFeet);
-        }
+        if(groundInfo.collider != null)
+            if (characterController.velocity.magnitude > 0 && characterController.isGrounded && !AudioManager.IsSoundPlaying(currentSoundObj))
+            {
+                CheckGroundLayer(WaterWalk, MetalWalk, RockWalk, TileWalk, playerFeet);
+            }
     }
 
     private void CheckGroundLayer(SoundFileObject Water, SoundFileObject Metal, SoundFileObject Rock, SoundFileObject Tile, Transform playerFeet)
     {
-        if (groundInfo.collider.gameObject.layer == 4)
-        {
-            AudioManager.PlaySound(Water, playerFeet.position);
-            currentSoundObj = Water;
+        try {
+            if (groundInfo.collider.gameObject.layer == 4)
+            {
+                AudioManager.PlaySound(Water, playerFeet.position);
+                currentSoundObj = Water;
+            }
+            else if (groundInfo.collider.gameObject.layer == 10)
+            {
+                AudioManager.PlaySound(Metal, playerFeet.position);
+                currentSoundObj = Metal;
+            }
+            else if (groundInfo.collider.gameObject.layer == 11)
+            {
+                AudioManager.PlaySound(RockWalk, playerFeet.position);
+                currentSoundObj = RockWalk;
+            }
+            else if (groundInfo.collider.gameObject.layer == 12)
+            {
+                AudioManager.PlaySound(TileWalk, playerFeet.position);
+                currentSoundObj = TileWalk;
+            }
         }
-        else if (groundInfo.collider.gameObject.layer == 10)
-        {
-            AudioManager.PlaySound(Metal, playerFeet.position);
-            currentSoundObj = Metal;
+        catch (Exception e) { 
+            Debug.LogWarning(e.ToString());
         }
-        else if (groundInfo.collider.gameObject.layer == 11)
-        {
-            AudioManager.PlaySound(RockWalk, playerFeet.position);
-            currentSoundObj = RockWalk;
-        }
-        else if (groundInfo.collider.gameObject.layer == 12)
-        {
-            AudioManager.PlaySound(TileWalk, playerFeet.position);
-            currentSoundObj = TileWalk;
-        }
+        
     }
 
 }

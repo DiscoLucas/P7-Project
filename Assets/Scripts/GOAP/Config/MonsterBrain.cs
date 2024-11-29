@@ -22,7 +22,8 @@ namespace Assets.Scripts.GOAP.Behaviors
         public BotState currentStat;
         public AgentSpeedBehavior speedBehavior;
         public AgentSoundBehaviors soundBehavior;
-
+        Die die;
+        float distanceToPlayer => Vector3.Distance(p_sensor.playersRealPostion.transform.position, transform.position);
         private bool playerSpotted = false; // Flag to track if the player has been spotted
 
         private void Awake()
@@ -46,6 +47,12 @@ namespace Assets.Scripts.GOAP.Behaviors
             {
                 protectionSensor.Inject(dependencyInjector);
             }
+            die = Die.Instance;
+        }
+
+        private void Update()
+        {
+            die.SanityEffect(distanceToPlayer);
         }
 
         private void playerPostionSmelled(Vector3 arg0, float arg1)

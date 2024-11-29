@@ -5,7 +5,7 @@ public class GameHudMenu : MenuBase
     [SerializeField]
     Transform pauseMenu;
     [SerializeField]
-    Transform deathScreen, winScreen,EggMessage;
+    Transform deathScreen, winScreen,EggMessage,interactMessage;
     [SerializeField]
     bool eggInHand = false;
 
@@ -21,6 +21,8 @@ public class GameHudMenu : MenuBase
     public void openPauseMenu() {
         changeToMenuState();
         Time.timeScale = 0;
+        interactMessage.gameObject.SetActive(false);
+        EggMessage.gameObject.SetActive(false);
         pauseMenu.gameObject.SetActive(true);
         
     }
@@ -85,5 +87,6 @@ public class GameHudMenu : MenuBase
         pauseMenu.gameObject.SetActive(false);
         deathScreen.gameObject.SetActive(false);
         winScreen.gameObject.SetActive(false);
+        interactMessage.gameObject.SetActive(false);
     }
 }

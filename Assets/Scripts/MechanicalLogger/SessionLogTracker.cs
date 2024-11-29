@@ -166,49 +166,72 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
     public void startLoggin()
     {
         state.sessionStarted = true;
+        sessionLog.startSession();
 
     }
 
     public void ExportSessionLogToCSV(SessionLog sessionLog)
     {
-        string fileName = sessionLog.name + ".csv";
-        string filePath = Path.Combine(Application.persistentDataPath, loggerFolder, fileName);
-
-        if (!Directory.Exists(Path.Combine(Application.persistentDataPath, loggerFolder)))
+        if (sessionLog == null)
         {
-            Directory.CreateDirectory(Path.Combine(Application.persistentDataPath, loggerFolder));
+            Debug.LogError("SessionLog is null. Cannot export.");
+            return;
         }
-        Debug.Log("saved at: " + filePath);
-        
-        
-        using (StreamWriter writer = new StreamWriter(filePath))
-        {
-            // Write session information
-            writer.WriteLine("Session Name: " + sessionLog.name);
-            writer.WriteLine("Total Time Played (seconds): " + sessionLog.timePlayed);
-            writer.WriteLine("Player Died: " + sessionLog.timePlayed);
-            writer.WriteLine("Game Completed: " + sessionLog.gameWasCompletede);
-            writer.WriteLine("----");
-            writer.WriteLine("Player Position X;Player Position Y;Player Position Z;Monster Position X;Monster Position Y;Monster Position Z;CurrentDeath") ;
 
-            int currentDeathIndex = 0;
-            for (int i = 0; i < sessionLog.allPlayerLoggedPositions.Count; i++)
+        // Define the output folder and file path
+        string basePath = Path.GetFullPath(Path.Combine(Application.dataPath, "..")); // Save next to the executable
+        string folderPath = Path.Combine(basePath, loggerFolder);
+        string filePath = Path.Combine(folderPath, sessionLog.name + ".csv");
+
+        try
+        {
+            // Ensure the directory exists
+            if (!Directory.Exists(folderPath))
             {
-                if (sessionLog.deathIndexs.Count > currentDeathIndex + 1) {
-                    if (sessionLog.deathIndexs[currentDeathIndex + 1] == i) { 
-                        currentDeathIndex = i;
-                    }
-                }
-                Vector3 playerPos = sessionLog.allPlayerLoggedPositions[i];
-                Vector3 monsterPos = sessionLog.allMonsterLoggedPositions[i];
-                string line = $"{playerPos.x};{playerPos.y};{playerPos.z};{monsterPos.x};{monsterPos.y};{monsterPos.z};{sessionLog.deathIndexs[currentDeathIndex]}";
-                writer.WriteLine(line);
-                Debug.Log(line);
+                Directory.CreateDirectory(folderPath);
             }
-        }
 
-        Debug.Log("SessionLog exported to CSV at: " + filePath);
+            Debug.Log($"Exporting session log to: {filePath}");
+
+            // Write session log to the CSV file
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                // Write session information
+                writer.WriteLine($"Session Name: {sessionLog.name}");
+                writer.WriteLine($"Total Time Played (seconds): {sessionLog.timePlayed}");
+                writer.WriteLine($"Player Died: {sessionLog.timesDied}");
+                writer.WriteLine($"Game Completed: {sessionLog.gameWasCompletede}");
+                writer.WriteLine("----");
+                writer.WriteLine("Player Position X;Player Position Y;Player Position Z;Monster Position X;Monster Position Y;Monster Position Z;CurrentDeath");
+
+                int currentDeathIndex = 0;
+
+                for (int i = 0; i < sessionLog.allPlayerLoggedPositions.Count; i++)
+                {
+                    // Update the current death index
+                    if (currentDeathIndex < sessionLog.deathIndexs.Count - 1 && sessionLog.deathIndexs[currentDeathIndex + 1] == i)
+                    {
+                        currentDeathIndex++;
+                    }
+
+                    // Write player and monster positions
+                    Vector3 playerPos = sessionLog.allPlayerLoggedPositions[i];
+                    Vector3 monsterPos = sessionLog.allMonsterLoggedPositions[i];
+                    int currentDeath = sessionLog.deathIndexs.Count > currentDeathIndex ? sessionLog.deathIndexs[currentDeathIndex] : -1;
+
+                    string line = $"{playerPos.x};{playerPos.y};{playerPos.z};{monsterPos.x};{monsterPos.y};{monsterPos.z};{currentDeath}";
+                    writer.WriteLine(line);
+                }
+            }
+
+            Debug.Log($"SessionLog successfully exported to CSV at: {filePath}");
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"Failed to export SessionLog to CSV. Error: {ex.Message}");
+        }
     }
+
     public string newSessionlogName = "NewSessionLog";
     public string sessionLogFolderName = "SessionLogs";
     public SessionLog createSessionLog()
@@ -226,21 +249,34 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
 
     }
 
-  
 
-    public string createFilepath(string filename)
+
+    public string CreateFilePath(string filename)
     {
-        
-        string folderPath = Path.Combine(Application.dataPath, sessionLogFolderName);
-        string filePath = Path.Combine(folderPath, $"{filename}.asset"); 
+        if (string.IsNullOrWhiteSpace(filename) || filename.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
+        {
+            throw new ArgumentException("Invalid filename provided.");
+        }
 
-        // Create the directory if it doesn't exist
+        // Navigate to the directory containing the executable
+        string basePath = Path.GetFullPath(Path.Combine(Application.dataPath, ".."));
+
+        // Combine with the desired folder
+        string folderPath = Path.Combine(basePath, sessionLogFolderName);
+
+        // Ensure the directory exists
         if (!Directory.Exists(folderPath))
         {
             Directory.CreateDirectory(folderPath);
         }
 
-        return filePath; // Returns the full file path for the asset
+        // Construct the full file path
+        string filePath = Path.Combine(folderPath, $"{filename}.csv");
+
+        Debug.Log($"Generated File Path: {filePath}");
+        return filePath;
     }
+
+
 
 }
