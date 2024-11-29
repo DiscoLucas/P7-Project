@@ -162,7 +162,14 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
     public void startLoggin()
     {
         state.sessionStarted = true;
-        sessionLog.startSession();
+        try
+        {
+            sessionLog.startSession();
+        }
+        catch (Exception e) {
+            Debug.LogWarning(e.ToString());
+        }
+        
 
     }
 
@@ -194,7 +201,7 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
             {
                 // Write session information
                 writer.WriteLine($"Session Name: {sessionLog.name}");
-                writer.WriteLine($"Total Time Played (seconds): {sessionLog.timePlayed}");
+                writer.WriteLine($"Total Time Played (Minutes : Seconds): {sessionLog.timePlayed}");
                 writer.WriteLine($"Player Died: {sessionLog.timesDied}");
                 writer.WriteLine($"Game Completed: {sessionLog.gameWasCompletede}");
                 writer.WriteLine("----");

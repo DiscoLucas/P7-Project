@@ -21,7 +21,7 @@ public class PlayerControls : MonoBehaviour
         bool canInteract = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, rayDistance) && hit.collider.CompareTag("Trigger");
         if (canInteract && !playerControls.pause && GameManager.Instance.inGame())
             hudMessage.gameObject.SetActive(true);
-        else if(hudMessage.gameObject.active && playerControls.pause)
+        else if(hudMessage.gameObject.active)
             hudMessage.gameObject.SetActive(false);
 
 
