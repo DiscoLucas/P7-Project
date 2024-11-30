@@ -69,16 +69,6 @@
 /// @param[in] uch_data register data
 /// @return  true on sucess
 bool maxim_max30102_write_reg(uint8_t uch_addr, uint8_t uch_data)
-/**
-* \brief        Write a value to a MAX30102 register
-* \par          Details
-*               This function writes a value to a MAX30102 register
-*
-* \param[in]    uch_addr    - register address
-* \param[in]    uch_data    - register data
-*
-* \retval       true on success
-*/
 {
   Wire.beginTransmission(I2C_WRITE_ADDR);
   Wire.write(uch_addr);
@@ -93,20 +83,10 @@ bool maxim_max30102_write_reg(uint8_t uch_addr, uint8_t uch_data)
 }
 
 /// @brief Read a MAX30102 register
-/// @param uch_addr register address
-/// @param puch_data pointer that stores the register data
+/// @param[in] uch_addr register address
+/// @param[out] puch_data pointer that stores the register data
 /// @return true on success
 bool maxim_max30102_read_reg(uint8_t uch_addr, uint8_t *puch_data)
-/**
-* \brief        Read a MAX30102 register
-* \par          Details
-*               This function reads a MAX30102 register
-*
-* \param[in]    uch_addr    - register address
-* \param[out]   puch_data    - pointer that stores the register data
-*
-* \retval       true on success
-*/
 {
   Wire.beginTransmission(I2C_WRITE_ADDR);
   Wire.write(uch_addr);
@@ -163,18 +143,12 @@ bool maxim_max30102_init()
 //To solve this problem, 16-bit MSB of the sampled data will be truncated.  Samples become 16-bit data.
 bool maxim_max30102_read_fifo(uint16_t *pun_red_led, uint16_t *pun_ir_led)
 #else
+/// @brief This function reads a set of samples from the MAX30102 FIFO register
+/// @param[out] pun_red_led pointer that stores the red LED reading data
+/// @param[out] pun_ir_led pointer that stores the IR LED reading data
+/// @return true on success
 bool maxim_max30102_read_fifo(uint32_t *pun_red_led, uint32_t *pun_ir_led)
 #endif
-/**
-* \brief        Read a set of samples from the MAX30102 FIFO register
-* \par          Details
-*               This function reads a set of samples from the MAX30102 FIFO register
-*
-* \param[out]   *pun_red_led   - pointer that stores the red LED reading data
-* \param[out]   *pun_ir_led    - pointer that stores the IR LED reading data
-*
-* \retval       true on success
-*/
 {
   uint32_t un_temp;
   uint8_t uch_temp;

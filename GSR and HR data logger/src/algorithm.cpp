@@ -60,13 +60,6 @@
 #include "algorithm.h"
 #include "arduino.h"
 
-#if defined(ARDUINO_AVR_UNO)
-//Arduino Uno doesn't have enough SRAM to store 100 samples of IR led data and red led data in 32-bit format
-//To solve this problem, 16-bit MSB of the sampled data will be truncated.  Samples become 16-bit data.
-void maxim_heart_rate_and_oxygen_saturation(uint16_t *pun_ir_buffer, int32_t n_ir_buffer_length, uint16_t *pun_red_buffer, int32_t *pn_spo2, int8_t *pch_spo2_valid, 
-                int32_t *pn_heart_rate, int8_t *pch_hr_valid)
-#else
-
 /// @brief Calculate the heart rate and SpO2 level
 /// @details By detecting  peaks of PPG cycle and corresponding AC/DC of red/infra-red signal, the an_ratio for the SPO2 is computed. Since this algorithm is aiming for Arm M0/M3. formaula for SPO2 did not achieve the accuracy due to register overflow. Thus, accurate SPO2 is precalculated and save longo uch_spo2_table[] per each an_ratio.
 /// @param[in] pun_ir_buffer IR Sensor data buffer
@@ -77,8 +70,7 @@ void maxim_heart_rate_and_oxygen_saturation(uint16_t *pun_ir_buffer, int32_t n_i
 /// @param[out] pn_heart_rate Calculated heart rate value
 /// @param[out] pch_hr_valid 1 if the calculated heart rate value is valid
 void maxim_heart_rate_and_oxygen_saturation(uint32_t *pun_ir_buffer, int32_t n_ir_buffer_length, uint32_t *pun_red_buffer, int32_t *pn_spo2, int8_t *pch_spo2_valid, 
-                int32_t *pn_heart_rate, int8_t *pch_hr_valid)
-#endif
+                int32_t *pn_heart_rate, int8_t *pch_hr_valid, float *hrv_sdnn, float *hrv_rmssd)
 {
   uint32_t un_ir_mean,un_only_once ;
   int32_t k, n_i_ratio_count;
@@ -93,6 +85,9 @@ void maxim_heart_rate_and_oxygen_saturation(uint32_t *pun_ir_buffer, int32_t n_i
   int32_t n_y_dc_max_idx, n_x_dc_max_idx; 
   int32_t an_ratio[5], n_ratio_average; 
   int32_t n_nume, n_denom ;
+
+  int32_t rrIntervals[15];
+  int32_t intervalCount = 0;
 
   // calculates DC mean and subtract DC from ir
   un_ir_mean =0; 
@@ -117,19 +112,53 @@ void maxim_heart_rate_and_oxygen_saturation(uint32_t *pun_ir_buffer, int32_t n_i
   if( n_th1>60) n_th1=60; // max allowed
 
   for ( k=0 ; k<15;k++) an_ir_valley_locs[k]=0;
+
   // since we flipped signal, we use peak detector as valley detector
   maxim_find_peaks( an_ir_valley_locs, &n_npks, an_x, BUFFER_SIZE, n_th1, 4, 15 );//peak_height, peak_distance, max_num_peaks 
-  n_peak_interval_sum =0;
-  if (n_npks>=2){
-    for (k=1; k<n_npks; k++) n_peak_interval_sum += (an_ir_valley_locs[k] -an_ir_valley_locs[k -1] ) ;
-    n_peak_interval_sum =n_peak_interval_sum/(n_npks-1);
-    *pn_heart_rate =(int32_t)( (FS*60)/ n_peak_interval_sum );
-    *pch_hr_valid  = 1;
-  }
-  else  { 
+  n_peak_interval_sum = 0;
+  if (n_npks >= 2){
+    for (k = 1; k < n_npks; k++) 
+    {
+      int32_t interval = an_ir_valley_locs[k] - an_ir_valley_locs[k - 1];
+      rrIntervals[intervalCount++] = interval;
+      n_peak_interval_sum += interval;
+
+      /*n_peak_interval_sum += (an_ir_valley_locs[k] -an_ir_valley_locs[k -1] ) ;
+      n_peak_interval_sum =n_peak_interval_sum/(n_npks-1);
+      *pn_heart_rate =(int32_t)( (FS*60)/ n_peak_interval_sum );
+      *pch_hr_valid  = 1;*/
+    }
+    n_peak_interval_sum = n_peak_interval_sum / (n_npks - 1);
+    *pn_heart_rate = (int32_t)((FS * 60) / n_peak_interval_sum);
+    *pch_hr_valid = 1;
+      
+  } else { 
     *pn_heart_rate = -999; // unable to calculate because # of peaks are too small
     *pch_hr_valid  = 0;
   }
+
+  // calculate heart rate variance from stored values
+  *hrv_sdnn = 0;
+  *hrv_rmssd = 0;
+  if (intervalCount > 1)
+  {
+    // calculate the standard deviation of RR intervals
+    int32_t mean_interval = n_peak_interval_sum;
+    for (k = 0; k < intervalCount; k++)
+    {
+      *hrv_sdnn += (rrIntervals[k] - mean_interval) * (rrIntervals[k] - mean_interval);
+    }
+    *hrv_sdnn = sqrt(*hrv_sdnn / intervalCount);
+
+    // calculate the root mean square of successive differences
+    for (k = 1; k < intervalCount; k++)
+    {
+      int32_t diff = rrIntervals[k] - rrIntervals[k - 1];
+      *hrv_rmssd += diff * diff;
+    }
+    *hrv_rmssd = sqrt(*hrv_rmssd / (intervalCount - 1));
+  }
+  
 
   //  load raw value again for SPO2 calculation : RED(=y) and IR(=X)
   for (k=0 ; k<n_ir_buffer_length ; k++ )  {
@@ -213,15 +242,14 @@ void maxim_find_peaks( int32_t *pn_locs, int32_t *n_npks,  int32_t  *pn_x, int32
   maxim_remove_close_peaks( pn_locs, n_npks, pn_x, n_min_distance );
   *n_npks = min( *n_npks, n_max_num );
 }
-
+/// @brief Find peaks above n_min_height
+/// @details Find all peaks above MIN_HEIGHT
+/// @param pn_locs 
+/// @param n_npks 
+/// @param pn_x 
+/// @param n_size 
+/// @param n_min_height 
 void maxim_peaks_above_min_height( int32_t *pn_locs, int32_t *n_npks,  int32_t  *pn_x, int32_t n_size, int32_t n_min_height )
-/**
-* \brief        Find peaks above n_min_height
-* \par          Details
-*               Find all peaks above MIN_HEIGHT
-*
-* \retval       None
-*/
 {
   int32_t i = 1, n_width;
   *n_npks = 0;
@@ -243,15 +271,12 @@ void maxim_peaks_above_min_height( int32_t *pn_locs, int32_t *n_npks,  int32_t  
       i++;
   }
 }
-
+/// @brief Remove peaks separated by less than MIN_DISTANCE
+/// @param pn_locs 
+/// @param pn_npks 
+/// @param pn_x 
+/// @param n_min_distance 
 void maxim_remove_close_peaks(int32_t *pn_locs, int32_t *pn_npks, int32_t *pn_x, int32_t n_min_distance)
-/**
-* \brief        Remove peaks
-* \par          Details
-*               Remove peaks separated by less than MIN_DISTANCE
-*
-* \retval       None
-*/
 {
     
   int32_t i, j, n_old_npks, n_dist;
@@ -272,15 +297,10 @@ void maxim_remove_close_peaks(int32_t *pn_locs, int32_t *pn_npks, int32_t *pn_x,
   // Resort indices int32_to ascending order
   maxim_sort_ascend( pn_locs, *pn_npks );
 }
-
+/// @brief Sort array in ascending order (insertion sort algorithm)
+/// @param pn_x 
+/// @param n_size 
 void maxim_sort_ascend(int32_t  *pn_x, int32_t n_size) 
-/**
-* \brief        Sort array
-* \par          Details
-*               Sort array in ascending order (insertion sort algorithm)
-*
-* \retval       None
-*/
 {
   int32_t i, j, n_temp;
   for (i = 1; i < n_size; i++) {
@@ -290,15 +310,11 @@ void maxim_sort_ascend(int32_t  *pn_x, int32_t n_size)
     pn_x[j] = n_temp;
   }
 }
-
+/// @brief Sort indices according to descending order (insertion sort algorithm)
+/// @param pn_x 
+/// @param pn_indx 
+/// @param n_size 
 void maxim_sort_indices_descend(  int32_t  *pn_x, int32_t *pn_indx, int32_t n_size)
-/**
-* \brief        Sort indices
-* \par          Details
-*               Sort indices according to descending order (insertion sort algorithm)
-*
-* \retval       None
-*/ 
 {
   int32_t i, j, n_temp;
   for (i = 1; i < n_size; i++) {
