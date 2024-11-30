@@ -52,7 +52,7 @@ float hrv_sdnn = 0;
 float hrv_rmssd = 0;
 
 bool isTransmitting = false;
-void EndTransmission()
+void StopDataTransmission()
 {
   digitalWriteFast(LED_BUILTIN, LOW);
   isTransmitting = false;
@@ -62,9 +62,10 @@ void EndTransmission()
 void setup()
 {
   while (!Serial && millis() < 5000);
-  //Serial.begin(11520);
+
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(intPin, INPUT_PULLUP); // pin connects to the interrupt output pin of the MAX30102
+  
   Serial.println("Initializing MAX30102...");
   maxim_max30102_reset(); //resets the MAX30102
   if (!maxim_max30102_init())
@@ -74,11 +75,14 @@ void setup()
   }  
   Serial.println("MAX30102 initialized successfully");
   maxim_max30102_read_reg(REG_INTR_STATUS_1, &dummy); // reads and clears the interrupt status register
+  Serial.println("Ready to recive commands");
   
 }
 
-void hr()
+void SensorLogger()
 {
+  isTransmitting = true;
+  unsigned long startTime = millis();
 
   uint32_t un_min, un_max, un_prev_data, un_brightness;  //variables to calculate the on-board LED brightness that reflects the heartbeats
   int32_t i;
@@ -121,7 +125,7 @@ void hr()
   
 
   //Continuously taking samples from MAX30102.  Heart rate and SpO2 are calculated every 1 second
-  while(1)
+  while(isTransmitting)
   {
     // reset the HR, SpO2 and GSR values
     i=0;
@@ -157,6 +161,8 @@ void hr()
       gsrSum += gsrSensorValue;
       gsrSampleCount++;
 
+      unsigned long elapsedTime = millis() - startTime;
+
       //calculate the brightness of the LED
       if (redBuffer[i] > un_prev_data)
       {
@@ -181,10 +187,10 @@ void hr()
           un_brightness = maxBrightness;
       }
 
-      Serial.print(F("time="));
-      // TODO: Add time since start of logging
+      Serial.print(F("Time: "));
+      Serial.print(elapsedTime);
 
-      Serial.print(F("red="));
+      Serial.print(F("; red="));
       Serial.print(redBuffer[i], DEC);
       Serial.print(F("; ir="));
       Serial.print(irBuffer[i], DEC);
@@ -205,17 +211,24 @@ void hr()
       Serial.print(hrv_sdnn, 2);
       Serial.print(F("; HRV RMSSD="));
       Serial.print(hrv_rmssd, 2);
+      
+      gsrAverage = gsrSum / gsrSampleCount;
+
+      // Output GSR average
+      Serial.print(F("; GSR Average="));
+      Serial.println(gsrAverage);
     }
-    // Calculate GSR average
-    gsrAverage = gsrSum / gsrSampleCount;
-
-    // Output GSR average
-    Serial.print(F("; GSR Average="));
-    Serial.println(gsrAverage);
-
+    
     maxim_heart_rate_and_oxygen_saturation(irBuffer, irBufferLength, redBuffer, &spo2, &spo2Valid, &heartRate, &heartRateValid, &hrv_sdnn, &hrv_rmssd);
+
+    // check for 'E' command to end transmission
+    if (Serial.available() > 0 && Serial.read() == 'E')
+    {
+      StopDataTransmission();
+    }
   }
 }
+// Counter function to simulate data transmission
 void counter(){
   while (isTransmitting)
   {
@@ -223,16 +236,20 @@ void counter(){
     Serial.println(cnt++);
     if (Serial.read() == 'E')
     {
-      EndTransmission();
+      StopDataTransmission();
     }
     delay(50);
   }
 }
 
+void AttemptReconnect()
+{
+
+}
+
 void loop() 
 {
-  //Serial.p
-  /*rintln(Serial.read());
+  
   if (Serial.available() > 0)
   {
     char command = Serial.read();
@@ -241,19 +258,30 @@ void loop()
         digitalWriteFast(LED_BUILTIN, HIGH);
         isTransmitting = true;
         Serial.println("Starting transmision");
-        while (isTransmitting) 
-        counter(); // do something...
+        SensorLogger();
         break;
 
       case 'E': // end transmision
-        EndTransmission();
+        StopDataTransmission();
         break;
+        
       default:
-        Serial.println(command + "is an invalid command");
+        Serial.println(String(command) + " is an invalid command");
         digitalWriteFast(LED_BUILTIN, LOW);
         break;
     }
   }
-*/
-  hr();
+  else // TODO: if serial connection is lost, stop transmission and try to reconnect
+  {
+    
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(100);
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(100);
+    if (isTransmitting)
+    {
+      StopDataTransmission();
+    }
+  }
+
 }
