@@ -83,10 +83,12 @@ public class TeensyLogger : Singleton<TeensyLogger>
             }
         }
 
+        if (baselineTimerText == null) return;
+
         if (baselineRemainingTime > 0)
         {
             TimeSpan timeSpan = TimeSpan.FromSeconds(baselineRemainingTime);
-            baselineTimerText.text = $"{timeSpan.Minutes:D2}:{timeSpan.Seconds:D2}";
+            baselineTimerText.text = $"Time remaing:\n{timeSpan.Minutes:D2}:{timeSpan.Seconds:D2}";
         }
 
         /*// Display the latest data received from the serial port

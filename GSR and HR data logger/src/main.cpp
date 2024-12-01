@@ -271,6 +271,8 @@ void loop()
         break;
     }
   }
+  
+  /*
   else // TODO: if serial connection is lost, stop transmission and try to reconnect
   {
     
@@ -283,5 +285,5 @@ void loop()
       StopDataTransmission();
     }
   }
-
+*/
 }

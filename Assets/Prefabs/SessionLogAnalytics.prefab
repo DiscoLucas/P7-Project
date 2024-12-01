@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6159441199169961504}
   - component: {fileID: 3216504320063452635}
+  - component: {fileID: 9070206060912456786}
   m_Layer: 0
   m_Name: SessionLogAnalytics
   m_TagString: Untagged
@@ -52,6 +53,7 @@ MonoBehaviour:
     name: 
     allPlayerLoggedPositions: []
     allMonsterLoggedPositions: []
+    addtionalLogginInfomation: []
     timesDied: 0
     gameWasCompletede: 0
     timePlayed: 0
@@ -74,6 +76,22 @@ MonoBehaviour:
   state: {fileID: 0}
   newSessionlogName: NewSessionLog
   sessionLogFolderName: SessionLogs
+--- !u!114 &9070206060912456786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857958380990510417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d216d829ed2b3694c8e8eae7c5a617ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  readPort: 0
+  timeOut: 100
+  baselineRemainingTime: 0
+  baselineTimerText: {fileID: 0}
 --- !u!1 &2866323108000222216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,6 +2375,7 @@ MonoBehaviour:
     name: 
     allPlayerLoggedPositions: []
     allMonsterLoggedPositions: []
+    addtionalLogginInfomation: []
     timesDied: 0
     gameWasCompletede: 0
     timePlayed: 0
@@ -4678,6 +4697,7 @@ MonoBehaviour:
     name: 
     allPlayerLoggedPositions: []
     allMonsterLoggedPositions: []
+    addtionalLogginInfomation: []
     timesDied: 0
     gameWasCompletede: 0
     timePlayed: 0
