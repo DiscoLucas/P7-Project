@@ -6,7 +6,6 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
-//using System.IO.Ports;
 
 public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
 {
@@ -147,7 +146,7 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
     [ContextMenu("End Session And SaveAs CSV")]
     public void EndSessionAndSaveAsCSV()
     {
-        Debug.Log("Session log is null: " + (sessionLog == null));
+        Debug.Log("Session log is null: " + (sessionLog == null)); // doesn't this always log that the session log is null?
 
         if (sessionLog != null)
         {

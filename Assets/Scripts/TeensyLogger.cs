@@ -1,16 +1,14 @@
 
 using UnityEngine;
-//using libTeensySharp;
-using TeensySharp;
-using System.Linq;
-using lunOptics.libUsbTree;
 using System;
 using System.IO.Ports;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Concurrent;
+using System.IO;
 using System.Collections;
-using System.Collections.Generic;
-public class TeensyLogger : MonoBehaviour
+using TMPro;
+public class TeensyLogger : Singleton<TeensyLogger>
 {
     Thread readThread;
     string latestData = "";
@@ -22,6 +20,31 @@ public class TeensyLogger : MonoBehaviour
     int baudRate = 9600;
 
     public int timeOut = 100;
+    public float baselineRemainingTime = 0;
+    Coroutine baselineCoroutine;
+
+    public TMP_Text baselineTimerText;
+
+    string BaselineFilePath() 
+    {
+        string basePath = Path.GetFullPath(Path.Combine(Application.dataPath, ".."));
+        string folderPath = Path.Combine(basePath, "Logs");
+        string filePath = Path.Combine(folderPath, SessionLogTracker.Instance.sessionLog.name + "_baseline.csv");
+        return filePath; 
+    }
+    string GameFilePath()
+    {
+        string basePath = Path.GetFullPath(Path.Combine(Application.dataPath, ".."));
+        string folderPath = Path.Combine(basePath, "Logs");
+        string filePath = Path.Combine(folderPath, SessionLogTracker.Instance.sessionLog.name + "_gameData.csv");
+        return filePath;
+    }
+
+    ConcurrentQueue<string> dataQueue = new ConcurrentQueue<string>();
+    StreamWriter fileWriter;
+    bool isLogging = false;
+    void StartCommand() => port.WriteLine("S");
+    void EndCommand() => port.WriteLine("E");
 
     void Start()
     {
@@ -40,10 +63,6 @@ public class TeensyLogger : MonoBehaviour
 
                 cancellationTokenSource = new CancellationTokenSource();
                 Task.Run(() => ReadSerialPort(cancellationTokenSource.Token));
-
-                //readPort = true;
-                //readThread = new Thread(ReadSerialPort);
-                //readThread.Start();
             }
             catch (Exception e)
             {
@@ -55,35 +74,97 @@ public class TeensyLogger : MonoBehaviour
     
     void Update()
     {
-        // Display the latest data received from the serial port
+        // process and save data from queue
+        while (dataQueue.TryDequeue(out string data))
+        {
+            if (fileWriter != null)
+            {
+                fileWriter.WriteLine($"{DateTime.Now};{data}");
+            }
+        }
+
+        if (baselineRemainingTime > 0)
+        {
+            TimeSpan timeSpan = TimeSpan.FromSeconds(baselineRemainingTime);
+            baselineTimerText.text = $"{timeSpan.Minutes:D2}:{timeSpan.Seconds:D2}";
+        }
+
+        /*// Display the latest data received from the serial port
         if (!string.IsNullOrEmpty(latestData))
         {
             Debug.Log("Received: " + latestData);
             latestData = ""; // Clear it after logging
         }
+        */
+    }
+    public void StartBaseLineLogging()
+    {
+        if (baselineCoroutine != null)
+        {
+            StopCoroutine(baselineCoroutine);
+        }
+        baselineCoroutine = StartCoroutine(BaselineLoggingCoroutine());
+    }
 
+    IEnumerator BaselineLoggingCoroutine()
+    {
+        StartLogging(BaselineFilePath());
+        baselineRemainingTime = 300f; // funni magic number
+
+        while (baselineRemainingTime > 0)
+        {
+            baselineRemainingTime -= Time.deltaTime;
+            yield return null;
+        }
+
+        StopLogging();
+        Debug.Log("Baseline logging compled");
+    }
+
+    public void StartGameLogging()
+    {
+       StartLogging(GameFilePath());
+    }
+
+    void StartLogging(string filePath)
+    {
+        StopLogging(); // just to be sure that no logging is already happening
+
+        StartCommand();
+        fileWriter = new StreamWriter(filePath, true);
+        fileWriter.WriteLine("Reference timestamp; MCU timestamp; Red LED; IR LED; HR; HR validity; SpO2; SpO2 validity; HRV SDNN; HRV RMSSD; GSR average"); // Headers for the CSV
+        isLogging = true;
+        Debug.Log("Started logging to " + filePath);
+    }
+
+    public void StopLogging()
+    {
+        EndCommand();
+        if (fileWriter != null)
+        {
+            fileWriter.Flush();
+            fileWriter.Close();
+            fileWriter = null;
+        }
+        isLogging = false;
+        Debug.Log("Stopped logging");
     }
     
-    public void StartTransmision()
-    {
-        port.WriteLine("S");
-    }
-
-    public void StopTransmision()
-    {
-        port.WriteLine("E");
-    }
     void OnDestroy()
     {
+        StopLogging();
         ClosePort();
     }
-    private void OnApplicationQuit()
+
+    protected override void OnApplicationQuit()
     {
+        StopLogging();
         ClosePort();
     }
 
     void ClosePort()
     {
+        EndCommand();
         if (cancellationTokenSource != null)
         {
             cancellationTokenSource.Cancel();
@@ -105,6 +186,11 @@ public class TeensyLogger : MonoBehaviour
                 try
                 {
                     string data = await Task.Run(() => port.ReadLine());
+                    if (isLogging)
+                    {
+                        dataQueue.Enqueue(data);
+                    }
+                    
                     lock (this)
                     {
                         latestData = data;
