@@ -201,11 +201,11 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
             {
                 // Write session information
                 writer.WriteLine($"Session Name: {sessionLog.name}");
-                writer.WriteLine($"Total Time Played (Minutes : Seconds): {sessionLog.timePlayed}");
+                writer.WriteLine($"Total Time Played (minutes:seconds:milliseconds): {sessionLog.timePlayed}");
                 writer.WriteLine($"Player Died: {sessionLog.timesDied}");
                 writer.WriteLine($"Game Completed: {sessionLog.gameWasCompletede}");
                 writer.WriteLine("----");
-                writer.WriteLine("Player Position X;Player Position Y;Player Position Z;Monster Position X;Monster Position Y;Monster Position Z;CurrentDeath");
+                writer.WriteLine("Time;State;Player Position X;Player Position Y;Player Position Z;Monster Position X;Monster Position Y;Monster Position Z;CurrentDeath");
 
                 int currentDeathIndex = 0;
 
@@ -221,8 +221,8 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
                     Vector3 playerPos = sessionLog.allPlayerLoggedPositions[i];
                     Vector3 monsterPos = sessionLog.allMonsterLoggedPositions[i];
                     int currentDeath = sessionLog.deathIndexs.Count > currentDeathIndex ? sessionLog.deathIndexs[currentDeathIndex] : -1;
-
-                    string line = $"{playerPos.x};{playerPos.y};{playerPos.z};{monsterPos.x};{monsterPos.y};{monsterPos.z};{currentDeath}";
+                    string timeAndState = sessionLog.addtionalLogginInfomation[i];
+                    string line = $"{timeAndState};{playerPos.x};{playerPos.y};{playerPos.z};{monsterPos.x};{monsterPos.y};{monsterPos.z};{currentDeath}";
                     writer.WriteLine(line);
                 }
             }
