@@ -111,7 +111,7 @@ public class TeensyLogger : Singleton<TeensyLogger>
     IEnumerator BaselineLoggingCoroutine()
     {
         StartLogging(BaselineFilePath());
-        baselineRemainingTime = 300f; // funni magic number
+        baselineRemainingTime = 150f; // funni magic number
 
         while (baselineRemainingTime > 0)
         {

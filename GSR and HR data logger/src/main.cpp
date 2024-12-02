@@ -33,7 +33,7 @@ int maxBrightness = 255;
 const int intPin = 20;
 const int sclPin = 19;
 const int sdaPin = 18;
-const int GSRPin = A2;
+const int GSRPin = A9;
 
 // Sensor values
 int gsrSensorValue = 0;
