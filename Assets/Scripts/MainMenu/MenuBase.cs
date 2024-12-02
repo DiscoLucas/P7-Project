@@ -32,6 +32,7 @@ public class MenuBase : MonoBehaviour
 
     IEnumerator asynchronousLoad(int num)
     {
+        TeensyLogger.Instance.ClosePort();
         closeMenus();
         LoadningScreen.SetActive(true);
 

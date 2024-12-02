@@ -97,7 +97,9 @@ public class GameManager : SingletonPersistent<GameManager>
             Debug.Log("monster gameobject name " + monsterObject.name);
         }
     }
-    public void onGameStart(){
+    public void onGameStart()
+    {
+        TeensyLogger.Instance.OnStart();
         Debug.Log("Game startede");
         if(protectionAreaObject == null)
             protectionAreaObject = GameObject.FindGameObjectWithTag(eggTag);

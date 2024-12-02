@@ -147,15 +147,7 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
     [ContextMenu("End Session And SaveAs CSV")]
     public void EndSessionAndSaveAsCSV()
     {
-        Debug.Log("Session log is null: " + (sessionLog == null)); // doesn't this always log that the session log is null?
-        try 
-        { 
-            TeensyLogger.Instance.StopLogging(); 
-        }
-        catch (Exception e)
-        {
-            Debug.LogWarning(e.ToString());
-        }
+        
         if (sessionLog != null)
         {
             
@@ -183,6 +175,16 @@ public class SessionLogTracker: SingletonPersistent<SessionLogTracker>
 
     public void ExportSessionLogToCSV(SessionLog sessionLog)
     {
+        
+        try
+        {
+            TeensyLogger.Instance.StopLogging();
+            Debug.Log("Stopped TeensyLogger");
+        }
+        catch (Exception e)
+        {
+            Debug.LogWarning(e.ToString());
+        }
         if (sessionLog == null)
         {
             Debug.LogError("SessionLog is null. Cannot export.");

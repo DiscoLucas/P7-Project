@@ -8,7 +8,7 @@ using System.Collections.Concurrent;
 using System.IO;
 using System.Collections;
 using TMPro;
-public class TeensyLogger : Singleton<TeensyLogger>
+public class TeensyLogger : SingletonPersistent<TeensyLogger>
 {
     Thread readThread;
     string latestData = "";
@@ -44,9 +44,14 @@ public class TeensyLogger : Singleton<TeensyLogger>
     StreamWriter fileWriter;
     bool isLogging = false;
     void StartCommand() => port.WriteLine("S");
-    void EndCommand() => port.WriteLine("E");
+    void EndCommand() { port.WriteLine("E"); }
 
     void Start()
+    {
+        OnStart();
+    }
+    
+    public void OnStart()
     {
         string[] availablePorts = SerialPort.GetPortNames();
         Debug.Log("Available ports: " + string.Join(", ", availablePorts));
@@ -151,12 +156,12 @@ public class TeensyLogger : Singleton<TeensyLogger>
         isLogging = false;
         Debug.Log("Stopped logging");
     }
-    
+    /*
     void OnDestroy()
     {
         StopLogging();
         ClosePort();
-    }
+    }*/
 
     protected override void OnApplicationQuit()
     {
@@ -164,7 +169,7 @@ public class TeensyLogger : Singleton<TeensyLogger>
         ClosePort();
     }
 
-    void ClosePort()
+    public void ClosePort()
     {
         EndCommand();
         if (cancellationTokenSource != null)
