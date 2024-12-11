@@ -72,3 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 ProjectSettings/Packages/com.unity.probuilder/Settings.json
 Assets/HQ Shipping Container (Modular)/HQ Shipping Container (Modular) Mobile Package/HQ Shipping Container (Modular) Mobile Package.unitypackage.meta
+/Dataprocessing/Sessionlog
