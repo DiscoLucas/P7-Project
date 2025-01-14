@@ -48397,6 +48397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickCount: 0
+  loadingScreen: {fileID: 900686909}
 --- !u!114 &1374776463
 MonoBehaviour:
   m_ObjectHideFlags: 0

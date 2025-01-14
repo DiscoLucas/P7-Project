@@ -286,4 +286,13 @@ void loop()
     }
   }
 */
+
+// TODO: implement a handshake ID command to check if the host is connected
+/*void loop() {
+    if (Serial.available()) {
+        String command = Serial.readStringUntil('\n');
+        if (command == "IDENTIFY") {
+            Serial.println("TEENSY_IDENTIFIER");
+        }
+    }*/
 }

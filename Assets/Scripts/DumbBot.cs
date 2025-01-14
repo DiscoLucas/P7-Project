@@ -128,8 +128,10 @@ public class DumbBot : MonoBehaviour
                 timeToKill -= Time.deltaTime;
                 if (timeToKill <= 0)
                 {
-                    animbehaviors.startAttack();
-                    //fsm.Trigger("KillPlayer"); <-- Should be called by the animation behavor inside onCollisionEnterAttack
+                    try { animbehaviors.startAttack(); }
+                    catch { fsm.Trigger("KillPlayer"); //< --Should be called by the animation behavor inside onCollisionEnterAttack
+                                                       // edited to also work in the meme version, where the animation behavior is not present.
+                    }
                 }
             },
             onExit: state => timeToKill = initialTimeToKill

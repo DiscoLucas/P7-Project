@@ -90,37 +90,62 @@ public class TeensyLogger : SingletonPersistent<TeensyLogger>
         if (availablePorts.Length == 0)
         {
             Debug.LogError("No serial devices detected. Deactivating script.");
-            gameObject.SetActive(false);
+            Destroy(this);
             return;
         }
 
-        if (Array.Exists(availablePorts, p => p.Equals(portName, StringComparison.OrdinalIgnoreCase)))
+        foreach (string portNameCandidate in availablePorts)
         {
-            port = new SerialPort(portName, baudRate)
-            {
-                ReadTimeout = timeOut
-            };
+            string currentPort = portNameCandidate; // Assign to a new variable
+            Debug.Log($"Checking port '{currentPort}' for Teensy...");
 
             try
             {
-                Debug.Log($"Attempting to open serial port '{portName}' at {baudRate} baud.");
-                port.Open();
+                using (var testPort = new SerialPort(currentPort, baudRate))
+                {
+                    testPort.ReadTimeout = 500; // Short timeout for device response
+                    testPort.Open();
 
-                cancellationTokenSource = new CancellationTokenSource();
-                Task.Run(() => ReadSerialPort(cancellationTokenSource.Token));
+                    // Send a query to the device
+                    testPort.WriteLine("IDENTIFY");
+                    string response = testPort.ReadLine();
+
+                    // Check for a Teensy-specific response
+                    if (response.Contains("TEENSY_IDENTIFIER")) // Replace with your Teensy's actual response
+                    {
+                        Debug.Log($"Teensy detected on port '{currentPort}'. Connecting...");
+                        portName = currentPort;
+
+                        // Initialize the actual port
+                        port = new SerialPort(portName, baudRate)
+                        {
+                            ReadTimeout = timeOut
+                        };
+                        port.Open();
+
+                        cancellationTokenSource = new CancellationTokenSource();
+                        Task.Run(() => ReadSerialPort(cancellationTokenSource.Token));
+                        return;
+                    }
+                    else
+                    {
+                        Debug.Log($"Port '{currentPort}' is not a Teensy (response: {response}).");
+                    }
+                }
             }
             catch (Exception e)
             {
-                Debug.LogWarning($"Failed to open serial port '{portName}': {e.Message}");
-                gameObject.SetActive(false);
+                Debug.LogWarning($"Error testing port '{currentPort}': {e.Message}");
             }
         }
-        else
-        {
-            Debug.LogError($"Port '{portName}' not found. Make sure the Teensy is connected.");
-            gameObject.SetActive(false);
-        }
+
+        // No Teensy was found
+        Debug.LogError("No Teensy detected. Deactivating script.");
+        Destroy(this);
     }
+
+
+
 
     void Update()
     {
