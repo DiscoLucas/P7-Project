@@ -35,12 +35,28 @@ public class GameManager : SingletonPersistent<GameManager>
     [HideInInspector] public float initialSaturation;
     [HideInInspector] public float initialChromaticAberration;
     [HideInInspector] public float initialFilmGrain;
+
+    
+
+    public void setBotType(BotType botType)
+    {
+        setpackage();
+        sceneLoadPackage.selectedBotType = botType;
+    }
+
+    public BotType getBotType()
+    {
+        setpackage();
+        return sceneLoadPackage.selectedBotType;
+    }
+
     public void setpackage() {
         if (sceneLoadPackage == null) {
             sceneLoadPackage = GetComponent<SceneLoadPackage>();
         }
     }
-
+    /*
+    // TODO: change to use enum instead
     public void setUsingNextBot(bool b) {
         setpackage();
         sceneLoadPackage.usingNextBot = b;
@@ -51,7 +67,7 @@ public class GameManager : SingletonPersistent<GameManager>
 
         
         return sceneLoadPackage.usingNextBot;
-    }
+    }*/
 
     public GameState State { get; private set; }
 
@@ -67,32 +83,48 @@ public class GameManager : SingletonPersistent<GameManager>
             Debug.Log("mONSTERS FOUND: " + monsters.Length);
             foreach (GameObject monster in monsters)
             {
-                if (getUsingNextBot())
+                BotType botType = getBotType();
+                switch (botType)
                 {
-                    DumbBot bot = monster.GetComponent<DumbBot>();
-                    if (bot != null)
-                    {
-                        Debug.Log("Nextbot found");
-                        monsterObject = monster;
-                    }
-                    else
-                    {
-                        monster.SetActive(false);
-                    }
+                    case BotType.Goap:
+                        MonsterBrain bot = monster.GetComponent<MonsterBrain>();
+                        if (bot != null)
+                        {
+                            Debug.Log("GoapBot found");
+                            monsterObject = monster;
+                        }
+                        else
+                        {
+                            monster.SetActive(false);
+                        }
+                        break;
+
+                    case BotType.NextBot:
+                        if (monster.GetComponent<DumbBot>() != null)
+                        {
+                            Debug.Log("Nextbot found");
+                            monsterObject = monster;
+                        }
+                        else
+                        {
+                            monster.SetActive(false);
+                        }
+                        break;
+
+                    case BotType.MemeBot:
+                        if (monster.GetComponent<MemeBot>() != null)
+                        {
+                            Debug.Log("MemeBot found, prepare yourself...");
+                            monsterObject = monster;
+                        }
+                        else
+                        {
+                            monster.SetActive(false);
+                        }
+                        break;
+
                 }
-                else
-                {
-                    MonsterBrain bot = monster.GetComponent<MonsterBrain>();
-                    if (bot != null)
-                    {
-                        Debug.Log("GoapBot found");
-                        monsterObject = monster;
-                    }
-                    else
-                    {
-                        monster.SetActive(false);
-                    }
-                }
+                
             }
             Debug.Log("monster gameobject name " + monsterObject.name);
         }
@@ -100,7 +132,7 @@ public class GameManager : SingletonPersistent<GameManager>
     public void onGameStart()
     {
         TeensyLogger.Instance.OnStart();
-        Debug.Log("Game startede");
+        Debug.Log("Game started");
         if(protectionAreaObject == null)
             protectionAreaObject = GameObject.FindGameObjectWithTag(eggTag);
         Debug.Log("Tried to find protection area");
@@ -320,4 +352,12 @@ public enum GameState
     Game,
     GameOver,
     Win
+}
+
+[Serializable]
+public enum BotType
+{
+    Goap,
+    NextBot,
+    MemeBot
 }

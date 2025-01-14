@@ -7209,10 +7209,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (14)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.95
@@ -7252,6 +7248,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (14)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -14840,10 +14840,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.48
@@ -14883,6 +14879,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (6)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -18313,10 +18313,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (12)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.610001
@@ -18356,6 +18352,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (12)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -18762,7 +18762,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
+  m_fontSize: 20.5
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -20418,10 +20418,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (20)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.07
@@ -20461,6 +20457,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (20)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -25715,7 +25715,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 28.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -28445,10 +28445,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (11)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.869999
@@ -28488,6 +28484,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (11)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -28753,10 +28753,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (22)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -31.092001
@@ -28796,6 +28792,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (22)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -29835,10 +29835,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.653
@@ -29878,6 +29874,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -30388,8 +30388,8 @@ RectTransform:
   - {fileID: 2100453225}
   m_Father: {fileID: 1678641812}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 713.20715, y: -224.99998}
   m_SizeDelta: {x: 151.58551, y: 427.99997}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -31342,10 +31342,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (17)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.869999
@@ -31385,6 +31381,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (17)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -32709,7 +32709,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 28.55
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -35073,10 +35073,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (10)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -31.04
@@ -35116,6 +35112,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (10)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -35748,7 +35748,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1044604621
@@ -37622,7 +37622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.4999981}
+  m_AnchoredPosition: {x: 0, y: -0.5}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1072708232
@@ -38053,10 +38053,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.610001
@@ -38096,6 +38092,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (7)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -38961,10 +38961,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (15)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.361
@@ -39004,6 +39000,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (15)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -39756,10 +39756,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (16)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.959999
@@ -39799,6 +39795,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (16)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -42253,10 +42253,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (18)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.150002
@@ -42296,6 +42292,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (18)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -45716,10 +45716,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.98
@@ -45759,6 +45755,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (9)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -47222,12 +47222,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1824482305}
         m_TargetAssemblyTypeName: MainMenuLogic, Assembly-CSharp
-        m_MethodName: setBotType
-        m_Mode: 6
+        m_MethodName: SetBotTypeEnum
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -48257,6 +48257,8 @@ GameObject:
   - component: {fileID: 1374776458}
   - component: {fileID: 1374776460}
   - component: {fileID: 1374776461}
+  - component: {fileID: 1374776463}
+  - component: {fileID: 1374776462}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -48376,12 +48378,81 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -25.847664}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1374776462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374776457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 720197808f677404fb1794f34434cf8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickCount: 0
+--- !u!114 &1374776463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374776457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1374776461}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1374776462}
+        m_TargetAssemblyTypeName: MemeLvlBtn, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1376741243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52077,7 +52148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0add6c7a001d842b536b16e69e62d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usingNextBot: 0
+  selectedBotType: 0
 --- !u!1001 &1494721237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53412,10 +53483,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -42.393
@@ -53455,6 +53522,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -179.99998
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -55792,10 +55863,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (19)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.650002
@@ -55835,6 +55902,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (19)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -55886,10 +55957,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (13)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.45
@@ -55929,6 +55996,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (13)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -56336,10 +56407,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.967003
@@ -56379,6 +56446,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (8)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -59363,10 +59434,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (21)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.851001
@@ -59406,6 +59473,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (21)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -61311,10 +61382,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.88
@@ -61354,6 +61421,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (4)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -64809,7 +64880,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1875868477
@@ -66013,7 +66084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 69.78001, y: 20.3705, z: 90.238525}
+  size: {x: 69.78, y: 20.3705, z: 90.238525}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -66053,7 +66124,7 @@ Transform:
   m_GameObject: {fileID: 1905755255}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.58999634, y: 0.5037508, z: 5.726261}
+  m_LocalPosition: {x: -0.59000015, y: 0.5037508, z: 5.726261}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -66067,10 +66138,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.45
@@ -66110,6 +66177,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (5)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -66245,8 +66316,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1824482305}
         m_TargetAssemblyTypeName: MainMenuLogic, Assembly-CSharp
-        m_MethodName: setBotType
-        m_Mode: 6
+        m_MethodName: SetBotTypeEnum
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -69179,10 +69250,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1473868294}
     m_Modifications:
-    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
-      propertyPath: m_Name
-      value: Light bar (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.903999
@@ -69222,6 +69289,10 @@ PrefabInstance:
     - target: {fileID: 3178765533646714092, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696608051697763193, guid: 3df8636a2153291489de70b45959cf41, type: 3}
+      propertyPath: m_Name
+      value: Light bar (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6674469936952536259, guid: 3df8636a2153291489de70b45959cf41, type: 3}
       propertyPath: m_BoundingSphereOverride.w

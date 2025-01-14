@@ -50,7 +50,7 @@ public class TeensyLogger : SingletonPersistent<TeensyLogger>
     {
         OnStart();
     }
-    
+    /*
     public void OnStart()
     {
         string[] availablePorts = SerialPort.GetPortNames();
@@ -74,9 +74,54 @@ public class TeensyLogger : SingletonPersistent<TeensyLogger>
                 Debug.LogWarning("Error opening serial port: " + e.Message + "on port " + port);
             }
         }
-        else Debug.LogError("How about you connect the teensy to the right port, dumbass");
+        else
+        {
+            Debug.LogError("How about you connect the teensy to the right port, dumbass");
+            gameObject.SetActive(false);
+        }
+        
     }
-    
+    */
+    public void OnStart()
+    {
+        string[] availablePorts = SerialPort.GetPortNames();
+        Debug.Log("Available ports: " + string.Join(", ", availablePorts));
+
+        if (availablePorts.Length == 0)
+        {
+            Debug.LogError("No serial devices detected. Deactivating script.");
+            gameObject.SetActive(false);
+            return;
+        }
+
+        if (Array.Exists(availablePorts, p => p.Equals(portName, StringComparison.OrdinalIgnoreCase)))
+        {
+            port = new SerialPort(portName, baudRate)
+            {
+                ReadTimeout = timeOut
+            };
+
+            try
+            {
+                Debug.Log($"Attempting to open serial port '{portName}' at {baudRate} baud.");
+                port.Open();
+
+                cancellationTokenSource = new CancellationTokenSource();
+                Task.Run(() => ReadSerialPort(cancellationTokenSource.Token));
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning($"Failed to open serial port '{portName}': {e.Message}");
+                gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            Debug.LogError($"Port '{portName}' not found. Make sure the Teensy is connected.");
+            gameObject.SetActive(false);
+        }
+    }
+
     void Update()
     {
         // process and save data from queue
