@@ -46,6 +46,7 @@ public class DumbBot : MonoBehaviour
     Vector3 playerPosition;
     public Transform home;
     float distanceToPlayer => Vector3.Distance(playerPosition, transform.position);
+    Camera cam;
     public SoundFileObject sound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -58,6 +59,7 @@ public class DumbBot : MonoBehaviour
         gameManager = GameManager.Instance;
         initialTimeToKill = timeToKill;
         ventCollider = GetComponent<Collider>();
+        cam = Camera.main;
 
         if (player == null || agent == null || home == null)
         {
@@ -152,7 +154,7 @@ public class DumbBot : MonoBehaviour
         fsm.SetStartState("Stalk");
 
         // configure transitions
-        fsm.AddTriggerTransition("PlayerVisible", "Stalk", "EvaluateState"); // TODO: fix EvaluateState. It works sometimes, but its REALLY fucky.
+        fsm.AddTriggerTransition("PlayerVisible", "Stalk", "EvaluateState"); 
         fsm.AddTransition("EvaluateState", "RunAway", t => newState == "RunAway");
         fsm.AddTransition("EvaluateState", "Chase", t => newState == "Chase");
         fsm.AddTwoWayTransition("Chase", "Attack", t => distanceToPlayer <= attackRange); // attack player
@@ -193,7 +195,7 @@ public class DumbBot : MonoBehaviour
         playerPosition = player.transform.position;
 
         if (currentState == "Stalk") // this should be a way to trigger the chase state without polling.
-            if (IsPlayerVisible() == true) 
+            if (IsPlayerVisible() == true && isSpotted()) 
             {
                 fsm.Trigger("PlayerVisible");
             }
@@ -253,6 +255,16 @@ public class DumbBot : MonoBehaviour
             }
         }
         return false;
+    }
+
+    bool isSpotted()
+    {
+        Vector3 viewportPos = cam.WorldToViewportPoint(gameObject.transform.position);
+        if (viewportPos.z > 0 && viewportPos.x >= 0 && viewportPos.x <= 1 && viewportPos.y >= 0 && viewportPos.y <= 1)
+        {
+            return true;
+        }
+        else return false;
     }
 
     Vector3 GetRandomNavMeshPoint()
