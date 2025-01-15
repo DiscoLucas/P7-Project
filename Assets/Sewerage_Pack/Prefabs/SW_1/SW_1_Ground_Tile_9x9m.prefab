@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33207328312801738}
   - component: {fileID: 23657897299448214}
   - component: {fileID: 65083958320933766}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_1_Ground_Tile_9x9m
   m_TagString: Untagged
   m_Icon: {fileID: 0}

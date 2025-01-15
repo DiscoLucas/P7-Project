@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33260991446994398}
   - component: {fileID: 23426203639809526}
   - component: {fileID: 64516751471355688}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_1_Ground_Tile_Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33544394027183964}
   - component: {fileID: 23365869306193856}
   - component: {fileID: 64354254184918646}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_5_Tile_Ground_Orange_3x3m
   m_TagString: Untagged
   m_Icon: {fileID: 0}

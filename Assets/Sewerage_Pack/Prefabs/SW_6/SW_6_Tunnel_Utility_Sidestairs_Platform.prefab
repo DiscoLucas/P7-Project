@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33285047170502184}
   - component: {fileID: 23051345575378114}
   - component: {fileID: 65087632808701248}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_6_Tunnel_Utility_Sidestairs_Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

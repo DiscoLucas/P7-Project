@@ -32,10 +32,22 @@ public class MainMenuLogic : MenuBase
     */
     /// <summary>
     /// Sets the bot type based on the specified integer value.
-    /// Acceptable values: 
-    /// 0 - GOAP Bot
-    /// 1 - NextBot
-    /// 2 - MemeBot
+    /// <list type="bullet">
+    ///     <listheader>
+    ///         <term>Bot Type</term>
+    ///         <description>Acceptable values:</description>
+    ///     </listheader>
+    ///     <item>
+    ///         <term>0</term> <description>GOAP Bot</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>1</term> <description>NextBot</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>2</term> <description>MemeBot</description>
+    ///     </item>
+    /// </list>
+    ///  
     /// </summary>
     /// <param name="botType">
     /// Integer representing the bot type. 

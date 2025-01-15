@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33591285347558570}
   - component: {fileID: 23119038191845132}
   - component: {fileID: 64737781066624168}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_5_Tile_Ground_Blue_3x3m
   m_TagString: Untagged
   m_Icon: {fileID: 0}

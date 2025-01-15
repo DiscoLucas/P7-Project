@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33940545203049162}
   - component: {fileID: 23803989075716202}
   - component: {fileID: 64180258570305182}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Drain_Room_Tile_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4254544944210530}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Drain_Room_Tile_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 33212133605613712}
   - component: {fileID: 23103136301384904}
   - component: {fileID: 64227881477092324}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Drain_Room_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 33636184242343316}
   - component: {fileID: 23574337666863566}
   - component: {fileID: 65589330822640536}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Drain_Room_Wall_Column
   m_TagString: Untagged
   m_Icon: {fileID: 0}

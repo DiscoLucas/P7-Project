@@ -25,7 +25,7 @@ public abstract class SingletonPersistent<T> : Singleton<T> where T : MonoBehavi
 {
     protected override void Awake()
     {
-        Debug.Log("singleton Awake" + gameObject.name);
+        //Debug.Log("singleton Awake" + gameObject.name);
         if (Instance != null)
         {
             
@@ -36,17 +36,17 @@ public abstract class SingletonPersistent<T> : Singleton<T> where T : MonoBehavi
                 Debug.LogError(e.ToString());
             }
             
-            Debug.Log("Removale of singleton: "  + gameObject.name);
+            //Debug.Log("Removale of singleton: "  + gameObject.name);
             Destroy(gameObject);
         }
         else
         {
             base.Awake();
-            Debug.Log("Creation of singleton" + gameObject.name);
+            //Debug.Log("Creation of singleton" + gameObject.name);
             DontDestroyOnLoad(gameObject);
         }
         
-        Debug.Log("singleton Createde" + gameObject.name);
+        //Debug.Log("singleton Createde" + gameObject.name);
     }
 
 

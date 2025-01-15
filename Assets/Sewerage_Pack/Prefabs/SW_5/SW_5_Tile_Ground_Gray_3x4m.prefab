@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33216916375695590}
   - component: {fileID: 23057864348444732}
   - component: {fileID: 64105320244554246}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_5_Tile_Ground_Gray_3x4m
   m_TagString: Untagged
   m_Icon: {fileID: 0}

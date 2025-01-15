@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33614528311868362}
   - component: {fileID: 23193599489385586}
   - component: {fileID: 64066866796765910}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_5_Tunnels_Floor_2.5x5m_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

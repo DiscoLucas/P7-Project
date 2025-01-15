@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33136710552612438}
   - component: {fileID: 23149166021314196}
   - component: {fileID: 64050971081857442}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SW_5_Tunnels_Ceiling_10x10m
   m_TagString: Untagged
   m_Icon: {fileID: 0}

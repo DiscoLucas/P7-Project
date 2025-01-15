@@ -5,6 +5,9 @@ using Assets.Scripts.GOAP.Sensors;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.Assertions;
+using System.Diagnostics;
+using Debug = UnityEngine.Debug;
 [DefaultExecutionOrder(-2)]
 public class GameManager : SingletonPersistent<GameManager>
 {
@@ -36,7 +39,7 @@ public class GameManager : SingletonPersistent<GameManager>
     [HideInInspector] public float initialChromaticAberration;
     [HideInInspector] public float initialFilmGrain;
 
-    
+    StackTrace stackTrace;
 
     public void setBotType(BotType botType)
     {
@@ -55,19 +58,6 @@ public class GameManager : SingletonPersistent<GameManager>
             sceneLoadPackage = GetComponent<SceneLoadPackage>();
         }
     }
-    /*
-    // TODO: change to use enum instead
-    public void setUsingNextBot(bool b) {
-        setpackage();
-        sceneLoadPackage.usingNextBot = b;
-    }
-
-    public bool getUsingNextBot() {
-        setpackage();
-
-        
-        return sceneLoadPackage.usingNextBot;
-    }*/
 
     public GameState State { get; private set; }
 
@@ -129,21 +119,30 @@ public class GameManager : SingletonPersistent<GameManager>
             Debug.Log("monster gameobject name " + monsterObject.name);
         }
     }
+    /// <summary>
+    /// Initializes the game, setting up necessary components and starting the game state. 
+    /// Is called from the <see cref="GameManagerActivator"/> class.
+    /// </summary>
     public void onGameStart()
     {
-        TeensyLogger.Instance.OnStart();
-        Debug.Log("Game started");
-        if(protectionAreaObject == null)
-            protectionAreaObject = GameObject.FindGameObjectWithTag(eggTag);
-        Debug.Log("Tried to find protection area");
+        if (getBotType() != BotType.MemeBot)
+        {
+            TeensyLogger.Instance.OnStart();
+            Debug.Log("Game started");
+            if (protectionAreaObject == null)
+                protectionAreaObject = GameObject.FindGameObjectWithTag(eggTag);
+        }
+
         if (gameHud == null)
             gameHud = GameObject.FindAnyObjectByType<GameHudMenu>();
-        if (playerObject == null) {
+        if (playerObject == null)
+        {
             GameObject[] objects = GameObject.FindGameObjectsWithTag("Player");
-            if (objects.Length > 0) {
+            if (objects.Length > 0)
+            {
                 playerObject = GameObject.FindGameObjectsWithTag("Player")[0];
             }
-            
+
         }
 
         GameObject spawnpoint = GameObject.FindWithTag("Spawnpoint");
@@ -152,9 +151,9 @@ public class GameManager : SingletonPersistent<GameManager>
             Debug.Log("Moving player to spawnpoint FROM: " + playerObject.transform.position + " to: " + spawnpoint.transform.position);
             playerObject.transform.position = spawnpoint.transform.position;
             Debug.Log("moved to: " + playerObject.transform.position);
-          //  var newobj = Instantiate(playerObject);
-           // playerObject.SetActive(false);
-           // playerObject = newobj;
+            //  var newobj = Instantiate(playerObject);
+            // playerObject.SetActive(false);
+            // playerObject = newobj;
         }
 
         ChangeState(GameState.TutorialSection);
@@ -163,7 +162,7 @@ public class GameManager : SingletonPersistent<GameManager>
         postProcessing = GameObject.Find("Post processing");
         if (postProcessing == null)
         {
-            Debug.LogError("Post processing GameObject not found"); 
+            Debug.LogError("Post processing GameObject not found");
             return;
         }
         volume = postProcessing.GetComponent<Volume>();
@@ -197,7 +196,7 @@ public class GameManager : SingletonPersistent<GameManager>
         {
             initialFilmGrain = filmGrain.intensity.value;
         }
-        
+
         onGameStartEvent.Invoke();
         //findMonster();
         Debug.Log("Protection areas object is: " + protectionAreaObject + " Player is: " + playerObject + " Monster is: " + monsterObject);

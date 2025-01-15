@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33020095725735884}
   - component: {fileID: 23716668379285980}
   - component: {fileID: 64039852395298520}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SW_2_Tile_Big_Wall_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

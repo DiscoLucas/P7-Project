@@ -10,7 +10,7 @@ public class GameManagerActivator : MonoBehaviour
         {
             case BotType.Goap:
                 GameManager.Instance.monsterObject = monster_Goap;
-                Debug.Log("Change to the Goap");
+                Debug.Log("Change to the bot to Goap");
                 break;
             case BotType.NextBot:
                 GameManager.Instance.monsterObject = monster_Next;

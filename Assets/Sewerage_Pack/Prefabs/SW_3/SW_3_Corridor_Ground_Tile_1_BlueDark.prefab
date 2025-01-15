@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33001183876168622}
   - component: {fileID: 23792092790116702}
   - component: {fileID: 65097664742403156}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: SW_3_Corridor_Ground_Tile_1_BlueDark
   m_TagString: Untagged
   m_Icon: {fileID: 0}

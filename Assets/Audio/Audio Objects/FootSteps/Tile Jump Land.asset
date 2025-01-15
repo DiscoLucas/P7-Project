@@ -32,7 +32,7 @@ MonoBehaviour:
   ignoreTimeScale: 0
   maxPlayingInstances: 10
   channelOverride: 0
-  mixerGroupOverride: {fileID: 0}
+  mixerGroupOverride: {fileID: 638778298537157183, guid: f3939c92bcaedfc488f1768332ba0f01, type: 2}
   fadeInOut: 0
   fadeInDuration: 0
   fadeOutDuration: 0

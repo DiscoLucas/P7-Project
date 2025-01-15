@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4010374647855322}
   - component: {fileID: 33344052474359272}
   - component: {fileID: 23188836821767566}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_6_Tunnel_Utility_Tile_Stairs_Pipes_Ceiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 33570678028305702}
   - component: {fileID: 23168445238909352}
   - component: {fileID: 64792019176414934}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_6_Tunnel_Utility_Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4064531571178132}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_6_Tunnel_Utility_Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 4878260201686944}
   - component: {fileID: 33443432083371752}
   - component: {fileID: 23518570898098570}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_6_Tunnel_Utility_Wall_Stairs_Ledge_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 4160108834892548}
   - component: {fileID: 33695432083512998}
   - component: {fileID: 23989473567492924}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_6_Tunnel_Utility_Wall_Stairs_Ledge_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 33518012620753202}
   - component: {fileID: 23290838795071848}
   - component: {fileID: 64437306927828026}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_6_Tunnel_Utility_Tile_Stairs_Ceiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 33040404004431770}
   - component: {fileID: 23915671526230406}
   - component: {fileID: 64637762784650530}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_6_Tunnel_Utility_Wall_Stairs_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 33342558766546846}
   - component: {fileID: 23547932806426576}
   - component: {fileID: 64691820725508296}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_6_Tunnel_Utility_Wall_Stairs_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}

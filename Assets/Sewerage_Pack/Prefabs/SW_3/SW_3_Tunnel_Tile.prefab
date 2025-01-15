@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33720138558055142}
   - component: {fileID: 23684424351925792}
   - component: {fileID: 64989456282787420}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Tunnel_Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

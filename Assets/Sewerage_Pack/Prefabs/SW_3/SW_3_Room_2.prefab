@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33615603503777846}
   - component: {fileID: 23975540873223982}
   - component: {fileID: 65793924669118468}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Room_2_Bars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 33832098076298720}
   - component: {fileID: 23442970664186954}
   - component: {fileID: 65625872821415438}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Room_2_Bars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 33962948060824624}
   - component: {fileID: 23928738209429990}
   - component: {fileID: 65312646563671238}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Room_2_Bars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 33883383841209264}
   - component: {fileID: 23829442534702332}
   - component: {fileID: 64929474522767040}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Room_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 33995804861804214}
   - component: {fileID: 23370980449244406}
   - component: {fileID: 65577301695587772}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Room_2_Bars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 33040831502851024}
   - component: {fileID: 23689357866328836}
   - component: {fileID: 65888649900006954}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Room_2_Bars
   m_TagString: Untagged
   m_Icon: {fileID: 0}

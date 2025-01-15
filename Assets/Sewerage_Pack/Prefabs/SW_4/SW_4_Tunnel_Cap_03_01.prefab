@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33484403970943436}
   - component: {fileID: 23018240922993266}
   - component: {fileID: 64222474832116952}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SW_4_Tunnel_Cap_03_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 33856713504311190}
   - component: {fileID: 23925206287011228}
   - component: {fileID: 64322365259087354}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SW_4_Tunnel_Cap_01_Ground_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

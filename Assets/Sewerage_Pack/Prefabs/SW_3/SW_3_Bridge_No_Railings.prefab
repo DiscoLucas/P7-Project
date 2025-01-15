@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33756702127987558}
   - component: {fileID: 23240507482880088}
   - component: {fileID: 64448725903278158}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SW_3_Bridge_No_Railings
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 33404114826032816}
   - component: {fileID: 23437877945769676}
   - component: {fileID: 64218697465463178}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: SW_3_Tile_Long_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 33310553753225616}
   - component: {fileID: 23559685047047508}
   - component: {fileID: 64669325147583328}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SW_3_Corridor_Big_Entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 33794014772823306}
   - component: {fileID: 23726026254479810}
   - component: {fileID: 64954376804717636}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: SW_3_Tile_Long_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 33821387628661430}
   - component: {fileID: 23252563342132660}
   - component: {fileID: 64558737454257674}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SW_3_Corridor_Big_Entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 33538216724980804}
   - component: {fileID: 23838322991429110}
   - component: {fileID: 64622173976573252}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SW_3_Tile_Long_1_Ditch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 33590843214967442}
   - component: {fileID: 23426151903539956}
   - component: {fileID: 65408977129173740}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SW_Walking_Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

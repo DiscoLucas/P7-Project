@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33315030969595186}
   - component: {fileID: 23319090740103526}
   - component: {fileID: 65262065685760116}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_2_Ground_Tile_12x4m_Cracked
   m_TagString: Untagged
   m_Icon: {fileID: 0}

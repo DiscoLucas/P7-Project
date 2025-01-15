@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33652731993805988}
   - component: {fileID: 23417365694763068}
   - component: {fileID: 65198229446962214}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: SW_3_Corridor_Ground_Tile_3_Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4629202908201428}
   - component: {fileID: 33629252233665046}
   - component: {fileID: 23223394335403768}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_4_Tunnel_Ground_Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}

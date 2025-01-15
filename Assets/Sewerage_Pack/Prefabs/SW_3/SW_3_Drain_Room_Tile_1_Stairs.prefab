@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33925645059172904}
   - component: {fileID: 23234027101534118}
   - component: {fileID: 64175590927404458}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Drain_Room_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 33412615186194050}
   - component: {fileID: 23902976673788332}
   - component: {fileID: 65334011111166420}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Drain_Room_Wall_Column
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4708422072027212}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Drain_Room_Tile_1_Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 33084156931949766}
   - component: {fileID: 23730120837734494}
   - component: {fileID: 64471838465677970}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Drain_Room_Tile_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 33281060047268344}
   - component: {fileID: 23182502386044698}
   - component: {fileID: 64091815928652594}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: SW_3_Drain_Room_Stairs_Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}

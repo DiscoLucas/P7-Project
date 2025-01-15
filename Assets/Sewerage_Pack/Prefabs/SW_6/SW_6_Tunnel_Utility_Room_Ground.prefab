@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33938587093781544}
   - component: {fileID: 23826673153036642}
   - component: {fileID: 64355976697603164}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: SW_6_Tunnel_Utility_Room_Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
