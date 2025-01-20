@@ -39,7 +39,7 @@ public class GameManager : SingletonPersistent<GameManager>
     [HideInInspector] public float initialChromaticAberration;
     [HideInInspector] public float initialFilmGrain;
 
-    StackTrace stackTrace;
+    public bool gmLogging;
 
     public void setBotType(BotType botType)
     {
@@ -125,9 +125,11 @@ public class GameManager : SingletonPersistent<GameManager>
     /// </summary>
     public void onGameStart()
     {
+        if (gmLogging) TeensyLogger.Instance.OnStart();
+        else try { Destroy(TeensyLogger.Instance.gameObject); } catch (Exception e) { Debug.LogWarning("TeensyLogger not found"); }
+
         if (getBotType() != BotType.MemeBot)
         {
-            TeensyLogger.Instance.OnStart();
             Debug.Log("Game started");
             if (protectionAreaObject == null)
                 protectionAreaObject = GameObject.FindGameObjectWithTag(eggTag);
@@ -277,10 +279,16 @@ public class GameManager : SingletonPersistent<GameManager>
             findMonster();
             monsterObject.SetActive(true);
         }
-        if (SessionLogTracker.Instance.state == null) {
+
+        if (SessionLogTracker.Instance.state == null)
+        {
             SessionLogTracker.Instance.state = GameObject.FindObjectOfType<SessionLogState>();
         }
-        SessionLogTracker.Instance.startLoggin();
+
+
+        if (gmLogging) SessionLogTracker.Instance.startLoggin();
+        else try { SessionLogTracker.Instance.gameObject.SetActive(false); } catch (Exception e) { Debug.LogWarning("SessionLogTracker not found"); }
+        
         ChangeState(GameState.Game);
     }
 

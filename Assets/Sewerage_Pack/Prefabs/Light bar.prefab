@@ -44,13 +44,13 @@ Light:
   serializedVersion: 11
   m_Type: 3
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5.621994
-  m_Range: 15
+  m_Intensity: 792.7705
+  m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -87,11 +87,11 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 2.67, y: 0.060152173}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
+  m_ColorTemperature: 4400
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 16.335339}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 21.335339}
   m_UseBoundingSphereOverride: 1
-  m_UseViewFrustumForShadowCasterCull: 1
+  m_UseViewFrustumForShadowCasterCull: 0
   m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -137,8 +137,8 @@ MonoBehaviour:
   m_ApplyRangeAttenuation: 1
   m_DisplayAreaLightEmissiveMesh: 0
   m_AreaLightCookie: {fileID: 0}
-  m_IESPoint: {fileID: 0}
-  m_IESSpot: {fileID: 0}
+  m_IESPoint: {fileID: -4633647934846040430, guid: 877ccb0acb1907147a1e0c9065c8c40c, type: 3}
+  m_IESSpot: {fileID: -5496489546768625155, guid: 877ccb0acb1907147a1e0c9065c8c40c, type: 3}
   m_IncludeForRayTracing: 1
   m_IncludeForPathTracing: 1
   m_AreaLightShadowCone: 120
@@ -284,13 +284,13 @@ Light:
   serializedVersion: 11
   m_Type: 3
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5.621994
-  m_Range: 15
+  m_Intensity: 792.7705
+  m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -327,11 +327,11 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 2.67, y: 0.060152173}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
+  m_ColorTemperature: 4400
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 16.335339}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 21.335339}
   m_UseBoundingSphereOverride: 1
-  m_UseViewFrustumForShadowCasterCull: 1
+  m_UseViewFrustumForShadowCasterCull: 0
   m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -377,8 +377,8 @@ MonoBehaviour:
   m_ApplyRangeAttenuation: 1
   m_DisplayAreaLightEmissiveMesh: 0
   m_AreaLightCookie: {fileID: 0}
-  m_IESPoint: {fileID: 0}
-  m_IESSpot: {fileID: 0}
+  m_IESPoint: {fileID: -4633647934846040430, guid: 877ccb0acb1907147a1e0c9065c8c40c, type: 3}
+  m_IESSpot: {fileID: -5496489546768625155, guid: 877ccb0acb1907147a1e0c9065c8c40c, type: 3}
   m_IncludeForRayTracing: 1
   m_IncludeForPathTracing: 1
   m_AreaLightShadowCone: 120
