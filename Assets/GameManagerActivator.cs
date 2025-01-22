@@ -3,9 +3,10 @@ using UnityEngine;
 public class GameManagerActivator : MonoBehaviour
 {
     public GameObject monster_Goap, monster_Next, monster_Meme;
+    public bool enableLogging;
     void Start()
     {
-        
+        GameManager.Instance.gmLogging = enableLogging;
         switch (GameManager.Instance.getBotType())
         {
             case BotType.Goap:

@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: 877ccb0acb1907147a1e0c9065c8c40c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 9801397f829a1ed42984340315cbf362, type: 3}
+  iesMetaData:
+    FileFormatVersion: LM-63-2002
+    IESPhotometricType: Type C
+    IESMaximumIntensity: 11800
+    IESMaximumIntensityUnit: Lumens
+    Manufacturer: TECHNICAL CONSUMER PRODUCTS, INC.
+    LuminaireCatalogNumber: PL4SA432UNIH
+    LuminaireDescription: POLAR BAY ENCLOSED & GASKETTED MIRO4 4' 32W T8 4 LAMP HBF
+    LampCatalogNumber: 
+    LampDescription: (4) 32 WATT T8 LINEAR FLUORESCENTS
+    PrefabLightType: 0
+    SpotAngle: 120
+    iesSize: 128
+    ApplyLightAttenuation: 1
+    UseIESMaximumIntensity: 1
+    CookieCompression: 2
+    LightAimAxisRotation: -90
