@@ -65,16 +65,7 @@ public class PlayerMovement : MonoBehaviour
         currentStamina = maxStamina;
         Debug.Log("pos: " +transform.position);
 
-        GameObject spawnpoint = GameObject.FindWithTag("Spawnpoint");
-        if (spawnpoint != null )
-        {
-            Debug.Log("Moving player to spawnpoint FROM: " + transform.position + " to: " + spawnpoint.transform.position);
-            transform.position = spawnpoint.transform.position;
-            Debug.Log("moved to: " + transform.position);
-            //  var newobj = Instantiate(playerObject);
-            // playerObject.SetActive(false);
-            // playerObject = newobj;
-        }
+        
     }
 
     void Update()

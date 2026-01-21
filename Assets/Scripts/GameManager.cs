@@ -40,6 +40,7 @@ public class GameManager : SingletonPersistent<GameManager>
     [HideInInspector] public float initialFilmGrain;
 
     public bool gmLogging;
+    public bool ignoreSpawnpoint = false; // set to true to stop moving the player to the spawnpoint on game start, useful for testing
 
     public void setBotType(BotType botType)
     {
@@ -147,17 +148,20 @@ public class GameManager : SingletonPersistent<GameManager>
 
         }
 
-        GameObject spawnpoint = GameObject.FindWithTag("Spawnpoint");
-        if (spawnpoint != null && playerObject != null)
+        if (!ignoreSpawnpoint)
         {
-            Debug.Log("Moving player to spawnpoint FROM: " + playerObject.transform.position + " to: " + spawnpoint.transform.position);
-            playerObject.transform.position = spawnpoint.transform.position;
-            Debug.Log("moved to: " + playerObject.transform.position);
-            //  var newobj = Instantiate(playerObject);
-            // playerObject.SetActive(false);
-            // playerObject = newobj;
+            GameObject spawnpoint = GameObject.FindWithTag("Spawnpoint");
+            if (spawnpoint != null && playerObject != null)
+            {
+                Debug.Log("Moving player to spawnpoint FROM: " + playerObject.transform.position + " to: " + spawnpoint.transform.position);
+                playerObject.transform.position = spawnpoint.transform.position;
+                Debug.Log("moved to: " + playerObject.transform.position);
+                //  var newobj = Instantiate(playerObject);
+                // playerObject.SetActive(false);
+                // playerObject = newobj;
+            }
         }
-
+        
         ChangeState(GameState.TutorialSection);
         die = Die.Instance;
 
