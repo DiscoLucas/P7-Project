@@ -48,6 +48,7 @@ public class DumbBot : MonoBehaviour
     float distanceToPlayer => Vector3.Distance(playerPosition, transform.position);
     Camera cam;
     public SoundFileObject sound;
+    public AgentSoundBehaviors soundBehaviors;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -60,6 +61,7 @@ public class DumbBot : MonoBehaviour
         initialTimeToKill = timeToKill;
         ventCollider = GetComponent<Collider>();
         cam = Camera.main;
+        soundBehaviors = gameObject.GetComponent<AgentSoundBehaviors>();
 
         if (player == null || agent == null || home == null)
         {
@@ -89,8 +91,9 @@ public class DumbBot : MonoBehaviour
             },
             onEnter: state => {
                 agent.speed = chaseSpeed;
-                AudioManager.PlaySound(sound, transform.position);
-            });
+                soundBehaviors.playChaseTheme();
+            },
+            onExit: state => soundBehaviors.stopChaseTheme());
 
 
         fsm.AddState("Idle",

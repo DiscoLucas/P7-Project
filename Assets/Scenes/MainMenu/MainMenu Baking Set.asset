@@ -254,7 +254,7 @@ MonoBehaviour:
             elementCount: 3
           - offset: 0
             elementCount: 3
-        m_Asset: {fileID: 0}
+        m_Asset: {fileID: 4900000, guid: f70e53978f201604fb3d32558a80acaa, type: 3}
   cellBricksDataAsset:
     m_AssetGUID: 92d0d1c7918a77a43b44618986611b2c
     m_StreamableAssetPath: APVStreamingAssets\c5469b2227fc94e4482cec372e380487\92d0d1c7918a77a43b44618986611b2c.bytes
@@ -337,7 +337,7 @@ MonoBehaviour:
   supportOffsetsChunkSize: 98304
   supportDataChunkSize: 262144
   lightingScenario: Default
-  version: 1
+  version: 2
   freezePlacement: 0
   probeOffset: {x: 0, y: 0, z: 0}
   simplificationLevels: 3
