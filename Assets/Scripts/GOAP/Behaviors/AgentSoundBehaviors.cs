@@ -1,5 +1,6 @@
 using UnityEngine;
 using JSAM;
+using System.Collections;
 
 public class AgentSoundBehaviors : MonoBehaviour
 {
@@ -15,6 +16,13 @@ public class AgentSoundBehaviors : MonoBehaviour
         float current = Time.timeSinceLevelLoad - timeWhenScream;
         cost = 1 - Mathf.Clamp01(current / config.screamInterval);
         return cost;
+    }
+
+    void Start()
+    {
+        // Hack to preload sound to avoid lag spike on first monster encounter.
+        playChaseTheme();
+        stopChaseTheme();
     }
 
     public void startScreamAction() {
@@ -51,12 +59,15 @@ public class AgentSoundBehaviors : MonoBehaviour
     /// <summary>
     /// Play the chase theme
     /// </summary>
-    public void playChaseTheme() { 
+    public void playChaseTheme() 
+    { 
         AudioManager.PlaySound(chaseTheme, transform.position);
     }
 
+
     public void stopChaseTheme()
     {
+        
         AudioManager.StopSound(chaseTheme);
     }
 
