@@ -18,12 +18,6 @@ public class AgentSoundBehaviors : MonoBehaviour
         return cost;
     }
 
-    void Start()
-    {
-        // Hack to preload sound to avoid lag spike on first monster encounter.
-        playChaseTheme();
-        stopChaseTheme();
-    }
 
     public void startScreamAction() {
         screamActiveAction = true;
